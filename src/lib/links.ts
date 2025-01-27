@@ -63,7 +63,7 @@ export const initialLinks: LinkItem[] = [
   {
     id: 'contact',
     title: 'Contact',
-    url: 'mailto:burak.boduroglu@yahoo.com',
+    url: 'https://acoustic-dust-b61.notion.site/1883b173972d8195b23ed9146b8c8119?pvs=105',
     views: 0,
     icon: faEnvelope,
   },

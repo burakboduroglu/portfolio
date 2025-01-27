@@ -6,6 +6,7 @@ import {
   faGithub,
   faDev,
   faHackerrank,
+  faFigma,
 } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
@@ -44,6 +45,13 @@ export const initialLinks: LinkItem[] = [
     url: 'https://dev.to/burakboduroglu',
     views: 0,
     icon: faDev,
+  },
+  {
+    id: 'figma',
+    title: 'Figma',
+    url: 'https://figma.com/@burakboduroglu',
+    views: 0,
+    icon: faFigma,
   },
   {
     id: 'hackerrank',

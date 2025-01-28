@@ -14,7 +14,7 @@ export function Footer() {
           Burak Boduroglu
         </a>
       </p>
-      <p className='mt-1 text-xs'>© 2025 All rights reserved</p>
+      <p className='mt-1 text-xs'>© {new Date().getFullYear()} All rights reserved</p>
     </div>
   )
 }

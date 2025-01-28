@@ -5,6 +5,7 @@ import { Profile } from './components/Profile'
 import { LinkGrid } from './components/LinkGrid'
 import { Footer } from './components/Footer'
 import { Toaster } from 'react-hot-toast'
+import { faSchool } from '@fortawesome/free-solid-svg-icons'
 
 function App() {
   const [links, setLinks] = React.useState<LinkItem[]>(() => {
@@ -49,7 +50,17 @@ function App() {
               name='Burak Boduroglu'
               bio='Software Engineer | TypeScript, Next.js, React Native'
             />
-            <LinkGrid links={links} onLinkClick={handleLinkClick} />
+            <LinkGrid
+              links={links}
+              onLinkClick={handleLinkClick}
+              featuredLink={{
+                id: 'featured-1',
+                title: 'Blogs & Tutorials',
+                url: 'https://burakboduroglu.github.io/blogs-and-tutorials/',
+                icon: faSchool,
+                views: 0,
+              }}
+            />
           </div>
           <Footer />
         </div>

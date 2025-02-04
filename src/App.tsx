@@ -48,7 +48,7 @@ function App() {
             <Profile
               imageUrl='https://avatars.githubusercontent.com/u/80620802?s=400&u=9932e501d5c723936e92da977ac3fb7691417f73&v=4'
               name='Burak Boduroglu'
-              bio='Software Engineer | TypeScript, Next.js, React Native'
+              bio='Fullstack JavaScript Developer | Next.js | Node.js | React Native'
             />
             <LinkGrid
               links={links}

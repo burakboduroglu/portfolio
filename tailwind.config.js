@@ -6,6 +6,7 @@ module.exports = {
       animation: {
         border: 'border 4s ease infinite',
         glow: 'glow 4s ease infinite',
+        'border-glow': 'borderGlow 1.5s ease-in-out infinite',
       },
       keyframes: {
         border: {
@@ -15,6 +16,10 @@ module.exports = {
         glow: {
           '0%, 100%': { opacity: 0.5 },
           '50%': { opacity: 0.8 },
+        },
+        borderGlow: {
+          '0%, 100%': { opacity: 1 },
+          '50%': { opacity: 0.2 },
         },
       },
       backgroundImage: {

@@ -7,9 +7,10 @@ interface LinkGridProps {
   links: LinkItem[]
   onLinkClick: (id: string) => void
   featuredLink?: LinkItem
+  secondFeaturedLink?: LinkItem
 }
 
-export function LinkGrid({ links, onLinkClick, featuredLink }: LinkGridProps) {
+export function LinkGrid({ links, onLinkClick, featuredLink, secondFeaturedLink }: LinkGridProps) {
   const handleCopyLink = async (e: React.MouseEvent, url: string) => {
     e.preventDefault()
     e.stopPropagation()
@@ -33,37 +34,26 @@ export function LinkGrid({ links, onLinkClick, featuredLink }: LinkGridProps) {
 
   return (
     <div className='flex flex-col gap-3'>
-      {featuredLink && (
-        <a
-          key={featuredLink.id}
-          href={featuredLink.url}
-          target='_blank'
-          rel='noopener noreferrer'
-          onClick={(e) => {
-            e.preventDefault()
-            onLinkClick(featuredLink.id)
-            window.open(featuredLink.url, '_blank')
-          }}
-          className='bg-gradient-to-r from-[#0f1c47] via-[#7a1515] to-[#b38309] 
-                     md:h-20 hover:opacity-90 transition-all duration-200 
-                     text-white font-medium rounded-md
-                     border border-white
-                     flex items-center justify-between md:justify-between
-                     relative group h-14 p-4
-                     md:col-span-full'>
-          <div className='flex items-center gap-3'>
-            <FontAwesomeIcon icon={featuredLink.icon} size='xl' className='block' />
-            <span className='text-sm md:text-lg text-white'>{featuredLink.title}</span>
-          </div>
-          <div className='flex items-center gap-3'>
-            <button
-              onClick={(e) => handleCopyLink(e, featuredLink.url)}
-              className='block text-white hover:cursor-pointer transition-colors p-1'>
-              <FontAwesomeIcon icon={faEllipsisVertical} size='lg' />
-            </button>
-          </div>
-        </a>
-      )}
+      <div className='flex flex-col md:flex-row gap-3'>
+        {featuredLink && (
+          <FeaturedLink
+            link={featuredLink}
+            onLinkClick={onLinkClick}
+            onCopyLink={handleCopyLink}
+            gradientClass='from-[#1f1f37] via-[#2d2d5a] to-[#373777]
+                         hover:from-[#24244d] hover:via-[#323268] hover:to-[#3d3d86]'
+          />
+        )}
+        {secondFeaturedLink && (
+          <FeaturedLink
+            link={secondFeaturedLink}
+            onLinkClick={onLinkClick}
+            onCopyLink={handleCopyLink}
+            gradientClass='from-[#1a1a2c] via-[#2b2b4f] to-[#35356b]
+                         hover:from-[#1f1f33] hover:via-[#30305a] hover:to-[#3a3a76]'
+          />
+        )}
+      </div>
 
       <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3'>
         {links.map((link) => (
@@ -99,5 +89,51 @@ export function LinkGrid({ links, onLinkClick, featuredLink }: LinkGridProps) {
         ))}
       </div>
     </div>
+  )
+}
+
+function FeaturedLink({
+  link,
+  onLinkClick,
+  onCopyLink,
+  gradientClass,
+}: {
+  link: LinkItem
+  onLinkClick: (id: string) => void
+  onCopyLink: (e: React.MouseEvent, url: string) => void
+  gradientClass: string
+}) {
+  return (
+    <a
+      key={link.id}
+      href={link.url}
+      target='_blank'
+      rel='noopener noreferrer'
+      onClick={(e) => {
+        e.preventDefault()
+        onLinkClick(link.id)
+        window.open(link.url, '_blank')
+      }}
+      className={`bg-gradient-to-r ${gradientClass}
+                 shadow-lg hover:shadow-xl
+                 md:h-20 transition-all duration-500 
+                 text-white font-medium rounded-md
+                 border border-[#ffffff15]
+                 flex items-center justify-between
+                 relative group h-14 p-4
+                 md:flex-1
+                 backdrop-blur-sm`}>
+      <div className='flex items-center gap-3'>
+        <FontAwesomeIcon icon={link.icon} size='xl' className='block' />
+        <span className='text-sm md:text-lg text-white'>{link.title}</span>
+      </div>
+      <div className='flex items-center gap-3'>
+        <button
+          onClick={(e) => onCopyLink(e, link.url)}
+          className='block text-white hover:cursor-pointer transition-colors p-1'>
+          <FontAwesomeIcon icon={faEllipsisVertical} size='lg' />
+        </button>
+      </div>
+    </a>
   )
 }

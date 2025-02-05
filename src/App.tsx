@@ -6,6 +6,7 @@ import { LinkGrid } from './components/LinkGrid'
 import { Footer } from './components/Footer'
 import { Toaster } from 'react-hot-toast'
 import { faSchool } from '@fortawesome/free-solid-svg-icons'
+import { faMedium } from '@fortawesome/free-brands-svg-icons'
 
 function App() {
   const [links, setLinks] = React.useState<LinkItem[]>(() => {
@@ -55,9 +56,16 @@ function App() {
               onLinkClick={handleLinkClick}
               featuredLink={{
                 id: 'featured-1',
-                title: 'Blogs & Tutorials',
+                title: 'Personal Blog',
                 url: 'https://burakboduroglu.github.io/blogs-and-tutorials/',
                 icon: faSchool,
+                views: 0,
+              }}
+              secondFeaturedLink={{
+                id: 'featured-2',
+                title: 'Medium Blog',
+                url: 'https://medium.com/@burakboduroglu',
+                icon: faMedium,
                 views: 0,
               }}
             />

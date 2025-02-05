@@ -45,11 +45,11 @@ function App() {
       <Toaster />
       <div className='bg-[#0B1925] min-h-screen flex flex-col items-center'>
         <div className='w-full max-w-[800px] px-4 flex flex-col min-h-screen'>
-          <div className='flex-1 py-8'>
+          <div className='flex-1 py-5'>
             <Profile
               imageUrl='https://avatars.githubusercontent.com/u/80620802?s=400&u=9932e501d5c723936e92da977ac3fb7691417f73&v=4'
               name='Burak Boduroglu'
-              bio='Fullstack JavaScript Developer | Next.js | Node.js | React Native'
+              bio='Fullstack JavaScript Developer'
             />
             <LinkGrid
               links={links}

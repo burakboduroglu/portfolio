@@ -36,7 +36,7 @@ export function LinkGrid({ links, onLinkClick, featuredLink, secondFeaturedLink 
     <div className='flex flex-col gap-3'>
       <div className='flex justify-center mb-1 w-full'>
         <img
-          src='https://skillicons.dev/icons?i=js,ts,next,react,nodejs,express,bun,mongodb,postgres,docker,vite,tailwind,prisma,git'
+          src='https://skillicons.dev/icons?i=java,spring,hibernate,js,ts,next,react,nodejs,express,vite,mongodb,postgres,docker,tailwind'
           alt='Tech Skills'
           className='h-8 md:h-10'
         />

@@ -7,10 +7,9 @@ interface LinkGridProps {
   links: LinkItem[]
   onLinkClick: (id: string) => void
   featuredLink?: LinkItem
-  secondFeaturedLink?: LinkItem
 }
 
-export function LinkGrid({ links, onLinkClick, featuredLink, secondFeaturedLink }: LinkGridProps) {
+export function LinkGrid({ links, onLinkClick, featuredLink }: LinkGridProps) {
   const handleCopyLink = async (e: React.MouseEvent, url: string) => {
     e.preventDefault()
     e.stopPropagation()
@@ -50,15 +49,6 @@ export function LinkGrid({ links, onLinkClick, featuredLink, secondFeaturedLink 
             onCopyLink={handleCopyLink}
             gradientClass='from-[#1f1f37] via-[#2d2d5a] to-[#373777]
                          hover:from-[#24244d] hover:via-[#323268] hover:to-[#3d3d86]'
-          />
-        )}
-        {secondFeaturedLink && (
-          <FeaturedLink
-            link={secondFeaturedLink}
-            onLinkClick={onLinkClick}
-            onCopyLink={handleCopyLink}
-            gradientClass='from-[#1a1a2c] via-[#2b2b4f] to-[#35356b]
-                         hover:from-[#1f1f33] hover:via-[#30305a] hover:to-[#3a3a76]'
           />
         )}
       </div>

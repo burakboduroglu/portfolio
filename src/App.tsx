@@ -62,13 +62,6 @@ function App() {
                 icon: faSchool,
                 views: 0,
               }}
-              secondFeaturedLink={{
-                id: 'featured-2',
-                title: 'Medium Blog',
-                url: 'https://medium.com/@burakboduroglu',
-                icon: faMedium,
-                views: 0,
-              }}
             />
           </div>
           <Footer />

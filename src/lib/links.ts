@@ -7,8 +7,10 @@ import {
   faDev,
   faHackerrank,
   faFigma,
+  faBluesky,
+  faMedium,
 } from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faCode, faFileCode } from '@fortawesome/free-solid-svg-icons'
 
 export const initialLinks: LinkItem[] = [
   {
@@ -40,11 +42,25 @@ export const initialLinks: LinkItem[] = [
     icon: faGithub,
   },
   {
+    id: 'BlueSky',
+    title: 'BlueSky',
+    url: 'https://bsky.app/profile/burakboduroglu.bsky.social',
+    views: 0,
+    icon: faBluesky,
+  },
+  {
     id: 'dev',
     title: 'DEV Community',
     url: 'https://dev.to/burakboduroglu',
     views: 0,
     icon: faDev,
+  },
+  {
+    id: 'medium',
+    title: 'Medium',
+    url: 'https://medium.com/@burakboduroglu',
+    views: 0,
+    icon: faMedium,
   },
   {
     id: 'figma',
@@ -60,6 +76,22 @@ export const initialLinks: LinkItem[] = [
     views: 0,
     icon: faHackerrank,
   },
+
+  {
+    id: 'leetcode',
+    title: 'LeetCode',
+    url: 'https://leetcode.com/u/burakboduroglu/',
+    views: 0,
+    icon: faCode,
+  },
+  {
+    id: 'Codewars',
+    title: 'Codewars',
+    url: 'https://www.codewars.com/users/burakboduroglu',
+    views: 0,
+    icon: faFileCode,
+  },
+
   {
     id: 'contact',
     title: 'Contact',

@@ -32,16 +32,17 @@ export function LinkGrid({ links, onLinkClick, featuredLink }: LinkGridProps) {
   }
 
   return (
-    <div className='flex flex-col gap-3'>
-      <div className='flex justify-center mb-1 w-full'>
+    <section className='flex flex-col gap-3' aria-label='Links and Skills'>
+      <header className='flex justify-center mb-1 w-full'>
         <img
           src='https://skillicons.dev/icons?i=java,spring,hibernate,js,ts,next,react,nodejs,express,vite,mongodb,postgres,docker,tailwind'
           alt='Tech Skills'
           className='h-8 md:h-10'
+          loading='lazy'
         />
-      </div>
+      </header>
 
-      <div className='flex flex-col md:flex-row gap-3'>
+      <nav className='flex flex-col md:flex-row gap-3' aria-label='Featured Link'>
         {featuredLink && (
           <FeaturedLink
             link={featuredLink}
@@ -51,42 +52,45 @@ export function LinkGrid({ links, onLinkClick, featuredLink }: LinkGridProps) {
                          hover:from-[#24244d] hover:via-[#323268] hover:to-[#3d3d86]'
           />
         )}
-      </div>
+      </nav>
 
-      <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3'>
+      <nav
+        className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3'
+        aria-label='Project Links'>
         {links.map((link) => (
-          <a
+          <article
             key={link.id}
-            href={link.url}
-            target='_blank'
-            rel='noopener noreferrer'
-            onClick={(e) => {
-              e.preventDefault()
-              onLinkClick(link.id)
-              window.open(link.url, '_blank')
-            }}
             className='bg-[#0B1925] hover:bg-gray-300 transition-all duration-200 
                      text-white hover:text-black font-medium rounded-md
                      border border-white
                      flex md:flex-col items-center justify-between md:justify-center
                      relative group h-14 md:h-auto md:aspect-square p-4 md:p-2'>
-            <div className='flex items-center gap-3 lg:pt-3 md:gap-0 md:flex-1 md:flex-col'>
-              <FontAwesomeIcon icon={link.icon} size='xl' className='block' />
+            <a
+              href={link.url}
+              target='_blank'
+              rel='noopener noreferrer'
+              onClick={(e) => {
+                e.preventDefault()
+                onLinkClick(link.id)
+                window.open(link.url, '_blank')
+              }}
+              className='flex items-center gap-3 lg:pt-3 md:gap-0 md:flex-1 md:flex-col'
+              aria-label={`Visit ${link.title}`}>
+              <FontAwesomeIcon icon={link.icon} size='xl' className='block' aria-hidden='true' />
               <span className='text-sm md:text-xs text-gray-400 group-hover:text-gray-600 md:mt-2'>
                 {link.title}
               </span>
-            </div>
-            <div className='flex items-center gap-3'>
-              <button
-                onClick={(e) => handleCopyLink(e, link.url)}
-                className='block text-gray-600 hover:cursor-pointer ransition-colors p-1'>
-                <FontAwesomeIcon icon={faEllipsisVertical} size='lg' />
-              </button>
-            </div>
-          </a>
+            </a>
+            <button
+              onClick={(e) => handleCopyLink(e, link.url)}
+              className='block text-gray-600 hover:cursor-pointer transition-colors p-1'
+              aria-label={`Copy link for ${link.title}`}>
+              <FontAwesomeIcon icon={faEllipsisVertical} size='lg' aria-hidden='true' />
+            </button>
+          </article>
         ))}
-      </div>
-    </div>
+      </nav>
+    </section>
   )
 }
 

@@ -77,9 +77,9 @@ export function LinkGrid({ links, onLinkClick, featuredLink }: LinkGridProps) {
               className='flex items-center gap-3 lg:pt-3 md:gap-0 md:flex-1 md:flex-col'
               aria-label={`Visit ${link.title}`}>
               <FontAwesomeIcon icon={link.icon} size='xl' className='block' aria-hidden='true' />
-              <span className='text-sm md:text-xs text-gray-400 group-hover:text-gray-600 md:mt-2'>
+              <h2 className='text-sm md:text-xs text-gray-400 group-hover:text-gray-600 md:mt-2'>
                 {link.title}
-              </span>
+              </h2>
             </a>
             <button
               onClick={(e) => handleCopyLink(e, link.url)}

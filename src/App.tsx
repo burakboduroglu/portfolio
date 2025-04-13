@@ -6,7 +6,6 @@ import { LinkGrid } from './components/LinkGrid'
 import { Footer } from './components/Footer'
 import { Toaster } from 'react-hot-toast'
 import { faSchool } from '@fortawesome/free-solid-svg-icons'
-import { faMedium } from '@fortawesome/free-brands-svg-icons'
 
 function App() {
   const [links, setLinks] = React.useState<LinkItem[]>(() => {

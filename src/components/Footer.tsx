@@ -5,9 +5,9 @@ export function Footer() {
   return (
     <footer className='py-6 text-gray-400 text-sm flex flex-col items-center border-t border-gray-800'>
       <div className='flex items-center gap-2'>
-        <span>Created with</span>
+        <p>Created with</p>
         <FontAwesomeIcon icon={faHeart} className='text-red-500' aria-label='love' />
-        <span>by</span>
+        <p>by</p>
         <address className='inline'>
           <a
             href='https://github.com/burakboduroglu'

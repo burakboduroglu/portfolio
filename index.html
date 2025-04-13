@@ -11,6 +11,19 @@
     <script type="module" crossorigin src="/portfolio/assets/index-Bwmnb-5n.js"></script>
     <link rel="stylesheet" crossorigin href="/portfolio/assets/index-BgGzX8Pj.css">
   </head>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=${import.meta.env.VITE_GTAG_ID}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', import.meta.env.VITE_GTAG_ID);
+  </script>
   <body>
     <div id="root"></div>
   </body>

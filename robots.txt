@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://burakboduroglu.github.io/portfolio/sitemap.xml
+Sitemap: https://burakboduroglu.com.tr/sitemap.xml

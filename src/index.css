@@ -4,15 +4,28 @@
 
 body {
   margin: 0;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
-    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #0f0f0f;
+  background-color: #0b1020;
   color: white;
+  /* Starry background */
+  background-image: radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(#b3c6ff 1.5px, transparent 1.5px),
+    radial-gradient(#fffbe6 1px, transparent 1px);
+  background-size: 100px 100px, 150px 150px, 200px 200px, 250px 250px;
+  background-position: 0 0, 50px 50px, 100px 100px, 150px 150px;
 }
 
 /* Add smooth scrolling to the whole page */
 html {
   scroll-behavior: smooth;
+}
+
+/* Glowing drop shadow for space theme */
+.drop-shadow-glow {
+  filter: drop-shadow(0 0 6px #b3c6ff) drop-shadow(0 0 8px #3a2a5a);
 }

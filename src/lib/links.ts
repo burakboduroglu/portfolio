@@ -7,7 +7,6 @@ import {
   faDev,
   faHackerrank,
   faFigma,
-  faBluesky,
   faMedium,
 } from "@fortawesome/free-brands-svg-icons";
 
@@ -39,13 +38,6 @@ export const initialLinks: LinkItem[] = [
     url: "https://github.com/burakboduroglu",
     views: 0,
     icon: faGithub,
-  },
-  {
-    id: "BlueSky",
-    title: "BlueSky",
-    url: "https://bsky.app/profile/burakboduroglu.bsky.social",
-    views: 0,
-    icon: faBluesky,
   },
   {
     id: "dev",

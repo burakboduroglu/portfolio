@@ -6,16 +6,15 @@ import toast from "react-hot-toast";
 interface LinkGridProps {
   links: LinkItem[];
   onLinkClick: (id: string) => void;
-  featuredLink?: LinkItem;
 }
 
-export function LinkGrid({ links, onLinkClick, featuredLink }: LinkGridProps) {
+export function LinkGrid({ links, onLinkClick }: LinkGridProps) {
   const handleCopyLink = async (e: React.MouseEvent, url: string) => {
     e.preventDefault();
     e.stopPropagation();
     try {
       await navigator.clipboard.writeText(url);
-      toast.success("Copied!", {
+      toast.success("Kopyalandı!", {
         duration: 2000,
         position: "bottom-center",
         style: {
@@ -24,7 +23,7 @@ export function LinkGrid({ links, onLinkClick, featuredLink }: LinkGridProps) {
         },
       });
     } catch (err) {
-      toast.error("Failed to copy link", {
+      toast.error("Kopyalama hatası", {
         duration: 2000,
         position: "bottom-center",
       });
@@ -41,22 +40,6 @@ export function LinkGrid({ links, onLinkClick, featuredLink }: LinkGridProps) {
           loading="lazy"
         />
       </header>
-
-      <nav
-        className="flex flex-col md:flex-row gap-3"
-        aria-label="Featured Link"
-      >
-        {featuredLink && (
-          <FeaturedLink
-            link={featuredLink}
-            onLinkClick={onLinkClick}
-            onCopyLink={handleCopyLink}
-            gradientClass="from-[#1f1f37] via-[#2d2d5a] to-[#373777]
-                         hover:from-[#24244d] hover:via-[#323268] hover:to-[#3d3d86]"
-          />
-        )}
-      </nav>
-
       <nav
         className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3"
         aria-label="Project Links"
@@ -64,11 +47,15 @@ export function LinkGrid({ links, onLinkClick, featuredLink }: LinkGridProps) {
         {links.map((link) => (
           <article
             key={link.id}
-            className="bg-[#0B1925] hover:bg-gray-300 transition-all duration-200 
-                     text-white hover:text-black font-medium rounded-md
-                     border border-white
+            className="bg-gradient-to-br from-space-blue/90 via-[#23234a]/95 to-space-teal/80
+                     hover:from-space-blue/95 hover:to-space-teal/90 transition-all duration-300
+                     text-space-silver/70 font-medium rounded-xl
+                     border border-[#3a3a5a]/30 shadow-lg shadow-space-blue/10
                      flex md:flex-col items-center justify-between md:justify-center
-                     relative group h-14 md:h-auto md:aspect-square p-4 md:p-2"
+                     relative group h-16 md:h-auto md:aspect-square p-4 md:p-2
+                     ring-1 ring-[#3a3a5a]/30 hover:ring-space-teal/30
+                     before:absolute before:inset-0 before:rounded-xl before:blur before:opacity-20 before:pointer-events-none
+                     before:bg-gradient-to-br before:from-space-blue/80 before:via-[#23234a]/90 before:to-space-teal/80"
           >
             <a
               href={link.url}
@@ -79,22 +66,22 @@ export function LinkGrid({ links, onLinkClick, featuredLink }: LinkGridProps) {
                 onLinkClick(link.id);
                 window.open(link.url, "_blank");
               }}
-              className="flex items-center gap-3 lg:pt-3 md:gap-0 md:flex-1 md:flex-col"
+              className="flex items-center gap-3 lg:pt-3 md:gap-0 md:flex-1 md:flex-col drop-shadow-glow"
               aria-label={`Visit ${link.title}`}
             >
               <FontAwesomeIcon
                 icon={link.icon}
                 size="xl"
-                className="block"
+                className="block text-space-silver/70 drop-shadow-glow"
                 aria-hidden="true"
               />
-              <h2 className="text-sm md:text-xs text-gray-400 group-hover:text-gray-600 md:mt-2">
+              <h2 className="text-sm md:text-xs text-gray-400 group-hover:text-gray-200 md:mt-2">
                 {link.title}
               </h2>
             </a>
             <button
               onClick={(e) => handleCopyLink(e, link.url)}
-              className="block text-gray-600 hover:cursor-pointer transition-colors p-1"
+              className="block text-space-silver/60 hover:text-space-teal hover:cursor-pointer transition-colors p-1"
               aria-label={`Copy link for ${link.title}`}
             >
               <FontAwesomeIcon

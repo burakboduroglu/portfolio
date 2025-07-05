@@ -5,7 +5,6 @@ import { Profile } from "./components/Profile";
 import { LinkGrid } from "./components/LinkGrid";
 import { Footer } from "./components/Footer";
 import { Toaster } from "react-hot-toast";
-import { faSchool } from "@fortawesome/free-solid-svg-icons";
 import { AnimatedStars } from "./components/AnimatedStars";
 
 function App() {
@@ -55,7 +54,7 @@ function App() {
             <Profile
               imageUrl="https://avatars.githubusercontent.com/u/80620802?s=400&u=9932e501d5c723936e92da977ac3fb7691417f73&v=4"
               name="Burak Boduroglu"
-              bio="BSc. Computer Engineering | MSc. Aerospace Engineering"
+              bio="Computer & Astronautical Engineer"
             />
             <LinkGrid links={links} onLinkClick={handleLinkClick} />
           </article>

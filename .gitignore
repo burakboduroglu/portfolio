@@ -13,6 +13,7 @@ node_modules
 bower_components
 package-lock.json   
 
+
 *.sublime*
 
 psd
@@ -39,3 +40,4 @@ sketch
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/react,visualstudiocode
+dist/

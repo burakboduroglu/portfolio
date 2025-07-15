@@ -5,7 +5,6 @@ import { Profile } from "./components/Profile";
 import { LinkGrid } from "./components/LinkGrid";
 import { Footer } from "./components/Footer";
 import { Toaster } from "react-hot-toast";
-import { AnimatedStars } from "./components/AnimatedStars";
 
 function App() {
   const [links, setLinks] = React.useState<LinkItem[]>(() => {
@@ -41,7 +40,6 @@ function App() {
 
   return (
     <>
-      <AnimatedStars />
       <Toaster />
       <main
         className="min-h-screen flex flex-col items-center relative"

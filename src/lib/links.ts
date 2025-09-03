@@ -1,14 +1,13 @@
 import { LinkItem } from "../types/link";
 import {
   faLinkedin,
-  faXTwitter,
-  faYoutube,
   faGithub,
-  faDev,
-  faHackerrank,
-  faFigma,
   faMedium,
+  faDev,
+  faMicrosoft,
+  faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
+import { faBlog, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 export const initialLinks: LinkItem[] = [
   {
@@ -17,20 +16,7 @@ export const initialLinks: LinkItem[] = [
     url: "https://linkedin.com/in/burakboduroglu",
     views: 0,
     icon: faLinkedin,
-  },
-  {
-    id: "x",
-    title: "X",
-    url: "https://x.com/cryptogophertr",
-    views: 0,
-    icon: faXTwitter,
-  },
-  {
-    id: "youtube",
-    title: "YouTube",
-    url: "https://youtube.com/@burakboduroglu",
-    views: 0,
-    icon: faYoutube,
+    description: "Professional network",
   },
   {
     id: "github",
@@ -38,13 +24,15 @@ export const initialLinks: LinkItem[] = [
     url: "https://github.com/burakboduroglu",
     views: 0,
     icon: faGithub,
+    description: " Visit my projects",
   },
   {
     id: "dev",
-    title: "DEV Community",
+    title: "Dev.to",
     url: "https://dev.to/burakboduroglu",
     views: 0,
     icon: faDev,
+    description: "Visit my dev.to profile",
   },
   {
     id: "medium",
@@ -52,19 +40,38 @@ export const initialLinks: LinkItem[] = [
     url: "https://medium.com/@burakboduroglu",
     views: 0,
     icon: faMedium,
+    description: " Read my articles",
   },
   {
-    id: "figma",
-    title: "Figma",
-    url: "https://figma.com/@burakboduroglu",
+    id: "microsoft",
+    title: "Microsoft Learn",
+    url: "https://learn.microsoft.com/en-us/users/burakboduroglu",
     views: 0,
-    icon: faFigma,
+    icon: faMicrosoft,
+    description: "Visit my Microsoft Learn profile",
   },
   {
-    id: "hackerrank",
-    title: "HackerRank",
-    url: "https://hackerrank.com/burakboduroglu",
+    id: "portfolio",
+    title: "Blogs and Tutorials",
+    url: "https://burakboduroglu.github.io/blogs-and-tutorials/",
     views: 0,
-    icon: faHackerrank,
+    icon: faBlog,
+    description: "Visit my personal blog",
+  },
+  {
+    id: "youtube",
+    title: "YouTube",
+    url: "https://www.youtube.com/@burakboduroglu",
+    views: 0,
+    icon: faYoutube,
+    description: "Visit my YouTube channel",
+  },
+  {
+    id: "contact",
+    title: "Contact Me",
+    url: "mailto:info@burakboduroglu.com.tr",
+    views: 0,
+    icon: faEnvelope,
+    description: "Let's discuss opportunities",
   },
 ];

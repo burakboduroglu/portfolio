@@ -1,9 +1,25 @@
 {
-  "name": "portfolio",
+  "name": "rpa-portfolio",
   "homepage": "http://burakboduroglu.com.tr",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "description": "RPA Developer Portfolio - UiPath, Python, C#, JavaScript Automation",
+  "keywords": [
+    "rpa",
+    "automation",
+    "uipath",
+    "python",
+    "csharp",
+    "javascript",
+    "java",
+    "spring-boot",
+    "nextjs",
+    "react",
+    "typescript",
+    "fullstack",
+    "portfolio"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

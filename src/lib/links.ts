@@ -71,14 +71,6 @@ export const initialLinks: LinkItem[] = [
     description: "Visit my YouTube channel",
   },
   {
-    id: "gravatar",
-    title: "Burak Boduroglu Card",
-    url: "https://burakboduroglu.bio",
-    views: 0,
-    icon: faAddressCard,
-    description: "Visit my personal card",
-  },
-  {
     id: "contact",
     title: "Contact Me",
     url: "mailto:info@burakboduroglu.com.tr",

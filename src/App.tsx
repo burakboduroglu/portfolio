@@ -1,10 +1,129 @@
 import React from 'react'
+import { animate, stagger, utils } from 'animejs'
 import { initialLinks } from './lib/links'
 import { LinkItem } from './types/link'
 import { Profile } from './components/Profile'
 import { LinkGrid } from './components/LinkGrid'
 import { Footer } from './components/Footer'
 import { Toaster } from 'react-hot-toast'
+
+// Floating shapes component with anime.js
+function FloatingShapes() {
+  const containerRef = React.useRef<HTMLDivElement>(null)
+
+  React.useEffect(() => {
+    if (!containerRef.current) return
+
+    const shapes = containerRef.current.querySelectorAll('.floating-shape')
+
+    shapes.forEach((shape, i) => {
+      const randomX = Math.random() * 100
+      const randomY = Math.random() * 100
+      ;(shape as HTMLElement).style.left = `${randomX}%`
+      ;(shape as HTMLElement).style.top = `${randomY}%`
+
+      // Create unique floating animation for each shape
+      animate(shape, {
+        translateX: [
+          { to: utils.random(-100, 100) },
+          { to: utils.random(-100, 100) },
+          { to: 0 },
+        ],
+        translateY: [
+          { to: utils.random(-100, 100) },
+          { to: utils.random(-100, 100) },
+          { to: 0 },
+        ],
+        rotate: [{ to: utils.random(-180, 180) }, { to: 0 }],
+        scale: [{ to: utils.random(0.8, 1.2) }, { to: 1 }],
+        opacity: [{ to: utils.random(0.4, 0.7) }, { to: 0.3 }],
+        duration: utils.random(8000, 15000),
+        delay: i * 200,
+        ease: 'inOutQuad',
+        loop: true,
+        alternate: true,
+      })
+    })
+  }, [])
+
+  return (
+    <div ref={containerRef} className='fixed inset-0 pointer-events-none overflow-hidden z-0'>
+      {/* Geometric shapes */}
+      {[...Array(12)].map((_, i) => (
+        <div
+          key={i}
+          className={`floating-shape absolute ${
+            i % 3 === 0
+              ? 'w-32 h-32 rounded-full bg-gradient-to-br from-primary-500/20 to-transparent'
+              : i % 3 === 1
+                ? 'w-24 h-24 rounded-2xl bg-gradient-to-br from-accent-cyan/15 to-transparent rotate-45'
+                : 'w-20 h-20 rounded-full border border-accent-pink/20'
+          }`}
+          style={{
+            filter: 'blur(1px)',
+          }}
+        />
+      ))}
+
+      {/* Glowing dots */}
+      {[...Array(20)].map((_, i) => (
+        <div
+          key={`dot-${i}`}
+          className='floating-shape absolute w-1 h-1 rounded-full bg-primary-400/60'
+          style={{
+            boxShadow: '0 0 10px rgba(99, 102, 241, 0.5)',
+          }}
+        />
+      ))}
+    </div>
+  )
+}
+
+// Animated grid lines
+function GridLines() {
+  const gridRef = React.useRef<HTMLDivElement>(null)
+
+  React.useEffect(() => {
+    if (!gridRef.current) return
+
+    const lines = gridRef.current.querySelectorAll('.grid-line')
+
+    animate(lines, {
+      opacity: [{ to: 0.15 }, { to: 0 }],
+      duration: 4000,
+      delay: stagger(200, { from: 'center' }),
+      ease: 'inOutSine',
+      loop: true,
+    })
+  }, [])
+
+  return (
+    <div
+      ref={gridRef}
+      className='fixed inset-0 pointer-events-none z-0'
+      style={{
+        perspective: '1000px',
+        perspectiveOrigin: '50% 50%',
+      }}>
+      {/* Horizontal lines */}
+      {[...Array(10)].map((_, i) => (
+        <div
+          key={`h-${i}`}
+          className='grid-line absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-500/30 to-transparent opacity-0'
+          style={{ top: `${10 + i * 10}%` }}
+        />
+      ))}
+      {/* Vertical lines */}
+      {[...Array(10)].map((_, i) => (
+        <div
+          key={`v-${i}`}
+          className='grid-line absolute top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-accent-cyan/20 to-transparent opacity-0'
+          style={{ left: `${10 + i * 10}%` }}
+        />
+      ))}
+    </div>
+  )
+}
 
 function App() {
   const [links, setLinks] = React.useState<LinkItem[]>(() => {
@@ -18,13 +137,6 @@ function App() {
     }
     return initialLinks
   })
-
-  const [cursorPos, setCursorPos] = React.useState<{ x: number; y: number }>({ x: 0, y: 0 })
-  React.useEffect(() => {
-    const onMove = (e: MouseEvent) => setCursorPos({ x: e.clientX, y: e.clientY })
-    window.addEventListener('mousemove', onMove)
-    return () => window.removeEventListener('mousemove', onMove)
-  }, [])
 
   const handleLinkClick = (id: string) => {
     setLinks((prevLinks) => {
@@ -48,32 +160,50 @@ function App() {
   return (
     <>
       <Toaster />
-      <main
-        className='min-h-screen flex flex-col items-center justify-center px-6 relative'
-        role='main'>
+      <div className='bg-animated-gradient min-h-screen relative overflow-hidden'>
+        {/* Animated background elements */}
+        <GridLines />
+        <FloatingShapes />
+
+        {/* Original orbs */}
+        <div className='orb orb-1' aria-hidden='true'></div>
+        <div className='orb orb-2' aria-hidden='true'></div>
+        <div className='orb orb-3' aria-hidden='true'></div>
+
+        {/* Noise texture overlay */}
         <div
-          className='pointer-events-none fixed inset-0 z-0'
+          className='fixed inset-0 pointer-events-none opacity-[0.02] z-10'
           style={{
-            background: `radial-gradient(600px at ${cursorPos.x}px ${cursorPos.y}px, rgba(255,255,255,0.05), transparent 60%)`,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
           }}
+          aria-hidden='true'
         />
-        <div className='relative z-10 w-full max-w-6xl py-10 mx-auto'>
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-            <div className='order-1 md:order-1'>
-              <Profile
-                imageUrl='https://avatars.githubusercontent.com/u/80620802?s=400&u=9932e501d5c723936e92da977ac3fb7691417f73&v=4'
-                name='Burak Boduroglu'
-                bio='RPA Developer & Full-Stack Engineer'
-                subtitle=''
-              />
-            </div>
-            <div className='order-2 md:order-2'>
-              <LinkGrid links={links} onLinkClick={handleLinkClick} />
+
+        <main className='relative z-20 min-h-screen flex flex-col' role='main'>
+          <div className='flex-1 flex items-center justify-center px-4 sm:px-6 py-12'>
+            <div className='w-full max-w-5xl'>
+              <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start'>
+                {/* Profile Section */}
+                <div className='order-1'>
+                  <Profile
+                    imageUrl='https://avatars.githubusercontent.com/u/80620802?s=400&u=9932e501d5c723936e92da977ac3fb7691417f73&v=4'
+                    name='Burak Boduroğlu'
+                    bio='Full-Stack Engineer & RPA Developer'
+                    subtitle=''
+                  />
+                </div>
+
+                {/* Links Section */}
+                <div className='order-2 lg:sticky lg:top-12'>
+                  <LinkGrid links={links} onLinkClick={handleLinkClick} />
+                </div>
+              </div>
             </div>
           </div>
+
           <Footer />
-        </div>
-      </main>
+        </main>
+      </div>
     </>
   )
 }

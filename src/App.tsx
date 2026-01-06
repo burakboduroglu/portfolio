@@ -24,16 +24,8 @@ function FloatingShapes() {
 
       // Create unique floating animation for each shape
       animate(shape, {
-        translateX: [
-          { to: utils.random(-100, 100) },
-          { to: utils.random(-100, 100) },
-          { to: 0 },
-        ],
-        translateY: [
-          { to: utils.random(-100, 100) },
-          { to: utils.random(-100, 100) },
-          { to: 0 },
-        ],
+        translateX: [{ to: utils.random(-100, 100) }, { to: utils.random(-100, 100) }, { to: 0 }],
+        translateY: [{ to: utils.random(-100, 100) }, { to: utils.random(-100, 100) }, { to: 0 }],
         rotate: [{ to: utils.random(-180, 180) }, { to: 0 }],
         scale: [{ to: utils.random(0.8, 1.2) }, { to: 1 }],
         opacity: [{ to: utils.random(0.4, 0.7) }, { to: 0.3 }],
@@ -56,8 +48,8 @@ function FloatingShapes() {
             i % 3 === 0
               ? 'w-32 h-32 rounded-full bg-gradient-to-br from-primary-500/20 to-transparent'
               : i % 3 === 1
-                ? 'w-24 h-24 rounded-2xl bg-gradient-to-br from-accent-cyan/15 to-transparent rotate-45'
-                : 'w-20 h-20 rounded-full border border-accent-pink/20'
+              ? 'w-24 h-24 rounded-2xl bg-gradient-to-br from-accent-cyan/15 to-transparent rotate-45'
+              : 'w-20 h-20 rounded-full border border-accent-pink/20'
           }`}
           style={{
             filter: 'blur(1px)',

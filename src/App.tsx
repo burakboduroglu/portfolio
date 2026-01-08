@@ -5,6 +5,8 @@ import { LinkItem } from './types/link'
 import { Profile } from './components/Profile'
 import { LinkGrid } from './components/LinkGrid'
 import { Footer } from './components/Footer'
+import { Terminal } from './components/Terminal'
+import { AnimatedStats } from './components/AnimatedStats'
 import { Toaster } from 'react-hot-toast'
 
 // Floating shapes component with anime.js
@@ -117,6 +119,11 @@ function GridLines() {
   )
 }
 
+// Section Divider component
+function SectionDivider() {
+  return <div className='section-divider-line' aria-hidden='true' />
+}
+
 function App() {
   const [links, setLinks] = React.useState<LinkItem[]>(() => {
     const savedViews = localStorage.getItem('linkViews')
@@ -172,7 +179,8 @@ function App() {
         />
 
         <main className='relative z-20 min-h-screen flex flex-col' role='main'>
-          <div className='flex-1 flex items-center justify-center px-4 sm:px-6 py-12'>
+          {/* Profile & Links Section */}
+          <section className='flex-1 flex items-center justify-center px-4 sm:px-6 py-12'>
             <div className='w-full max-w-5xl'>
               <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start'>
                 {/* Profile Section */}
@@ -181,8 +189,10 @@ function App() {
                     imageUrl='https://avatars.githubusercontent.com/u/80620802?s=400&u=9932e501d5c723936e92da977ac3fb7691417f73&v=4'
                     name='Burak Boduroğlu'
                     bio='Full-Stack Engineer & RPA Developer'
-                    subtitle=''
-                  />
+                    subtitle=''>
+                    {/* Terminal - between Skills and About */}
+                    <Terminal />
+                  </Profile>
                 </div>
 
                 {/* Links Section */}
@@ -191,7 +201,14 @@ function App() {
                 </div>
               </div>
             </div>
-          </div>
+          </section>
+
+          <SectionDivider />
+
+          {/* Stats Section */}
+          <section className='section-spacing px-4 sm:px-6'>
+            <AnimatedStats />
+          </section>
 
           <Footer />
         </main>

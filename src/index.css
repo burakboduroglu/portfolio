@@ -383,3 +383,308 @@ html {
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.3), transparent);
 }
+
+/* ==========================================
+   TYPING HERO STYLES
+   ========================================== */
+.typing-hero-container {
+  text-align: center;
+}
+
+.typing-box {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 0.75rem;
+  padding: 0.5rem 1rem;
+  min-width: 280px;
+  justify-content: center;
+}
+
+.typing-text {
+  background: linear-gradient(135deg, #6366f1 0%, #22d3ee 50%, #f472b6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.typing-cursor {
+  color: #22d3ee;
+  font-weight: 100;
+  margin-left: 2px;
+  font-size: 1.5rem;
+}
+
+.code-snippet-mini {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* ==========================================
+   TERMINAL STYLES
+   ========================================== */
+.terminal-window {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(99, 102, 241, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.terminal-header {
+  background: linear-gradient(180deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.9));
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+}
+
+.terminal-body {
+  padding: 0.75rem 1rem;
+  min-height: 120px;
+  max-height: 200px;
+  overflow-y: auto;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #f1f5f9;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  caret-color: #22d3ee;
+}
+
+.terminal-input::placeholder {
+  color: rgba(148, 163, 184, 0.5);
+}
+
+.terminal-btn {
+  font-family: 'JetBrains Mono', monospace;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 0.375rem;
+  color: #818cf8;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.terminal-btn:hover {
+  background: rgba(99, 102, 241, 0.2);
+  border-color: rgba(99, 102, 241, 0.4);
+  color: #a5b4fc;
+}
+
+/* ==========================================
+   STATS CARD STYLES
+   ========================================== */
+.stat-card {
+  position: relative;
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  text-align: center;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.stat-card:hover {
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 
+    0 20px 40px -15px rgba(99, 102, 241, 0.2),
+    0 0 0 1px rgba(99, 102, 241, 0.1);
+}
+
+.stat-icon-container {
+  width: 48px;
+  height: 48px;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================
+   TIMELINE STYLES
+   ========================================== */
+.timeline-container {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(99, 102, 241, 0.5) 10%,
+    rgba(99, 102, 241, 0.5) 90%,
+    transparent
+  );
+  transform: translateX(-50%);
+}
+
+@media (max-width: 768px) {
+  .timeline-line {
+    left: 24px;
+  }
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .timeline-item {
+    width: 50%;
+    padding: 0 2rem;
+  }
+
+  .timeline-left {
+    margin-left: 0;
+    margin-right: auto;
+    padding-right: 3rem;
+    text-align: right;
+  }
+
+  .timeline-right {
+    margin-left: auto;
+    margin-right: 0;
+    padding-left: 3rem;
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline-item {
+    width: 100%;
+    padding-left: 4rem;
+    text-align: left;
+  }
+}
+
+.timeline-dot {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: 
+    0 4px 12px rgba(99, 102, 241, 0.3),
+    0 0 0 4px rgba(3, 7, 18, 1),
+    0 0 0 6px rgba(99, 102, 241, 0.2);
+}
+
+@media (min-width: 768px) {
+  .timeline-left .timeline-dot {
+    right: -20px;
+    left: auto;
+  }
+
+  .timeline-right .timeline-dot {
+    left: -20px;
+    right: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline-dot {
+    left: 4px;
+    top: 0;
+  }
+}
+
+.timeline-year-mobile {
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.timeline-card {
+  position: relative;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+  width: 100%;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.timeline-card:hover {
+  border-color: rgba(99, 102, 241, 0.3);
+  background: rgba(15, 23, 42, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.2);
+}
+
+@media (min-width: 768px) {
+  .timeline-left .timeline-card {
+    text-align: right;
+  }
+
+  .timeline-left .timeline-card .flex-wrap {
+    justify-content: flex-end;
+  }
+}
+
+.timeline-end-dot {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .timeline-end-dot {
+    justify-content: flex-start;
+    padding-left: 16px;
+  }
+}
+
+/* ==========================================
+   SECTION SPACING
+   ========================================== */
+.section-spacing {
+  padding: 4rem 0;
+}
+
+.section-divider-line {
+  width: 100%;
+  max-width: 200px;
+  height: 1px;
+  margin: 3rem auto;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(99, 102, 241, 0.3),
+    rgba(34, 211, 238, 0.3),
+    rgba(99, 102, 241, 0.3),
+    transparent
+  );
+}

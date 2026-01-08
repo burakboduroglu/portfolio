@@ -6,6 +6,7 @@ interface ProfileProps {
   name: string
   bio: string
   subtitle: string
+  children?: React.ReactNode
 }
 
 const skills = [
@@ -30,7 +31,7 @@ const skills = [
   { emoji: '📋', name: 'JIRA', category: 'process', highlight: false },
 ]
 
-export function Profile({ imageUrl, name, bio }: ProfileProps) {
+export function Profile({ imageUrl, name, bio, children }: ProfileProps) {
   const profileRef = React.useRef<HTMLDivElement>(null)
   const skillsRef = React.useRef<HTMLDivElement>(null)
   const nameRef = React.useRef<HTMLHeadingElement>(null)
@@ -170,6 +171,9 @@ export function Profile({ imageUrl, name, bio }: ProfileProps) {
           ))}
         </div>
       </div>
+
+      {/* Children (Terminal) - Between Skills and About */}
+      {children && <div className='mt-6 w-full max-w-2xl'>{children}</div>}
 
       {/* About Section */}
       <div ref={aboutRef} className='mt-6 w-full max-w-2xl glass-card p-6 opacity-0'>

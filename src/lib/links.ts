@@ -6,6 +6,7 @@ import {
   faDev,
   faMicrosoft,
   faYoutube,
+  faTiktok,
 } from "@fortawesome/free-brands-svg-icons";
 import {
   faGraduationCap,
@@ -69,6 +70,14 @@ export const initialLinks: LinkItem[] = [
     views: 0,
     icon: faYoutube,
     description: "Visit my YouTube channel",
+  },
+  {
+    id: "tiktok",
+    title: "TikTok",
+    url: "https://www.tiktok.com/@burak_boduroglu",
+    views: 0,
+    icon: faTiktok,
+    description: "Follow me on TikTok",
   },
   {
     id: "contact",

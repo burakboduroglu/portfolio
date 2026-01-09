@@ -1,5 +1,26 @@
 import React from 'react'
 import { animate, stagger } from 'animejs'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faLeaf,
+  faRocket,
+  faBolt,
+  faRobot,
+  faCubes,
+  faDatabase,
+  faWandMagicSparkles,
+  faPlug,
+  faUsers,
+  faListCheck,
+} from '@fortawesome/free-solid-svg-icons'
+import {
+  faJava,
+  faReact,
+  faPython as faPythonBrand,
+  faDocker as faDockerBrand,
+  faGithub as faGithubBrand,
+  faMicrosoft as faMicrosoftBrand,
+} from '@fortawesome/free-brands-svg-icons'
 
 interface ProfileProps {
   imageUrl: string
@@ -9,26 +30,36 @@ interface ProfileProps {
   children?: React.ReactNode
 }
 
-const skills = [
-  // Highlighted Full-Stack Skills
-  { emoji: '🍃', name: 'Spring Boot', category: 'fullstack', highlight: true },
-  { emoji: '🚀', name: 'Next.js', category: 'fullstack', highlight: true },
-  { emoji: '⚛️', name: 'React', category: 'fullstack', highlight: true },
-  { emoji: '☕', name: 'Java', category: 'fullstack', highlight: true },
-  { emoji: '⚡', name: 'TypeScript', category: 'fullstack', highlight: true },
-  { emoji: '🐍', name: 'Python', category: 'backend', highlight: false },
-  // RPA & AI
-  { emoji: '🤖', name: 'UiPath Agentic AI', category: 'rpa', highlight: false },
-  { emoji: '🧩', name: 'Copilot Studio', category: 'ai', highlight: false },
-  { emoji: '🧱', name: 'Power Platform', category: 'platform', highlight: false },
-  { emoji: '🧰', name: 'REFramework', category: 'rpa', highlight: false },
-  { emoji: '✨', name: 'Generative AI', category: 'ai', highlight: false },
-  // DevOps & Process
-  { emoji: '🔗', name: 'REST APIs', category: 'backend', highlight: false },
-  { emoji: '🐳', name: 'Docker', category: 'devops', highlight: false },
-  { emoji: '🐱', name: 'GitHub', category: 'devops', highlight: false },
-  { emoji: '🧭', name: 'Agile & Scrum', category: 'process', highlight: false },
-  { emoji: '📋', name: 'JIRA', category: 'process', highlight: false },
+// Skills with FontAwesome icons - organized in rows of 4 for symmetry
+const skillRows = [
+  // Row 1 - Full-Stack Highlighted
+  [
+    { name: 'Spring Boot', icon: faLeaf, highlight: true, color: 'text-green-400' },
+    { name: 'Next.js', icon: faRocket, highlight: true, color: 'text-white' },
+    { name: 'React', icon: faReact, highlight: true, color: 'text-cyan-400' },
+    { name: 'Java', icon: faJava, highlight: true, color: 'text-orange-400' },
+  ],
+  // Row 2 - Full-Stack Highlighted
+  [
+    { name: 'TypeScript', icon: faBolt, highlight: true, color: 'text-blue-400' },
+    { name: 'Python', icon: faPythonBrand, highlight: false, color: 'text-yellow-400' },
+    { name: 'REST APIs', icon: faPlug, highlight: false, color: 'text-purple-400' },
+    { name: 'Docker', icon: faDockerBrand, highlight: false, color: 'text-blue-500' },
+  ],
+  // Row 3 - RPA & AI
+  [
+    { name: 'UiPath', icon: faRobot, highlight: false, color: 'text-orange-500' },
+    { name: 'Copilot Studio', icon: faMicrosoftBrand, highlight: false, color: 'text-cyan-400' },
+    { name: 'Power Platform', icon: faCubes, highlight: false, color: 'text-purple-500' },
+    { name: 'Generative AI', icon: faWandMagicSparkles, highlight: false, color: 'text-pink-400' },
+  ],
+  // Row 4 - DevOps & Process
+  [
+    { name: 'PostgreSQL', icon: faDatabase, highlight: false, color: 'text-sky-400' },
+    { name: 'GitHub', icon: faGithubBrand, highlight: false, color: 'text-white' },
+    { name: 'Agile', icon: faUsers, highlight: false, color: 'text-green-500' },
+    { name: 'JIRA', icon: faListCheck, highlight: false, color: 'text-blue-400' },
+  ],
 ]
 
 export function Profile({ imageUrl, name, bio, children }: ProfileProps) {
@@ -37,6 +68,7 @@ export function Profile({ imageUrl, name, bio, children }: ProfileProps) {
   const nameRef = React.useRef<HTMLHeadingElement>(null)
   const bioRef = React.useRef<HTMLParagraphElement>(null)
   const aboutRef = React.useRef<HTMLDivElement>(null)
+  const terminalRef = React.useRef<HTMLDivElement>(null)
 
   React.useEffect(() => {
     // Profile image entrance animation
@@ -72,16 +104,26 @@ export function Profile({ imageUrl, name, bio, children }: ProfileProps) {
       })
     }
 
-    // Skills stagger animation from center
+    // Skills stagger animation - row by row
     if (skillsRef.current) {
       const badges = skillsRef.current.querySelectorAll('.skill-badge')
       animate(badges, {
-        scale: [{ from: 0, to: 1 }],
+        scale: [{ from: 0.8, to: 1 }],
         opacity: [{ from: 0, to: 1 }],
-        translateY: [{ from: 20, to: 0 }],
-        duration: 600,
-        delay: stagger(50, { grid: [6, 3], from: 'center' }),
+        duration: 500,
+        delay: stagger(60, { start: 400 }),
         ease: 'outBack',
+      })
+    }
+
+    // Terminal animation
+    if (terminalRef.current) {
+      animate(terminalRef.current, {
+        translateY: [{ from: 40, to: 0 }],
+        opacity: [{ from: 0, to: 1 }],
+        duration: 800,
+        delay: 700,
+        ease: 'outExpo',
       })
     }
 
@@ -91,7 +133,7 @@ export function Profile({ imageUrl, name, bio, children }: ProfileProps) {
         translateY: [{ from: 60, to: 0 }],
         opacity: [{ from: 0, to: 1 }],
         duration: 1000,
-        delay: 800,
+        delay: 900,
         ease: 'outExpo',
       })
     }
@@ -100,8 +142,9 @@ export function Profile({ imageUrl, name, bio, children }: ProfileProps) {
   // Hover animation for skill badges
   const handleSkillHover = (e: React.MouseEvent<HTMLDivElement>) => {
     animate(e.currentTarget, {
-      scale: 1.1,
-      duration: 300,
+      scale: 1.08,
+      translateY: -4,
+      duration: 250,
       ease: 'outBack',
     })
   }
@@ -109,13 +152,14 @@ export function Profile({ imageUrl, name, bio, children }: ProfileProps) {
   const handleSkillLeave = (e: React.MouseEvent<HTMLDivElement>) => {
     animate(e.currentTarget, {
       scale: 1,
-      duration: 300,
+      translateY: 0,
+      duration: 250,
       ease: 'outQuad',
     })
   }
 
   return (
-    <section className='flex flex-col items-center text-center gap-6' aria-label='Profile Section'>
+    <section className='flex flex-col items-center text-center gap-8' aria-label='Profile Section'>
       {/* Profile Image with Animated Gradient Border */}
       <div ref={profileRef} className='opacity-0'>
         <div className='gradient-border profile-glow'>
@@ -144,56 +188,74 @@ export function Profile({ imageUrl, name, bio, children }: ProfileProps) {
         </p>
       </div>
 
-      {/* Skills Grid */}
-      <div className='mt-4 w-full max-w-2xl'>
-        <h2 className='text-sm font-semibold text-dark-400 uppercase tracking-widest mb-4 animate-fade-up delay-200'>
-          Technologies & Skills
+      {/* Skills Grid - Symmetric 4x4 Layout */}
+      <div className='w-full max-w-xl'>
+        <h2 className='text-xs font-semibold text-dark-400 uppercase tracking-widest mb-5 flex items-center justify-center gap-3'>
+          <span className='w-12 h-[1px] bg-gradient-to-r from-transparent to-primary-500/50'></span>
+          Tech Stack
+          <span className='w-12 h-[1px] bg-gradient-to-l from-transparent to-primary-500/50'></span>
         </h2>
-        <div ref={skillsRef} className='grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2'>
-          {skills.map((skill) => (
-            <div
-              key={skill.name}
-              onMouseEnter={handleSkillHover}
-              onMouseLeave={handleSkillLeave}
-              className={`skill-badge flex flex-col items-center p-3 cursor-default opacity-0 ${
-                skill.highlight
-                  ? 'bg-gradient-to-br from-primary-500/20 to-accent-cyan/10 border-primary-500/40 ring-1 ring-primary-500/20'
-                  : ''
-              }`}>
-              <span className='text-2xl mb-1.5'>{skill.emoji}</span>
-              <span
-                className={`text-[10px] text-center font-medium leading-tight ${
-                  skill.highlight ? 'text-primary-300' : 'text-dark-300'
-                }`}>
-                {skill.name}
-              </span>
+        <div ref={skillsRef} className='space-y-3'>
+          {skillRows.map((row, rowIndex) => (
+            <div key={rowIndex} className='grid grid-cols-4 gap-3'>
+              {row.map((skill) => (
+                <div
+                  key={skill.name}
+                  onMouseEnter={handleSkillHover}
+                  onMouseLeave={handleSkillLeave}
+                  className={`skill-badge flex flex-col items-center justify-center p-3 cursor-default opacity-0 rounded-xl transition-colors ${
+                    skill.highlight
+                      ? 'bg-gradient-to-br from-primary-500/15 to-accent-cyan/10 border border-primary-500/30'
+                      : 'bg-dark-800/40 border border-dark-700/50 hover:border-dark-600/70'
+                  }`}>
+                  <FontAwesomeIcon icon={skill.icon} className={`text-xl mb-2 ${skill.color}`} />
+                  <span
+                    className={`text-[10px] font-medium leading-tight ${
+                      skill.highlight ? 'text-dark-200' : 'text-dark-400'
+                    }`}>
+                    {skill.name}
+                  </span>
+                </div>
+              ))}
             </div>
           ))}
         </div>
       </div>
 
-      {/* Children (Terminal) - Between Skills and About */}
-      {children && <div className='mt-6 w-full max-w-2xl'>{children}</div>}
+      {/* Children (Terminal) - Centered and Larger */}
+      {children && (
+        <div ref={terminalRef} className='w-full max-w-2xl opacity-0'>
+          {children}
+        </div>
+      )}
 
       {/* About Section */}
-      <div ref={aboutRef} className='mt-6 w-full max-w-2xl glass-card p-6 opacity-0'>
-        <h2 className='text-sm font-semibold text-primary-400 uppercase tracking-widest mb-3 flex items-center gap-2'>
-          <span className='w-8 h-[1px] bg-gradient-to-r from-primary-500 to-transparent'></span>
+      <div ref={aboutRef} className='w-full max-w-2xl glass-card p-6 md:p-8 opacity-0'>
+        <h2 className='text-xs font-semibold text-primary-400 uppercase tracking-widest mb-5 flex items-center justify-center gap-3'>
+          <span className='w-12 h-[1px] bg-gradient-to-r from-transparent to-primary-500'></span>
           About
-          <span className='w-8 h-[1px] bg-gradient-to-l from-primary-500 to-transparent'></span>
+          <span className='w-12 h-[1px] bg-gradient-to-l from-transparent to-primary-500'></span>
         </h2>
-        <p className='text-dark-300 text-sm md:text-base leading-relaxed'>
-          Full-Stack Engineer specializing in building scalable web applications and enterprise
-          solutions. I develop robust backends with{' '}
-          <span className='text-accent-cyan font-medium'>Spring Boot</span> and{' '}
-          <span className='text-primary-400 font-medium'>Java</span>, create performant frontends
-          with <span className='text-accent-pink font-medium'>Next.js</span> and{' '}
-          <span className='text-primary-400 font-medium'>React</span>, and leverage{' '}
-          <span className='text-accent-cyan font-medium'>TypeScript</span> for type-safe code across
-          the stack. Additionally, I build enterprise process automations using UiPath Agentic AI,
-          Microsoft Copilot Studio and Power Platform, combining full-stack development with GenAI
-          to deliver end-to-end solutions.
-        </p>
+        <div className='text-dark-300 text-sm md:text-base leading-relaxed space-y-3'>
+          <p>
+            Full-Stack Engineer specializing in building scalable web applications and enterprise
+            solutions.
+          </p>
+          <p>
+            I develop robust backends with{' '}
+            <span className='text-green-400 font-medium'>Spring Boot</span> &{' '}
+            <span className='text-orange-400 font-medium'>Java</span>, create performant frontends
+            with <span className='text-white font-medium'>Next.js</span> &{' '}
+            <span className='text-cyan-400 font-medium'>React</span>, and leverage{' '}
+            <span className='text-blue-400 font-medium'>TypeScript</span> for type-safe code.
+          </p>
+          <p>
+            I also build enterprise automations using{' '}
+            <span className='text-orange-500 font-medium'>UiPath</span>,{' '}
+            <span className='text-cyan-400 font-medium'>Microsoft Copilot Studio</span> &{' '}
+            <span className='text-purple-400 font-medium'>Power Platform</span>.
+          </p>
+        </div>
       </div>
     </section>
   )

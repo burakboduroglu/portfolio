@@ -119,11 +119,6 @@ function GridLines() {
   )
 }
 
-// Section Divider component
-function SectionDivider() {
-  return <div className='section-divider-line' aria-hidden='true' />
-}
-
 function App() {
   const [links, setLinks] = React.useState<LinkItem[]>(() => {
     const savedViews = localStorage.getItem('linkViews')
@@ -179,12 +174,12 @@ function App() {
         />
 
         <main className='relative z-20 min-h-screen flex flex-col' role='main'>
-          {/* Profile & Links Section */}
-          <section className='flex-1 flex items-center justify-center px-4 sm:px-6 py-12'>
-            <div className='w-full max-w-5xl'>
-              <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start'>
+          {/* Profile & Links Section - Single Column Layout */}
+          <section className='flex-1 px-4 sm:px-6 py-12'>
+            <div className='w-full max-w-2xl mx-auto'>
+              <div className='flex flex-col gap-12'>
                 {/* Profile Section */}
-                <div className='order-1'>
+                <div>
                   <Profile
                     imageUrl='https://avatars.githubusercontent.com/u/80620802?s=400&u=9932e501d5c723936e92da977ac3fb7691417f73&v=4'
                     name='Burak Boduroğlu'
@@ -196,14 +191,12 @@ function App() {
                 </div>
 
                 {/* Links Section */}
-                <div className='order-2 lg:sticky lg:top-12'>
+                <div>
                   <LinkGrid links={links} onLinkClick={handleLinkClick} />
                 </div>
               </div>
             </div>
           </section>
-
-          <SectionDivider />
 
           {/* Stats Section */}
           <section className='section-spacing px-4 sm:px-6'>

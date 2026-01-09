@@ -1,26 +1,23 @@
 import React from 'react'
 import { animate, stagger } from 'animejs'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-  faLeaf,
-  faRocket,
-  faBolt,
-  faRobot,
-  faCubes,
-  faDatabase,
-  faWandMagicSparkles,
-  faPlug,
-  faUsers,
-  faListCheck,
-} from '@fortawesome/free-solid-svg-icons'
-import {
-  faJava,
-  faReact,
-  faPython as faPythonBrand,
-  faDocker as faDockerBrand,
-  faGithub as faGithubBrand,
-  faMicrosoft as faMicrosoftBrand,
-} from '@fortawesome/free-brands-svg-icons'
+  SpringBootIcon,
+  NextJsIcon,
+  ReactIcon,
+  JavaIcon,
+  TypeScriptIcon,
+  PythonIcon,
+  DockerIcon,
+  PostgreSQLIcon,
+  GitHubIcon,
+  UiPathIcon,
+  MicrosoftIcon,
+  JiraIcon,
+  AgileIcon,
+  ApiIcon,
+  AIIcon,
+  PowerPlatformIcon,
+} from './TechIcons'
 
 interface ProfileProps {
   imageUrl: string
@@ -30,35 +27,35 @@ interface ProfileProps {
   children?: React.ReactNode
 }
 
-// Skills with FontAwesome icons - organized in rows of 4 for symmetry
+// Skills with real technology SVG icons - organized in rows of 4 for symmetry
 const skillRows = [
   // Row 1 - Full-Stack Highlighted
   [
-    { name: 'Spring Boot', icon: faLeaf, highlight: true, color: 'text-green-400' },
-    { name: 'Next.js', icon: faRocket, highlight: true, color: 'text-white' },
-    { name: 'React', icon: faReact, highlight: true, color: 'text-cyan-400' },
-    { name: 'Java', icon: faJava, highlight: true, color: 'text-orange-400' },
+    { name: 'Spring Boot', Icon: SpringBootIcon, highlight: true, color: 'text-green-500' },
+    { name: 'Next.js', Icon: NextJsIcon, highlight: true, color: 'text-white' },
+    { name: 'React', Icon: ReactIcon, highlight: true, color: 'text-cyan-400' },
+    { name: 'Java', Icon: JavaIcon, highlight: true, color: 'text-red-500' },
   ],
   // Row 2 - Full-Stack Highlighted
   [
-    { name: 'TypeScript', icon: faBolt, highlight: true, color: 'text-blue-400' },
-    { name: 'Python', icon: faPythonBrand, highlight: false, color: 'text-yellow-400' },
-    { name: 'REST APIs', icon: faPlug, highlight: false, color: 'text-purple-400' },
-    { name: 'Docker', icon: faDockerBrand, highlight: false, color: 'text-blue-500' },
+    { name: 'TypeScript', Icon: TypeScriptIcon, highlight: true, color: 'text-blue-500' },
+    { name: 'Python', Icon: PythonIcon, highlight: false, color: 'text-yellow-400' },
+    { name: 'REST APIs', Icon: ApiIcon, highlight: false, color: 'text-purple-400' },
+    { name: 'Docker', Icon: DockerIcon, highlight: false, color: 'text-blue-400' },
   ],
   // Row 3 - RPA & AI
   [
-    { name: 'UiPath', icon: faRobot, highlight: false, color: 'text-orange-500' },
-    { name: 'Copilot Studio', icon: faMicrosoftBrand, highlight: false, color: 'text-cyan-400' },
-    { name: 'Power Platform', icon: faCubes, highlight: false, color: 'text-purple-500' },
-    { name: 'Generative AI', icon: faWandMagicSparkles, highlight: false, color: 'text-pink-400' },
+    { name: 'UiPath', Icon: UiPathIcon, highlight: false, color: 'text-orange-500' },
+    { name: 'Copilot Studio', Icon: MicrosoftIcon, highlight: false, color: 'text-cyan-400' },
+    { name: 'Power Platform', Icon: PowerPlatformIcon, highlight: false, color: 'text-purple-500' },
+    { name: 'Generative AI', Icon: AIIcon, highlight: false, color: 'text-pink-400' },
   ],
   // Row 4 - DevOps & Process
   [
-    { name: 'PostgreSQL', icon: faDatabase, highlight: false, color: 'text-sky-400' },
-    { name: 'GitHub', icon: faGithubBrand, highlight: false, color: 'text-white' },
-    { name: 'Agile', icon: faUsers, highlight: false, color: 'text-green-500' },
-    { name: 'JIRA', icon: faListCheck, highlight: false, color: 'text-blue-400' },
+    { name: 'PostgreSQL', Icon: PostgreSQLIcon, highlight: false, color: 'text-sky-400' },
+    { name: 'GitHub', Icon: GitHubIcon, highlight: false, color: 'text-white' },
+    { name: 'Agile', Icon: AgileIcon, highlight: false, color: 'text-green-500' },
+    { name: 'JIRA', Icon: JiraIcon, highlight: false, color: 'text-blue-500' },
   ],
 ]
 
@@ -188,7 +185,7 @@ export function Profile({ imageUrl, name, bio, children }: ProfileProps) {
         </p>
       </div>
 
-      {/* Skills Grid - Symmetric 4x4 Layout */}
+      {/* Skills Grid - Symmetric 4x4 Layout with Real Logos */}
       <div className='w-full max-w-xl'>
         <h2 className='text-xs font-semibold text-dark-400 uppercase tracking-widest mb-5 flex items-center justify-center gap-3'>
           <span className='w-12 h-[1px] bg-gradient-to-r from-transparent to-primary-500/50'></span>
@@ -208,7 +205,7 @@ export function Profile({ imageUrl, name, bio, children }: ProfileProps) {
                       ? 'bg-gradient-to-br from-primary-500/15 to-accent-cyan/10 border border-primary-500/30'
                       : 'bg-dark-800/40 border border-dark-700/50 hover:border-dark-600/70'
                   }`}>
-                  <FontAwesomeIcon icon={skill.icon} className={`text-xl mb-2 ${skill.color}`} />
+                  <skill.Icon className={`w-6 h-6 mb-2 ${skill.color}`} />
                   <span
                     className={`text-[10px] font-medium leading-tight ${
                       skill.highlight ? 'text-dark-200' : 'text-dark-400'

@@ -53,9 +53,7 @@ const commands: Record<string, TerminalLine[]> = {
 
 export function Terminal() {
   const [history, setHistory] = React.useState<TerminalLine[]>([
-    { type: 'output', content: 'Last login: ' + new Date().toLocaleString() + ' on ttys000' },
-    { type: 'success', content: '🚀 Welcome to burak\'s shell! Type "help" for commands.' },
-    { type: 'output', content: '' },
+    { type: 'success', content: 'Welcome! Type "help" for commands.' },
   ])
   const [input, setInput] = React.useState('')
   const [isProcessing, setIsProcessing] = React.useState(false)
@@ -74,8 +72,8 @@ export function Terminal() {
     const trimmedCmd = cmd.trim().toLowerCase()
     setIsProcessing(true)
 
-    // Add user input to history (zsh style with rocket)
-    setHistory((prev) => [...prev, { type: 'input', content: `🚀 burak ~/portfolio ❯ ${cmd}` }])
+    // Add user input to history (zsh style)
+    setHistory((prev) => [...prev, { type: 'input', content: `burak ❯ ${cmd}` }])
 
     await new Promise((resolve) => setTimeout(resolve, 100))
 
@@ -166,22 +164,22 @@ export function Terminal() {
         role='application'
         aria-label='Interactive terminal'>
         {/* Terminal header - macOS style */}
-        <div className='flex items-center justify-between px-4 py-3 bg-dark-800/90 border-b border-dark-700/50 rounded-t-xl'>
-          <div className='flex items-center gap-2'>
-            <div className='w-3 h-3 rounded-full bg-red-500 hover:bg-red-400 transition-colors'></div>
-            <div className='w-3 h-3 rounded-full bg-yellow-500 hover:bg-yellow-400 transition-colors'></div>
-            <div className='w-3 h-3 rounded-full bg-green-500 hover:bg-green-400 transition-colors'></div>
+        <div className='flex items-center justify-between px-3 md:px-4 py-2 md:py-3 bg-dark-800/90 border-b border-dark-700/50 rounded-t-xl'>
+          <div className='flex items-center gap-1.5 md:gap-2'>
+            <div className='w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-red-500'></div>
+            <div className='w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-yellow-500'></div>
+            <div className='w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-green-500'></div>
           </div>
-          <div className='text-dark-400 text-xs font-mono'>
-            🚀 burak — zsh — 80×24
+          <div className='text-dark-400 text-[10px] md:text-xs font-mono'>
+            burak — zsh
           </div>
-          <div className='w-16'></div>
+          <div className='w-10 md:w-16'></div>
         </div>
 
         {/* Terminal body - all content left-aligned */}
         <div
           ref={terminalRef}
-          className='p-5 h-80 overflow-y-auto bg-[#0a0e14] font-mono text-[15px] leading-7 rounded-b-xl text-left'>
+          className='p-3 md:p-5 h-44 md:h-72 overflow-y-auto bg-[#0a0e14] font-mono text-[11px] md:text-[14px] leading-5 md:leading-6 rounded-b-xl text-left'>
           {/* History - each line left-aligned */}
           {history.map((line, index) => (
             <div key={index} className={`${getLineClass(line.type)} whitespace-pre text-left`}>
@@ -189,36 +187,34 @@ export function Terminal() {
             </div>
           ))}
 
-          {/* Input prompt - zsh style with rocket */}
+          {/* Input prompt - zsh style */}
           <form onSubmit={handleSubmit} className='flex items-center mt-1 text-left'>
-            <span className='mr-1'>🚀</span>
             <span className='text-cyan-300 font-semibold mr-1'>burak</span>
-            <span className='text-blue-300 mr-1'>~/portfolio</span>
-            <span className='text-pink-400 mr-2 font-bold'>❯</span>
+            <span className='text-pink-400 mr-1.5 font-bold'>❯</span>
             <input
               ref={inputRef}
               type='text'
               value={input}
               onChange={(e) => setInput(e.target.value)}
               disabled={isProcessing}
-              className='flex-1 bg-transparent border-none outline-none text-white font-mono text-[15px] text-left'
+              className='flex-1 bg-transparent border-none outline-none text-white font-mono text-[11px] md:text-[14px] text-left'
               autoComplete='off'
               spellCheck='false'
             />
-            {!isProcessing && <span className='w-2.5 h-5 bg-emerald-400 animate-pulse rounded-sm'></span>}
+            {!isProcessing && <span className='w-2 h-4 md:w-2.5 md:h-5 bg-emerald-400 animate-pulse rounded-sm'></span>}
           </form>
         </div>
       </div>
 
       {/* Quick command buttons */}
-      <div className='flex justify-center gap-2 mt-4'>
+      <div className='flex justify-center gap-1.5 md:gap-2 mt-3 md:mt-4'>
         {['help', 'about', 'skills', 'contact'].map((cmd) => (
           <button
             key={cmd}
             data-cmd={cmd}
             onClick={() => handleButtonClick(cmd)}
             disabled={isProcessing}
-            className='px-4 py-2 text-xs font-mono font-medium text-dark-400 bg-dark-800/60 border border-dark-700/50 rounded-lg hover:bg-dark-700/60 hover:text-dark-200 hover:border-primary-500/30 transition-all disabled:opacity-50 disabled:cursor-not-allowed'>
+            className='px-2.5 md:px-4 py-1.5 md:py-2 text-[10px] md:text-xs font-mono font-medium text-dark-400 bg-dark-800/60 border border-dark-700/50 rounded-md md:rounded-lg hover:bg-dark-700/60 hover:text-dark-200 hover:border-primary-500/30 transition-all disabled:opacity-50 disabled:cursor-not-allowed'>
             {cmd}
           </button>
         ))}

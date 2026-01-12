@@ -25,6 +25,10 @@ module.exports = {
           pink: '#f472b6',
           purple: '#a855f7',
         },
+        wise: {
+          green: '#9FE870',
+          dark: '#163300',
+        },
         dark: {
           50: '#f8fafc',
           100: '#f1f5f9',

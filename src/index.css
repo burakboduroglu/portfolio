@@ -701,3 +701,161 @@ html {
     transparent
   );
 }
+
+/* ==========================================
+   WISE DESIGN INSPIRED STYLES
+   ========================================== */
+
+/* Wise Marquee */
+.wise-marquee-container {
+  background: linear-gradient(90deg, rgba(159, 232, 112, 0.05), rgba(99, 102, 241, 0.05), rgba(159, 232, 112, 0.05));
+  border-top: 1px solid rgba(159, 232, 112, 0.1);
+  border-bottom: 1px solid rgba(159, 232, 112, 0.1);
+}
+
+.wise-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.wise-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Bento Card */
+.bento-card {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.bento-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* Wise Green Glow */
+.wise-glow {
+  box-shadow: 0 0 30px rgba(159, 232, 112, 0.3);
+}
+
+/* Wise Button Style */
+.wise-btn {
+  background: #9FE870;
+  color: #163300;
+  font-weight: 700;
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.wise-btn:hover {
+  background: #b5f08a;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(159, 232, 112, 0.3);
+}
+
+/* ==========================================
+   ANIMATED GRADIENT TEXT
+   ========================================== */
+.animated-gradient-text {
+  background: linear-gradient(
+    90deg,
+    #9FE870,
+    #6366f1,
+    #22d3ee,
+    #f472b6,
+    #9FE870
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-flow 4s linear infinite;
+}
+
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* ==========================================
+   MAGNETIC BUTTON EFFECT
+   ========================================== */
+.magnetic-btn {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.magnetic-btn:hover {
+  transform: translate(var(--x, 0), var(--y, 0));
+}
+
+/* ==========================================
+   BLOB ANIMATION
+   ========================================== */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: blob-float 15s ease-in-out infinite;
+}
+
+@keyframes blob-float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    border-radius: 50%;
+  }
+  25% {
+    transform: translate(20px, -30px) scale(1.1);
+    border-radius: 60% 40% 70% 30%;
+  }
+  50% {
+    transform: translate(-20px, 20px) scale(0.9);
+    border-radius: 40% 60% 30% 70%;
+  }
+  75% {
+    transform: translate(30px, 10px) scale(1.05);
+    border-radius: 70% 30% 50% 50%;
+  }
+}
+
+/* ==========================================
+   GLOW EFFECTS
+   ========================================== */
+.glow-green {
+  box-shadow: 0 0 20px rgba(159, 232, 112, 0.4), 0 0 40px rgba(159, 232, 112, 0.2);
+}
+
+.glow-primary {
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.4), 0 0 40px rgba(99, 102, 241, 0.2);
+}
+
+/* ==========================================
+   SCROLL REVEAL
+   ========================================== */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}

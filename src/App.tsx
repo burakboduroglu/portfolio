@@ -7,6 +7,13 @@ import { LinkGrid } from './components/LinkGrid'
 import { Footer } from './components/Footer'
 import { Terminal } from './components/Terminal'
 import { AnimatedStats } from './components/AnimatedStats'
+import { BubbleNav } from './components/BubbleNav'
+import { WiseMarquee } from './components/WiseMarquee'
+import { WiseBentoGrid } from './components/WiseBentoGrid'
+import { ScrollProgress } from './components/ScrollProgress'
+import { StatusBadge } from './components/StatusBadge'
+import { EasterEgg } from './components/EasterEgg'
+import { FloatingActionButton } from './components/FloatingActionButton'
 import { Toaster } from 'react-hot-toast'
 
 // Floating shapes component with anime.js
@@ -154,6 +161,18 @@ function App() {
   return (
     <>
       <Toaster />
+      {/* Scroll Progress Bar */}
+      <ScrollProgress />
+      
+      {/* Status Badge - Available for Work */}
+      <StatusBadge />
+      
+      {/* Easter Egg - Konami Code */}
+      <EasterEgg />
+      
+      {/* Floating Action Button */}
+      <FloatingActionButton />
+      
       <div className='bg-animated-gradient min-h-screen relative overflow-hidden'>
         {/* Animated background elements */}
         <GridLines />
@@ -173,33 +192,46 @@ function App() {
           aria-hidden='true'
         />
 
-        <main className='relative z-20 min-h-screen flex flex-col' role='main'>
-          {/* Profile & Links Section - Single Column Layout */}
-          <section className='flex-1 px-4 sm:px-6 py-12'>
-            <div className='w-full max-w-2xl mx-auto'>
-              <div className='flex flex-col gap-12'>
-                {/* Profile Section */}
-                <div>
-                  <Profile
-                    imageUrl='https://avatars.githubusercontent.com/u/80620802?s=400&u=9932e501d5c723936e92da977ac3fb7691417f73&v=4'
-                    name='Burak Boduroğlu'
-                    bio='Full-Stack Engineer & RPA Developer'
-                    subtitle=''>
-                    {/* Terminal - between Skills and About */}
-                    <Terminal />
-                  </Profile>
-                </div>
+        {/* Bubble Navigation */}
+        <BubbleNav />
 
-                {/* Links Section */}
-                <div>
-                  <LinkGrid links={links} onLinkClick={handleLinkClick} />
-                </div>
-              </div>
+        <main className='relative z-20 min-h-screen flex flex-col' role='main'>
+          {/* Profile Section */}
+          <section id='profile' className='px-4 sm:px-6 pt-12 pb-8'>
+            <div className='w-full max-w-2xl mx-auto'>
+              <Profile
+                imageUrl='https://avatars.githubusercontent.com/u/80620802?s=400&u=9932e501d5c723936e92da977ac3fb7691417f73&v=4'
+                name='Burak Boduroğlu'
+                bio='Full-Stack Engineer & RPA Developer'
+                subtitle=''
+              />
+            </div>
+          </section>
+
+          {/* Wise Marquee - Inspired by wise.design */}
+          <WiseMarquee />
+
+          {/* Terminal Section */}
+          <section id='terminal' className='px-4 sm:px-6 py-8'>
+            <div className='w-full max-w-2xl mx-auto'>
+              <Terminal />
+            </div>
+          </section>
+
+          {/* Bento Grid - Wise Style */}
+          <section className='px-4 sm:px-6 py-8'>
+            <WiseBentoGrid />
+          </section>
+
+          {/* Links Section */}
+          <section id='links' className='px-4 sm:px-6 py-8'>
+            <div className='w-full max-w-2xl mx-auto'>
+              <LinkGrid links={links} onLinkClick={handleLinkClick} />
             </div>
           </section>
 
           {/* Stats Section */}
-          <section className='section-spacing px-4 sm:px-6'>
+          <section id='stats' className='section-spacing px-4 sm:px-6'>
             <AnimatedStats />
           </section>
 

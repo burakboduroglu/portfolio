@@ -16,6 +16,67 @@ const commands: Record<string, TerminalLine[]> = {
     { type: 'success', content: '  skills   →  View my technical skills' },
     { type: 'success', content: '  contact  →  Get contact information' },
     { type: 'success', content: '  clear    →  Clear terminal' },
+    { type: 'output', content: '' },
+    { type: 'output', content: '🎮 Fun commands:' },
+    { type: 'success', content: '  secret   →  🎉 Easter egg!' },
+    { type: 'success', content: '  matrix   →  💊 Enter the Matrix' },
+    { type: 'success', content: '  joke     →  😂 Developer humor' },
+    { type: 'success', content: '  coffee   →  ☕ Check coffee status' },
+  ],
+  secret: [
+    { type: 'output', content: '' },
+    { type: 'success', content: '🎮 SECRET UNLOCKED!' },
+    { type: 'output', content: '─────────────────────────────────' },
+    { type: 'output', content: '' },
+    { type: 'output', content: '  🕹️  KONAMI CODE:' },
+    { type: 'output', content: '' },
+    { type: 'success', content: '  ↑ ↑ ↓ ↓ ← → ← → B A' },
+    { type: 'output', content: '' },
+    { type: 'output', content: '  Enter this code on your keyboard' },
+    { type: 'output', content: '  to unlock the ULTIMATE secret! 🔓' },
+    { type: 'output', content: '' },
+    { type: 'output', content: '  Arrow keys + B + A keys' },
+    { type: 'output', content: '  Good luck, gamer! 🎯' },
+  ],
+  matrix: [
+    { type: 'output', content: '' },
+    { type: 'success', content: '💊 Wake up, Neo...' },
+    { type: 'output', content: '' },
+    { type: 'output', content: '  01001000 01100101 01101100' },
+    { type: 'output', content: '  01101100 01101111 00100001' },
+    { type: 'output', content: '' },
+    { type: 'success', content: '  The Matrix has you...' },
+    { type: 'output', content: '  Follow the white rabbit. 🐰' },
+  ],
+  joke: [
+    { type: 'output', content: '' },
+    { type: 'success', content: '😂 Developer Joke:' },
+    { type: 'output', content: '' },
+    { type: 'output', content: '  Why do programmers prefer dark mode?' },
+    { type: 'output', content: '' },
+    { type: 'success', content: '  Because light attracts bugs! 🐛' },
+  ],
+  coffee: [
+    { type: 'output', content: '' },
+    { type: 'success', content: '☕ Coffee Status:' },
+    { type: 'output', content: '' },
+    { type: 'output', content: '  [████████████████████] 100%' },
+    { type: 'output', content: '' },
+    { type: 'success', content: '  CRITICAL: Coffee levels optimal!' },
+    { type: 'output', content: '  Ready to code for 12 more hours.' },
+  ],
+  hello: [
+    { type: 'output', content: '' },
+    { type: 'success', content: '👋 Hello there!' },
+    { type: 'output', content: '' },
+    { type: 'output', content: '  Nice to meet you!' },
+    { type: 'output', content: '  Welcome to my portfolio.' },
+  ],
+  sudo: [
+    { type: 'output', content: '' },
+    { type: 'error', content: '🚫 Permission denied!' },
+    { type: 'output', content: '' },
+    { type: 'output', content: '  Nice try, but you are not root here 😏' },
   ],
   about: [
     { type: 'output', content: '👨‍💻 About Me' },
@@ -207,7 +268,7 @@ export function Terminal() {
       </div>
 
       {/* Quick command buttons */}
-      <div className='flex justify-center gap-1.5 md:gap-2 mt-3 md:mt-4'>
+      <div className='flex flex-wrap justify-center gap-1.5 md:gap-2 mt-3 md:mt-4'>
         {['help', 'about', 'skills', 'contact'].map((cmd) => (
           <button
             key={cmd}
@@ -215,6 +276,19 @@ export function Terminal() {
             onClick={() => handleButtonClick(cmd)}
             disabled={isProcessing}
             className='px-2.5 md:px-4 py-1.5 md:py-2 text-[10px] md:text-xs font-mono font-medium text-dark-400 bg-dark-800/60 border border-dark-700/50 rounded-md md:rounded-lg hover:bg-dark-700/60 hover:text-dark-200 hover:border-primary-500/30 transition-all disabled:opacity-50 disabled:cursor-not-allowed'>
+            {cmd}
+          </button>
+        ))}
+      </div>
+      {/* Fun command buttons */}
+      <div className='flex flex-wrap justify-center gap-1.5 md:gap-2 mt-2'>
+        {['secret', 'matrix', 'joke', 'coffee'].map((cmd) => (
+          <button
+            key={cmd}
+            data-cmd={cmd}
+            onClick={() => handleButtonClick(cmd)}
+            disabled={isProcessing}
+            className='px-2.5 md:px-4 py-1.5 md:py-2 text-[10px] md:text-xs font-mono font-medium text-wise-green/70 bg-wise-green/10 border border-wise-green/20 rounded-md md:rounded-lg hover:bg-wise-green/20 hover:text-wise-green hover:border-wise-green/40 transition-all disabled:opacity-50 disabled:cursor-not-allowed'>
             {cmd}
           </button>
         ))}

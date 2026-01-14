@@ -14,6 +14,7 @@ import { ScrollProgress } from './components/ScrollProgress'
 import { StatusBadge } from './components/StatusBadge'
 import { EasterEgg } from './components/EasterEgg'
 import { FloatingActionButton } from './components/FloatingActionButton'
+import { SpotifyEmbed } from './components/SpotifyEmbed'
 import { Toaster } from 'react-hot-toast'
 
 // Floating shapes component with anime.js
@@ -228,6 +229,11 @@ function App() {
             <div className='w-full max-w-2xl mx-auto'>
               <LinkGrid links={links} onLinkClick={handleLinkClick} />
             </div>
+          </section>
+
+          {/* Podcast Section */}
+          <section id='podcast' className='px-4 sm:px-6 py-8'>
+            <SpotifyEmbed />
           </section>
 
           {/* Stats Section */}

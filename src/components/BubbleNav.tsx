@@ -10,6 +10,7 @@ const navItems: NavItem[] = [
   { id: 'profile', label: 'Profile' },
   { id: 'terminal', label: 'Terminal' },
   { id: 'links', label: 'Links' },
+  { id: 'podcast', label: 'Podcast' },
   { id: 'stats', label: 'Stats' },
 ]
 

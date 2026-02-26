@@ -231,9 +231,7 @@ export function Terminal() {
             <div className='w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-yellow-500'></div>
             <div className='w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-green-500'></div>
           </div>
-          <div className='text-dark-400 text-[10px] md:text-xs font-mono'>
-            burak — zsh
-          </div>
+          <div className='text-dark-400 text-[10px] md:text-xs font-mono'>burak — zsh</div>
           <div className='w-10 md:w-16'></div>
         </div>
 
@@ -262,7 +260,9 @@ export function Terminal() {
               autoComplete='off'
               spellCheck='false'
             />
-            {!isProcessing && <span className='w-2 h-4 md:w-2.5 md:h-5 bg-emerald-400 animate-pulse rounded-sm'></span>}
+            {!isProcessing && (
+              <span className='w-2 h-4 md:w-2.5 md:h-5 bg-emerald-400 animate-pulse rounded-sm'></span>
+            )}
           </form>
         </div>
       </div>

@@ -1,10 +1,7 @@
 import React from 'react'
-import { animate, stagger } from 'animejs'
+import { animate } from 'animejs'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faStar,
-  faUsers,
-} from '@fortawesome/free-solid-svg-icons'
+import { faStar, faUsers } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core'
 
@@ -142,8 +139,7 @@ function StatCard({ stat, index }: { stat: StatItem; index: number }) {
         className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-10 rounded-2xl`}></div>
 
       {/* Icon */}
-      <div
-        className={`stat-icon-container bg-gradient-to-br ${stat.color}`}>
+      <div className={`stat-icon-container bg-gradient-to-br ${stat.color}`}>
         <FontAwesomeIcon icon={stat.icon} className='text-white text-lg' />
       </div>
 
@@ -194,9 +190,9 @@ export function AnimatedStats() {
 
       {/* GitHub link */}
       <div className='mt-6 text-center'>
-        <a 
-          href='https://github.com/burakboduroglu' 
-          target='_blank' 
+        <a
+          href='https://github.com/burakboduroglu'
+          target='_blank'
           rel='noopener noreferrer'
           className='text-dark-500 text-xs font-mono hover:text-primary-400 transition-colors'>
           <span className='text-accent-cyan'>→</span> View full profile on GitHub

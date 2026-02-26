@@ -1,7 +1,7 @@
 import React from 'react'
 import { animate } from 'animejs'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCode, faRocket, faLightbulb, faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { faCode, faRocket, faLightbulb } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 const bentoItems = [
@@ -47,7 +47,7 @@ const bentoItems = [
   },
 ]
 
-function BentoCard({ item, index }: { item: typeof bentoItems[0]; index: number }) {
+function BentoCard({ item, index }: { item: (typeof bentoItems)[0]; index: number }) {
   const cardRef = React.useRef<HTMLDivElement>(null)
 
   React.useEffect(() => {

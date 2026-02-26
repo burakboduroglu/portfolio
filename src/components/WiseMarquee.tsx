@@ -1,5 +1,3 @@
-import React from 'react'
-
 const marqueeItems = [
   { text: 'Full-Stack Developer', emoji: '💻' },
   { text: 'Spring Boot', emoji: '🍃' },
@@ -17,9 +15,7 @@ export function WiseMarquee() {
       <div className='wise-marquee flex'>
         {/* Double the items for seamless loop */}
         {[...marqueeItems, ...marqueeItems].map((item, index) => (
-          <div
-            key={index}
-            className='flex items-center gap-2 md:gap-3 mx-4 md:mx-8 shrink-0'>
+          <div key={index} className='flex items-center gap-2 md:gap-3 mx-4 md:mx-8 shrink-0'>
             <span className='text-xl md:text-2xl'>{item.emoji}</span>
             <span className='text-lg md:text-2xl font-bold text-white whitespace-nowrap'>
               {item.text}

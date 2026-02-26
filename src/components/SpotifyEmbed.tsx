@@ -1,5 +1,3 @@
-import React from 'react'
-
 export function SpotifyEmbed() {
   return (
     <section className='w-full max-w-2xl mx-auto'>
@@ -26,4 +24,3 @@ export function SpotifyEmbed() {
     </section>
   )
 }
-

@@ -1,13 +1,31 @@
 import React from 'react'
 import { animate } from 'animejs'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope, faFileAlt, faComments } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faComments } from '@fortawesome/free-solid-svg-icons'
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 
 const actions = [
-  { id: 'email', icon: faEnvelope, label: 'Email', href: 'mailto:info@burakboduroglu.com.tr', color: 'bg-wise-green' },
-  { id: 'linkedin', icon: faLinkedin, label: 'LinkedIn', href: 'https://linkedin.com/in/burakboduroglu', color: 'bg-blue-600' },
-  { id: 'github', icon: faGithub, label: 'GitHub', href: 'https://github.com/burakboduroglu', color: 'bg-dark-700' },
+  {
+    id: 'email',
+    icon: faEnvelope,
+    label: 'Email',
+    href: 'mailto:info@burakboduroglu.com.tr',
+    color: 'bg-wise-green',
+  },
+  {
+    id: 'linkedin',
+    icon: faLinkedin,
+    label: 'LinkedIn',
+    href: 'https://linkedin.com/in/burakboduroglu',
+    color: 'bg-blue-600',
+  },
+  {
+    id: 'github',
+    icon: faGithub,
+    label: 'GitHub',
+    href: 'https://github.com/burakboduroglu',
+    color: 'bg-dark-700',
+  },
 ]
 
 export function FloatingActionButton() {

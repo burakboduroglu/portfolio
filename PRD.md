@@ -1,6 +1,6 @@
 # Ürün Gereksinim Belgesi (PRD) — Kişisel Site
 
-**Sürüm:** 1.3  
+**Sürüm:** 1.4  
 **Durum:** Taslak  
 **Dil:** Ana metin Türkçe; teknik terim ve ürün adları İngilizce kalabilir.
 
@@ -206,7 +206,7 @@ gizlilik_notu:
 | **0** | PRD onayı; 2–3 proje için TR/EN içerik taslakları |
 | **1** | Next.js scaffold, i18n, shadcn, landing + liste + case study şablonu |
 | **2** | İlk case study’lerin yayını; SEO ve OG ince ayarı |
-| **3** | CI, container imajı veya deploy rehberi (Dokploy/VPS) |
+| **3** | Dark mode (kalıcı toggle) + görsel tasarım iyileştirmesi (creative-showcase yönü) |
 
 ---
 
@@ -242,3 +242,4 @@ Depoda halihazırda Vite + React tabanlı bir portföy bulunabilir. Bu PRD **yen
 | 2025-03-21 | 1.1 | §6 UI referansı: Wise Design + [docs/design-reference-wise.md](docs/design-reference-wise.md) |
 | 2025-03-21 | 1.2 | §12 Faz 0: üç proje için TR/EN case study taslakları [content/work/](content/work/) |
 | 2025-03-21 | 1.3 | §12 Faz 1 tamam: next-intl, shadcn, landing/work/case study şablonu ([docs/implementation.md](docs/implementation.md)) |
+| 2026-03-21 | 1.4 | §12 Faz 3 revizyonu: pipeline/container yerine dark mode ve görsel iyileştirme odağı |

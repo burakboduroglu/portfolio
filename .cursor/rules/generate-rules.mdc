@@ -12,10 +12,11 @@ Kaynak: kök [PRD.md](../../PRD.md), [DATA_DICTIONARY.md](../../DATA_DICTIONARY.
 - **MVP stack:** Next.js App Router, TypeScript, Tailwind CSS, shadcn/ui. İçerik: MDX veya Markdown + frontmatter.
 - **Non-goals (ilk sürüm):** tam CMS, kullanıcı hesabı, blog (PRD §9). Yeni özellik eklerken MVP dışına çıkma.
 - **Veritabanı:** Postgres/Prisma/Drizzle yalnızca PRD’de tanımlı dinamik ihtiyaç varsa; aksi halde ekleme.
+- **Faz 3 odağı:** Pipeline/container işleri yerine dark mode ve tasarım iyileştirmesi (creative-showcase yönü).
 
 ## Rotalar ve i18n
 
-- URL: `/[locale]/...` (`tr` | `en`). **Slug dil-bağımsız** (ör. `invoice-automation-n8n`); başlık/özet çeviri katmanında.
+- URL: `/[locale]/...` (`tr` | `en`).
 - Kullanıcıya görünen metinleri hardcode etme; `messages/` veya eşdeğeri sözlük + DATA_DICTIONARY `TranslationKey` grupları.
 - SEO: sayfa `title`, `description`, Open Graph; locale için `hreflang` / canonical stratejisine uy (PRD §3.1, §4).
 
@@ -27,7 +28,7 @@ Kaynak: kök [PRD.md](../../PRD.md), [DATA_DICTIONARY.md](../../DATA_DICTIONARY.
 
 ## UI ve kalite
 
-- Görsel ton: [design-reference-wise.md](../../docs/design-reference-wise.md) (Wise Design ilhamı; telif/marka kopyası yok) + PRD §6.
+- Görsel ton: [design-reference-wise.md](../../docs/design-reference-wise.md), [burakboduroglu.com.tr](https://burakboduroglu.com.tr/) ve Behance creative-showcase yönü; marka varlığı birebir kopyalanmaz.
 - shadcn + Tailwind ile tutarlı bileşenler; erişilebilirlik (kontrast, heading hiyerarşisi, klavye) — PRD §6.
 - Görseller: Next.js `Image` ve uygun boyut/format; statik öncelikli sayfa üretimi tercih et.
 
@@ -38,7 +39,7 @@ Kaynak: kök [PRD.md](../../PRD.md), [DATA_DICTIONARY.md](../../DATA_DICTIONARY.
 <h1>Projelerim</h1>
 
 // ✅ İyi — locale + sözlük
-<h1>{t("work.title")}</h1>
+<h1>{t("about.title")}</h1>
 ```
 
 ```yaml

@@ -24,8 +24,6 @@ MVP sayfa türleri (PRD §4):
 |------------|-------------|------|
 | `home` | `/[locale]` | Hero, value prop, öne çıkan projeler, CTA |
 | `about` | `/[locale]/about` | Bio, odak alanları |
-| `work` | `/[locale]/work` | Proje listesi / filtre |
-| `work_detail` | `/[locale]/work/[slug]` | Case study |
 | `contact` | `/[locale]/contact` | İletişim (veya yalnızca footer — ürün kararı) |
 
 ---
@@ -87,9 +85,10 @@ Kategoriler (MVP minimum); anahtarlar `snake_case` veya `nested.object` — proj
 
 | Grup | Örnek anahtarlar | Kullanım |
 |------|------------------|----------|
-| `nav` | `nav.home`, `nav.work`, `nav.about`, `nav.contact` | Navigasyon |
+| `nav` | `nav.home`, `nav.about`, `nav.contact` | Navigasyon |
 | `home` | `home.hero_title`, `home.cta` | Ana sayfa |
-| `work` | `work.title`, `work.filter_all` | Proje listesi |
+| `about` | `about.title`, `about.stackTitle` | Hakkında |
+| `contact` | `contact.title`, `contact.links.*` | İletişim |
 | `common` | `common.language_tr`, `common.language_en` | Dil seçici, footer |
 | `meta` | `meta.default_description` | SEO fallback |
 

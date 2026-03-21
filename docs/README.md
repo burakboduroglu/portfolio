@@ -6,7 +6,7 @@ Bu klasör, kişisel site projesinin ürün ve teknik sözleşmelerini içerir.
 |-------|------------------|
 | [PRD.md](../PRD.md) | Kapsam, MVP, case study yapısı, non-goals, yol haritası |
 | [DATA_DICTIONARY.md](../DATA_DICTIONARY.md) | Proje/case study alanları, locale, çeviri anahtar grupları (kök; tek kaynak) |
-| [implementation.md](implementation.md) | Dizin yapısı, i18n, içerik akışı, deploy, Lighthouse hedefleri |
+| [implementation.md](implementation.md) | Dizin yapısı, i18n, dark mode/tasarım odağı ve teknik notlar |
 | [design-reference-wise.md](design-reference-wise.md) | UI ilham kaynağı ([Wise Design](https://wise.design/)); PRD §6 ile uyumlu prensipler ve telif sınırları |
 | [../content/README.md](../content/README.md) | Faz 0 iş içeriği: `work/<slug>/tr.md` ve `en.md` taslakları |
 

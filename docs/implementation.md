@@ -24,17 +24,13 @@ app/
     page.tsx                 # Ana sayfa
     about/page.tsx
     contact/page.tsx
-    work/page.tsx
-    work/[slug]/page.tsx
     not-found.tsx
   globals.css
-middleware.ts
+proxy.ts
 i18n/
   routing.ts
   request.ts
   navigation.ts              # Link, useRouter, …
-content/
-  work/<slug>/tr.md | en.md
 messages/
   tr.json
   en.json
@@ -45,7 +41,6 @@ components/
   locale-switcher.tsx
   markdown-body.tsx
 lib/
-  content.ts                 # gray-matter + fs
   utils.ts
 ```
 
@@ -93,10 +88,11 @@ Sayısal eşikler scaffold tamamlandığında buraya yazılır:
 
 ---
 
-## 8. Dağıtım ve ortam
+## 8. Faz 3 odağı (tasarım + tema)
 
-- **Container:** Dockerfile veya Podman uyumlu imaj; multi-stage build önerilir.  
-- **VPS / Dokploy:** Reverse proxy (TLS), `NODE_ENV=production`, runtime env listesi:
+- **Tema:** Header üzerinde kullanıcı seçimi kalıcı (localStorage) dark mode toggle.  
+- **Görsel yön:** Creative-showcase; [burakboduroglu.com.tr](https://burakboduroglu.com.tr/) sadeliği + Behance tarzı daha vurucu sunum dengesi.  
+- **Kapsam dışı (Faz 3):** CI/pipeline/container/deploy rehberi.
 
 | Değişken | Açıklama |
 |----------|----------|
@@ -112,7 +108,8 @@ Sayısal eşikler scaffold tamamlandığında buraya yazılır:
 |-------|--------|
 | Eski Vite + React portföy | Next.js scaffold ile **kaldırıldı** (bkz. repo geçmişi). |
 | PRD §12 Faz 0 | **İçerik taslakları** [content/work/](../content/work/) altında 3 proje × TR/EN; `case_study_status: draft`. Ürün onayı PRD sahibine aittir. |
-| PRD §12 Faz 1 | **Uygulandı:** `next-intl`, `middleware`, shadcn/ui, landing + work listesi + case study sayfası, `content/work` okuma (`lib/content.ts`), `react-markdown`. |
+| PRD §12 Faz 1–2 | **Uygulandı:** `next-intl`, `proxy` tabanlı locale yönlendirme, shadcn/ui, landing + about + contact sayfaları, linktree tarzı iletişim blokları. |
+| PRD §12 Faz 3 | **Yeni hedef:** dark mode + creative-showcase görsel iyileştirme (pipeline/deploy dokümantasyonu yok). |
 
 **Karar kaydı:**
 
@@ -128,3 +125,4 @@ Sayısal eşikler scaffold tamamlandığında buraya yazılır:
 | 1.0 | 2025-03-21 | İlk uygulama rehberi |
 | 1.1 | 2025-03-21 | Faz 0 içerik ağacı ve içerik deseni kilidi |
 | 1.2 | 2025-03-21 | Faz 1: next-intl, shadcn, sayfalar, içerik boru hattı |
+| 1.3 | 2026-03-21 | Faz 3 yön değişimi: dark mode + tasarım iyileştirmesi |

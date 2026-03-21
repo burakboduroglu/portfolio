@@ -8,7 +8,7 @@ alwaysApply: true
 ## Özellik veya içerik öncesi
 
 1. [PRD.md](../../PRD.md) **§3 MVP** ve **§9 non-goals** — kapsam dışı mı kontrol et.
-2. Case study / proje eklenecekse PRD **§5** ve **§8** checklist hazır olsun.
+2. Tasarım/tema değişikliğinde PRD **§6** ve **§12 Faz 3** hedefleriyle uyumu kontrol et.
 
 ## Şema veya alan değişikliği
 
@@ -22,6 +22,7 @@ alwaysApply: true
 - [ ] Gizlilik / anonimleştirme
 - [ ] OG + meta her dil için
 - [ ] Lighthouse hedefleri: PRD §10 (uygulama sonrası sayısal eşikler `implementation.md` içinde tanımlı olmalı)
+- [ ] Dark mode (toggle + kalıcılık) ve kontrast kontrolleri tamam mı?
 
 ## Doküman haritası
 

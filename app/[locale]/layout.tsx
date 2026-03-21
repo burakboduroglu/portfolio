@@ -49,7 +49,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   }
 
   setRequestLocale(locale);
-  const messages = await getMessages();
+  const messages = await getMessages({ locale });
   const themeInitScript = `
     (function() {
       try {
@@ -74,9 +74,9 @@ export default async function LocaleLayout({ children, params }: Props) {
       <body className="bb-background-mesh flex min-h-screen flex-col bg-background font-sans text-foreground antialiased">
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <NextIntlClientProvider messages={messages}>
-          <SiteHeader />
+          <SiteHeader locale={locale} />
           <main className="flex-1">{children}</main>
-          <SiteFooter />
+          <SiteFooter locale={locale} />
         </NextIntlClientProvider>
       </body>
     </html>

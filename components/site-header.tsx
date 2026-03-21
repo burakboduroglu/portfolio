@@ -4,8 +4,10 @@ import { BackButton } from "@/components/back-button";
 import { LocaleSwitcher } from "@/components/locale-switcher";
 import { ThemeToggle } from "@/components/theme-toggle";
 
-export async function SiteHeader() {
-  const t = await getTranslations("nav");
+type Props = { locale: string };
+
+export async function SiteHeader({ locale }: Props) {
+  const t = await getTranslations({ locale, namespace: "nav" });
   const brand = t("brand");
 
   const links = [

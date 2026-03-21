@@ -13,9 +13,9 @@ import { HomeHeroAvatar } from "@/components/home-hero-avatar";
 type Props = { params: Promise<{ locale: string }> };
 
 export default async function HomePage({ params }: Props) {
-  await params;
-  const t = await getTranslations("home");
-  const tNav = await getTranslations("nav");
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "home" });
+  const tNav = await getTranslations({ locale, namespace: "nav" });
 
   return (
     <div className="mx-auto max-w-7xl px-6 pb-24 pt-16 md:pt-24">

@@ -16,8 +16,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function AboutPage() {
-  const t = await getTranslations("about");
+export default async function AboutPage({ params }: Props) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "about" });
   const approach = t.raw("approach") as string[];
   const stack = t.raw("stack") as string[];
 

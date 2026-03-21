@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start -H 127.0.0.1",
     "lint": "eslint",
+    "predeploy": "GH_PAGES=1 next build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {

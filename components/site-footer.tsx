@@ -1,8 +1,10 @@
 import { getTranslations } from "next-intl/server";
 
-export async function SiteFooter() {
-  const t = await getTranslations("footer");
-  const tNav = await getTranslations("nav");
+type Props = { locale: string };
+
+export async function SiteFooter({ locale }: Props) {
+  const t = await getTranslations({ locale, namespace: "footer" });
+  const tNav = await getTranslations({ locale, namespace: "nav" });
   const year = new Date().getFullYear();
 
   return (

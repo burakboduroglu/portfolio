@@ -113,5 +113,10 @@
   "notFound": {
     "title": "Page not found",
     "back": "Back to home"
+  },
+  "redirect": {
+    "ariaLabel": "Redirecting to the home page",
+    "hint": "If you are not redirected automatically, use the link below.",
+    "linkLabel": "Open Turkish home"
   }
 }

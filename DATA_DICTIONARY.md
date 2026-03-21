@@ -91,6 +91,7 @@ Kategoriler (MVP minimum); anahtarlar `snake_case` veya `nested.object` — proj
 | `contact` | `contact.title`, `contact.links.*` | İletişim |
 | `common` | `common.language_tr`, `common.language_en` | Dil seçici, footer |
 | `meta` | `meta.default_description` | SEO fallback |
+| `redirect` | `redirect.ariaLabel`, `redirect.hint`, `redirect.linkLabel` | Kök `/` → `/tr/` geçişi (statik export; varsayılan `tr` metinleri) |
 
 ---
 

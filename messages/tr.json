@@ -113,5 +113,10 @@
   "notFound": {
     "title": "Sayfa bulunamadı",
     "back": "Ana sayfaya dön"
+  },
+  "redirect": {
+    "ariaLabel": "Ana sayfaya yönlendiriliyor",
+    "hint": "Otomatik geçiş olmazsa aşağıdaki bağlantıyı kullanın.",
+    "linkLabel": "Türkçe ana sayfaya git"
   }
 }

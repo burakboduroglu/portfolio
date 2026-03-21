@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[22016,["/_next/static/chunks/13h-0fd.p-1ga.js"],""]
+3:I[97367,["/_next/static/chunks/01xlw8hd842-c.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto flex min-h-screen max-w-3xl flex-col items-center justify-center gap-4 px-6 text-center","children":[["$","h1",null,{"className":"text-2xl font-semibold","children":"Yonlendiriliyor..."}],["$","p",null,{"className":"text-muted-foreground","children":"Ana sayfaya otomatik gecis yapilamazsa asagidaki baglantiyi kullanin."}],["$","$L2",null,{"className":"underline underline-offset-4","href":"/tr/","children":"/tr/"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"window.location.replace('/tr/');"}}]]}],[["$","script","script-0",{"src":"/_next/static/chunks/13h-0fd.p-1ga.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"qN-cGGHo2gVjlVR9rauu9"}
+5:null

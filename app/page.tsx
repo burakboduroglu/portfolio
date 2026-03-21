@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { RedirectToTr } from "@/components/redirect-to-tr";
 import trMessages from "@/messages/tr.json";
 
 /**
@@ -34,11 +35,7 @@ export default function RootPage() {
           {r.linkLabel}
         </Link>
       </div>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: "window.location.replace('/tr/');",
-        }}
-      />
+      <RedirectToTr />
     </main>
   );
 }

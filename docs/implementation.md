@@ -35,11 +35,10 @@ messages/
   tr.json
   en.json
 components/
-  ui/                        # shadcn (button, card, badge, …)
+  ui/                        # shadcn (button, card, …)
   site-header.tsx
   site-footer.tsx
   locale-switcher.tsx
-  markdown-body.tsx
 lib/
   utils.ts
 ```

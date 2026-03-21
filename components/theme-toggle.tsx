@@ -3,15 +3,12 @@
 import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const THEME_KEY = "bb-theme";
-
-type Theme = "light" | "dark";
-
-function applyTheme(theme: Theme) {
-  const root = document.documentElement;
-  root.classList.toggle("dark", theme === "dark");
-}
+import {
+  applyTheme,
+  getInitialTheme,
+  THEME_KEY,
+  type Theme,
+} from "@/lib/theme";
 
 export function ThemeToggle() {
   const [theme, setTheme] = useState<Theme>("light");
@@ -19,15 +16,7 @@ export function ThemeToggle() {
 
   useEffect(() => {
     setMounted(true);
-
-    const saved = localStorage.getItem(THEME_KEY);
-    const nextTheme =
-      saved === "light" || saved === "dark"
-        ? saved
-        : window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? "dark"
-          : "light";
-
+    const nextTheme = getInitialTheme();
     setTheme(nextTheme);
     applyTheme(nextTheme);
   }, []);

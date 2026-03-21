@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Script from "next/script";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { Geist, Geist_Mono } from "next/font/google";
 import { routing } from "@/i18n/routing";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { ThemeInit } from "@/components/theme-init";
 import "../globals.css";
 
 const geistSans = Geist({
@@ -70,20 +70,6 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   setRequestLocale(locale);
   const messages = await getMessages({ locale });
-  const themeInitScript = `
-    (function() {
-      try {
-        var saved = localStorage.getItem("bb-theme");
-        var systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        var theme = saved === "light" || saved === "dark" ? saved : (systemDark ? "dark" : "light");
-        if (theme === "dark") {
-          document.documentElement.classList.add("dark");
-        } else {
-          document.documentElement.classList.remove("dark");
-        }
-      } catch (e) {}
-    })();
-  `;
 
   return (
     <html
@@ -92,9 +78,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       suppressHydrationWarning
     >
       <body className="bb-background-mesh flex min-h-screen flex-col bg-background font-sans text-foreground antialiased">
-        <Script id="theme-init" strategy="beforeInteractive">
-          {themeInitScript}
-        </Script>
+        <ThemeInit />
         <NextIntlClientProvider messages={messages}>
           <SiteHeader locale={locale} />
           <main className="flex-1">{children}</main>

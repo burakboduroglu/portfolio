@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "siteTitle": "Portfolio",
+    "siteDescription": "Personal site about fullstack development, automation, DevOps, and careful LLM experiments."
+  },
+  "nav": {
+    "brand": "Burak Boduroğlu",
+    "home": "Home",
+    "about": "About",
+    "work": "Work",
+    "contact": "Contact"
+  },
+  "home": {
+    "eyebrow": "Fullstack · Automation · DevOps · AI",
+    "headline": "Development across code, automation, and infrastructure.",
+    "sub": "Things I build and try with Next.js, Spring Boot, Postgres, n8n, Docker, and VPS.",
+    "ctaWork": "Examples",
+    "ctaContact": "Contact",
+    "pillarsTitle": "Focus areas",
+    "pillarFullstack": "Fullstack applications",
+    "pillarFullstackDesc": "TypeScript, APIs, and data layers—getting projects running and evolving them.",
+    "pillarAutomation": "Automation",
+    "pillarAutomationDesc": "n8n-style tools for integrations and workflow tinkering.",
+    "pillarDevops": "DevOps",
+    "pillarDevopsDesc": "Containers, Podman, Dokploy, and VPS—environment setup and deploy practice.",
+    "pillarAi": "Prompts and safe LLM use",
+    "pillarAiDesc": "Hooking LLM APIs into projects with templates, guardrails, and small experiments."
+  },
+  "about": {
+    "title": "About",
+    "body": "Short bio and how I work will live here. Phase 2 will refine copy and SEO."
+  },
+  "work": {
+    "title": "Work",
+    "subtitle": "Case study drafts and notes.",
+    "empty": "No projects to list yet.",
+    "readCase": "Case study",
+    "draft": "Draft",
+    "review": "In review",
+    "published": "Published"
+  },
+  "case": {
+    "back": "All work",
+    "notFound": "Project not found."
+  },
+  "contact": {
+    "title": "Contact",
+    "body": "Reach out via LinkedIn, email, or GitHub. Links will be updated in the footer."
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "localeHint": "Language"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "back": "Back to home"
+  }
+}

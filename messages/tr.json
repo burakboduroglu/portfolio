@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "siteTitle": "Portfolio",
+    "siteDescription": "Fullstack geliştirme, otomasyon, DevOps ve kontrollü LLM denemeleri üzerine kişisel site."
+  },
+  "nav": {
+    "brand": "Burak Boduroğlu",
+    "home": "Ana sayfa",
+    "about": "Hakkında",
+    "work": "İşler",
+    "contact": "İletişim"
+  },
+  "home": {
+    "eyebrow": "Fullstack · Otomasyon · DevOps · AI",
+    "headline": "Kod, otomasyon ve altyapı tarafında geliştirme.",
+    "sub": "Next.js, Spring Boot, Postgres, n8n, Docker ve VPS ile denediklerim ve üzerinde çalıştığım şeyler.",
+    "ctaWork": "Örnekler",
+    "ctaContact": "İletişim",
+    "pillarsTitle": "Odak alanları",
+    "pillarFullstack": "Fullstack uygulamalar",
+    "pillarFullstackDesc": "TypeScript, API ve veri katmanı; projeyi ayağa kaldırıp geliştirmek.",
+    "pillarAutomation": "Otomasyon",
+    "pillarAutomationDesc": "n8n tarzı araçlarla entegrasyon ve iş akışı kurcalamak.",
+    "pillarDevops": "DevOps",
+    "pillarDevopsDesc": "Container, Podman, Dokploy ve VPS ile ortam kurma ve yayına alma pratiği.",
+    "pillarAi": "Prompt ve güvenli LLM kullanımı",
+    "pillarAiDesc": "Şablonlar, sınırlar ve basit denemelerle LLM API’lerini projeye bağlamak."
+  },
+  "about": {
+    "title": "Hakkında",
+    "body": "Kısa bio ve çalışma şekli bu bölümde yer alacak. Faz 2’de içerik ve SEO ince ayarı yapılacak."
+  },
+  "work": {
+    "title": "İşler",
+    "subtitle": "Case study taslakları ve notlar.",
+    "empty": "Henüz liste için içerik yok.",
+    "readCase": "Case study",
+    "draft": "Taslak",
+    "review": "İncelemede",
+    "published": "Yayında"
+  },
+  "case": {
+    "back": "Tüm işler",
+    "notFound": "Bu proje bulunamadı."
+  },
+  "contact": {
+    "title": "İletişim",
+    "body": "LinkedIn, e-posta veya GitHub üzerinden ulaşabilirsiniz. Bağlantılar footer’da güncellenecek."
+  },
+  "footer": {
+    "rights": "Tüm hakları saklıdır.",
+    "localeHint": "Dil"
+  },
+  "notFound": {
+    "title": "Sayfa bulunamadı",
+    "back": "Ana sayfaya dön"
+  }
+}

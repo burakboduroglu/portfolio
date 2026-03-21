@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio
 
-## Getting Started
+Kişisel site — [PRD.md](PRD.md), [DATA_DICTIONARY.md](DATA_DICTIONARY.md) ve [docs/](docs/) ile hizalı. Stack: **Next.js 16** (App Router), **next-intl** (`/tr`, `/en`), **Tailwind v4**, **shadcn/ui** (base nova), içerik: `content/work/<slug>/tr.md` · `en.md`.
 
-First, run the development server:
+## Geliştirme
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Kök `/` otomatik olarak varsayılan locale’e yönlendirilir (`/tr`). Sayfalar: `/[locale]`, `/about`, `/work`, `/work/[slug]`, `/contact`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Üretim
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+`npm start` yerel olarak `127.0.0.1` bağlar (bazı ortamlarda `os.networkInterfaces` hatasını önlemek için). `NEXT_PUBLIC_SITE_URL` kanonik URL için kullanılabilir (OG / metadata — Faz 2).
 
-To learn more about Next.js, take a look at the following resources:
+Ana sayfadaki yuvarlak profil görseli GitHub avatarından gelir: `NEXT_PUBLIC_GITHUB_USERNAME` (varsayılan `burakboduroglu`) → `https://github.com/<kullanıcı>.png`. `https://github.com/account` bir görsel adresi değildir.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Dokümantasyon
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Dosya | Açıklama |
+|-------|-----------|
+| [PRD.md](PRD.md) | Ürün kapsamı ve yol haritası |
+| [DATA_DICTIONARY.md](DATA_DICTIONARY.md) | İçerik alanları |
+| [docs/implementation.md](docs/implementation.md) | Dizin yapısı ve teknik notlar |
 
-## Deploy on Vercel
+## Lisans
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Projeye uygun lisans dosyasını repo köküne ekleyin (ör. MIT).

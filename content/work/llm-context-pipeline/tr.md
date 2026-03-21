@@ -9,8 +9,8 @@ stack:
   - Next.js
   - PostgreSQL
   - OpenAI API
-title: Üretim LLM bağlam hattı
-summary: RAG ve politika katmanı ile bağlamlı, ölçülebilir çıktı üreten fullstack taslak.
+title: Kontrollü LLM asistan hattı (taslak)
+summary: Prompt şablonları ve güvenlik kurallarıyla API tabanlı modele bağlı, ölçülebilir çıktı hedefleyen fullstack taslak.
 demo_url: null
 repo_url: null
 privacy_note: Veri kaynakları ve müşteri genellemesi anonimdir.
@@ -18,7 +18,7 @@ privacy_note: Veri kaynakları ve müşteri genellemesi anonimdir.
 
 ## Başlık ve özet
 
-Destek ekibinin sık soruları için iç dokümanlardan bağlam çeken; prompt şablonları ve güvenlik politikaları sabitlenmiş bir asistan hattı tasarlandı (taslak).
+Destek veya iç süreçler için sabit prompt şablonları, rol tanımı ve güvenlik politikalarıyla API üzerinden çalışan bir asistan hattı tasarlandı (taslak).
 
 ## Rolünüz
 
@@ -38,15 +38,15 @@ Token maliyeti; iç dokümanların bölüm bazlı yetkilendirmesi; yanıtlarda k
 
 ## Çözüm özeti
 
-Next.js arayüzü, vektör / anahtar kelime hibrit arama (taslak), sistem + kullanıcı mesajları için ayrı şablonlar, çıktı sonrası basit doğrulama adımları.
+Next.js arayüzü, sistem + kullanıcı mesajları için ayrı şablonlar, gerekirse el ile seçilen veya basit kurallarla filtrelenmiş bağlam, çıktı sonrası doğrulama adımları.
 
 ## Teknik mimari
 
-Sorgu → retrieval → bağlam birleştirme → LLM → post-filter (PII / yasaklı konu). Diyagram Faz 2’de.
+İstek → (isteğe bağlı) kısıtlı bağlam ekleme → LLM API → post-filter (PII / yasaklı konu). Diyagram Faz 2’de.
 
 ## Kullanılan teknolojiler
 
-Next.js, PostgreSQL, embeddings API, OpenAI veya eşdeğeri uyumlu uç nokta.
+Next.js, PostgreSQL, OpenAI veya eşdeğeri LLM API.
 
 ## Prompt / context engineering
 

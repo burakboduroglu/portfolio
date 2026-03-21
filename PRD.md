@@ -1,6 +1,6 @@
 # Ürün Gereksinim Belgesi (PRD) — Kişisel Site
 
-**Sürüm:** 1.1  
+**Sürüm:** 1.2  
 **Durum:** Taslak  
 **Dil:** Ana metin Türkçe; teknik terim ve ürün adları İngilizce kalabilir.
 
@@ -240,3 +240,4 @@ Depoda halihazırda Vite + React tabanlı bir portföy bulunabilir. Bu PRD **yen
 |-------|--------|-----|
 | 2025-03-21 | 1.0 | İlk PRD; iki dil + case study kararları dahil |
 | 2025-03-21 | 1.1 | §6 UI referansı: Wise Design + [docs/design-reference-wise.md](docs/design-reference-wise.md) |
+| 2025-03-21 | 1.2 | §12 Faz 0: üç proje için TR/EN case study taslakları [content/work/](content/work/) |

@@ -14,18 +14,23 @@ function applyTheme(theme: Theme) {
 }
 
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>(() => {
-    if (typeof window === "undefined") return "light";
-    const saved = localStorage.getItem(THEME_KEY);
-    if (saved === "light" || saved === "dark") return saved;
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
-  });
+  const [theme, setTheme] = useState<Theme>("light");
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    applyTheme(theme);
-  }, [theme]);
+    setMounted(true);
+
+    const saved = localStorage.getItem(THEME_KEY);
+    const nextTheme =
+      saved === "light" || saved === "dark"
+        ? saved
+        : window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+
+    setTheme(nextTheme);
+    applyTheme(nextTheme);
+  }, []);
 
   const toggleTheme = () => {
     const nextTheme: Theme = theme === "dark" ? "light" : "dark";
@@ -41,9 +46,15 @@ export function ThemeToggle() {
       size="sm"
       className="min-w-14 font-mono text-xs uppercase"
       onClick={toggleTheme}
-      aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+      aria-label={
+        mounted
+          ? theme === "dark"
+            ? "Switch to light mode"
+            : "Switch to dark mode"
+          : "Toggle theme"
+      }
     >
-      {theme === "dark" ? (
+      {mounted && theme === "dark" ? (
         <Sun className="size-4" aria-hidden />
       ) : (
         <Moon className="size-4" aria-hidden />

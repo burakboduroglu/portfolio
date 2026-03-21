@@ -1,51 +1,110 @@
 {
   "meta": {
-    "siteTitle": "Portfolio",
-    "siteDescription": "Fullstack geliştirme, otomasyon, DevOps ve kontrollü LLM denemeleri üzerine kişisel site."
+    "siteTitle": "BB",
+    "siteDescription": "Burak Boduroğlu'nun context engineering, prompt engineering ve agentic coding odaklı fullstack geliştirme, otomasyon ve DevOps çalışmalarını paylaştığı kişisel sitesi."
   },
   "nav": {
     "brand": "Burak Boduroğlu",
     "home": "Ana sayfa",
     "about": "Hakkında",
-    "work": "İşler",
     "contact": "İletişim"
   },
   "home": {
-    "eyebrow": "Fullstack · Otomasyon · DevOps · AI",
-    "headline": "Kod, otomasyon ve altyapı tarafında geliştirme.",
-    "sub": "Next.js, Spring Boot, Postgres, n8n, Docker ve VPS ile denediklerim ve üzerinde çalıştığım şeyler.",
-    "ctaWork": "Örnekler",
+    "eyebrow": "CONTEXT ENGINEERING · AGENTIC CODING · PROMPT ENGINEERING",
+    "headline": "Context engineering yaklaşımıyla web uygulamaları ve otomasyonlar geliştiriyorum.",
+    "sub": "Context engineering, prompt engineering, web uygulama geliştirme ve otomasyon alanlarında; Next.js, Java/Spring Boot, Python, PostgreSQL, n8n, Docker/Podman ve VPS/Dokploy kullanarak projeler geliştiriyorum.",
+    "ctaAbout": "Hakkında",
     "ctaContact": "İletişim",
     "pillarsTitle": "Odak alanları",
     "pillarFullstack": "Fullstack uygulamalar",
-    "pillarFullstackDesc": "TypeScript, API ve veri katmanı; projeyi ayağa kaldırıp geliştirmek.",
+    "pillarFullstackDesc": "TypeScript, API ve veri katmanını birlikte tasarlayıp projeyi üretime taşınabilir bir temelde kurarım.",
     "pillarAutomation": "Otomasyon",
-    "pillarAutomationDesc": "n8n tarzı araçlarla entegrasyon ve iş akışı kurcalamak.",
+    "pillarAutomationDesc": "n8n ve benzeri araçlarla tekrar eden süreçleri otomatikleştirir, entegrasyonları izlenebilir hale getiririm.",
     "pillarDevops": "DevOps",
-    "pillarDevopsDesc": "Container, Podman, Dokploy ve VPS ile ortam kurma ve yayına alma pratiği.",
-    "pillarAi": "Prompt ve güvenli LLM kullanımı",
-    "pillarAiDesc": "Şablonlar, sınırlar ve basit denemelerle LLM API’lerini projeye bağlamak."
+    "pillarDevopsDesc": "Container tabanlı ortamlar, VPS ve Dokploy ile güvenli dağıtım ve operasyonel devamlılık üzerinde çalışırım.",
+    "pillarAi": "Context & Prompt Engineering",
+    "pillarAiDesc": "Context modelleme, prompt şablonları, guardrail'ler ve değerlendirme döngüleriyle LLM davranışını daha öngörülebilir hale getiririm."
   },
   "about": {
     "title": "Hakkında",
-    "body": "Kısa bio ve çalışma şekli bu bölümde yer alacak. Faz 2’de içerik ve SEO ince ayarı yapılacak."
-  },
-  "work": {
-    "title": "İşler",
-    "subtitle": "Case study taslakları ve notlar.",
-    "empty": "Henüz liste için içerik yok.",
-    "readCase": "Case study",
-    "draft": "Taslak",
-    "review": "İncelemede",
-    "published": "Yayında"
-  },
-  "case": {
-    "back": "Tüm işler",
-    "notFound": "Bu proje bulunamadı."
+    "metaDescription": "Burak Boduroğlu — context engineering, prompt engineering, agentic coding, fullstack geliştirme ve DevOps.",
+    "lead": "Benim için kaliteli yazılım; doğru context, net promptlar ve güçlü mühendislik temeliyle birlikte çalışan bir sistem demek.",
+    "p1": "Next.js ve TypeScript ile ürün geliştiriyor; Java (Spring Boot) ve Python ile backend servisleri kuruyor; PostgreSQL ile veri katmanını tasarlıyorum. Entegrasyon ve iş akışlarında n8n, dağıtım tarafında Docker/Podman ve VPS/Dokploy kullanıyorum.",
+    "p2": "Özellikle LLM odaklı projelerde context engineering ve prompt engineering katmanlarını ayrı bir disiplin olarak ele alıyorum. Agentic coding yaklaşımıyla görevleri parçalayıp, değerlendirme adımları ve guardrail'lerle daha güvenilir çıktılar hedefliyorum.",
+    "approachTitle": "Nasıl çalışırım",
+    "approach": [
+      "Önce problemi, kısıtları ve başarı ölçütünü netleştirmek",
+      "Küçük, tekrarlanabilir teslim parçaları ve erken geri bildirim",
+      "Gözlemlenebilirlik ve mümkün olduğunca basit geri alma yolları",
+      "LLM tarafında context engineering, prompt engineering ve guardrail odaklı değerlendirme döngüleri",
+      "Agentic coding akışlarında görev kırılımı, araç seçimi ve kalite kontrol adımlarını netleştirmek"
+    ],
+    "stackTitle": "Stack ve araçlar",
+    "stack": [
+      "TypeScript",
+      "Java",
+      "Python",
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Spring Boot",
+      "PostgreSQL",
+      "Docker",
+      "Podman",
+      "n8n",
+      "Node.js",
+      "Git",
+      "Cursor",
+      "Claude Code",
+      "Codex"
+    ]
   },
   "contact": {
     "title": "İletişim",
-    "body": "LinkedIn, e-posta veya GitHub üzerinden ulaşabilirsiniz. Bağlantılar footer’da güncellenecek."
+    "metaDescription": "Sosyal profiller, blog ve e-posta ile iletişim.",
+    "body": "Aşağıdaki bağlantılardan profillere ve içeriklere gidebilir veya doğrudan e-posta ile yazabilirsiniz.",
+    "links": {
+      "linkedin": {
+        "title": "LinkedIn",
+        "description": "Profesyonel ağ"
+      },
+      "github": {
+        "title": "GitHub",
+        "description": "Projeler ve kaynak kod"
+      },
+      "dev": {
+        "title": "Dev.to",
+        "description": "Dev.to profilim"
+      },
+      "medium": {
+        "title": "Medium",
+        "description": "Yazılar"
+      },
+      "microsoft": {
+        "title": "Microsoft Learn",
+        "description": "Learn profilim"
+      },
+      "portfolio": {
+        "title": "Blog ve eğitimler",
+        "description": "Kişisel blog ve notlar (GitHub Pages)"
+      },
+      "youtube": {
+        "title": "YouTube",
+        "description": "Kanal"
+      },
+      "tiktok": {
+        "title": "TikTok",
+        "description": "Kısa içerikler"
+      },
+      "vsco": {
+        "title": "VSCO",
+        "description": "Fotoğraf galerisi"
+      },
+      "contact": {
+        "title": "E-posta",
+        "description": "info@burakboduroglu.com.tr — birlikte konuşalım"
+      }
+    }
   },
   "footer": {
     "rights": "Tüm hakları saklıdır.",

@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 
 export async function SiteFooter() {
   const t = await getTranslations("footer");
+  const tNav = await getTranslations("nav");
   const year = new Date().getFullYear();
 
   return (
@@ -10,7 +11,7 @@ export async function SiteFooter() {
         <p>
           © {year} — {t("rights")}
         </p>
-        <p className="text-xs">{t("localeHint")}</p>
+        <p className="text-xs">{tNav("brand")}</p>
       </div>
     </footer>
   );

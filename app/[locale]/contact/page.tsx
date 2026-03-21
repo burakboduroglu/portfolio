@@ -1,4 +1,20 @@
+import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { ContactLinktree } from "@/components/contact-linktree";
+
+type Props = {
+  params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "contact" });
+
+  return {
+    title: t("title"),
+    description: t("metaDescription"),
+  };
+}
 
 export default async function ContactPage() {
   const t = await getTranslations("contact");
@@ -9,6 +25,7 @@ export default async function ContactPage() {
       <p className="mt-8 text-lg leading-relaxed text-muted-foreground">
         {t("body")}
       </p>
+      <ContactLinktree />
     </div>
   );
 }

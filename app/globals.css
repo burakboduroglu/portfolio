@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+@import "@fortawesome/fontawesome-svg-core/styles.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -127,4 +128,31 @@
   html {
     @apply font-sans;
   }
+}
+
+@keyframes bb-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bb-fade-up {
+  animation: bb-fade-up 500ms ease-out both;
+}
+
+.bb-fade-up-delayed {
+  animation: bb-fade-up 640ms ease-out 80ms both;
+}
+
+.bb-fade-up-delayed-2 {
+  animation: bb-fade-up 700ms ease-out 140ms both;
+}
+
+.bb-fade-up-delayed-3 {
+  animation: bb-fade-up 760ms ease-out 200ms both;
 }

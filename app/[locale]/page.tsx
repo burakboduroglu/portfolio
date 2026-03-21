@@ -18,25 +18,25 @@ export default async function HomePage({ params }: Props) {
   const tNav = await getTranslations("nav");
 
   return (
-    <div className="mx-auto max-w-6xl px-6 pb-24 pt-16 md:pt-24">
-      <p className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
+    <div className="mx-auto max-w-7xl px-6 pb-24 pt-16 md:pt-24">
+      <p className="bb-fade-up text-sm font-medium uppercase tracking-widest text-muted-foreground">
         {t("eyebrow")}
       </p>
-      <div className="mt-6 flex flex-col items-start gap-8 sm:flex-row sm:items-start sm:gap-10">
+      <div className="bb-fade-up-delayed mt-6 flex flex-col items-start gap-8 sm:flex-row sm:items-center sm:gap-10">
         <HomeHeroAvatar alt={tNav("brand")} />
-        <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-balance sm:min-w-0 sm:flex-1 md:text-5xl lg:text-6xl">
+        <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-balance sm:min-w-0 sm:flex-1 md:text-5xl lg:text-6xl xl:max-w-5xl">
           {t("headline")}
         </h1>
       </div>
-      <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground text-pretty">
+      <p className="bb-fade-up-delayed-2 mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground text-pretty">
         {t("sub")}
       </p>
-      <div className="mt-10 flex flex-wrap gap-4">
+      <div className="bb-fade-up-delayed-3 mt-10 flex flex-wrap gap-4">
         <Link
-          href="/work"
+          href="/about"
           className={cn(buttonVariants({ variant: "default", size: "lg" }))}
         >
-          {t("ctaWork")}
+          {t("ctaAbout")}
         </Link>
         <Link
           href="/contact"
@@ -46,7 +46,7 @@ export default async function HomePage({ params }: Props) {
         </Link>
       </div>
 
-      <section className="mt-24">
+      <section className="bb-fade-up-delayed-3 mt-24">
         <h2 className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
           {t("pillarsTitle")}
         </h2>
@@ -69,7 +69,10 @@ export default async function HomePage({ params }: Props) {
               body: t("pillarAiDesc"),
             },
           ].map((item) => (
-            <Card key={item.title} className="border-border/80 shadow-none">
+            <Card
+              key={item.title}
+              className="border-border/80 shadow-none transition-transform duration-300 ease-out hover:-translate-y-1"
+            >
               <CardHeader>
                 <CardTitle className="text-lg">{item.title}</CardTitle>
                 <CardDescription className="text-base leading-relaxed">

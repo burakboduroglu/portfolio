@@ -1,18 +1,19 @@
 {
   "meta": {
-    "siteTitle": "BB",
+    "siteTitle": "Burak Boduroğlu",
     "siteDescription": "Burak Boduroğlu'nun context engineering, prompt engineering ve agentic coding odaklı fullstack geliştirme, otomasyon ve DevOps çalışmalarını paylaştığı kişisel sitesi."
   },
   "nav": {
     "brand": "Burak Boduroğlu",
+    "back": "Geri",
     "home": "Ana sayfa",
     "about": "Hakkında",
     "contact": "İletişim"
   },
   "home": {
     "eyebrow": "CONTEXT ENGINEERING · AGENTIC CODING · PROMPT ENGINEERING",
-    "headline": "Context engineering yaklaşımıyla web uygulamaları ve otomasyonlar geliştiriyorum.",
-    "sub": "Context engineering, prompt engineering, web uygulama geliştirme ve otomasyon alanlarında; Next.js, Java/Spring Boot, Python, PostgreSQL, n8n, Docker/Podman ve VPS/Dokploy kullanarak projeler geliştiriyorum.",
+    "headline": "Context engineering ile web uygulamaları ve otomasyon çözümleri geliştiriyorum.",
+    "sub": "Projelerimde LLM’leri context engineering ve prompt engineering ile aktif kullanıyor; Next.js, Java/Spring Boot, PostgreSQL, n8n, Docker/Podman ve VPS/Dokploy ile ürünler geliştiriyorum.",
     "ctaAbout": "Hakkında",
     "ctaContact": "İletişim",
     "pillarsTitle": "Odak alanları",
@@ -29,8 +30,8 @@
     "title": "Hakkında",
     "metaDescription": "Burak Boduroğlu — context engineering, prompt engineering, agentic coding, fullstack geliştirme ve DevOps.",
     "lead": "Benim için kaliteli yazılım; doğru context, net promptlar ve güçlü mühendislik temeliyle birlikte çalışan bir sistem demek.",
-    "p1": "Next.js ve TypeScript ile ürün geliştiriyor; Java (Spring Boot) ve Python ile backend servisleri kuruyor; PostgreSQL ile veri katmanını tasarlıyorum. Entegrasyon ve iş akışlarında n8n, dağıtım tarafında Docker/Podman ve VPS/Dokploy kullanıyorum.",
-    "p2": "Özellikle LLM odaklı projelerde context engineering ve prompt engineering katmanlarını ayrı bir disiplin olarak ele alıyorum. Agentic coding yaklaşımıyla görevleri parçalayıp, değerlendirme adımları ve guardrail'lerle daha güvenilir çıktılar hedefliyorum.",
+    "p1": "Next.js ve TypeScript ile ürün geliştiriyor, Java (Spring Boot) ile backend servisleri kuruyor ve PostgreSQL ile veri katmanını tasarlıyorum. Entegrasyon ve iş akışlarında n8n, dağıtım tarafında Docker/Podman ve VPS/Dokploy kullanıyorum.",
+    "p2": "Projelerimde LLM kullanımını context engineering ve prompt engineering yaklaşımıyla yönetiyorum. Geliştirme sürecinde Cursor, Codex ve Claude Code gibi araçları aktif kullanarak görevleri daha hızlı ve kontrollü ilerletiyorum.",
     "approachTitle": "Nasıl çalışırım",
     "approach": [
       "Önce problemi, kısıtları ve başarı ölçütünü netleştirmek",
@@ -43,7 +44,6 @@
     "stack": [
       "TypeScript",
       "Java",
-      "Python",
       "Next.js",
       "React",
       "Tailwind CSS",

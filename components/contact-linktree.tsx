@@ -15,7 +15,7 @@ export function ContactLinktree() {
   const linksCopy = t.raw("links") as Record<string, LinkCopy>;
 
   return (
-    <ul className="mx-auto mt-12 max-w-md space-y-3">
+    <ul className="mx-auto mt-12 grid max-w-4xl gap-3 md:grid-cols-2">
       {CONTACT_LINK_DEFINITIONS.map((link) => {
         const isMailto = link.url.startsWith("mailto:");
         const copy = linksCopy[link.id];

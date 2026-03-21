@@ -22,9 +22,9 @@ export default async function AboutPage() {
   const stack = t.raw("stack") as string[];
 
   return (
-    <div className="mx-auto max-w-3xl px-6 py-16 md:py-24">
+    <div className="mx-auto max-w-4xl px-6 py-16 md:py-24">
       <h1 className="text-4xl font-semibold tracking-tight">{t("title")}</h1>
-      <p className="mt-8 text-xl font-medium leading-relaxed text-foreground text-pretty">
+      <p className="bb-showcase-panel mt-8 p-6 text-xl font-medium leading-relaxed text-foreground text-pretty md:p-7">
         {t("lead")}
       </p>
       <div className="mt-10 space-y-6 text-lg leading-relaxed text-muted-foreground">
@@ -32,7 +32,7 @@ export default async function AboutPage() {
         <p className="text-pretty">{t("p2")}</p>
       </div>
 
-      <section className="mt-16">
+      <section className="bb-showcase-panel mt-16 p-6 md:p-7">
         <h2 className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
           {t("approachTitle")}
         </h2>
@@ -45,7 +45,7 @@ export default async function AboutPage() {
         </ul>
       </section>
 
-      <section className="mt-16">
+      <section className="bb-showcase-panel mt-16 p-6 md:p-7">
         <h2 className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
           {t("stackTitle")}
         </h2>

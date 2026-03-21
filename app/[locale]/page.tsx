@@ -22,9 +22,9 @@ export default async function HomePage({ params }: Props) {
       <p className="bb-fade-up text-sm font-medium uppercase tracking-widest text-muted-foreground">
         {t("eyebrow")}
       </p>
-      <div className="bb-fade-up-delayed mt-6 flex flex-col items-start gap-8 sm:flex-row sm:items-center sm:gap-10">
+      <div className="bb-showcase-panel bb-fade-up-delayed mt-6 flex flex-col items-start gap-8 p-6 sm:flex-row sm:items-center sm:gap-10 md:p-8">
         <HomeHeroAvatar alt={tNav("brand")} />
-        <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-balance sm:min-w-0 sm:flex-1 md:text-5xl lg:text-6xl xl:max-w-5xl">
+        <h1 className="max-w-4xl text-3xl font-semibold tracking-tight text-balance sm:min-w-0 sm:flex-1 md:text-4xl lg:text-5xl xl:max-w-5xl">
           {t("headline")}
         </h1>
       </div>
@@ -71,7 +71,7 @@ export default async function HomePage({ params }: Props) {
           ].map((item) => (
             <Card
               key={item.title}
-              className="border-border/80 shadow-none transition-transform duration-300 ease-out hover:-translate-y-1"
+              className="border-border/80 bg-card/80 shadow-none backdrop-blur-sm transition duration-300 ease-out hover:-translate-y-1 hover:border-primary/35"
             >
               <CardHeader>
                 <CardTitle className="text-lg">{item.title}</CardTitle>

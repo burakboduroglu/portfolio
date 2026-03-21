@@ -56,7 +56,7 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --primary: oklch(0.23 0.04 264);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -67,7 +67,7 @@
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --ring: oklch(0.62 0.07 264);
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
@@ -85,9 +85,9 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
+  --background: oklch(0.15 0.01 264);
   --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
+  --card: oklch(0.22 0.01 264);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
@@ -95,14 +95,14 @@
   --primary-foreground: oklch(0.205 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
+  --muted: oklch(0.28 0.01 264);
+  --muted-foreground: oklch(0.76 0.01 264);
   --accent: oklch(0.269 0 0);
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
+  --ring: oklch(0.64 0.06 264);
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
@@ -155,4 +155,32 @@
 
 .bb-fade-up-delayed-3 {
   animation: bb-fade-up 760ms ease-out 200ms both;
+}
+
+.bb-background-mesh {
+  background-image:
+    radial-gradient(circle at 14% 14%, oklch(0.84 0.05 264 / 0.22), transparent 42%),
+    radial-gradient(circle at 86% 10%, oklch(0.88 0.03 220 / 0.2), transparent 46%),
+    radial-gradient(circle at 50% 100%, oklch(0.9 0.02 300 / 0.14), transparent 50%);
+  background-attachment: fixed;
+}
+
+.dark .bb-background-mesh {
+  background-image:
+    radial-gradient(circle at 12% 16%, oklch(0.42 0.06 264 / 0.24), transparent 40%),
+    radial-gradient(circle at 84% 10%, oklch(0.44 0.05 220 / 0.2), transparent 44%),
+    radial-gradient(circle at 50% 100%, oklch(0.36 0.04 300 / 0.22), transparent 52%);
+}
+
+.bb-showcase-panel {
+  @apply rounded-2xl border border-border/80 bg-card/70 shadow-sm backdrop-blur-sm;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bb-fade-up,
+  .bb-fade-up-delayed,
+  .bb-fade-up-delayed-2,
+  .bb-fade-up-delayed-3 {
+    animation: none;
+  }
 }

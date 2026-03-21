@@ -1,6 +1,8 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
+import { BackButton } from "@/components/back-button";
 import { LocaleSwitcher } from "@/components/locale-switcher";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export async function SiteHeader() {
   const t = await getTranslations("nav");
@@ -13,14 +15,17 @@ export async function SiteHeader() {
   ] as const;
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/80 bg-background/80 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-6">
-        <Link
-          href="/"
-          className="text-sm font-semibold tracking-tight text-foreground"
-        >
-          {brand}
-        </Link>
+    <header className="sticky top-0 z-50 border-b border-border/80 bg-background/75 backdrop-blur-xl">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-6">
+        <div className="flex items-center gap-2">
+          <BackButton />
+          <Link
+            href="/"
+            className="text-sm font-semibold tracking-tight text-foreground"
+          >
+            {brand}
+          </Link>
+        </div>
         <nav className="hidden items-center gap-8 md:flex" aria-label="Main">
           {links.map(({ href, label }) => (
             <Link
@@ -33,6 +38,7 @@ export async function SiteHeader() {
           ))}
         </nav>
         <div className="flex items-center gap-3">
+          <ThemeToggle />
           <LocaleSwitcher />
         </div>
       </div>

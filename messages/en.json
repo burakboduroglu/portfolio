@@ -1,10 +1,11 @@
 {
   "meta": {
-    "siteTitle": "BB",
+    "siteTitle": "Burak Boduroğlu",
     "siteDescription": "Burak Boduroglu's personal site focused on context engineering, prompt engineering, agentic coding, and production-minded fullstack/DevOps work."
   },
   "nav": {
     "brand": "Burak Boduroğlu",
+    "back": "Back",
     "home": "Home",
     "about": "About",
     "contact": "Contact"
@@ -12,7 +13,7 @@
   "home": {
     "eyebrow": "Context Engineering · Agentic Coding · Prompt Engineering",
     "headline": "I build LLM-enabled products with strong software fundamentals and agentic workflows.",
-    "sub": "I build projects in context engineering, prompt engineering, web applications, and automation using Next.js, Java/Spring Boot, Python, PostgreSQL, n8n, Docker/Podman, and VPS/Dokploy.",
+    "sub": "In my projects, I actively use LLMs through context engineering and prompt engineering, and build products with Next.js, Java/Spring Boot, PostgreSQL, n8n, Docker/Podman, and VPS/Dokploy.",
     "ctaAbout": "About",
     "ctaContact": "Contact",
     "pillarsTitle": "Focus areas",
@@ -29,8 +30,8 @@
     "title": "About",
     "metaDescription": "Burak Boduroglu — context engineering, prompt engineering, agentic coding, fullstack development, and DevOps.",
     "lead": "To me, quality software means a system where context, prompts, and engineering discipline work together.",
-    "p1": "I build products with Next.js and TypeScript, backend services with Java (Spring Boot) and Python, and data layers with PostgreSQL. For integration workflows I use n8n, and for delivery I use Docker/Podman with VPS/Dokploy.",
-    "p2": "In LLM-heavy projects, I treat context engineering and prompt engineering as first-class layers. With an agentic coding mindset, I break work into explicit steps and add evaluation/guardrail checkpoints for more reliable outputs.",
+    "p1": "I build products with Next.js and TypeScript, backend services with Java (Spring Boot), and data layers with PostgreSQL. For integration workflows I use n8n, and for delivery I use Docker/Podman with VPS/Dokploy.",
+    "p2": "Across my projects, I handle LLM usage with context engineering and prompt engineering practices. I also actively use tools like Cursor, Codex, and Claude Code to move faster with clearer quality control.",
     "approachTitle": "How I work",
     "approach": [
       "Clarify the problem, constraints, and what “done” means first",
@@ -43,7 +44,6 @@
     "stack": [
       "TypeScript",
       "Java",
-      "Python",
       "Next.js",
       "React",
       "Tailwind CSS",

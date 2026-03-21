@@ -1,75 +1,36 @@
-# RPA Developer Portfolio 🤖
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-A modern, professional portfolio website designed specifically for RPA (Robotic Process Automation) developers and full-stack automation engineers.
+## Getting Started
 
-## 🚀 Features
-
-- **RPA-Focused Design**: Tailored for automation professionals
-- **Full-Stack Expertise**: Java Spring Boot, Next.js, React, TypeScript
-- **Modern UI/UX**: Clean, professional interface with automation themes
-- **Responsive Layout**: Works perfectly on all devices
-- **Skill Showcase**: Highlights UiPath, Python, C#, Java, Spring Boot, Next.js expertise
-- **Professional Links**: Curated links relevant to RPA developers
-- **Performance Optimized**: Built with React, TypeScript, and Tailwind CSS
-
-## 🛠️ Tech Stack
-
-- **Frontend**: React 18 + TypeScript, Next.js
-- **Backend**: Java Spring Boot
-- **Styling**: Tailwind CSS
-- **Icons**: FontAwesome
-- **Build Tool**: Vite
-- **Deployment**: GitHub Pages
-
-## 🎯 Target Audience
-
-- RPA Developers
-- Automation Engineers
-- Full-Stack Developers
-- UiPath Specialists
-- Python Automation Developers
-- C# Automation Developers
-- Java Spring Boot Developers
-- Next.js Developers
-- Process Automation Consultants
-
-## 🚀 Getting Started
+First, run the development server:
 
 ```bash
-# Install dependencies
-npm install
-
-# Start development server
 npm run dev
-
-# Build for production
-npm run build
-
-# Deploy to GitHub Pages
-npm run deploy
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## 📱 Customization
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-The portfolio is easily customizable for different RPA professionals:
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-- Update profile information in `src/App.tsx`
-- Modify links in `src/lib/links.ts`
-- Customize skills and expertise badges
-- Adjust color scheme and branding
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## 🌟 Key Sections
+## Learn More
 
-1. **Profile Header**: Professional photo with RPA badge
-2. **Skills Grid**: Visual representation of automation tools
-3. **Expertise Badges**: UiPath, Python, C#, JavaScript, Power Automate
-4. **Professional Links**: LinkedIn, GitHub, UiPath Community, etc.
-5. **Contact Section**: Direct contact for automation opportunities
+To learn more about Next.js, take a look at the following resources:
 
----
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-<div align="center"> 
-    <img src="https://github.githubassets.com/assets/mona-loading-dark-7701a7b97370.gif" alt="gif" width="100" height="100"/>
-</div>
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-_Built with ❤️ for the automation community_
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

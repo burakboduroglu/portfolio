@@ -1,0 +1,50 @@
+---
+description: PRD ile uyumlu kod ve içerik üretimi (Next.js, i18n, case study, SEO)
+alwaysApply: true
+---
+
+# Kod ve içerik üretimi
+
+Kaynak: kök [PRD.md](../../PRD.md), [DATA_DICTIONARY.md](../../DATA_DICTIONARY.md).
+
+## Stack ve sınırlar
+
+- **MVP stack:** Next.js App Router, TypeScript, Tailwind CSS, shadcn/ui. İçerik: MDX veya Markdown + frontmatter.
+- **Non-goals (ilk sürüm):** tam CMS, kullanıcı hesabı, blog (PRD §9). Yeni özellik eklerken MVP dışına çıkma.
+- **Veritabanı:** Postgres/Prisma/Drizzle yalnızca PRD’de tanımlı dinamik ihtiyaç varsa; aksi halde ekleme.
+
+## Rotalar ve i18n
+
+- URL: `/[locale]/...` (`tr` | `en`). **Slug dil-bağımsız** (ör. `invoice-automation-n8n`); başlık/özet çeviri katmanında.
+- Kullanıcıya görünen metinleri hardcode etme; `messages/` veya eşdeğeri sözlük + DATA_DICTIONARY `TranslationKey` grupları.
+- SEO: sayfa `title`, `description`, Open Graph; locale için `hreflang` / canonical stratejisine uy (PRD §3.1, §4).
+
+## Case study ve projeler
+
+- Yeni proje/detay: PRD §5 zorunlu bölümleri ve [DATA_DICTIONARY.md](../../DATA_DICTIONARY.md) `Project` / `CaseStudy` alanlarıyla aynı isimlendirme.
+- **Gizlilik:** müşteri adı yoksa sektör/genel tanım; PII ve sırlar yok (PRD §5 son paragraf).
+- TR ve EN içerik birlikte güncellenmeli; yayın öncesi PRD §8 checklist.
+
+## UI ve kalite
+
+- Görsel ton: [design-reference-wise.md](../../docs/design-reference-wise.md) (Wise Design ilhamı; telif/marka kopyası yok) + PRD §6.
+- shadcn + Tailwind ile tutarlı bileşenler; erişilebilirlik (kontrast, heading hiyerarşisi, klavye) — PRD §6.
+- Görseller: Next.js `Image` ve uygun boyut/format; statik öncelikli sayfa üretimi tercih et.
+
+## Örnekler
+
+```tsx
+// ❌ Kötü — tek dil, rota ihlali
+<h1>Projelerim</h1>
+
+// ✅ İyi — locale + sözlük
+<h1>{t("work.title")}</h1>
+```
+
+```yaml
+# ❌ Kötü — slug Türkçe karakter
+slug: fatura-otomasyonu
+
+# ✅ İyi
+slug: invoice-automation-n8n
+```

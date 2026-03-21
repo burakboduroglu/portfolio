@@ -1,0 +1,34 @@
+---
+description: Geliştirme iş akışı — PRD, DATA_DICTIONARY ve docs senkronu
+alwaysApply: true
+---
+
+# İş akışı
+
+## Özellik veya içerik öncesi
+
+1. [PRD.md](../../PRD.md) **§3 MVP** ve **§9 non-goals** — kapsam dışı mı kontrol et.
+2. Case study / proje eklenecekse PRD **§5** ve **§8** checklist hazır olsun.
+
+## Şema veya alan değişikliği
+
+- Frontmatter, tip, API veya çeviri anahtarı değiştiyse **[DATA_DICTIONARY.md](../../DATA_DICTIONARY.md)** (kök) güncelle.
+- Davranış, dizin yapısı, deploy veya env stratejisi değiştiyse **[implementation.md](../../docs/implementation.md)** ilgili bölümü güncelle.
+- PRD’de ürün kararı değiştiysede **[PRD.md](../../PRD.md)** revizyon tablosu (§15) + ilgili bölüm.
+
+## Yayın / PR öncesi
+
+- [ ] TR + EN tutarlılık (PRD §8)
+- [ ] Gizlilik / anonimleştirme
+- [ ] OG + meta her dil için
+- [ ] Lighthouse hedefleri: PRD §10 (uygulama sonrası sayısal eşikler `implementation.md` içinde tanımlı olmalı)
+
+## Doküman haritası
+
+| Konu            | Dosya                          |
+|-----------------|--------------------------------|
+| Ürün gereksinimi | `PRD.md`                       |
+| Alan / içerik   | `DATA_DICTIONARY.md` (kök)     |
+| Nasıl kurulur   | `docs/implementation.md`       |
+| UI ilham / telif | `docs/design-reference-wise.md` |
+| İndeks          | `docs/README.md`               |

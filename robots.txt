@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://burakboduroglu.com.tr/sitemap.xml

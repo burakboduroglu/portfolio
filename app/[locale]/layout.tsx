@@ -31,13 +31,32 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
   const title = t("siteTitle");
+  const description = t("siteDescription");
+  const baseUrl = new URL("https://burakboduroglu.com.tr");
+  const localePath = `/${locale}`;
 
   return {
+    metadataBase: baseUrl,
     title: {
       default: title,
       template: `%s · ${title}`,
     },
-    description: t("siteDescription"),
+    description,
+    alternates: {
+      canonical: localePath,
+      languages: {
+        tr: "/tr",
+        en: "/en",
+      },
+    },
+    openGraph: {
+      type: "website",
+      url: localePath,
+      siteName: title,
+      title,
+      description,
+      locale,
+    },
   };
 }
 

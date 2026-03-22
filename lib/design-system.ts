@@ -39,3 +39,13 @@ export const surface = {
   editorial: "bb-showcase-panel",
   product: "bb-surface-product",
 } as const;
+
+/**
+ * Metin ve navigasyon linkleri — hafif renk + alt çizgi (PRD: abartısız hareket).
+ */
+export const link = {
+  /** Header marka → ana sayfa */
+  brand: "bb-link-brand",
+  /** Üst ve mobil nav */
+  nav: "bb-link-nav",
+} as const;

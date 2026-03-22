@@ -3,6 +3,8 @@ import { Link } from "@/i18n/navigation";
 import { BackButton } from "@/components/back-button";
 import { LocaleSwitcher } from "@/components/locale-switcher";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { link } from "@/lib/design-system";
+import { cn } from "@/lib/utils";
 
 type Props = { locale: string };
 
@@ -21,20 +23,13 @@ export async function SiteHeader({ locale }: Props) {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-6">
         <div className="flex items-center gap-2">
           <BackButton />
-          <Link
-            href="/"
-            className="text-sm font-semibold tracking-tight text-foreground"
-          >
+          <Link href="/" className={link.brand}>
             {brand}
           </Link>
         </div>
         <nav className="hidden items-center gap-8 md:flex" aria-label="Main">
           {links.map(({ href, label }) => (
-            <Link
-              key={href}
-              href={href}
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
+            <Link key={href} href={href} className={link.nav}>
               {label}
             </Link>
           ))}
@@ -49,11 +44,7 @@ export async function SiteHeader({ locale }: Props) {
         aria-label="Main mobile"
       >
         {links.map(({ href, label }) => (
-          <Link
-            key={href}
-            href={href}
-            className="shrink-0 text-sm text-muted-foreground"
-          >
+          <Link key={href} href={href} className={cn("shrink-0", link.nav)}>
             {label}
           </Link>
         ))}

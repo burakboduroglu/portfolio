@@ -91,6 +91,7 @@ Yok sayılan bölüm için metin: `N/A — <kısa gerekçe>` (PRD §5).
 | `section.label` / `section.gap` | Bölüm başlığı (eyebrow stili) ve ana bölüm dikey aralığı |
 | `surface.editorial` | Vitrin panelleri (`bb-showcase-panel`) |
 | `surface.product` | Yoğun liste / tıklanabilir satırlar (`bb-surface-product`) |
+| `link.brand` / `link.nav` | Header metin linkleri (`bb-link-brand`, `bb-link-nav`) |
 
 ---
 
@@ -125,3 +126,4 @@ PRD §7: MVP’de zorunlu değil. Form veya dinamik özellik eklenirse burada ge
 | 1.0 | 2025-03-21 | PRD 1.0 ile hizalı ilk sözlük |
 | 1.1 | 2025-03-21 | Kaynak kök `DATA_DICTIONARY.md` olarak sabitlendi |
 | 1.2 | 2026-03-21 | `DesignSystem` bölümü — `lib/design-system.ts` eşlemesi |
+| 1.3 | 2026-03-21 | `link.brand` / `link.nav` satırı |

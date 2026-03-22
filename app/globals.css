@@ -212,6 +212,31 @@
   @apply rounded-xl border border-border/80 bg-card/90;
 }
 
+/* —— link hover (design-system link.*) —— */
+
+.bb-link-brand {
+  @apply text-sm font-semibold tracking-tight text-foreground underline-offset-4 transition-colors duration-200 ease-out;
+}
+
+.bb-link-brand:hover {
+  @apply text-primary;
+}
+
+.bb-link-nav {
+  @apply text-sm text-muted-foreground underline-offset-[6px] decoration-primary/0 transition-[color,text-decoration-color,text-underline-offset] duration-200 ease-out;
+}
+
+.bb-link-nav:hover {
+  @apply text-foreground underline decoration-primary/45;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bb-link-brand,
+  .bb-link-nav {
+    transition: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .bb-fade-up,
   .bb-fade-up-delayed,

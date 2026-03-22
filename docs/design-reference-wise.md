@@ -74,6 +74,7 @@ Wise Design, Wise’ın markasıdır. Bu proje **referans ve ilham** içindir; t
 | Sayfa kabuğu (geniş / dar tuval), H1 varyantları, yüzey sabitleri | [`lib/design-system.ts`](../lib/design-system.ts) |
 | `bb-*` yardımcı sınıflar, `--spacing-section-y`, mesh / fade animasyonları | [`app/globals.css`](../app/globals.css) |
 | Ürün yüzeyi (iletişim link ızgarası) | `data-surface="product"` + `surface.product` — [`components/contact-linktree.tsx`](../components/contact-linktree.tsx) |
+| Nav / marka link hover | `link.brand`, `link.nav` → `bb-link-*` — [`components/site-header.tsx`](../components/site-header.tsx) |
 
 **Revizyon**
 
@@ -82,3 +83,4 @@ Wise Design, Wise’ın markasıdır. Bu proje **referans ve ilham** içindir; t
 | 1.0 | 2025-03-21 | İlk referans dokümanı |
 | 1.1 | 2026-03-21 | Tasarım metodolojisi: [Wise Design Components](https://wise.design/components) birincil referans olarak tanımlandı |
 | 1.2 | 2026-03-21 | §7: `lib/design-system.ts` + `globals.css` ile kod eşlemesi |
+| 1.3 | 2026-03-21 | §7: `link.*` + `bb-link-*` nav hover |

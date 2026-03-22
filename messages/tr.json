@@ -30,7 +30,7 @@
     "title": "Hakkında",
     "metaDescription": "Burak Boduroğlu — context engineering, prompt engineering, agentic coding, fullstack geliştirme ve DevOps.",
     "lead": "Benim için kaliteli yazılım; doğru context, net promptlar ve güçlü mühendislik temeliyle birlikte çalışan bir sistem demek.",
-    "p1": "Next.js ve TypeScript ile ürün geliştiriyor, Java (Spring Boot) ile backend servisleri kuruyor ve PostgreSQL ile veri katmanını tasarlıyorum. Entegrasyon ve iş akışlarında n8n, dağıtım tarafında Docker/Podman ve VPS/Dokploy kullanıyorum.",
+    "p1": "Next.js ve TypeScript ile ürün geliştiriyorum; backend tarafında Node.js ve Java (Spring Boot) ile servisler kuruyor, PostgreSQL ile veri katmanını tasarlıyorum. Entegrasyon ve iş akışlarında n8n, dağıtım tarafında Docker/Podman ve VPS/Dokploy kullanıyorum.",
     "p2": "Projelerimde LLM kullanımını context engineering ve prompt engineering yaklaşımıyla yönetiyorum. Geliştirme sürecinde Cursor, Codex ve Claude Code gibi araçları aktif kullanarak görevleri daha hızlı ve kontrollü ilerletiyorum.",
     "approachTitle": "Nasıl çalışırım",
     "approach": [

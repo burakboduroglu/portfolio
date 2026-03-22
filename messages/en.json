@@ -13,7 +13,7 @@
   "home": {
     "eyebrow": "Context Engineering · Agentic Coding · Prompt Engineering",
     "headline": "I build LLM-enabled products with strong software fundamentals and agentic workflows.",
-    "sub": "In my projects, I actively use LLMs through context engineering and prompt engineering, and build products with Next.js, Java/Spring Boot, PostgreSQL, n8n, Docker/Podman, and VPS/Dokploy.",
+    "sub": "I build web applications and automation solutions with a strong focus on context engineering and prompt engineering. My core stack includes Next.js, Node.js, TypeScript, Java/Spring Boot, PostgreSQL, n8n, and container-based deployments with Docker/Podman on VPS environments.",
     "ctaAbout": "About",
     "ctaContact": "Contact",
     "pillarsTitle": "Focus areas",
@@ -43,17 +43,28 @@
     "stackTitle": "Stack & tools",
     "stack": [
       "TypeScript",
-      "Java",
       "Next.js",
       "React",
+      "Vite",
       "Tailwind CSS",
-      "Spring Boot",
-      "PostgreSQL",
-      "Docker",
-      "Podman",
-      "n8n",
+      "Figma",
       "Node.js",
+      "Express.js",
+      "Bun",
+      "Java",
+      "Spring Boot",
+      "Hibernate",
+      "Docker",
       "Git",
+      "GitLab",
+      "GitHub",
+      "Notion",
+      "Podman",
+      "PostgreSQL",
+      "MongoDB",
+      "Prisma",
+      "Drizzle",
+      "Redis",
       "Cursor",
       "Claude Code",
       "Codex"
@@ -64,9 +75,9 @@
     "metaDescription": "Social profiles, blog, and email.",
     "body": "Use the links below for profiles and content, or email me directly.",
     "links": {
-      "linkedin": {
-        "title": "LinkedIn",
-        "description": "Professional network"
+      "gitlab": {
+        "title": "GitLab",
+        "description": "Repos and activity"
       },
       "github": {
         "title": "GitHub",
@@ -76,6 +87,18 @@
         "title": "Dev.to",
         "description": "My Dev.to profile"
       },
+      "npm": {
+        "title": "npm",
+        "description": "Published packages"
+      },
+      "reddit": {
+        "title": "Reddit",
+        "description": "Profile"
+      },
+      "linkedin": {
+        "title": "LinkedIn",
+        "description": "Professional network"
+      },
       "medium": {
         "title": "Medium",
         "description": "Articles"
@@ -83,10 +106,6 @@
       "microsoft": {
         "title": "Microsoft Learn",
         "description": "My Microsoft Learn profile"
-      },
-      "portfolio": {
-        "title": "Blogs and tutorials",
-        "description": "Personal blog and notes (GitHub Pages)"
       },
       "youtube": {
         "title": "YouTube",

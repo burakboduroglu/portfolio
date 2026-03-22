@@ -28,7 +28,7 @@ Kaynak: kök [PRD.md](../../PRD.md), [DATA_DICTIONARY.md](../../DATA_DICTIONARY.
 
 ## UI ve kalite
 
-- Görsel ton: [design-reference-wise.md](../../docs/design-reference-wise.md), [burakboduroglu.com.tr](https://burakboduroglu.com.tr/) ve Behance creative-showcase yönü; marka varlığı birebir kopyalanmaz.
+- Görsel ton ve bileşen metodolojisi: [design-reference-wise.md](../../docs/design-reference-wise.md) (birincil: [Wise Design Components](https://wise.design/components)), [burakboduroglu.com.tr](https://burakboduroglu.com.tr/) ve Behance creative-showcase yönü; marka varlığı birebir kopyalanmaz.
 - shadcn + Tailwind ile tutarlı bileşenler; erişilebilirlik (kontrast, heading hiyerarşisi, klavye) — PRD §6.
 - Görseller: Next.js `Image` ve uygun boyut/format; statik öncelikli sayfa üretimi tercih et.
 

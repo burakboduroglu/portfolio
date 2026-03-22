@@ -112,7 +112,7 @@ Her case study sayfasında aşağıdaki başlıklar doldurulmalıdır (yoksa “
 
 ## 6. Tasarım ve UX ilkeleri
 
-- **UI referansı (ilham):** Arayüz tonu ve düzen dili için [Wise Design](https://wise.design/) prensiplerinden ilham alınır; ayrıntılı eşleme ve telif sınırları [docs/design-reference-wise.md](docs/design-reference-wise.md) dosyasında tanımlıdır. Hedef, Wise kimliğini kopyalamak değil; editoryal tipografi, bol beyaz alan, güçlü bölüm ritmi ve çok dillilik hissinin kendi marka paletiyle yorumlanmasıdır.  
+- **UI referansı (ilham):** Tasarım **metodolojisi ve bileşen düzeni** için birincil kaynak [Wise Design — Components](https://wise.design/components) kataloğudur; genel site dili için [Wise Design](https://wise.design/) ile birlikte değerlendirilir. Ayrıntılı eşleme, teknik eşleme (shadcn/ui + Tailwind) ve telif sınırları [docs/design-reference-wise.md](docs/design-reference-wise.md) dosyasında tanımlıdır. Hedef, Wise kimliğini kopyalamak değil; bileşen odaklı tutarlılık, editoryal tipografi, bol beyaz alan, güçlü bölüm ritmi ve çok dillilik hissinin kendi marka paletiyle yorumlanmasıdır.  
 - **Görsel dil:** Okunabilir tipografi, sınırlı renk paleti, shadcn/ui + Tailwind ile tutarlı bileşenler; gereksiz “portfolio klişesi” animasyonlarından kaçınma.  
 - **Erişilebilirlik:** WCAG’e yakın kontrast, klavye ile kullanım, anlamlı heading hiyerarşisi.  
 - **Performans:** Statik öncelikli sayfa üretimi; görsellerde lazy load ve uygun format (uygulama: Next.js Image vb.).  
@@ -243,3 +243,4 @@ Depoda halihazırda Vite + React tabanlı bir portföy bulunabilir. Bu PRD **yen
 | 2025-03-21 | 1.2 | §12 Faz 0: üç proje için TR/EN case study taslakları [content/work/](content/work/) |
 | 2025-03-21 | 1.3 | §12 Faz 1 tamam: next-intl, shadcn, landing/work/case study şablonu ([docs/implementation.md](docs/implementation.md)) |
 | 2026-03-21 | 1.4 | §12 Faz 3 revizyonu: pipeline/container yerine dark mode ve görsel iyileştirme odağı |
+| 2026-03-21 | 1.5 | §6: tasarım metodolojisi [Wise Design Components](https://wise.design/components); [docs/design-reference-wise.md](docs/design-reference-wise.md) güncellendi |

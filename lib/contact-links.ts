@@ -2,14 +2,17 @@ import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import {
   faDev,
   faGithub,
+  faGitlab,
   faLinkedin,
   faMedium,
   faMicrosoft,
+  faNpm,
+  faReddit,
   faTiktok,
   faVsco,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope, faGraduationCap } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 export type ContactLinkDef = {
   id: string;
@@ -20,9 +23,9 @@ export type ContactLinkDef = {
 /** Sıra ve URL’ler; başlık ve açıklama `messages` içinde `contact.links.<id>`. */
 export const CONTACT_LINK_DEFINITIONS: readonly ContactLinkDef[] = [
   {
-    id: "linkedin",
-    url: "https://linkedin.com/in/burakboduroglu",
-    icon: faLinkedin,
+    id: "gitlab",
+    url: "https://gitlab.com/burakboduroglu",
+    icon: faGitlab,
   },
   {
     id: "github",
@@ -35,6 +38,21 @@ export const CONTACT_LINK_DEFINITIONS: readonly ContactLinkDef[] = [
     icon: faDev,
   },
   {
+    id: "npm",
+    url: "https://www.npmjs.com/~burakboduroglu",
+    icon: faNpm,
+  },
+  {
+    id: "reddit",
+    url: "https://www.reddit.com/user/burakboduroglu1/",
+    icon: faReddit,
+  },
+  {
+    id: "linkedin",
+    url: "https://linkedin.com/in/burakboduroglu",
+    icon: faLinkedin,
+  },
+  {
     id: "medium",
     url: "https://medium.com/@burakboduroglu",
     icon: faMedium,
@@ -43,11 +61,6 @@ export const CONTACT_LINK_DEFINITIONS: readonly ContactLinkDef[] = [
     id: "microsoft",
     url: "https://learn.microsoft.com/en-us/users/burakboduroglu",
     icon: faMicrosoft,
-  },
-  {
-    id: "portfolio",
-    url: "https://burakboduroglu.github.io/blogs-and-tutorials/",
-    icon: faGraduationCap,
   },
   {
     id: "youtube",

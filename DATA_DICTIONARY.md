@@ -87,7 +87,7 @@ Kategoriler (MVP minimum); anahtarlar `snake_case` veya `nested.object` — proj
 |------|------------------|----------|
 | `nav` | `nav.home`, `nav.about`, `nav.contact` | Navigasyon |
 | `home` | `home.hero_title`, `home.cta` | Ana sayfa |
-| `about` | `about.title`, `about.stackTitle` | Hakkında |
+| `about` | `about.title`, `about.stackTitle`, `about.stack[]` | Hakkında; stack etiketleri TR/EN aynı (teknik adlar) |
 | `contact` | `contact.title`, `contact.links.*` | İletişim |
 | `common` | `common.language_tr`, `common.language_en` | Dil seçici, footer |
 | `meta` | `meta.default_description` | SEO fallback |

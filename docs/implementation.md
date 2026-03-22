@@ -66,7 +66,7 @@ lib/
 
 - Tailwind CSS + shadcn/ui (PRD §6–7).  
 - Tema: sınırlı palet, güçlü tipografi; gereksiz ağır animasyon yok.  
-- **UI ilhamı:** [design-reference-wise.md](design-reference-wise.md) — [Wise Design](https://wise.design/) editoryal düzeni ve çok dillilik vurgusu; marka varlığı kopyalanmaz.
+- **UI ilhamı ve metodoloji:** [design-reference-wise.md](design-reference-wise.md) — birincil bileşen referansı [Wise Design — Components](https://wise.design/components); genel düzen [Wise Design](https://wise.design/). Uygulama: shadcn/ui + Tailwind; marka varlığı kopyalanmaz.
 
 ---
 

@@ -13,7 +13,7 @@
   "home": {
     "eyebrow": "CONTEXT ENGINEERING · AGENTIC CODING · PROMPT ENGINEERING",
     "headline": "Context engineering ile web uygulamaları ve otomasyon çözümleri geliştiriyorum.",
-    "sub": "Projelerimde LLM’leri context engineering ve prompt engineering ile aktif kullanıyor; Next.js, Java/Spring Boot, PostgreSQL, n8n, Docker/Podman ve VPS/Dokploy ile ürünler geliştiriyorum.",
+    "sub": "Web uygulamaları ve otomasyon çözümlerini context engineering ve prompt engineering odağında geliştiriyorum. Ana stack’im: Next.js, Node.js, TypeScript, Java/Spring Boot, PostgreSQL, n8n ve VPS ortamlarında Docker/Podman ile konteyner tabanlı dağıtımlar.",
     "ctaAbout": "Hakkında",
     "ctaContact": "İletişim",
     "pillarsTitle": "Odak alanları",
@@ -43,17 +43,28 @@
     "stackTitle": "Stack ve araçlar",
     "stack": [
       "TypeScript",
-      "Java",
       "Next.js",
       "React",
+      "Vite",
       "Tailwind CSS",
-      "Spring Boot",
-      "PostgreSQL",
-      "Docker",
-      "Podman",
-      "n8n",
+      "Figma",
       "Node.js",
+      "Express.js",
+      "Bun",
+      "Java",
+      "Spring Boot",
+      "Hibernate",
+      "Docker",
       "Git",
+      "GitLab",
+      "GitHub",
+      "Notion",
+      "Podman",
+      "PostgreSQL",
+      "MongoDB",
+      "Prisma",
+      "Drizzle",
+      "Redis",
       "Cursor",
       "Claude Code",
       "Codex"
@@ -64,9 +75,9 @@
     "metaDescription": "Sosyal profiller, blog ve e-posta ile iletişim.",
     "body": "Aşağıdaki bağlantılardan profillere ve içeriklere gidebilir veya doğrudan e-posta ile yazabilirsiniz.",
     "links": {
-      "linkedin": {
-        "title": "LinkedIn",
-        "description": "Profesyonel ağ"
+      "gitlab": {
+        "title": "GitLab",
+        "description": "Repo ve aktivite"
       },
       "github": {
         "title": "GitHub",
@@ -76,6 +87,18 @@
         "title": "Dev.to",
         "description": "Dev.to profilim"
       },
+      "npm": {
+        "title": "npm",
+        "description": "Yayımlanan paketler"
+      },
+      "reddit": {
+        "title": "Reddit",
+        "description": "Profil"
+      },
+      "linkedin": {
+        "title": "LinkedIn",
+        "description": "Profesyonel ağ"
+      },
       "medium": {
         "title": "Medium",
         "description": "Yazılar"
@@ -83,10 +106,6 @@
       "microsoft": {
         "title": "Microsoft Learn",
         "description": "Learn profilim"
-      },
-      "portfolio": {
-        "title": "Blog ve eğitimler",
-        "description": "Kişisel blog ve notlar (GitHub Pages)"
       },
       "youtube": {
         "title": "YouTube",

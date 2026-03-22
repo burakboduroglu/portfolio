@@ -67,9 +67,18 @@ Wise Design, Wise’ın markasıdır. Bu proje **referans ve ilham** içindir; t
 - [PRD.md](../PRD.md) §6 — ürün düzeyinde tasarım ilkeleri ve bu dosyaya atıf.
 - [implementation.md](implementation.md) §5 — teknik stil ve bileşen uygulaması.
 
+## 7. Kodda uygulama (site ayarları)
+
+| Ne | Nerede |
+|----|--------|
+| Sayfa kabuğu (geniş / dar tuval), H1 varyantları, yüzey sabitleri | [`lib/design-system.ts`](../lib/design-system.ts) |
+| `bb-*` yardımcı sınıflar, `--spacing-section-y`, mesh / fade animasyonları | [`app/globals.css`](../app/globals.css) |
+| Ürün yüzeyi (iletişim link ızgarası) | `data-surface="product"` + `surface.product` — [`components/contact-linktree.tsx`](../components/contact-linktree.tsx) |
+
 **Revizyon**
 
 | Sürüm | Tarih | Not |
 |-------|--------|-----|
 | 1.0 | 2025-03-21 | İlk referans dokümanı |
 | 1.1 | 2026-03-21 | Tasarım metodolojisi: [Wise Design Components](https://wise.design/components) birincil referans olarak tanımlandı |
+| 1.2 | 2026-03-21 | §7: `lib/design-system.ts` + `globals.css` ile kod eşlemesi |

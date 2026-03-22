@@ -6,6 +6,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* design-reference-wise.md: editoryal bölüm ritmi, grid disiplini */
+  --spacing-section-y: 6rem;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
@@ -174,6 +176,40 @@
 
 .bb-showcase-panel {
   @apply rounded-2xl border border-border/80 bg-card/70 shadow-sm backdrop-blur-sm;
+}
+
+/* —— design-system (docs/design-reference-wise.md) —— */
+
+.bb-page-shell-wide {
+  @apply mx-auto max-w-7xl px-6 pb-24 pt-16 md:pt-24;
+}
+
+.bb-page-shell-narrow {
+  @apply mx-auto max-w-4xl px-6 py-16 md:py-24;
+}
+
+.bb-h1-page {
+  @apply text-balance text-4xl font-semibold tracking-tight;
+}
+
+.bb-h1-hero {
+  @apply max-w-4xl text-3xl font-semibold tracking-tight text-balance sm:min-w-0 sm:flex-1 md:text-4xl lg:text-5xl xl:max-w-5xl;
+}
+
+.bb-section-label {
+  @apply text-sm font-semibold uppercase tracking-widest text-muted-foreground;
+}
+
+.bb-eyebrow {
+  @apply text-sm font-medium uppercase tracking-widest text-muted-foreground;
+}
+
+.bb-section-gap {
+  margin-top: var(--spacing-section-y);
+}
+
+.bb-surface-product {
+  @apply rounded-xl border border-border/80 bg-card/90;
 }
 
 @media (prefers-reduced-motion: reduce) {

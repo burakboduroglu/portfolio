@@ -79,6 +79,21 @@ Yok sayılan bölüm için metin: `N/A — <kısa gerekçe>` (PRD §5).
 
 ---
 
+## DesignSystem (layout / yüzey)
+
+[design-reference-wise.md](docs/design-reference-wise.md) ile hizalı teknik sabitler; kodda [`lib/design-system.ts`](lib/design-system.ts) + [`app/globals.css`](app/globals.css).
+
+| Sabit / sınıf | Amaç |
+|---------------|------|
+| `pageShell.editorialWide` | Ana sayfa tuvali (`bb-page-shell-wide`) |
+| `pageShell.editorialNarrow` | About, contact okuma genişliği (`bb-page-shell-narrow`) |
+| `heading.hero` / `heading.page` | Hero H1 vs iç sayfa H1 |
+| `section.label` / `section.gap` | Bölüm başlığı (eyebrow stili) ve ana bölüm dikey aralığı |
+| `surface.editorial` | Vitrin panelleri (`bb-showcase-panel`) |
+| `surface.product` | Yoğun liste / tıklanabilir satırlar (`bb-surface-product`) |
+
+---
+
 ## TranslationKey (UI sözlüğü)
 
 Kategoriler (MVP minimum); anahtarlar `snake_case` veya `nested.object` — projede tek stil seçilir.
@@ -109,3 +124,4 @@ PRD §7: MVP’de zorunlu değil. Form veya dinamik özellik eklenirse burada ge
 |-------|--------|-----|
 | 1.0 | 2025-03-21 | PRD 1.0 ile hizalı ilk sözlük |
 | 1.1 | 2025-03-21 | Kaynak kök `DATA_DICTIONARY.md` olarak sabitlendi |
+| 1.2 | 2026-03-21 | `DesignSystem` bölümü — `lib/design-system.ts` eşlemesi |

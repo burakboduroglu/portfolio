@@ -1,6 +1,13 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { buttonVariants } from "@/components/ui/button-variants";
+import {
+  eyebrow,
+  heading,
+  pageShell,
+  section,
+  surface,
+} from "@/lib/design-system";
 import { cn } from "@/lib/utils";
 import {
   Card,
@@ -18,15 +25,16 @@ export default async function HomePage({ params }: Props) {
   const tNav = await getTranslations({ locale, namespace: "nav" });
 
   return (
-    <div className="mx-auto max-w-7xl px-6 pb-24 pt-16 md:pt-24">
-      <p className="bb-fade-up text-sm font-medium uppercase tracking-widest text-muted-foreground">
-        {t("eyebrow")}
-      </p>
-      <div className="bb-showcase-panel bb-fade-up-delayed mt-6 flex flex-col items-start gap-8 p-6 sm:flex-row sm:items-center sm:gap-10 md:p-8">
+    <div className={pageShell.editorialWide}>
+      <p className={cn("bb-fade-up", eyebrow)}>{t("eyebrow")}</p>
+      <div
+        className={cn(
+          surface.editorial,
+          "bb-fade-up-delayed mt-6 flex flex-col items-start gap-8 p-6 sm:flex-row sm:items-center sm:gap-10 md:p-8",
+        )}
+      >
         <HomeHeroAvatar alt={tNav("brand")} />
-        <h1 className="max-w-4xl text-3xl font-semibold tracking-tight text-balance sm:min-w-0 sm:flex-1 md:text-4xl lg:text-5xl xl:max-w-5xl">
-          {t("headline")}
-        </h1>
+        <h1 className={heading.hero}>{t("headline")}</h1>
       </div>
       <p className="bb-fade-up-delayed-2 mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground text-pretty">
         {t("sub")}
@@ -46,10 +54,8 @@ export default async function HomePage({ params }: Props) {
         </Link>
       </div>
 
-      <section className="bb-fade-up-delayed-3 mt-24">
-        <h2 className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-          {t("pillarsTitle")}
-        </h2>
+      <section className={cn("bb-fade-up-delayed-3", section.gap)}>
+        <h2 className={section.label}>{t("pillarsTitle")}</h2>
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {[
             {
@@ -71,7 +77,7 @@ export default async function HomePage({ params }: Props) {
           ].map((item) => (
             <Card
               key={item.title}
-              className="border-border/80 bg-card/80 shadow-none backdrop-blur-sm transition duration-300 ease-out hover:-translate-y-1 hover:border-primary/35"
+              className="border-border/80 bg-card/80 shadow-none backdrop-blur-sm transition-[border-color,box-shadow] duration-200 ease-out hover:border-primary/30 hover:shadow-sm"
             >
               <CardHeader>
                 <CardTitle className="text-lg">{item.title}</CardTitle>

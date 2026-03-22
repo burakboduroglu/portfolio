@@ -4,6 +4,7 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTranslations } from "next-intl";
 import { CONTACT_LINK_DEFINITIONS } from "@/lib/contact-links";
+import { surface } from "@/lib/design-system";
 import { cn } from "@/lib/utils";
 
 config.autoAddCss = false;
@@ -15,7 +16,10 @@ export function ContactLinktree() {
   const linksCopy = t.raw("links") as Record<string, LinkCopy>;
 
   return (
-    <ul className="mx-auto mt-12 grid max-w-4xl gap-3 md:grid-cols-2">
+    <ul
+      className="mt-12 grid w-full gap-2.5 md:grid-cols-2 md:gap-3"
+      data-surface="product"
+    >
       {CONTACT_LINK_DEFINITIONS.map((link) => {
         const isMailto = link.url.startsWith("mailto:");
         const copy = linksCopy[link.id];
@@ -27,7 +31,8 @@ export function ContactLinktree() {
                 ? {}
                 : { target: "_blank", rel: "noopener noreferrer" })}
               className={cn(
-                "flex items-start gap-4 rounded-xl border border-border bg-card px-4 py-3 text-card-foreground shadow-sm transition-colors",
+                surface.product,
+                "flex items-start gap-4 px-4 py-3 text-card-foreground shadow-sm transition-colors duration-200",
                 "hover:border-primary/40 hover:bg-accent/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
               )}
             >

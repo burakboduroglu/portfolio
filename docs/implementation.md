@@ -67,6 +67,7 @@ lib/
 - Tailwind CSS + shadcn/ui (PRD §6–7).  
 - Tema: sınırlı palet, güçlü tipografi; gereksiz ağır animasyon yok.  
 - **UI ilhamı ve metodoloji:** [design-reference-wise.md](design-reference-wise.md) — birincil bileşen referansı [Wise Design — Components](https://wise.design/components); genel düzen [Wise Design](https://wise.design/). Uygulama: shadcn/ui + Tailwind; marka varlığı kopyalanmaz.
+- **Düzen sözleşmesi:** [`lib/design-system.ts`](../lib/design-system.ts) (sayfa kabuğu, `heading`, `section`, `surface`) + [`app/globals.css`](../app/globals.css) içindeki `bb-*` sınıfları; ayrıntı [design-reference-wise.md](design-reference-wise.md) §7.
 
 ---
 
@@ -125,3 +126,4 @@ Sayısal eşikler scaffold tamamlandığında buraya yazılır:
 | 1.1 | 2025-03-21 | Faz 0 içerik ağacı ve içerik deseni kilidi |
 | 1.2 | 2025-03-21 | Faz 1: next-intl, shadcn, sayfalar, içerik boru hattı |
 | 1.3 | 2026-03-21 | Faz 3 yön değişimi: dark mode + tasarım iyileştirmesi |
+| 1.4 | 2026-03-21 | §5: `lib/design-system.ts` + design-reference-wise §7 kod eşlemesi |

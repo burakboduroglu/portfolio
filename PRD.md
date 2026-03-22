@@ -76,8 +76,9 @@ Kişisel site; aşağıdaki uzmanlık alanlarını tek bir profesyonel kimlikte 
 | Rota (örnek) | Açıklama |
 |--------------|----------|
 | `/[locale]` | Ana sayfa |
+| `/[locale]/projects` | Öne çıkan projeler (harici npm/GitHub bağlantıları; kart düzeni) |
 | `/[locale]/about` | Hakkında |
-| `/[locale]/work` | Proje listesi |
+| `/[locale]/work` | İçerik tabanlı proje / case study listesi (ileride `content/work` ile) |
 | `/[locale]/work/[slug]` | Case study |
 | `/[locale]/contact` | İletişim (veya sadece footer — PRD tercihi uygulamada sabitlenir) |
 
@@ -244,3 +245,4 @@ Depoda halihazırda Vite + React tabanlı bir portföy bulunabilir. Bu PRD **yen
 | 2025-03-21 | 1.3 | §12 Faz 1 tamam: next-intl, shadcn, landing/work/case study şablonu ([docs/implementation.md](docs/implementation.md)) |
 | 2026-03-21 | 1.4 | §12 Faz 3 revizyonu: pipeline/container yerine dark mode ve görsel iyileştirme odağı |
 | 2026-03-21 | 1.5 | §6: tasarım metodolojisi [Wise Design Components](https://wise.design/components); [docs/design-reference-wise.md](docs/design-reference-wise.md) güncellendi |
+| 2026-03-21 | 1.6 | §4: `/[locale]/projects` öne çıkan harici projeler; `/work` içerik tabanlı liste olarak ayrıldı |

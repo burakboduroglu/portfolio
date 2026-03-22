@@ -8,7 +8,9 @@ export default async function NotFound() {
 
   return (
     <div className="mx-auto flex min-h-[50vh] max-w-lg flex-col items-center justify-center px-6 py-24 text-center">
-      <h1 className="text-3xl font-semibold tracking-tight">{t("title")}</h1>
+      <h1 className="font-mono text-3xl font-semibold tracking-tight">
+        {t("title")}
+      </h1>
       <Link
         href="/"
         className={cn(buttonVariants({ variant: "default" }), "mt-8")}

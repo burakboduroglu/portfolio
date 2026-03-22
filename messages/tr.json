@@ -8,11 +8,13 @@
     "back": "Geri",
     "home": "Ana sayfa",
     "about": "Hakkında",
+    "projects": "Projeler",
     "contact": "İletişim"
   },
   "home": {
     "eyebrow": "CONTEXT ENGINEERING · AGENTIC CODING · PROMPT ENGINEERING",
-    "headline": "Context engineering ile web uygulamaları ve otomasyon çözümleri geliştiriyorum.",
+    "heroTitle": "Burak Boduroğlu",
+    "heroSubtitle": "Uygulamalar ve otomasyon çözümleri geliştiriyorum.",
     "sub": "Web uygulamaları ve otomasyon çözümlerini context engineering ve prompt engineering odağında geliştiriyorum. Ana stack’im: Next.js, Node.js, TypeScript, Java/Spring Boot, PostgreSQL, n8n ve VPS ortamlarında Docker/Podman ile konteyner tabanlı dağıtımlar.",
     "ctaAbout": "Hakkında",
     "ctaContact": "İletişim",
@@ -24,21 +26,36 @@
     "pillarDevops": "DevOps",
     "pillarDevopsDesc": "Container tabanlı ortamlar, VPS ve Dokploy ile güvenli dağıtım ve operasyonel devamlılık üzerinde çalışırım.",
     "pillarAi": "Context & Prompt Engineering",
-    "pillarAiDesc": "Context modelleme, prompt şablonları, guardrail'ler ve değerlendirme döngüleriyle LLM davranışını daha öngörülebilir hale getiririm."
+    "pillarAiDesc": "Context & Prompt Engineering ile uygulamalar ve otomasyon çözümleri geliştiriyorum."
   },
   "about": {
     "title": "Hakkında",
     "metaDescription": "Burak Boduroğlu — context engineering, prompt engineering, agentic coding, fullstack geliştirme ve DevOps.",
-    "lead": "Benim için kaliteli yazılım; doğru context, net promptlar ve güçlü mühendislik temeliyle birlikte çalışan bir sistem demek.",
+    "lead": "\"Benim için kaliteli yazılım; doğru context, net promptlar ve güçlü mühendislik temeliyle birlikte çalışan bir sistem demek.\"",
     "p1": "Next.js ve TypeScript ile ürün geliştiriyorum; backend tarafında Node.js ve Java (Spring Boot) ile servisler kuruyor, PostgreSQL ile veri katmanını tasarlıyorum. Entegrasyon ve iş akışlarında n8n, dağıtım tarafında Docker/Podman ve VPS/Dokploy kullanıyorum.",
     "p2": "Projelerimde LLM kullanımını context engineering ve prompt engineering yaklaşımıyla yönetiyorum. Geliştirme sürecinde Cursor, Codex ve Claude Code gibi araçları aktif kullanarak görevleri daha hızlı ve kontrollü ilerletiyorum.",
-    "approachTitle": "Nasıl çalışırım",
+    "approachTitle": "Nasıl Çalışırım",
     "approach": [
-      "Önce problemi, kısıtları ve başarı ölçütünü netleştirmek",
-      "Küçük, tekrarlanabilir teslim parçaları ve erken geri bildirim",
-      "Gözlemlenebilirlik ve mümkün olduğunca basit geri alma yolları",
-      "LLM tarafında context engineering, prompt engineering ve guardrail odaklı değerlendirme döngüleri",
-      "Agentic coding akışlarında görev kırılımı, araç seçimi ve kalite kontrol adımlarını netleştirmek"
+      {
+        "lead": "Problemi, kısıtları ve başarı kriterini önce netleştir",
+        "detail": "Ne inşa ettiğini bilmeden yazmaya başlamak, pusulasız yol almak gibidir."
+      },
+      {
+        "lead": "Küçük, tekrarlanabilir teslimatlar ve erken geri bildirim döngüleri",
+        "detail": "Büyük bang yerine sık ve küçük adımlarla ilerle; hata ne kadar erken yakalanırsa o kadar ucuza kapanır."
+      },
+      {
+        "lead": "Gözlemlenebilirlik ve sade geri alma yolları",
+        "detail": "Sistemin içinde ne olduğunu görebilmek, sorun çıktığında da hızla önceki çalışır hale dönebilmek şart."
+      },
+      {
+        "lead": "LLM katmanında context engineering, prompt engineering ve guardrail odaklı değerlendirme döngüleri",
+        "detail": "Modelin ne gördüğü, ne yapması gerektiği ve sınırların nerede çizildiği sürekli test edilmeli."
+      },
+      {
+        "lead": "Agentic akışlarda görev kırılımı, araç seçimi ve kalite kontrol adımlarını baştan netleştir",
+        "detail": "Otonom bir ajan çalışmaya başlamadan önce hangi adımı atacağı, hangi aracı kullanacağı ve çıktının nasıl doğrulanacağı açık olmalı."
+      }
     ],
     "stackTitle": "Stack ve araçlar",
     "stack": [
@@ -69,6 +86,27 @@
       "Claude Code",
       "Codex"
     ]
+  },
+  "projects": {
+    "title": "Projeler",
+    "metaDescription": "Açık kaynak paketler, GitHub çalışmaları ve yayında olan web projeleri.",
+    "intro": "Ürettiğim ve üzerinde çalıştığım işler: npm paketleri, açık kaynak repolar ve canlıdaki web siteleri. Aşağıdaki kartlar harici adrese gider; tıklayınca yeni sekmede açılır.",
+    "linkLabel": "Projeyi aç",
+    "portkill": {
+      "description": "npm üzerindeki CLI aracı; geliştirme sırasında belirli portları dinleyen süreçleri sonlandırmaya yönelik."
+    },
+    "eruSocial": {
+      "title": "Eru Social Web",
+      "description": "Erciyes Üniversitesi tasarım projesi kapsamında geliştirilen sosyal web uygulaması; gönderi ve topluluk akışları, Clerk ile kimlik doğrulama (Next.js, MongoDB)."
+    },
+    "acapair": {
+      "title": "Acapair",
+      "description": "Eğitim odaklı yayın platformu için organizasyon deposu; Rust ve TypeScript tabanlı API ve servis repoları."
+    },
+    "alicePalazzo": {
+      "title": "Alice Palazzo",
+      "description": "Kayseri’de düğün ve balo salonu için tanıtım sitesi; hizmetler, sanal tur ve iletişim odaklı deneyim."
+    }
   },
   "contact": {
     "title": "İletişim",

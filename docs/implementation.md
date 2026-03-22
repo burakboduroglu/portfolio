@@ -23,6 +23,7 @@ app/
     layout.tsx               # html/lang, NextIntlClientProvider, header/footer
     page.tsx                 # Ana sayfa
     about/page.tsx
+    projects/page.tsx
     contact/page.tsx
     not-found.tsx
   globals.css
@@ -41,6 +42,7 @@ components/
   locale-switcher.tsx
 lib/
   utils.ts
+  featured-projects.ts
 ```
 
 **İçerik deseni (Faz 0 kilidi):** Locale başına **`tr.md` / `en.md`** (Markdown + YAML frontmatter); `slug` ve `stack` her iki dosyada aynı. PRD §5 bölümleri gövdede `##` başlıklarıyla. Faz 1’de uzantı MDX’e taşınabilir.
@@ -127,3 +129,4 @@ Sayısal eşikler scaffold tamamlandığında buraya yazılır:
 | 1.2 | 2025-03-21 | Faz 1: next-intl, shadcn, sayfalar, içerik boru hattı |
 | 1.3 | 2026-03-21 | Faz 3 yön değişimi: dark mode + tasarım iyileştirmesi |
 | 1.4 | 2026-03-21 | §5: `lib/design-system.ts` + design-reference-wise §7 kod eşlemesi |
+| 1.5 | 2026-03-21 | `/[locale]/projects` + `lib/featured-projects.ts` |

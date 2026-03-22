@@ -14,6 +14,7 @@ export async function SiteHeader({ locale }: Props) {
 
   const links = [
     { href: "/", label: t("home") },
+    { href: "/projects", label: t("projects") },
     { href: "/about", label: t("about") },
     { href: "/contact", label: t("contact") },
   ] as const;

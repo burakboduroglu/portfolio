@@ -12,7 +12,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
+  --font-heading: var(--font-geist-mono);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -189,19 +189,19 @@
 }
 
 .bb-h1-page {
-  @apply text-balance text-4xl font-semibold tracking-tight;
+  @apply font-mono text-balance text-4xl font-semibold tracking-tight;
 }
 
 .bb-h1-hero {
-  @apply max-w-4xl text-3xl font-semibold tracking-tight text-balance sm:min-w-0 sm:flex-1 md:text-4xl lg:text-5xl xl:max-w-5xl;
+  @apply max-w-4xl font-mono text-3xl font-semibold tracking-tight text-balance sm:min-w-0 sm:flex-1 md:text-4xl lg:text-5xl xl:max-w-5xl;
 }
 
 .bb-section-label {
-  @apply text-sm font-semibold uppercase tracking-widest text-muted-foreground;
+  @apply font-mono text-sm font-semibold uppercase tracking-widest text-muted-foreground;
 }
 
 .bb-eyebrow {
-  @apply text-sm font-medium uppercase tracking-widest text-muted-foreground;
+  @apply font-mono text-sm font-medium uppercase tracking-widest text-muted-foreground;
 }
 
 .bb-section-gap {
@@ -210,6 +210,13 @@
 
 .bb-surface-product {
   @apply rounded-xl border border-border/80 bg-card/90;
+}
+
+/** Kart hover: hafif kalkış, gölge, arka plan (motion-reduce’da transform yok) */
+.bb-card-hover {
+  @apply transition-[border-color,box-shadow,transform,background-color] duration-200 ease-out;
+  @apply hover:-translate-y-1 hover:border-primary/45 hover:bg-accent/25 hover:shadow-md;
+  @apply motion-reduce:hover:translate-y-0;
 }
 
 /* —— link hover (design-system link.*) —— */

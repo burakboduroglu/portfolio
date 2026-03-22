@@ -23,6 +23,7 @@ MVP sayfa türleri (PRD §4):
 | `pageType` | Rota örneği | Amaç |
 |------------|-------------|------|
 | `home` | `/[locale]` | Hero, value prop, öne çıkan projeler, CTA |
+| `projects` | `/[locale]/projects` | Öne çıkan harici projeler (kartlar); metin `messages` `projects.*` |
 | `about` | `/[locale]/about` | Bio, odak alanları |
 | `contact` | `/[locale]/contact` | İletişim (veya yalnızca footer — ürün kararı) |
 
@@ -91,6 +92,7 @@ Yok sayılan bölüm için metin: `N/A — <kısa gerekçe>` (PRD §5).
 | `section.label` / `section.gap` | Bölüm başlığı (eyebrow stili) ve ana bölüm dikey aralığı |
 | `surface.editorial` | Vitrin panelleri (`bb-showcase-panel`) |
 | `surface.product` | Yoğun liste / tıklanabilir satırlar (`bb-surface-product`) |
+| `surface.cardHover` | Kart ızgarası hover (`bb-card-hover`) |
 | `link.brand` / `link.nav` | Header metin linkleri (`bb-link-brand`, `bb-link-nav`) |
 
 ---
@@ -101,9 +103,10 @@ Kategoriler (MVP minimum); anahtarlar `snake_case` veya `nested.object` — proj
 
 | Grup | Örnek anahtarlar | Kullanım |
 |------|------------------|----------|
-| `nav` | `nav.home`, `nav.about`, `nav.contact` | Navigasyon |
-| `home` | `home.hero_title`, `home.cta` | Ana sayfa |
-| `about` | `about.title`, `about.stackTitle`, `about.stack[]` | Hakkında; stack etiketleri TR/EN aynı (teknik adlar) |
+| `nav` | `nav.home`, `nav.projects`, `nav.about`, `nav.contact` | Navigasyon |
+| `home` | `home.heroTitle`, `home.heroSubtitle`, `home.sub`, `home.cta*` | Ana sayfa (hero: isim + tagline) |
+| `about` | `about.title`, `about.approachTitle`, `about.approach[]` (`lead`, `detail`), `about.stackTitle`, `about.stack[]` | Hakkında; `approach` maddeleri kalın başlık + gövde; stack etiketleri TR/EN aynı (teknik adlar) |
+| `projects` | `projects.title`, `projects.intro`, `projects.linkLabel`, `projects.portkill.description` (başlık kodda: `.portkill`), diğer id’ler için `{title,description}` | Proje kartları; URL’ler [`lib/featured-projects.ts`](lib/featured-projects.ts) |
 | `contact` | `contact.title`, `contact.links.*` | İletişim |
 | `common` | `common.language_tr`, `common.language_en` | Dil seçici, footer |
 | `meta` | `meta.default_description` | SEO fallback |
@@ -127,3 +130,6 @@ PRD §7: MVP’de zorunlu değil. Form veya dinamik özellik eklenirse burada ge
 | 1.1 | 2025-03-21 | Kaynak kök `DATA_DICTIONARY.md` olarak sabitlendi |
 | 1.2 | 2026-03-21 | `DesignSystem` bölümü — `lib/design-system.ts` eşlemesi |
 | 1.3 | 2026-03-21 | `link.brand` / `link.nav` satırı |
+| 1.4 | 2026-03-21 | `about.approach`: `string[]` → `{ lead, detail }[]` |
+| 1.5 | 2026-03-21 | `PageType.projects`, `projects.*` çeviri grubu, `nav.projects` |
+| 1.6 | 2026-03-22 | `home.headline` → `home.heroTitle` + `home.heroSubtitle` |

@@ -34,7 +34,12 @@ export default async function HomePage({ params }: Props) {
         )}
       >
         <HomeHeroAvatar alt={tNav("brand")} />
-        <h1 className={heading.hero}>{t("headline")}</h1>
+        <div className="max-w-4xl space-y-3 text-balance sm:min-w-0 sm:flex-1">
+          <h1 className={heading.hero}>{t("heroTitle")}</h1>
+          <p className="text-xl font-medium leading-relaxed text-muted-foreground text-pretty sm:text-2xl">
+            {t("heroSubtitle")}
+          </p>
+        </div>
       </div>
       <p className="bb-fade-up-delayed-2 mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground text-pretty">
         {t("sub")}
@@ -77,7 +82,10 @@ export default async function HomePage({ params }: Props) {
           ].map((item) => (
             <Card
               key={item.title}
-              className="border-border/80 bg-card/80 shadow-none backdrop-blur-sm transition-[border-color,box-shadow] duration-200 ease-out hover:border-primary/30 hover:shadow-sm"
+              className={cn(
+                "border-border/80 bg-card/80 shadow-none backdrop-blur-sm",
+                surface.cardHover,
+              )}
             >
               <CardHeader>
                 <CardTitle className="text-lg">{item.title}</CardTitle>

@@ -38,6 +38,8 @@ export const eyebrow = "bb-eyebrow" as const;
 export const surface = {
   editorial: "bb-showcase-panel",
   product: "bb-surface-product",
+  /** shadcn Card — vitrin ızgarası (ana sayfa, projeler) */
+  cardHover: "bb-card-hover",
 } as const;
 
 /**

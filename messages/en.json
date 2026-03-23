@@ -132,10 +132,6 @@
         "title": "npm",
         "description": "Published packages"
       },
-      "reddit": {
-        "title": "Reddit",
-        "description": "Profile"
-      },
       "linkedin": {
         "title": "LinkedIn",
         "description": "Professional network"

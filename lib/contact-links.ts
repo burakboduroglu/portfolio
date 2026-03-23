@@ -7,7 +7,6 @@ import {
   faMedium,
   faMicrosoft,
   faNpm,
-  faReddit,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
@@ -39,11 +38,6 @@ export const CONTACT_LINK_DEFINITIONS: readonly ContactLinkDef[] = [
     id: "npm",
     url: "https://www.npmjs.com/~burakboduroglu",
     icon: faNpm,
-  },
-  {
-    id: "reddit",
-    url: "https://www.reddit.com/user/burboduroglu/",
-    icon: faReddit,
   },
   {
     id: "linkedin",

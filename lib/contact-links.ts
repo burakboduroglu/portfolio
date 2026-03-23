@@ -8,8 +8,6 @@ import {
   faMicrosoft,
   faNpm,
   faReddit,
-  faTiktok,
-  faVsco,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
@@ -44,7 +42,7 @@ export const CONTACT_LINK_DEFINITIONS: readonly ContactLinkDef[] = [
   },
   {
     id: "reddit",
-    url: "https://www.reddit.com/user/Human-Natural-3857/",
+    url: "https://www.reddit.com/user/burboduroglu/",
     icon: faReddit,
   },
   {
@@ -66,16 +64,6 @@ export const CONTACT_LINK_DEFINITIONS: readonly ContactLinkDef[] = [
     id: "youtube",
     url: "https://www.youtube.com/@burakboduroglu",
     icon: faYoutube,
-  },
-  {
-    id: "tiktok",
-    url: "https://www.tiktok.com/@burak_boduroglu",
-    icon: faTiktok,
-  },
-  {
-    id: "vsco",
-    url: "https://vsco.co/burakbodurogluu",
-    icon: faVsco,
   },
   {
     id: "contact",

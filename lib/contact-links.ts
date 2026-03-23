@@ -44,7 +44,7 @@ export const CONTACT_LINK_DEFINITIONS: readonly ContactLinkDef[] = [
   },
   {
     id: "reddit",
-    url: "https://www.reddit.com/user/burakboduroglu1/",
+    url: "https://www.reddit.com/user/Human-Natural-3857/",
     icon: faReddit,
   },
   {

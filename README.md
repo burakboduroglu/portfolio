@@ -1,35 +1,27 @@
-# Portfolio
+# Notion-style Portfolio
 
-Kişisel site — [PRD.md](PRD.md), [DATA_DICTIONARY.md](DATA_DICTIONARY.md) ve [docs/](docs/) ile hizalı. Stack: **Next.js 16** (App Router), **next-intl** (`/tr`, `/en`), **Tailwind v4**, **shadcn/ui** (base nova).
+A minimalist personal portfolio built with React and Vite, inspired by the clean editorial layout of [benlang.me](https://benlang.me).
 
-## Geliştirme
+## Getting started
 
-```bash
+Install dependencies:
+
+```sh
 npm install
+```
+
+Start the dev server:
+
+```sh
 npm run dev
 ```
 
-Kök `/` otomatik olarak varsayılan locale’e yönlendirilir (`/tr`). Sayfalar: `/[locale]`, `/about`, `/contact`.
+Build for production:
 
-## Üretim
-
-```bash
+```sh
 npm run build
-npm start
 ```
 
-`npm start` yerel olarak `127.0.0.1` bağlar (bazı ortamlarda `os.networkInterfaces` hatasını önlemek için). `NEXT_PUBLIC_SITE_URL` kanonik URL için kullanılabilir (OG / metadata).
+## Customize
 
-Ana sayfadaki yuvarlak profil görseli GitHub avatarından gelir: `NEXT_PUBLIC_GITHUB_USERNAME` (varsayılan `burakboduroglu`) → `https://github.com/<kullanıcı>.png`. `https://github.com/account` bir görsel adresi değildir.
-
-## Dokümantasyon
-
-| Dosya | Açıklama |
-|-------|-----------|
-| [PRD.md](PRD.md) | Ürün kapsamı ve yol haritası |
-| [DATA_DICTIONARY.md](DATA_DICTIONARY.md) | İçerik alanları |
-| [docs/implementation.md](docs/implementation.md) | Dizin yapısı, tema ve teknik notlar |
-
-## Lisans
-
-Projeye uygun lisans dosyasını repo köküne ekleyin (ör. MIT).
+Most of the content lives in `src/App.jsx`. Update the arrays at the top of the file to add your own work history, projects, investments, links, and contact details.

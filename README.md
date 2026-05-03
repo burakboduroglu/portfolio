@@ -1,35 +1,17 @@
-# Portföy Sayfam
+# Portfolio site
 
-Kişisel portföy ve projelerimi göstermek için React ve Vite ile oluşturdum.
+This repository holds the source for my personal site: a single page that introduces who I am, how I work, and the small products and tools I ship. It is meant to read like a hand-built portfolio—not a reusable template or a library for others to install.
 
-## Başlangıç
+## What it is
 
-Bağımlılıkları yükle:
+The page pairs a calm, editorial hero (photo, short positioning copy, location) with a **Reach out** block for direct links. Below that sits an **Apps** section styled like a focused product shelf: each entry is a real project with its own story, stack, and links, instead of a generic grid of cards.
 
-```sh
-npm install
-```
+Visually I leaned toward clarity and restraint: monospace type, light structure, a single accent color, and enough whitespace that the content—not chrome—carries the impression.
 
-Geliştirme sunucusunu başlat:
+## What I used
 
-```sh
-npm run dev
-```
+The UI is **React** on **Vite**, with layout and typography in plain CSS. Icons come from **Lucide** where it fits; a couple of brand marks are inlined where the icon set does not ship them. Content and copy live in code (`src/App.jsx`) so the whole thing stays easy to revise and deploy as static files.
 
-Üretim için derle:
+## If you cloned the repo
 
-```sh
-npm run build
-```
-
-## Deploy
-
-GitHub Pages'e dağıt:
-
-```sh
-npm run deploy
-```
-
-## İçeriği Düzenle
-
-`src/App.jsx` dosyasında tüm içerik bulunur. Kendi deneyimlerimi, projelerimi ve bağlantılarımı buradan güncelleyebilirim.
+You are looking at my site’s source, not a packaged product. Still, the usual Vite commands apply: `npm install`, `npm run dev` for local preview, `npm run build` for production output. I deploy the built `dist` to **GitHub Pages** with `npm run deploy` when I publish updates.

@@ -1,27 +1,35 @@
-# Notion-style Portfolio
+# Portföy Sayfam
 
-A minimalist personal portfolio built with React and Vite, inspired by the clean editorial layout of [benlang.me](https://benlang.me).
+Kişisel portföy ve projelerimi göstermek için React ve Vite ile oluşturdum.
 
-## Getting started
+## Başlangıç
 
-Install dependencies:
+Bağımlılıkları yükle:
 
 ```sh
 npm install
 ```
 
-Start the dev server:
+Geliştirme sunucusunu başlat:
 
 ```sh
 npm run dev
 ```
 
-Build for production:
+Üretim için derle:
 
 ```sh
 npm run build
 ```
 
-## Customize
+## Deploy
 
-Most of the content lives in `src/App.jsx`. Update the arrays at the top of the file to add your own work history, projects, investments, links, and contact details.
+GitHub Pages'e dağıt:
+
+```sh
+npm run deploy
+```
+
+## İçeriği Düzenle
+
+`src/App.jsx` dosyasında tüm içerik bulunur. Kendi deneyimlerimi, projelerimi ve bağlantılarımı buradan güncelleyebilirim.

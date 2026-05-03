@@ -399,6 +399,24 @@ blockquote {
   outline-offset: 2px;
 }
 
+/* Mobile: give hero location line some bottom gap */
+@media (max-width: 600px) {
+  .location-line--hero {
+    margin-bottom: 18px;
+    padding-top: 10px;
+  }
+
+  /* Close vertical gap in reach-out column on mobile */
+  .reach-out-column {
+    gap: 5px;
+  }
+
+  /* Nudge the reach-out pre text a bit to the right on mobile */
+  .reach-out-pre {
+    padding-left: 12px;
+  }
+}
+
 .reach-out-link-icon {
   flex-shrink: 0;
   opacity: 0.42;

@@ -105,6 +105,7 @@ const apps = [
   {
     id: 'portkill',
     categoryKey: 'cli',
+    categoryKeys: ['cli', 'developer'],
     category: 'CLI App',
     title: '.portkill',
     subtitle: 'Free stuck TCP ports in one command',
@@ -122,6 +123,30 @@ const apps = [
     heroTitle: 'Free ports without memorizing commands.',
     heroText:
       'A focused developer tool for finding and killing port-bound processes quickly and safely.',
+  },
+  {
+    id: 'dev-notes',
+    categoryKey: 'cli',
+    categoryKeys: ['cli', 'developer'],
+    category: 'CLI / DevTool',
+    title: 'DevNotes',
+    subtitle: 'Developer notes from the command line',
+    repo: 'https://github.com/burakboduroglu/dev-notes',
+    description:
+      'A CLI and developer tool for keeping practical development notes close to the terminal, so commands, snippets, and implementation details stay easy to capture and revisit.',
+    stack: 'Developer Tool',
+    platform: 'CLI',
+    price: 'Free',
+    stars: '—',
+    forks: '—',
+    action: 'Get',
+    icon: 'DN',
+    logoUrl:
+      'https://raw.githubusercontent.com/burakboduroglu/dev-notes/main/assets/devnotes-logo.svg',
+    accent: 'devnotes',
+    heroTitle: 'Keep developer notes where the work happens.',
+    heroText:
+      'DevNotes is a terminal-friendly notes utility for saving the commands, snippets, and context you reach for while building.',
   },
   {
     id: 'alice',
@@ -145,6 +170,10 @@ const apps = [
       'Alice is a clean promotional website concept for showcasing a wedding venue with a calm, elegant, and conversion-focused presentation.',
   },
 ]
+
+function getAppCategoryKeys(app) {
+  return app.categoryKeys ?? [app.categoryKey]
+}
 
 const contactTopics = [
   {
@@ -422,11 +451,9 @@ function AppsSite() {
     const categoryApps =
       activeCategory === 'all'
         ? apps
-        : activeCategory === 'developer'
-          ? apps.filter((app) => app.categoryKey === 'cli')
-          : activeCategory === 'productivity'
-            ? apps.filter((app) => app.id === 'macshelf')
-            : apps.filter((app) => app.categoryKey === activeCategory)
+        : activeCategory === 'productivity'
+          ? apps.filter((app) => app.id === 'macshelf')
+          : apps.filter((app) => getAppCategoryKeys(app).includes(activeCategory))
 
     if (!query) {
       return categoryApps

@@ -796,6 +796,12 @@ blockquote {
     linear-gradient(135deg, #05130b, #12311d 52%, #06150b);
 }
 
+.store-app-icon.devnotes {
+  background:
+    radial-gradient(circle at 28% 18%, rgba(250, 204, 21, 0.2), transparent 28px),
+    linear-gradient(135deg, #15110a, #332414 52%, #0e1827);
+}
+
 .portkill-mark {
   display: inline-flex;
   align-items: center;
@@ -1076,6 +1082,13 @@ blockquote {
 
 .store-preview.rose {
   background: radial-gradient(circle at top, #b64d64, #16070c 70%);
+}
+
+.store-preview.devnotes {
+  background:
+    radial-gradient(circle at 76% 18%, rgba(250, 204, 21, 0.32), transparent 16rem),
+    radial-gradient(circle at 22% 2%, rgba(56, 189, 248, 0.18), transparent 14rem),
+    linear-gradient(145deg, #15110a 0%, #07111f 72%);
 }
 
 .preview-window {

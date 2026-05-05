@@ -14,4 +14,4 @@ The UI is **React** on **Vite**, with layout and typography in plain CSS. Icons 
 
 ## If you cloned the repo
 
-You are looking at my site’s source, not a packaged product. Still, the usual Vite commands apply: `npm install`, `npm run dev` for local preview, `npm run build` for production output. I deploy the built `dist` to **GitHub Pages** with `npm run deploy` when I publish updates.
+You are looking at my site’s source, not a packaged product. Still, the usual Vite commands apply: `npm install`, `npm run dev` for local preview, and `npm run build` for production output. Pushes to `main` are deployed to **GitHub Pages** automatically through GitHub Actions; `npm run deploy` remains available as a manual fallback.

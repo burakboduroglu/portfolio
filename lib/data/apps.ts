@@ -1,0 +1,122 @@
+import { AppCard } from '../types/app'
+
+const apps: AppCard[] = [
+  {
+    id: 'macshelf',
+    categoryKey: 'macos',
+    category: 'macOS App',
+    title: 'MacShelf',
+    subtitle: 'Native clipboard shelf for macOS',
+    repo: 'https://github.com/burakboduroglu/macshelf',
+    link: 'https://github.com/burakboduroglu/macshelf',
+    description:
+      'A native macOS clipboard shelf for text and images. Built as a small productivity utility for keeping useful snippets close without breaking flow.',
+    stack: 'Swift',
+    platform: 'macOS',
+    price: 'Free',
+    stars: '2',
+    forks: '0',
+    action: 'Get',
+    icon: 'M',
+    logoUrl:
+      'https://raw.githubusercontent.com/burakboduroglu/macshelf/main/assets/macshelf-logo.svg',
+    accent: 'dark',
+    heroTitle: 'Your clipboard, always in sight.',
+    heroText:
+      'MacShelf keeps text and image snippets ready on your Mac — simple, native, and out of the way.',
+  },
+  {
+    id: 'portkill',
+    categoryKey: 'cli',
+    categoryKeys: ['cli', 'developer'],
+    category: 'CLI App',
+    title: '.portkill',
+    subtitle: 'Free stuck TCP ports in one command',
+    repo: 'https://github.com/burakboduroglu/portkill',
+    link: 'https://github.com/burakboduroglu/portkill',
+    description:
+      'A CLI for macOS and Linux that kills processes listening on TCP ports, with dry-run, port ranges, list mode, and an optional local web UI.',
+    stack: 'TypeScript',
+    platform: 'macOS / Linux',
+    price: 'Free',
+    stars: '2',
+    forks: '0',
+    action: 'Get',
+    icon: 'p',
+    accent: 'portkill',
+    heroTitle: 'Free ports without memorizing commands.',
+    heroText:
+      'A focused developer tool for finding and killing port-bound processes quickly and safely.',
+  },
+  {
+    id: 'dev-notes',
+    categoryKey: 'cli',
+    categoryKeys: ['cli', 'developer'],
+    category: 'CLI / DevTool',
+    title: 'DevNotes',
+    subtitle: 'Developer notes from the command line',
+    repo: 'https://github.com/burakboduroglu/dev-notes',
+    link: 'https://github.com/burakboduroglu/dev-notes',
+    description:
+      'A CLI and developer tool for keeping practical development notes close to the terminal, so commands, snippets, and implementation details stay easy to capture and revisit.',
+    stack: 'Developer Tool',
+    platform: 'CLI',
+    price: 'Free',
+    stars: '30',
+    forks: '3',
+    action: 'Get',
+    icon: 'DN',
+    logoUrl:
+      'https://raw.githubusercontent.com/burakboduroglu/dev-notes/main/assets/devnotes-logo.svg',
+    accent: 'devnotes',
+    heroTitle: 'Keep developer notes where the work happens.',
+    heroText:
+      'DevNotes is a terminal-friendly notes utility for saving the commands, snippets, and context you reach for while building.',
+  },
+  {
+    id: 'alice',
+    categoryKey: 'web',
+    category: 'Web App',
+    title: 'Alice',
+    subtitle: 'Landing page for a wedding venue',
+    repo: 'https://github.com/burakboduroglu/alice',
+    link: 'https://alicepalazzo.com',
+    description:
+      'A polished landing page concept for a wedding venue, designed to present the space, atmosphere, and key information clearly for couples planning their event.',
+    stack: 'Web',
+    platform: 'Browser',
+    price: 'Free',
+    stars: '0',
+    forks: '0',
+    action: 'View',
+    icon: 'A',
+    accent: 'rose',
+    heroTitle: 'A warm landing page for a wedding venue.',
+    heroText:
+      'Alice is a clean promotional website concept for showcasing a wedding venue with a calm, elegant, and conversion-focused presentation.',
+  },
+  {
+    id: 'betus-design',
+    categoryKey: 'web',
+    category: 'Web App',
+    title: 'Betus Design',
+    subtitle: 'Landing page for a handmade craft shop',
+    repo: 'https://github.com/burakboduroglu/betus-design',
+    link: 'https://btsdesign.com.tr',
+    description:
+      'A polished landing page concept for a handmade craft shop, designed to present the products, atmosphere, and key information clearly for customers planning their purchase.',
+    stack: 'Web',
+    platform: 'Browser',
+    price: 'Free',
+    stars: '0',
+    forks: '0',
+    action: 'View',
+    icon: 'B',
+    accent: 'golden',
+    heroTitle: 'A warm landing page for a handmade craft shop.',
+    heroText:
+      'Betus Design is a clean promotional website concept for showcasing a handmade craft shop with a calm, elegant, and conversion-focused presentation.',
+  },
+]
+
+export default apps

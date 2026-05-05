@@ -1,5 +1,4 @@
-import { ArrowUpRight, BookOpen, ChevronRight, Hexagon, Mail, MapPin } from 'lucide-react'
-
+import { ArrowUpRight, ChevronRight, MapPin } from 'lucide-react'
 import profile from '../lib/data/profile'
 import contactTopics from '../lib/data/contact-topics'
 import AppsSite from './components/app-site/apps-site'
@@ -27,9 +26,7 @@ function App() {
             <img className='profile-photo' src={profile.avatarUrl} alt='Burak Boduroğlu' />
             <div className='hero-photo-line' aria-hidden='true' />
           </div>
-
           <h1>{profile.name}</h1>
-
           <div className='hero-grid'>
             <div className='hero-copy-main'>
               <p>{profile.intro}</p>
@@ -38,7 +35,6 @@ function App() {
             <p className='location-line location-line--hero'>
               <MapPin size={15} /> {profile.location}
             </p>
-
             <div className='reach-out-column'>
               <p className='reach-out-pre'>{profile.reachOutPre}</p>
               <aside className='reach-out' aria-label='Contact links'>

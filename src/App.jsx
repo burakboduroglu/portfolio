@@ -59,8 +59,7 @@ const profile = {
     'I’m a software engineer who likes turning unclear ideas into simple, reliable, and usable software. I enjoy working across the full product cycle — understanding the problem, shaping the experience, building the system, and refining it until it feels clear and dependable.',
   aiIntro:
     'My work style is practical and intentional: define the context, move in small iterations, keep the system observable, and use modern tools thoughtfully. I care about software that is easy to understand, easy to improve, and calm to operate.',
-  reachOutPre:
-    'Open to collaborations, developer tooling, and clear conversations —',
+  reachOutPre: 'Open to collaborations, developer tooling, and clear conversations —',
   links: [
     { label: 'Send email', href: 'mailto:info@burakboduroglu.com.tr', icon: 'mail' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/burakboduroglu', icon: 'linkedin' },
@@ -91,7 +90,7 @@ const apps = [
     stack: 'Swift',
     platform: 'macOS',
     price: 'Free',
-    stars: '1',
+    stars: '2',
     forks: '0',
     action: 'Get',
     icon: 'M',
@@ -137,8 +136,8 @@ const apps = [
     stack: 'Developer Tool',
     platform: 'CLI',
     price: 'Free',
-    stars: '—',
-    forks: '—',
+    stars: '30',
+    forks: '3',
     action: 'Get',
     icon: 'DN',
     logoUrl:
@@ -160,14 +159,35 @@ const apps = [
     stack: 'Web',
     platform: 'Browser',
     price: 'Free',
-    stars: '—',
-    forks: '—',
+    stars: '0',
+    forks: '0',
     action: 'View',
     icon: 'A',
     accent: 'rose',
     heroTitle: 'A warm landing page for a wedding venue.',
     heroText:
       'Alice is a clean promotional website concept for showcasing a wedding venue with a calm, elegant, and conversion-focused presentation.',
+  },
+  {
+    id: 'betus-design',
+    categoryKey: 'web',
+    category: 'Web App',
+    title: 'Betus Design',
+    subtitle: 'Landing page for a handmade craft shop',
+    repo: 'https://github.com/burakboduroglu/betus-design',
+    description:
+      'A polished landing page concept for a handmade craft shop, designed to present the products, atmosphere, and key information clearly for customers planning their purchase.',
+    stack: 'Web',
+    platform: 'Browser',
+    price: 'Free',
+    stars: '0',
+    forks: '0',
+    action: 'View',
+    icon: 'B',
+    accent: 'golden',
+    heroTitle: 'A warm landing page for a handmade craft shop.',
+    heroText:
+      'Betus Design is a clean promotional website concept for showcasing a handmade craft shop with a calm, elegant, and conversion-focused presentation.',
   },
 ]
 
@@ -571,7 +591,11 @@ function App() {
                           </span>
                           <span className='reach-out-link-label'>{link.label}</span>
                         </span>
-                        <ArrowUpRight size={17} className='reach-out-link-icon' aria-hidden='true' />
+                        <ArrowUpRight
+                          size={17}
+                          className='reach-out-link-icon'
+                          aria-hidden='true'
+                        />
                       </ExternalLink>
                     </li>
                   ))}

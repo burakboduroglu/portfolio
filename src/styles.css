@@ -829,6 +829,10 @@ blockquote {
   background: linear-gradient(135deg, #a33c58, #f19585);
 }
 
+.store-app-icon.golden {
+  background: linear-gradient(135deg, #b08968, #f7c873);
+}
+
 .store-empty {
   display: grid;
   min-height: 250px;

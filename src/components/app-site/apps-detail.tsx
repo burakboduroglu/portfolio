@@ -26,9 +26,11 @@ function AppsDetail({ app, onBack }: { app: any; onBack: () => void }) {
             <ExternalLink className='store-primary-link' href={app.link}>
               {app.action}
             </ExternalLink>
-            <ExternalLink className='store-secondary-link' href={app.repo}>
-              View on GitHub <ArrowUpRight size={14} />
-            </ExternalLink>
+            {app.repo ? (
+              <ExternalLink className='store-secondary-link' href={app.repo}>
+                View on GitHub <ArrowUpRight size={14} />
+              </ExternalLink>
+            ) : null}
           </div>
         </div>
       </div>

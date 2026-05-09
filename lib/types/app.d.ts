@@ -5,7 +5,7 @@ export type AppCard = {
   category: string
   title: string
   subtitle: string
-  repo: string
+  repo?: string
   link: string
   description: string
   stack: string

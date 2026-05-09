@@ -21,9 +21,7 @@ function AppsSite() {
     const categoryApps =
       activeCategory === 'all'
         ? apps
-        : activeCategory === 'productivity'
-          ? apps.filter((app) => app.id === 'macshelf')
-          : apps.filter((app) => getAppCategoryKeys(app).includes(activeCategory))
+        : apps.filter((app) => getAppCategoryKeys(app).includes(activeCategory))
 
     if (!query) {
       return categoryApps

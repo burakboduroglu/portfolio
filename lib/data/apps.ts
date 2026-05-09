@@ -4,6 +4,7 @@ const apps: AppCard[] = [
   {
     id: 'macshelf',
     categoryKey: 'macos',
+    categoryKeys: ['macos', 'productivity'],
     category: 'macOS App',
     title: 'MacShelf',
     subtitle: 'Native clipboard shelf for macOS',
@@ -72,6 +73,29 @@ const apps: AppCard[] = [
     heroTitle: 'Keep developer notes where the work happens.',
     heroText:
       'DevNotes is a terminal-friendly notes utility for saving the commands, snippets, and context you reach for while building.',
+  },
+  {
+    id: 'bdash',
+    categoryKey: 'web',
+    categoryKeys: ['web', 'productivity'],
+    category: 'Web App',
+    title: 'BDash',
+    subtitle: 'Small business management platform',
+    link: 'https://bdash.burakboduroglu.com.tr',
+    description:
+      'BDash is a focused business management platform for keeping products, inventory, costs, customers, and orders in one clear operating surface. It combines a fast TanStack Start interface with Supabase Auth and Postgres, giving small teams a practical dashboard for daily work without burying simple workflows under enterprise complexity.',
+    stack: 'TypeScript',
+    platform: 'Web',
+    price: 'Private',
+    stars: '—',
+    forks: '—',
+    action: 'View',
+    icon: 'B',
+    logoUrl: 'https://bdash.burakboduroglu.com.tr/assets/logo-icon-CwSWcM3c.png',
+    accent: 'bdash',
+    heroTitle: 'A calm control surface for small business operations.',
+    heroText:
+      'BDash brings products, inventory, customers, costs, and orders into a fast web dashboard built with TanStack Start, Supabase, and Bun.',
   },
   {
     id: 'alice',

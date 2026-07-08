@@ -10,11 +10,14 @@ function getAppCategoryKeys(app: AppCard) {
   return app.categoryKeys ?? [app.categoryKey]
 }
 
+const ITEMS_PER_PAGE = 4
+
 function AppsSite() {
   const [activeCategory, setActiveCategory] = useState('all')
   const [selectedApp, setSelectedApp] = useState<AppCard | null>(null)
   const [searchQuery, setSearchQuery] = useState('')
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true)
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+  const [currentPage, setCurrentPage] = useState(1)
 
   const visibleApps = useMemo(() => {
     const query = searchQuery.trim().toLowerCase()
@@ -35,9 +38,16 @@ function AppsSite() {
     )
   }, [activeCategory, searchQuery])
 
+  const totalPages = Math.max(1, Math.ceil(visibleApps.length / ITEMS_PER_PAGE))
+  const paginatedApps = visibleApps.slice(
+    (currentPage - 1) * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE
+  )
+
   function handleCategoryChange(categoryKey: string) {
     setActiveCategory(categoryKey)
     setSelectedApp(null)
+    setCurrentPage(1)
   }
 
   function handleSelectApp(app: AppCard) {
@@ -75,16 +85,21 @@ function AppsSite() {
         onSearchChange={(value: string) => {
           setSearchQuery(value)
           setSelectedApp(null)
+          setCurrentPage(1)
         }}
       />
       {selectedApp ? (
         <AppsDetail app={selectedApp} onBack={() => setSelectedApp(null)} />
       ) : (
         <AppsHome
-          visibleApps={visibleApps}
+          paginatedApps={paginatedApps}
+          totalApps={visibleApps.length}
           activeCategory={activeCategory}
           searchQuery={searchQuery.trim()}
           onSelect={handleSelectApp}
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={setCurrentPage}
         />
       )}
     </section>

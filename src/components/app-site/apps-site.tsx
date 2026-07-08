@@ -30,7 +30,7 @@ function AppsSite() {
       return categoryApps
     }
 
-    return apps.filter((app) =>
+    return categoryApps.filter((app) =>
       [app.title, app.subtitle, app.description, app.category, app.stack, app.platform]
         .join(' ')
         .toLowerCase()

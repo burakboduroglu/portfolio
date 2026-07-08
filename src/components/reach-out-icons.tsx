@@ -1,4 +1,4 @@
-import { ArrowUpRight, BookOpen, ChevronRight, Hexagon, Mail, MapPin } from 'lucide-react'
+import { BookOpen, Hexagon, Mail } from 'lucide-react'
 
 function SvgGitHub(props: React.SVGProps<SVGSVGElement>) {
   return (

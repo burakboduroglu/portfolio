@@ -1,4 +1,6 @@
-function AppIcon({ app, large = false }: { app: any; large?: boolean }) {
+import type { AppCard } from '../../../lib/types/app'
+
+function AppIcon({ app, large = false }: { app: AppCard; large?: boolean }) {
   return (
     <div
       className={`store-app-icon ${app.accent} ${large ? 'large' : ''} ${app.icon.length > 2 ? 'wordmark' : ''}`}

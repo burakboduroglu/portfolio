@@ -832,6 +832,22 @@ blockquote {
   font-weight: 900;
 }
 
+.portkill-wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.portkill-wordmark i {
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  background: #35e66f;
+  box-shadow: 0 0 10px rgba(53, 230, 111, 0.5);
+}
+
 .store-app-icon.rose {
   background: linear-gradient(135deg, #a33c58, #f19585);
 }

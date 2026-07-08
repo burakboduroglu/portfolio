@@ -1,8 +1,19 @@
 import { Search, Star } from 'lucide-react'
 import categories from '../../../lib/data/categories'
 import profile from '../../../lib/data/profile'
+import ExternalLink from './external-link'
 
-function StoreSidebar({ activeCategory, onCategoryChange, searchQuery, onSearchChange }: any) {
+function StoreSidebar({
+  activeCategory,
+  onCategoryChange,
+  searchQuery,
+  onSearchChange,
+}: {
+  activeCategory: string
+  onCategoryChange: (key: string) => void
+  searchQuery: string
+  onSearchChange: (value: string) => void
+}) {
   return (
     <aside className='store-sidebar' aria-label='Apps navigation'>
       <label className='store-search'>
@@ -42,9 +53,9 @@ function StoreSidebar({ activeCategory, onCategoryChange, searchQuery, onSearchC
       </div>
 
       <div className='store-sidebar-link-group'>
-        <a href='https://github.com/burakboduroglu' target='_blank' rel='noreferrer'>
+        <ExternalLink href='https://github.com/burakboduroglu'>
           <span className='github-dot'>●</span> GitHub
-        </a>
+        </ExternalLink>
       </div>
 
       <div className='store-sidebar-footer'>

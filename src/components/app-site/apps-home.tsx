@@ -29,7 +29,7 @@ function AppsHome({
     activeCategory === 'all'
       ? 'All'
       : (categories.find(
-          (category: { key: string; label: string }) => category.key === activeCategory
+          (category) => category.key === activeCategory
         )?.label ?? 'All')
   const title = searchQuery
     ? `Search results for "${searchQuery}"`

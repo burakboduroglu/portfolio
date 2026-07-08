@@ -1,6 +1,7 @@
 import AppIcon from './app-icon'
+import type { AppCard } from '../../../lib/types/app'
 
-function AppListItem({ app, onSelect }: { app: any; onSelect: (app: any) => void }) {
+function AppListItem({ app, onSelect }: { app: AppCard; onSelect: (app: AppCard) => void }) {
   return (
     <button className='store-list-item' type='button' onClick={() => onSelect(app)}>
       <AppIcon app={app} />

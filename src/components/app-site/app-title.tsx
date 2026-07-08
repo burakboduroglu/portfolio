@@ -1,4 +1,6 @@
-function AppTitle({ app }: { app: any }) {
+import type { AppCard } from '../../../lib/types/app'
+
+function AppTitle({ app }: { app: AppCard }) {
   return app.id === 'portkill' ? (
     <span className='portkill-wordmark'>
       <i />

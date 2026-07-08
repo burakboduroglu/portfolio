@@ -1,8 +1,9 @@
 import { ArrowUpRight, ChevronLeft } from 'lucide-react'
 import AppIcon from './app-icon'
 import ExternalLink from './external-link'
+import type { AppCard } from '../../../lib/types/app'
 
-function AppsDetail({ app, onBack }: { app: any; onBack: () => void }) {
+function AppsDetail({ app, onBack }: { app: AppCard; onBack: () => void }) {
   const stats = [
     ['Stars', app.stars],
     ['Forks', app.forks],

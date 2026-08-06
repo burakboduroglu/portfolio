@@ -1,15 +1,15 @@
+export type ProfileLinkKey = 'email' | 'linkedin' | 'devto' | 'github' | 'npm'
+
 export type ProfileLink = {
-  label: string
+  key: ProfileLinkKey
   href: string
   icon: string
 }
 
 export type ProfileData = {
   name: string
-  location: string
   avatarUrl: string
-  intro: string
-  aiIntro: string
-  reachOutPre: string
+  email: string
+  githubUrl: string
   links: ProfileLink[]
 }

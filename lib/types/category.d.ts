@@ -1,7 +1,8 @@
 import type { LucideIcon } from 'lucide-react'
 
+export type CategoryKey = 'macos' | 'web' | 'developer' | 'cli' | 'productivity'
+
 export type AppCategory = {
-  key: string
-  label: string
+  key: CategoryKey
   icon: LucideIcon
 }

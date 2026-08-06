@@ -1,6 +1,7 @@
 import { Search, Star } from 'lucide-react'
 import categories from '../../../lib/data/categories'
 import profile from '../../../lib/data/profile'
+import { useT } from '../../../lib/i18n'
 import ExternalLink from './external-link'
 
 function StoreSidebar({
@@ -14,16 +15,18 @@ function StoreSidebar({
   searchQuery: string
   onSearchChange: (value: string) => void
 }) {
+  const t = useT()
+
   return (
-    <aside className='store-sidebar' aria-label='Apps navigation'>
+    <aside className='store-sidebar' aria-label={t.apps.navAria}>
       <label className='store-search'>
         <Search size={15} />
         <input
           type='search'
           value={searchQuery}
           onChange={(event) => onSearchChange(event.target.value)}
-          placeholder='Search'
-          aria-label='Search apps'
+          placeholder={t.apps.searchPlaceholder}
+          aria-label={t.apps.searchAria}
         />
       </label>
 
@@ -31,11 +34,11 @@ function StoreSidebar({
         className={activeCategory === 'all' ? 'discover-button active' : 'discover-button'}
         type='button'
         onClick={() => onCategoryChange('all')}>
-        <Star size={18} /> Discover
+        <Star size={18} /> {t.apps.discover}
       </button>
 
       <div className='store-nav-group'>
-        <p>Categories</p>
+        <p>{t.apps.categoriesHeading}</p>
         {categories.map((category) => {
           const Icon = category.icon
           const isActive = activeCategory === category.key
@@ -46,14 +49,14 @@ function StoreSidebar({
               type='button'
               key={category.key}
               onClick={() => onCategoryChange(category.key)}>
-              <Icon size={17} /> {category.label}
+              <Icon size={17} /> {t.categories[category.key]}
             </button>
           )
         })}
       </div>
 
       <div className='store-sidebar-link-group'>
-        <ExternalLink href='https://github.com/burakboduroglu'>
+        <ExternalLink href={profile.githubUrl}>
           <span className='github-dot'>●</span> GitHub
         </ExternalLink>
       </div>

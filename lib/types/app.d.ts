@@ -1,22 +1,34 @@
-export type AppCard = {
-  id: string
+export type AppId = 'macshelf' | 'portkill' | 'dev-notes' | 'bdash' | 'alice' | 'betus-design'
+
+/** Language-independent structure — lives in lib/data/apps.ts */
+export type AppMeta = {
+  id: AppId
   categoryKey: string
   categoryKeys?: string[]
-  category: string
+  /** Brand name, never translated ('.portkill', 'MacShelf') */
   title: string
-  subtitle: string
-  repo?: string
   link: string
+  repo?: string
+  stars: string
+  forks: string
+  icon: string
+  logoUrl?: string
+  accent: string
+  featured?: boolean
+}
+
+/** Translated prose — lives in lib/i18n/{en,tr,de}.ts, keyed by AppId */
+export type AppCopy = {
+  category: string
+  subtitle: string
   description: string
   stack: string
   platform: string
   price: string
-  stars: string
-  forks: string
   action: string
-  icon: string
-  logoUrl?: string
-  accent: string
   heroTitle: string
   heroText: string
 }
+
+/** Merged at runtime by useApps() — the shape every component consumes */
+export type AppCard = AppMeta & AppCopy

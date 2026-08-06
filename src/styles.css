@@ -53,7 +53,7 @@ main {
 }
 
 /**
- * Üst bar: Docker.com tarzı ince grid çizgileri + nokta dokusu (açık tema uyarlaması).
+ * Top bar: fine grid lines + dot texture, adapted for the light theme.
  */
 .site-navbar {
   position: sticky;
@@ -116,6 +116,54 @@ main {
 
 .page-top-apps:hover {
   color: var(--link);
+}
+
+.page-top-actions {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 14px;
+}
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.lang-switch button {
+  padding: 4px 8px;
+  border: 0;
+  border-left: 1px solid var(--line);
+  color: var(--muted);
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  transition:
+    color 140ms ease,
+    background-color 140ms ease;
+}
+
+.lang-switch button:first-child {
+  border-left: 0;
+}
+
+.lang-switch button:hover {
+  color: var(--text);
+  background: rgba(55, 53, 47, 0.05);
+}
+
+.lang-switch button[aria-current] {
+  color: var(--text);
+  background: rgba(55, 53, 47, 0.08);
+  box-shadow: inset 0 -2px 0 var(--link);
 }
 
 .page-label {
@@ -452,6 +500,25 @@ blockquote {
   display: none;
 }
 
+/* Keyboard focus inside the dark panel. The UA default ring is effectively
+   invisible on #000, so every interactive element gets an explicit one. */
+.apps-site :is(a, button, input):focus-visible {
+  outline: 2px solid #3291ff;
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* Full-bleed rows read better with an inset marker than a floating ring */
+.store-list-item:focus-visible,
+.store-hero-card button:focus-visible {
+  outline-offset: -2px;
+}
+
+/* The input sits inside an already-outlined wrapper — don't double up */
+.store-search input:focus-visible {
+  outline: none;
+}
+
 .store-sidebar {
   display: flex;
   flex-direction: column;
@@ -480,8 +547,10 @@ blockquote {
 }
 
 .store-search:focus-within {
-  border-color: #2f7ff0;
+  border-color: #3291ff;
   background: #202020;
+  outline: 2px solid #3291ff;
+  outline-offset: 2px;
 }
 
 .store-search input {
@@ -497,42 +566,6 @@ blockquote {
 
 .store-search input::placeholder {
   color: #77777d;
-}
-
-.store-brand-card {
-  display: flex;
-  align-items: center;
-  gap: 11px;
-  margin-bottom: 16px;
-  padding: 11px;
-  border: 1px solid #2b2b2b;
-  border-radius: 14px;
-  background: linear-gradient(180deg, #202020, #171717);
-}
-
-.store-brand-card img {
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
-  object-fit: cover;
-}
-
-.store-brand-card strong,
-.store-brand-card span {
-  display: block;
-}
-
-.store-brand-card strong {
-  color: #f5f5f7;
-  font-size: 13px;
-  font-weight: 800;
-}
-
-.store-brand-card span {
-  margin-top: 2px;
-  color: #85858c;
-  font-size: 12px;
-  font-weight: 650;
 }
 
 .discover-button,
@@ -740,6 +773,9 @@ blockquote {
   font-style: normal;
   font-size: 13px;
   font-weight: 800;
+  transition:
+    color 140ms ease,
+    background-color 140ms ease;
 }
 
 .store-app-icon {
@@ -936,6 +972,104 @@ blockquote {
   color: #3291ff;
 }
 
+/* Filter chips — mirrors the sidebar categories, and is the primary filter on mobile */
+.store-filter-bar {
+  margin-bottom: 26px;
+}
+
+/* Wraps on desktop — Turkish labels are long enough to overflow 1120px, and a
+   clipped chip reads as a bug rather than as a scrollable row. */
+.store-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.store-chip-row::-webkit-scrollbar {
+  display: none;
+}
+
+.store-chip {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 7px;
+  padding: 7px 12px;
+  border: 1px solid #2a2a2a;
+  border-radius: 999px;
+  color: #8c8c92;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  transition:
+    border-color 140ms ease,
+    color 140ms ease,
+    background-color 140ms ease;
+}
+
+.store-chip:hover {
+  border-color: #3a3a3a;
+  color: #f5f5f7;
+}
+
+.store-chip.empty {
+  opacity: 0.4;
+}
+
+.store-chip[aria-pressed='true'] {
+  border-color: #3291ff;
+  color: #f5f5f7;
+  background: rgba(50, 145, 255, 0.12);
+}
+
+.store-chip-count {
+  padding: 1px 6px;
+  border-radius: 999px;
+  color: #73737a;
+  background: #171717;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.store-chip[aria-pressed='true'] .store-chip-count {
+  color: #cfe4ff;
+  background: rgba(50, 145, 255, 0.22);
+}
+
+.store-filter-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #171717;
+  color: #73737a;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.store-clear-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border: 0;
+  color: #8c8c92;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  transition: color 140ms ease;
+}
+
+.store-clear-filter:hover {
+  color: #3291ff;
+}
+
 .store-list-copy {
   min-width: 0;
 }
@@ -965,6 +1099,7 @@ blockquote {
   width: fit-content;
   max-width: 100%;
   margin-top: 4px;
+  padding: 2px 7px;
   border-radius: 5px;
   color: #8a8a91;
   background: #111;
@@ -1068,11 +1203,37 @@ blockquote {
 }
 
 .store-stats span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   color: #73737a;
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+}
+
+.store-stats span svg {
+  flex-shrink: 0;
+  opacity: 0.75;
+}
+
+.store-detail-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.store-badge {
+  padding: 3px 9px;
+  border: 1px solid #242424;
+  border-radius: 999px;
+  color: #8c8c92;
+  background: #101010;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .store-preview-section,
@@ -1123,6 +1284,18 @@ blockquote {
     radial-gradient(circle at 82% 18%, rgba(45, 212, 191, 0.28), transparent 15rem),
     radial-gradient(circle at 18% 12%, rgba(59, 130, 246, 0.2), transparent 13rem),
     linear-gradient(145deg, #071416 0%, #0b1220 76%);
+}
+
+.store-preview.portkill {
+  background:
+    radial-gradient(circle at 78% 16%, rgba(53, 230, 111, 0.26), transparent 15rem),
+    linear-gradient(145deg, #05130b 0%, #06150b 74%);
+}
+
+.store-preview.golden {
+  background:
+    radial-gradient(circle at 76% 16%, rgba(247, 200, 115, 0.28), transparent 15rem),
+    linear-gradient(145deg, #1a1208 0%, #0d0904 74%);
 }
 
 .preview-window {
@@ -1184,6 +1357,75 @@ blockquote {
 
 .store-page-fade {
   animation: store-fade-in 220ms ease both;
+}
+
+/* Card micro-interactions. Colour transitions apply everywhere; movement is
+   gated on prefers-reduced-motion below. Accent hues are reused from the
+   matching .store-app-icon rules — no new colours are introduced. */
+.store-list-item,
+.store-hero-card button {
+  transition:
+    border-color 140ms ease,
+    background-color 140ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.store-list-item .store-app-icon,
+.store-hero-card button .store-app-icon {
+  transition: transform 180ms ease;
+}
+
+.store-list-item:hover .store-get-button,
+.store-hero-card button:hover em {
+  color: #f5f5f7;
+  background: #3291ff;
+}
+
+.store-list-item[data-accent='dark']:hover {
+  box-shadow: inset 2px 0 0 #4a4a4a;
+}
+
+.store-list-item[data-accent='portkill']:hover {
+  box-shadow: inset 2px 0 0 #35e66f;
+}
+
+.store-list-item[data-accent='devnotes']:hover {
+  box-shadow: inset 2px 0 0 #facc15;
+}
+
+.store-list-item[data-accent='bdash']:hover {
+  box-shadow: inset 2px 0 0 #2dd4bf;
+}
+
+.store-list-item[data-accent='rose']:hover {
+  box-shadow: inset 2px 0 0 #f19585;
+}
+
+.store-list-item[data-accent='golden']:hover {
+  box-shadow: inset 2px 0 0 #f7c873;
+}
+
+.store-list-item[data-accent='blue']:hover {
+  box-shadow: inset 2px 0 0 #66a0ff;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .store-list-item:hover,
+  .store-hero-card button:hover {
+    transform: translateY(-2px);
+  }
+
+  .store-list-item:hover .store-app-icon,
+  .store-hero-card button:hover .store-app-icon {
+    transform: scale(1.04);
+  }
+
+  /* Cards fade in one after another; the key={currentPage} remount replays it */
+  .store-list-grid .store-list-item {
+    animation: store-fade-in 260ms ease both;
+    animation-delay: calc(var(--i, 0) * 45ms);
+  }
 }
 
 .store-pagination {
@@ -1444,6 +1686,11 @@ blockquote {
     transform: translateX(-100%);
   }
 
+  /* Keep the chip row clear of the floating menu toggle (44px + 16px offset) */
+  .store-chip-row {
+    margin-right: 52px;
+  }
+
   .store-menu-toggle {
     position: absolute;
     top: 16px;
@@ -1537,6 +1784,15 @@ blockquote {
     font-size: 14px;
   }
 
+  .page-top-actions {
+    gap: 10px;
+  }
+
+  .lang-switch button {
+    padding: 4px 6px;
+    font-size: 10px;
+  }
+
   .page-label {
     font-size: 14px;
   }
@@ -1574,6 +1830,28 @@ blockquote {
   .store-detail {
     min-height: 620px;
     padding: 18px 14px;
+  }
+
+  .store-filter-bar {
+    margin-bottom: 20px;
+  }
+
+  /* On narrow screens a single scrollable row beats four rows of wrapped chips */
+  .store-chip-row {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+  }
+
+  .store-chip {
+    scroll-snap-align: start;
+  }
+
+  .store-filter-meta {
+    flex-wrap: wrap;
+    row-gap: 6px;
   }
 
   .store-hero-card {

@@ -8,7 +8,6 @@ const en = {
       'A minimal personal site for Burak Boduroğlu with an embedded apps showcase built using React and Vite.',
   },
   nav: {
-    apps: 'Apps',
     languageAria: 'Language',
   },
   hero: {
@@ -19,9 +18,8 @@ const en = {
   },
   profile: {
     intro:
-      'I’m a software engineer who likes turning unclear ideas into simple, reliable, and usable software. I enjoy working across the full product cycle — understanding the problem, shaping the experience, building the system, and refining it until it feels clear and dependable.',
-    aiIntro:
-      'My work style is practical and intentional: define the context, move in small iterations, keep the system observable, and use modern tools thoughtfully. I care about software that is easy to understand, easy to improve, and calm to operate.',
+      'I’m a software engineer. I enjoy turning messy ideas into simple, useful products that people can actually use. I prefer being involved from understanding the problem to shipping the product. I work in small steps, use the right tools, and care about writing readable, maintainable code.',
+    aiIntro: '',
     links: {
       email: 'Send email',
       linkedin: 'LinkedIn',
@@ -79,38 +77,38 @@ const en = {
       'I’m interested in well-scoped products, practical AI-assisted engineering workflows, developer tools, and software that feels simple from the outside while staying solid underneath.',
     topics: [
       {
-        title: 'I build clear, dependable software',
+        title: 'I think about the product and the code together',
         bullets: [
-          'I like working on products and internal tools where the problem is real, the scope is clear, and the result needs to feel simple for users.',
-          'I’m most useful when I can help shape both the technical direction and the product details around it.',
+          'I enjoy working on products and internal tools that solve a real need and have a clear scope.',
+          'I do my best work when I can think about the problem, the user, and the technical solution together.',
         ],
       },
       {
-        title: 'I care about developer tools and useful utilities',
+        title: 'Small tools that do useful work',
         bullets: [
-          'Projects like MacShelf and .portkill reflect the kind of software I enjoy: focused, practical, and built around real workflow friction.',
-          'If you’re building tools for developers, teams, or technical operators, I’d be happy to hear about it.',
+          'MacShelf and .portkill reflect the kind of software I like: tools that do one thing and do it well.',
+          'If you’re building something that makes a developer’s or team’s daily work easier, I’d like to hear about it.',
         ],
       },
       {
-        title: 'I use AI as part of an engineering system',
+        title: 'I use AI as part of the work',
         bullets: [
-          'I’m interested in context engineering, agentic workflows, review loops, and ways to make AI-assisted development more reliable.',
-          'The goal is not to skip engineering judgment, but to make better engineering work faster and more repeatable.',
+          'I think about context engineering, agent workflows, and code review processes.',
+          'AI is not a replacement for thinking; it is a tool that can make a good engineering process faster.',
         ],
       },
       {
-        title: 'I write and share technical notes',
+        title: 'I write about what I learn',
         bullets: [
-          'I publish practical programming notes and software engineering articles on Substack and DEV.to.',
-          'I enjoy turning what I learn while building into notes that are useful for other developers.',
+          'I write about programming and software engineering on Substack and DEV.to.',
+          'I turn what I learn while building into notes I can return to and that may be useful to other people too.',
         ],
       },
       {
-        title: 'I’m open to thoughtful conversations',
+        title: 'Write if you want to talk',
         bullets: [
-          'Reach out if you want to talk about software, developer tooling, AI-assisted engineering workflows, or a focused product idea.',
-          'The best way to contact me is by email: info@burakboduroglu.com.tr.',
+          'We can talk about software, developer tools, AI, or a product you’re working on.',
+          'The easiest way to reach me is by email: info@burakboduroglu.com.tr.',
         ],
       },
     ],
@@ -128,81 +126,81 @@ const en = {
   appCopy: {
     macshelf: {
       category: 'macOS App',
-      subtitle: 'Native clipboard shelf for macOS',
+      subtitle: 'Clipboard manager for macOS',
       description:
-        'A native macOS clipboard shelf for text and images. Built as a small productivity utility for keeping useful snippets close without breaking flow.',
+        'A macOS app that keeps the text and images you copy so you can find and use them again whenever you need them.',
       stack: 'Swift',
       platform: 'macOS',
       price: 'Free',
       action: 'Get',
-      heroTitle: 'Your clipboard, always in sight.',
+      heroTitle: 'Don’t lose what you copied.',
       heroText:
-        'MacShelf keeps text and image snippets ready on your Mac — simple, native, and out of the way.',
+        'MacShelf keeps the things you copy in the background and puts them within reach when you need them.',
     },
     portkill: {
       category: 'CLI App',
-      subtitle: 'Free stuck TCP ports in one command',
+      subtitle: 'Close used TCP ports with one command',
       description:
-        'A CLI for macOS and Linux that kills processes listening on TCP ports, with dry-run, port ranges, list mode, and an optional local web UI.',
+        'A CLI for macOS and Linux that finds and closes the process using a port. It also supports previews, port ranges, and listing open ports.',
       stack: 'TypeScript',
       platform: 'macOS / Linux',
       price: 'Free',
       action: 'Get',
-      heroTitle: 'Free ports without memorizing commands.',
+      heroTitle: 'Find the process using a port.',
       heroText:
-        'A focused developer tool for finding and killing port-bound processes quickly and safely.',
+        'Find which process is using a port and close it with one command when needed.',
     },
     'dev-notes': {
       category: 'CLI / DevTool',
-      subtitle: 'Developer notes from the command line',
+      subtitle: 'Keep developer notes in the terminal',
       description:
-        'A CLI and developer tool for keeping practical development notes close to the terminal, so commands, snippets, and implementation details stay easy to capture and revisit.',
+        'A CLI for saving commands, code snippets, and project notes without leaving the terminal, then finding them again when needed.',
       stack: 'Developer Tool',
       platform: 'CLI',
       price: 'Free',
       action: 'Get',
-      heroTitle: 'Keep developer notes where the work happens.',
+      heroTitle: 'Keep your notes close to the terminal.',
       heroText:
-        'DevNotes is a terminal-friendly notes utility for saving the commands, snippets, and context you reach for while building.',
+        'DevNotes keeps the commands, code snippets, and project details you use while building in one place.',
     },
     bdash: {
       category: 'SaaS',
-      subtitle: 'Small business management platform',
+      subtitle: 'Management platform for businesses',
       description:
-        'BDash is a focused business management platform for keeping products, inventory, costs, customers, and orders in one clear operating surface. It combines a fast TanStack Start interface with Supabase Auth and Postgres, giving small teams a practical dashboard for daily work without burying simple workflows under enterprise complexity.',
+        'BDash brings products, inventory, costs, customers, and orders together in one dashboard. It is designed to help businesses keep track of their daily work without unnecessary complexity.',
       stack: 'TypeScript',
       platform: 'Web',
       price: 'Private',
       action: 'View',
-      heroTitle: 'A calm control surface for small business operations.',
+      heroTitle: 'Keep the business in one place.',
       heroText:
-        'BDash brings products, inventory, customers, costs, and orders into a fast web dashboard built with TanStack Start, Supabase, and Bun.',
+        'BDash lets you track the business’s daily operations from a single web dashboard.',
     },
     alice: {
       category: 'Web Page',
       subtitle: 'Landing page for a wedding venue',
       description:
-        'A polished landing page concept for a wedding venue, designed to present the space, atmosphere, and key information clearly for couples planning their event.',
+        'A website concept for a wedding venue. It presents the venue’s atmosphere, services, and important information in a simple way.',
       stack: 'Web',
       platform: 'Browser',
       price: 'Free',
       action: 'View',
-      heroTitle: 'A warm landing page for a wedding venue.',
+      heroTitle: 'Let the venue speak for itself.',
       heroText:
-        'Alice is a clean promotional website concept for showcasing a wedding venue with a calm, elegant, and conversion-focused presentation.',
+        'Alice is a simple website concept that highlights the atmosphere and experience of a wedding venue.',
     },
     'betus-design': {
       category: 'Web Page',
       subtitle: 'Landing page for a handmade craft shop',
       description:
-        'A polished landing page concept for a handmade craft shop, designed to present the products, atmosphere, and key information clearly for customers planning their purchase.',
+        'A website concept for a handmade workshop. It presents the products, the story behind the workshop, and the important information simply.',
       stack: 'Web',
       platform: 'Browser',
       price: 'Free',
       action: 'View',
-      heroTitle: 'A warm landing page for a handmade craft shop.',
+      heroTitle: 'Tell the story behind the work.',
       heroText:
-        'Betus Design is a clean promotional website concept for showcasing a handmade craft shop with a calm, elegant, and conversion-focused presentation.',
+        'Betus Design is a simple website concept that highlights the products and story of a handmade workshop.',
     },
   },
 } satisfies Messages

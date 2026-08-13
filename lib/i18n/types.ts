@@ -13,7 +13,7 @@ export function isLocale(value: unknown): value is Locale {
 /**
  * The single contract every dictionary satisfies. Because `appCopy` and
  * `categories` are keyed by union types, a missing translation is a compile
- * error — and `npm run build` runs `tsc --noEmit` first, so it blocks deploys.
+ * error — and `bun run build` runs `tsc --noEmit` first, so it blocks deploys.
  */
 export type Messages = {
   /** Endonym shown in the language switcher tooltip */

@@ -63,15 +63,22 @@ function persistLocale(locale: Locale) {
   }
 }
 
-/** Keeps <html lang>, <title>, meta description and the ?lang= param in sync */
+function setMetaContent(selector: string, content: string) {
+  const element = document.querySelector(selector)
+  if (element) {
+    element.setAttribute('content', content)
+  }
+}
+
+/** Keeps document metadata and the ?lang= param in sync */
 function syncDocument(locale: Locale, messages: Messages) {
   document.documentElement.lang = locale
   document.title = messages.meta.title
-
-  const description = document.querySelector('meta[name="description"]')
-  if (description) {
-    description.setAttribute('content', messages.meta.description)
-  }
+  setMetaContent('meta[name="description"]', messages.meta.description)
+  setMetaContent('meta[property="og:title"]', messages.meta.title)
+  setMetaContent('meta[property="og:description"]', messages.meta.description)
+  setMetaContent('meta[name="twitter:title"]', messages.meta.title)
+  setMetaContent('meta[name="twitter:description"]', messages.meta.description)
 
   const url = new URL(window.location.href)
   if (url.searchParams.get('lang') !== locale) {

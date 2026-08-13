@@ -8,7 +8,6 @@ const de = {
       'Eine minimalistische persönliche Website von Burak Boduroğlu mit einer eingebetteten App-Übersicht, gebaut mit React und Vite.',
   },
   nav: {
-    apps: 'Apps',
     languageAria: 'Sprache',
   },
   hero: {
@@ -19,9 +18,8 @@ const de = {
   },
   profile: {
     intro:
-      'Ich bin Softwareentwickler und verwandle unklare Ideen gern in einfache, verlässliche und benutzbare Software. Ich arbeite gerne über den gesamten Produktzyklus hinweg — das Problem verstehen, die Erfahrung gestalten, das System bauen und es verfeinern, bis es klar und verlässlich wirkt.',
-    aiIntro:
-      'Meine Arbeitsweise ist pragmatisch und bewusst: den Kontext festlegen, in kleinen Schritten vorgehen, das System beobachtbar halten und moderne Werkzeuge überlegt einsetzen. Mir liegt an Software, die leicht zu verstehen, leicht zu verbessern und ruhig zu betreiben ist.',
+      'Ich bin Softwareentwickler. Ich entwickle gern aus ungeordneten Ideen einfache, nützliche Produkte, die Menschen wirklich verwenden können. Ich arbeite am liebsten vom Verständnis des Problems bis zum Launch mit. Dabei gehe ich in kleinen Schritten vor, setze die passenden Werkzeuge ein und achte auf lesbaren, wartbaren Code.',
+    aiIntro: '',
     links: {
       email: 'E-Mail senden',
       linkedin: 'LinkedIn',
@@ -79,38 +77,38 @@ const de = {
       'Mich interessieren klar abgegrenzte Produkte, praxisnahe KI-gestützte Entwicklungsabläufe, Entwickler-Tools und Software, die von außen einfach wirkt und innen solide bleibt.',
     topics: [
       {
-        title: 'Ich baue klare, verlässliche Software',
+        title: 'Ich denke Produkt und Code zusammen',
         bullets: [
-          'Ich arbeite gern an Produkten und internen Tools, bei denen das Problem echt ist, der Umfang klar und das Ergebnis sich für Nutzer einfach anfühlen muss.',
-          'Am nützlichsten bin ich, wenn ich sowohl die technische Richtung als auch die Produktdetails drumherum mitgestalten kann.',
+          'Ich arbeite gern an Produkten und internen Tools, die ein echtes Problem lösen und einen klaren Umfang haben.',
+          'Am besten bin ich, wenn ich Problem, Nutzer und technische Lösung gemeinsam betrachten kann.',
         ],
       },
       {
-        title: 'Mir liegen Entwickler-Tools und nützliche Helfer am Herzen',
+        title: 'Kleine Werkzeuge, die etwas erledigen',
         bullets: [
-          'Projekte wie MacShelf und .portkill zeigen, welche Art von Software mir Freude macht: fokussiert, praktisch und um echte Reibung im Arbeitsablauf herum gebaut.',
-          'Wenn du Werkzeuge für Entwickler, Teams oder technische Anwender baust, höre ich gern davon.',
+          'MacShelf und .portkill zeigen, welche Art von Software ich mag: Werkzeuge, die eine Sache gut machen.',
+          'Wenn du etwas baust, das den Alltag von Entwicklern oder Teams leichter macht, höre ich gern davon.',
         ],
       },
       {
-        title: 'Ich nutze KI als Teil eines Engineering-Systems',
+        title: 'Ich nutze KI als Teil der Arbeit',
         bullets: [
-          'Mich interessieren Context Engineering, agentische Workflows, Review-Schleifen und Wege, KI-gestützte Entwicklung verlässlicher zu machen.',
-          'Das Ziel ist nicht, technisches Urteilsvermögen zu überspringen, sondern gute Engineering-Arbeit schneller und wiederholbarer zu machen.',
+          'Ich beschäftige mich mit Context Engineering, agentischen Abläufen und Code-Reviews.',
+          'KI ersetzt für mich nicht das Denken, sondern kann einen guten Engineering-Prozess schneller machen.',
         ],
       },
       {
-        title: 'Ich schreibe und teile technische Notizen',
+        title: 'Ich schreibe über das, was ich lerne',
         bullets: [
-          'Auf Substack (penolox) und DEV.to veröffentliche ich praktische Programmiernotizen und Artikel zum Software Engineering.',
-          'Ich verwandle gern das, was ich beim Bauen lerne, in Notizen, die auch anderen Entwicklern nützen.',
+          'Auf Substack (penolox) und DEV.to schreibe ich über Programmierung und Softwareentwicklung.',
+          'Was ich beim Bauen lerne, halte ich in Notizen fest, zu denen ich später zurückkehren kann und die vielleicht auch anderen helfen.',
         ],
       },
       {
-        title: 'Ich bin offen für gute Gespräche',
+        title: 'Schreib mir, wenn du reden möchtest',
         bullets: [
-          'Melde dich, wenn du über Software, Entwickler-Tools, KI-gestützte Entwicklungsabläufe oder eine fokussierte Produktidee sprechen möchtest.',
-          'Am besten erreichst du mich per E-Mail: info@burakboduroglu.com.tr.',
+          'Wir können über Software, Entwickler-Tools, KI oder ein Produkt sprechen, an dem du arbeitest.',
+          'Am einfachsten erreichst du mich per E-Mail: info@burakboduroglu.com.tr.',
         ],
       },
     ],
@@ -128,81 +126,81 @@ const de = {
   appCopy: {
     macshelf: {
       category: 'macOS-App',
-      subtitle: 'Natives Zwischenablage-Regal für macOS',
+      subtitle: 'Zwischenablage-Manager für macOS',
       description:
-        'Ein natives Zwischenablage-Regal für macOS, für Text und Bilder. Entstanden als kleines Produktivitätswerkzeug, um nützliche Schnipsel griffbereit zu halten, ohne den Arbeitsfluss zu unterbrechen.',
+        'Eine macOS-App, die kopierte Texte und Bilder speichert, damit du sie später leicht wiederfindest und verwenden kannst.',
       stack: 'Swift',
       platform: 'macOS',
       price: 'Kostenlos',
       action: 'Laden',
-      heroTitle: 'Deine Zwischenablage, immer im Blick.',
+      heroTitle: 'Verliere Kopiertes nicht mehr.',
       heroText:
-        'MacShelf hält Text- und Bildschnipsel auf deinem Mac bereit — einfach, nativ und nie im Weg.',
+        'MacShelf speichert Kopiertes im Hintergrund und hält es bereit, wenn du es brauchst.',
     },
     portkill: {
       category: 'CLI-App',
-      subtitle: 'Blockierte TCP-Ports mit einem Befehl freigeben',
+      subtitle: 'Belegte TCP-Ports mit einem Befehl schließen',
       description:
-        'Ein CLI für macOS und Linux, das Prozesse auf TCP-Ports beendet — mit Dry-Run, Port-Bereichen, Listenmodus und optionaler lokaler Weboberfläche.',
+        'Ein CLI für macOS und Linux, das den Prozess findet und beendet, der einen Port verwendet. Mit Vorschau, Port-Bereichen und Listenmodus.',
       stack: 'TypeScript',
       platform: 'macOS / Linux',
       price: 'Kostenlos',
       action: 'Laden',
-      heroTitle: 'Ports freigeben, ohne Befehle auswendig zu lernen.',
+      heroTitle: 'Finde den Prozess hinter einem Port.',
       heroText:
-        'Ein fokussiertes Entwickler-Tool, um portgebundene Prozesse schnell und sicher zu finden und zu beenden.',
+        'Finde heraus, welcher Prozess einen Port verwendet, und beende ihn bei Bedarf mit einem Befehl.',
     },
     'dev-notes': {
       category: 'CLI / DevTool',
-      subtitle: 'Entwicklernotizen direkt aus der Kommandozeile',
+      subtitle: 'Entwicklernotizen im Terminal festhalten',
       description:
-        'Ein CLI und Entwickler-Tool, um praktische Entwicklungsnotizen nah am Terminal zu halten, damit Befehle, Schnipsel und Implementierungsdetails leicht festzuhalten und wiederzufinden sind.',
+        'Ein CLI, mit dem du Befehle, Code-Schnipsel und Projektnotizen direkt im Terminal speicherst und später wiederfindest.',
       stack: 'Entwickler-Tool',
       platform: 'CLI',
       price: 'Kostenlos',
       action: 'Laden',
-      heroTitle: 'Entwicklernotizen dort, wo die Arbeit passiert.',
+      heroTitle: 'Halte deine Notizen nah am Terminal.',
       heroText:
-        'DevNotes ist ein terminalfreundliches Notiz-Werkzeug für die Befehle, Schnipsel und Zusammenhänge, auf die du beim Bauen zurückgreifst.',
+        'DevNotes hält die Befehle, Code-Schnipsel und Projektdetails, die du beim Bauen verwendest, an einem Ort.',
     },
     bdash: {
       category: 'SaaS',
-      subtitle: 'Verwaltungsplattform für kleine Unternehmen',
+      subtitle: 'Verwaltungsplattform für Unternehmen',
       description:
-        'BDash ist eine fokussierte Verwaltungsplattform, die Produkte, Lagerbestand, Kosten, Kunden und Bestellungen auf einer klaren Arbeitsoberfläche bündelt. Sie verbindet eine schnelle TanStack-Start-Oberfläche mit Supabase Auth und Postgres und gibt kleinen Teams ein praktisches Dashboard für den Alltag, ohne einfache Abläufe unter Enterprise-Komplexität zu begraben.',
+        'BDash bündelt Produkte, Lagerbestand, Kosten, Kunden und Bestellungen in einem Dashboard. Die Plattform hilft Unternehmen, ihre täglichen Abläufe ohne unnötige Komplexität im Blick zu behalten.',
       stack: 'TypeScript',
       platform: 'Web',
       price: 'Privat',
       action: 'Ansehen',
-      heroTitle: 'Eine ruhige Steuerzentrale für kleine Unternehmen.',
+      heroTitle: 'Das Unternehmen an einem Ort im Blick.',
       heroText:
-        'BDash bringt Produkte, Lagerbestand, Kunden, Kosten und Bestellungen in ein schnelles Web-Dashboard, gebaut mit TanStack Start, Supabase und Bun.',
+        'BDash ermöglicht die Verwaltung der täglichen Abläufe über ein einziges Web-Dashboard.',
     },
     alice: {
       category: 'Web Page',
       subtitle: 'Landingpage für eine Hochzeitslocation',
       description:
-        'Ein sorgfältig gestaltetes Landingpage-Konzept für eine Hochzeitslocation, das Raum, Atmosphäre und wichtige Informationen klar für Paare in der Planung darstellt.',
+        'Ein Website-Konzept für eine Hochzeitslocation. Es präsentiert Atmosphäre, Leistungen und wichtige Informationen auf einfache Weise.',
       stack: 'Web',
       platform: 'Browser',
       price: 'Kostenlos',
       action: 'Ansehen',
-      heroTitle: 'Eine warme Landingpage für eine Hochzeitslocation.',
+      heroTitle: 'Die Location auf den ersten Blick spürbar machen.',
       heroText:
-        'Alice ist ein klares Website-Konzept, das eine Hochzeitslocation ruhig, elegant und abschlussorientiert in Szene setzt.',
+        'Alice ist ein einfaches Website-Konzept, das die Atmosphäre und das Erlebnis einer Hochzeitslocation hervorhebt.',
     },
     'betus-design': {
       category: 'Web Page',
       subtitle: 'Landingpage für eine Manufaktur für Handarbeit',
       description:
-        'Ein sorgfältig gestaltetes Landingpage-Konzept für eine Manufaktur für Handarbeit, das Produkte, Atmosphäre und wichtige Informationen klar für Kundinnen und Kunden darstellt.',
+        'Ein Website-Konzept für eine Manufaktur. Es präsentiert die Produkte, die Geschichte der Werkstatt und wichtige Informationen auf einfache Weise.',
       stack: 'Web',
       platform: 'Browser',
       price: 'Kostenlos',
       action: 'Ansehen',
-      heroTitle: 'Eine warme Landingpage für eine Manufaktur für Handarbeit.',
+      heroTitle: 'Die Geschichte hinter der Handarbeit erzählen.',
       heroText:
-        'Betus Design ist ein klares Website-Konzept, das eine Manufaktur für Handarbeit ruhig, elegant und abschlussorientiert in Szene setzt.',
+        'Betus Design ist ein einfaches Website-Konzept, das die Produkte und die Geschichte einer Manufaktur hervorhebt.',
     },
   },
 } satisfies Messages

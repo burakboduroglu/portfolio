@@ -8,7 +8,6 @@ const tr = {
       'Burak Boduroğlu’nun kişisel sitesi; yaptığı işler, uygulamalar ve teknik notlar.',
   },
   nav: {
-    apps: 'Uygulamalar',
     languageAria: 'Dil',
   },
   hero: {

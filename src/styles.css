@@ -2395,6 +2395,14 @@ blockquote {
     font-size: 12px;
   }
 
+  .project-card-media .store-app-icon .portkill-mark {
+    gap: 0;
+  }
+
+  .project-card-media .store-app-icon .portkill-mark i {
+    display: none;
+  }
+
   .project-card-subtitle {
     min-height: 0;
     -webkit-line-clamp: 1;

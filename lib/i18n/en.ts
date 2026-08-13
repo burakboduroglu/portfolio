@@ -18,17 +18,17 @@ const en = {
     reachOut: 'Reach out',
   },
   profile: {
-    location: 'Türkiye / Remote',
     intro:
       'I’m a software engineer who likes turning unclear ideas into simple, reliable, and usable software. I enjoy working across the full product cycle — understanding the problem, shaping the experience, building the system, and refining it until it feels clear and dependable.',
     aiIntro:
       'My work style is practical and intentional: define the context, move in small iterations, keep the system observable, and use modern tools thoughtfully. I care about software that is easy to understand, easy to improve, and calm to operate.',
-    reachOutPre: 'Open to collaborations, developer tooling, and clear conversations —',
     links: {
       email: 'Send email',
       linkedin: 'LinkedIn',
       devto: 'DEV.to',
       github: 'GitHub',
+      substack: 'Substack',
+      producthunt: 'Product Hunt',
     },
   },
   categories: {
@@ -39,6 +39,7 @@ const en = {
     productivity: 'Productivity',
   },
   apps: {
+    title: 'Projects',
     sectionAria: 'Embedded apps showcase',
     navAria: 'Apps navigation',
     openNav: 'Open navigation',
@@ -76,7 +77,6 @@ const en = {
     title: 'Let’s talk',
     intro:
       'I’m interested in well-scoped products, practical AI-assisted engineering workflows, developer tools, and software that feels simple from the outside while staying solid underneath.',
-    sendEmail: 'Send email',
     topics: [
       {
         title: 'I build clear, dependable software',
@@ -102,7 +102,7 @@ const en = {
       {
         title: 'I write and share technical notes',
         bullets: [
-          'I publish practical programming notes and software engineering articles on DEV.to.',
+          'I publish practical programming notes and software engineering articles on Substack (penolox) and DEV.to.',
           'I enjoy turning what I learn while building into notes that are useful for other developers.',
         ],
       },
@@ -114,6 +114,13 @@ const en = {
         ],
       },
     ],
+  },
+  articles: {
+    sectionAria: 'Articles and writing',
+    scrollLabel: 'Articles',
+    title: 'Articles',
+    viewAll: 'View all on Substack',
+    readOnSubstack: 'Read on Substack',
   },
   footer: {
     crafted: (name) => ['Crafted with', `by ${name}`],
@@ -159,7 +166,7 @@ const en = {
         'DevNotes is a terminal-friendly notes utility for saving the commands, snippets, and context you reach for while building.',
     },
     bdash: {
-      category: 'Web App',
+      category: 'SaaS',
       subtitle: 'Small business management platform',
       description:
         'BDash is a focused business management platform for keeping products, inventory, costs, customers, and orders in one clear operating surface. It combines a fast TanStack Start interface with Supabase Auth and Postgres, giving small teams a practical dashboard for daily work without burying simple workflows under enterprise complexity.',
@@ -172,7 +179,7 @@ const en = {
         'BDash brings products, inventory, customers, costs, and orders into a fast web dashboard built with TanStack Start, Supabase, and Bun.',
     },
     alice: {
-      category: 'Web App',
+      category: 'Web Page',
       subtitle: 'Landing page for a wedding venue',
       description:
         'A polished landing page concept for a wedding venue, designed to present the space, atmosphere, and key information clearly for couples planning their event.',
@@ -185,7 +192,7 @@ const en = {
         'Alice is a clean promotional website concept for showcasing a wedding venue with a calm, elegant, and conversion-focused presentation.',
     },
     'betus-design': {
-      category: 'Web App',
+      category: 'Web Page',
       subtitle: 'Landing page for a handmade craft shop',
       description:
         'A polished landing page concept for a handmade craft shop, designed to present the products, atmosphere, and key information clearly for customers planning their purchase.',

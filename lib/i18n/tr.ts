@@ -5,7 +5,7 @@ const tr = {
   meta: {
     title: 'Burak Boduroğlu',
     description:
-      'Burak Boduroğlu’nun sade kişisel sitesi; React ve Vite ile geliştirilmiş gömülü bir uygulama vitrini içerir.',
+      'Burak Boduroğlu’nun kişisel sitesi; yaptığı işler, uygulamalar ve teknik notlar.',
   },
   nav: {
     apps: 'Uygulamalar',
@@ -14,21 +14,20 @@ const tr = {
   hero: {
     photoAlt: 'Burak Boduroğlu',
     contactLinksAria: 'İletişim bağlantıları',
-    connect: 'Bağlantı',
+    connect: 'İletişim',
     reachOut: 'İletişime geç',
   },
   profile: {
-    location: 'Türkiye / Uzaktan',
     intro:
-      'Belirsiz fikirleri sade, güvenilir ve kullanışlı yazılıma dönüştürmeyi seven bir yazılım mühendisiyim. Ürün döngüsünün tamamında çalışmaktan keyif alıyorum — problemi anlamak, deneyimi şekillendirmek, sistemi kurmak ve net ve güvenilir hissettirene kadar inceltmek.',
-    aiIntro:
-      'Çalışma tarzım pratik ve bilinçli: bağlamı tanımla, küçük adımlarla ilerle, sistemi gözlemlenebilir tut ve modern araçları düşünerek kullan. Anlaşılması kolay, geliştirilmesi kolay ve işletmesi sakin yazılımı önemsiyorum.',
-    reachOutPre: 'İş birliklerine, geliştirici araçlarına ve net sohbetlere açığım —',
+      'Yazılım mühendisiyim. Dağınık fikirleri sade, kullanışlı ve gerçekten işe yarayan ürünlere dönüştürmeyi seviyorum. Problemi anlamaktan ürünü yayına almaya kadar sürecin içinde olmayı tercih ederim. Küçük adımlarla ilerler, doğru araçları kullanır ve okunabilir, sürdürülebilir kod yazmaya önem veririm.',
+    aiIntro: '',
     links: {
-      email: 'E-posta gönder',
+      email: 'E-posta',
       linkedin: 'LinkedIn',
       devto: 'DEV.to',
       github: 'GitHub',
+      substack: 'Substack',
+      producthunt: 'Product Hunt',
     },
   },
   categories: {
@@ -39,8 +38,9 @@ const tr = {
     productivity: 'Üretkenlik',
   },
   apps: {
-    sectionAria: 'Gömülü uygulama vitrini',
-    navAria: 'Uygulama gezinmesi',
+    title: 'Projeler',
+    sectionAria: 'Uygulama vitrini',
+    navAria: 'Uygulama menüsü',
     openNav: 'Menüyü aç',
     closeNav: 'Menüyü kapat',
     searchPlaceholder: 'Ara',
@@ -48,7 +48,7 @@ const tr = {
     discover: 'Keşfet',
     categoriesHeading: 'Kategoriler',
     all: 'Tümü',
-    allApps: 'Tüm Uygulamalar',
+    allApps: 'Tüm uygulamalar',
     featured: 'Öne çıkan',
     filterAria: 'Kategoriye göre filtrele',
     searchResults: (query) => `"${query}" için sonuçlar`,
@@ -56,17 +56,17 @@ const tr = {
     resultCount: (count) => `${count} sonuç`,
     clearFilter: 'Filtreleri temizle',
     emptyTitle: 'Uygulama bulunamadı',
-    emptyBody: 'Uygulama adı, kategori, platform veya dil ile aramayı deneyin.',
+    emptyBody: 'Uygulama adı, kategori, platform veya dil ile aramayı dene.',
     prevPage: 'Önceki sayfa',
     nextPage: 'Sonraki sayfa',
     pageOf: (current, total) => `Sayfa ${current} / ${total}`,
     back: 'Geri',
-    viewOnGitHub: 'GitHub’da görüntüle',
+    viewOnGitHub: 'GitHub’da aç',
     preview: 'Önizleme',
     description: 'Açıklama',
     stats: {
       stars: 'Yıldız',
-      forks: 'Çatal',
+      forks: 'Fork',
       price: 'Fiyat',
       platform: 'Platform',
       language: 'Dil',
@@ -75,127 +75,133 @@ const tr = {
   contact: {
     title: 'Konuşalım',
     intro:
-      'Kapsamı net ürünler, pratik yapay zekâ destekli mühendislik akışları, geliştirici araçları ve dışarıdan sade görünürken içeride sağlam kalan yazılımlar ilgimi çekiyor.',
-    sendEmail: 'E-posta gönder',
+      'Kapsamı belli ürünler, geliştirici araçları ve iyi düşünülmüş mühendislik süreçleri ilgimi çekiyor. Dışarıdan basit görünen ama işini güvenilir biçimde yapan yazılımları seviyorum.',
     topics: [
       {
-        title: 'Net ve güvenilir yazılım geliştiriyorum',
+        title: 'Ürünü ve kodu birlikte düşünüyorum',
         bullets: [
-          'Problemin gerçek, kapsamın net olduğu ve sonucun kullanıcılar için sade hissettirmesi gereken ürünler ve iç araçlar üzerinde çalışmayı seviyorum.',
-          'Hem teknik yönü hem de etrafındaki ürün detaylarını birlikte şekillendirebildiğimde en faydalı olduğumu düşünüyorum.',
+          'Gerçek bir ihtiyacı çözen, kapsamı belli ürünler ve iç araçlar üzerinde çalışmayı seviyorum.',
+          'Problemi, kullanıcıyı ve teknik çözümü birlikte düşündüğüm projelerde daha iyi iş çıkarıyorum.',
         ],
       },
       {
-        title: 'Geliştirici araçlarını ve işe yarar yardımcıları önemsiyorum',
+        title: 'Küçük ama işe yarayan araçlar',
         bullets: [
-          'MacShelf ve .portkill gibi projeler sevdiğim yazılım türünü yansıtıyor: odaklı, pratik ve gerçek iş akışı sürtünmesi etrafında kurulmuş.',
-          'Geliştiriciler, ekipler veya teknik operatörler için araç geliştiriyorsanız duymaktan memnuniyet duyarım.',
+          'MacShelf ve .portkill, sevdiğim yaklaşımı iyi anlatıyor: tek bir işi yapan ve o işi düzgün yapan araçlar.',
+          'Geliştiricilerin veya ekiplerin günlük işini kolaylaştıran bir şey yapıyorsan konuşmak isterim.',
         ],
       },
       {
-        title: 'Yapay zekâyı mühendislik sisteminin bir parçası olarak kullanıyorum',
+        title: 'Yapay zekâyı işin içinde kullanıyorum',
         bullets: [
-          'Bağlam mühendisliği, ajans akışları, inceleme döngüleri ve yapay zekâ destekli geliştirmeyi daha güvenilir kılacak yollar ilgimi çekiyor.',
-          'Amaç mühendislik muhakemesini atlamak değil, iyi mühendislik işini daha hızlı ve tekrarlanabilir hale getirmek.',
+          'Context engineering, ajan akışları ve kod inceleme süreçleri üzerine düşünüyorum.',
+          'Yapay zekâ benim için düşünmenin yerine geçen bir araç değil; iyi bir mühendislik sürecini hızlandıran bir yardımcı.',
         ],
       },
       {
-        title: 'Teknik notlar yazıyor ve paylaşıyorum',
+        title: 'Öğrendiklerimi yazıyorum',
         bullets: [
-          'DEV.to üzerinde pratik programlama notları ve yazılım mühendisliği yazıları yayımlıyorum.',
-          'Geliştirirken öğrendiklerimi diğer geliştiricilere faydalı olacak notlara dönüştürmekten keyif alıyorum.',
+          'Substack’te (penolox) ve DEV.to’da programlama ve yazılım mühendisliği üzerine yazıyorum.',
+          'Bir şey inşa ederken öğrendiklerimi, daha sonra dönüp bakabileceğim ve başkasının da işine yarayabilecek notlara çeviriyorum.',
         ],
       },
       {
-        title: 'Düşünceli sohbetlere açığım',
+        title: 'Konuşmak istersen yaz',
         bullets: [
-          'Yazılım, geliştirici araçları, yapay zekâ destekli mühendislik akışları ya da odaklı bir ürün fikri hakkında konuşmak isterseniz yazın.',
-          'Bana ulaşmanın en iyi yolu e-posta: info@burakboduroglu.com.tr.',
+          'Yazılım, geliştirici araçları, yapay zekâ veya üzerinde çalıştığın bir ürün hakkında konuşabiliriz.',
+          'Bana ulaşmanın en kolay yolu e-posta: info@burakboduroglu.com.tr.',
         ],
       },
     ],
   },
+  articles: {
+    sectionAria: 'Yazılar',
+    scrollLabel: 'Yazılar',
+    title: 'Yazılar',
+    viewAll: 'Tümünü Substack’te gör',
+    readOnSubstack: 'Substack’te oku',
+  },
   footer: {
-    crafted: (name) => [`${name} tarafından`, 'ile yapıldı'],
+    crafted: (name) => [`${name} tarafından`, 'yapıldı'],
   },
   appCopy: {
     macshelf: {
       category: 'macOS Uygulaması',
-      subtitle: 'macOS için yerel pano rafı',
+      subtitle: 'macOS için pano yöneticisi',
       description:
-        'Metin ve görseller için yerel bir macOS pano rafı. Faydalı parçacıkları akışı bozmadan elinizin altında tutmak için küçük bir üretkenlik aracı olarak geliştirildi.',
+        'Daha önce kopyaladığın metin ve görselleri saklayan macOS uygulaması. İhtiyacın olduğunda aradığını kolayca bulup tekrar kullanmanı sağlar.',
       stack: 'Swift',
       platform: 'macOS',
       price: 'Ücretsiz',
       action: 'İndir',
-      heroTitle: 'Panonuz her zaman göz önünde.',
+      heroTitle: 'Panondaki şeyleri kaybetme.',
       heroText:
-        'MacShelf, metin ve görsel parçacıklarını Mac’inizde hazır tutar — sade, yerel ve yolunuza çıkmadan.',
+        'MacShelf, kopyaladığın şeyleri kaybetmemen için arka planda çalışır ve ihtiyaç olduğunda hepsini elinin altında tutar.',
     },
     portkill: {
       category: 'CLI Uygulaması',
-      subtitle: 'Takılı TCP portlarını tek komutla serbest bırakın',
+      subtitle: 'Kullanılan TCP portlarını tek komutla kapat',
       description:
-        'macOS ve Linux için TCP portlarını dinleyen süreçleri sonlandıran bir CLI; kuru çalıştırma, port aralıkları, listeleme modu ve isteğe bağlı yerel web arayüzü ile.',
+        'macOS ve Linux’ta bir portu kullanan süreci bulup kapatmaya yarayan bir CLI. İşlemi uygulamadan önce kontrol etmek, port aralığı taramak ve açık portları listelemek mümkün.',
       stack: 'TypeScript',
       platform: 'macOS / Linux',
       price: 'Ücretsiz',
       action: 'İndir',
-      heroTitle: 'Komut ezberlemeden portları serbest bırakın.',
+      heroTitle: 'Portu kullanan süreci hemen bul.',
       heroText:
-        'Porta bağlı süreçleri hızlı ve güvenli şekilde bulup sonlandırmak için odaklı bir geliştirici aracı.',
+        'Bir portu hangi sürecin kullandığını bulup gerektiğinde tek komutla kapat.',
     },
     'dev-notes': {
       category: 'CLI / Geliştirici Aracı',
-      subtitle: 'Komut satırından geliştirici notları',
+      subtitle: 'Geliştirici notlarını terminalde tut',
       description:
-        'Pratik geliştirme notlarını terminale yakın tutmak için bir CLI ve geliştirici aracı; böylece komutlar, parçacıklar ve uygulama detayları kolayca kaydedilir ve tekrar bulunur.',
+        'Komutları, kod parçalarını ve proje notlarını terminalden çıkmadan kaydetmeni ve ihtiyaç olduğunda bulmanı sağlayan bir CLI.',
       stack: 'Geliştirici Aracı',
       platform: 'CLI',
       price: 'Ücretsiz',
       action: 'İndir',
-      heroTitle: 'Geliştirici notlarını işin geçtiği yerde tutun.',
+      heroTitle: 'Notların terminalden uzaklaşmasın.',
       heroText:
-        'DevNotes, geliştirirken başvurduğunuz komutları, parçacıkları ve bağlamı kaydetmek için terminal dostu bir not aracıdır.',
+        'DevNotes, geliştirirken sık kullandığın komutları, kod parçalarını ve proje detaylarını tek yerde tutar.',
     },
     bdash: {
-      category: 'Web Uygulaması',
-      subtitle: 'Küçük işletme yönetim platformu',
+      category: 'SaaS',
+      subtitle: 'İşletmeler için yönetim paneli',
       description:
-        'BDash; ürünleri, stoğu, maliyetleri, müşterileri ve siparişleri tek bir net operasyon yüzeyinde tutan odaklı bir işletme yönetim platformudur. Hızlı bir TanStack Start arayüzünü Supabase Auth ve Postgres ile birleştirerek küçük ekiplere, basit iş akışlarını kurumsal karmaşıklığın altına gömmeden günlük iş için pratik bir panel sunar.',
+        'BDash; ürün, stok, maliyet, müşteri ve sipariş takibini tek panelde bir araya getirir. Küçük ekiplerin günlük işlerini daha kolay takip edebilmesi için tasarlandı.',
       stack: 'TypeScript',
       platform: 'Web',
       price: 'Özel',
       action: 'Görüntüle',
-      heroTitle: 'Küçük işletme operasyonları için sakin bir kontrol yüzeyi.',
+      heroTitle: 'Küçük işletmenin bütün işleri tek yerde.',
       heroText:
-        'BDash; ürünleri, stoğu, müşterileri, maliyetleri ve siparişleri TanStack Start, Supabase ve Bun ile kurulmuş hızlı bir web paneline taşır.',
+        'BDash, işletmenin günlük operasyonlarını tek bir web panelinden takip etmeni sağlar.',
     },
     alice: {
-      category: 'Web Uygulaması',
-      subtitle: 'Bir düğün mekânı için tanıtım sayfası',
+      category: 'Web Page',
+      subtitle: 'Düğün mekânı için tanıtım sayfası',
       description:
-        'Bir düğün mekânı için özenli bir tanıtım sayfası konsepti; mekânı, atmosferi ve önemli bilgileri organizasyonunu planlayan çiftlere net biçimde sunmak üzere tasarlandı.',
+        'Bir düğün mekânını tanıtmak için hazırlanmış web sitesi konsepti. Mekânın atmosferini, hizmetlerini ve önemli bilgileri sade bir şekilde sunar.',
       stack: 'Web',
       platform: 'Tarayıcı',
       price: 'Ücretsiz',
       action: 'Görüntüle',
-      heroTitle: 'Bir düğün mekânı için sıcak bir tanıtım sayfası.',
+      heroTitle: 'Mekânı daha ilk bakışta hissettir.',
       heroText:
-        'Alice, bir düğün mekânını sakin, zarif ve dönüşüm odaklı bir sunumla öne çıkarmak için tasarlanmış temiz bir tanıtım sitesi konseptidir.',
+        'Alice, bir düğün mekânının atmosferini ve sunduğu deneyimi öne çıkaran sade bir web sitesi konsepti.',
     },
     'betus-design': {
-      category: 'Web Uygulaması',
-      subtitle: 'El yapımı tasarım atölyesi için tanıtım sayfası',
+      category: 'Web Page',
+      subtitle: 'El yapımı atölye için tanıtım sayfası',
       description:
-        'El yapımı bir tasarım atölyesi için özenli bir tanıtım sayfası konsepti; ürünleri, atmosferi ve önemli bilgileri alışverişini planlayan müşterilere net biçimde sunmak üzere tasarlandı.',
+        'El yapımı ürünler üreten bir atölye için hazırlanmış web sitesi konsepti. Ürünleri, atölyenin hikâyesini ve önemli bilgileri sade bir şekilde sunar.',
       stack: 'Web',
       platform: 'Tarayıcı',
       price: 'Ücretsiz',
       action: 'Görüntüle',
-      heroTitle: 'El yapımı tasarım atölyesi için sıcak bir tanıtım sayfası.',
+      heroTitle: 'El emeğinin hikâyesini anlat.',
       heroText:
-        'Betus Design, el yapımı bir tasarım atölyesini sakin, zarif ve dönüşüm odaklı bir sunumla öne çıkarmak için tasarlanmış temiz bir tanıtım sitesi konseptidir.',
+        'Betus Design, el yapımı bir atölyenin ürünlerini ve hikâyesini öne çıkaran sade bir web sitesi konsepti.',
     },
   },
 } satisfies Messages

@@ -33,14 +33,13 @@ export type Messages = {
     reachOut: string
   }
   profile: {
-    location: string
     intro: string
     aiIntro: string
-    reachOutPre: string
     links: Record<ProfileLinkKey, string>
   }
   categories: Record<CategoryKey, string>
   apps: {
+    title: string
     sectionAria: string
     navAria: string
     openNav: string
@@ -71,8 +70,14 @@ export type Messages = {
   contact: {
     title: string
     intro: string
-    sendEmail: string
     topics: { title: string; bullets: string[] }[]
+  }
+  articles: {
+    sectionAria: string
+    scrollLabel: string
+    title: string
+    viewAll: string
+    readOnSubstack: string
   }
   footer: {
     /** [before ❤️, after ❤️] — DE and TR put the heart in a different position */

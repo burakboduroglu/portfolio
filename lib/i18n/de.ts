@@ -18,17 +18,17 @@ const de = {
     reachOut: 'Melde dich',
   },
   profile: {
-    location: 'Türkei / Remote',
     intro:
       'Ich bin Softwareentwickler und verwandle unklare Ideen gern in einfache, verlässliche und benutzbare Software. Ich arbeite gerne über den gesamten Produktzyklus hinweg — das Problem verstehen, die Erfahrung gestalten, das System bauen und es verfeinern, bis es klar und verlässlich wirkt.',
     aiIntro:
       'Meine Arbeitsweise ist pragmatisch und bewusst: den Kontext festlegen, in kleinen Schritten vorgehen, das System beobachtbar halten und moderne Werkzeuge überlegt einsetzen. Mir liegt an Software, die leicht zu verstehen, leicht zu verbessern und ruhig zu betreiben ist.',
-    reachOutPre: 'Offen für Zusammenarbeit, Entwickler-Tools und klare Gespräche —',
     links: {
       email: 'E-Mail senden',
       linkedin: 'LinkedIn',
       devto: 'DEV.to',
       github: 'GitHub',
+      substack: 'Substack',
+      producthunt: 'Product Hunt',
     },
   },
   categories: {
@@ -39,6 +39,7 @@ const de = {
     productivity: 'Produktivität',
   },
   apps: {
+    title: 'Projekte',
     sectionAria: 'Eingebettete App-Übersicht',
     navAria: 'App-Navigation',
     openNav: 'Navigation öffnen',
@@ -76,7 +77,6 @@ const de = {
     title: 'Sprechen wir',
     intro:
       'Mich interessieren klar abgegrenzte Produkte, praxisnahe KI-gestützte Entwicklungsabläufe, Entwickler-Tools und Software, die von außen einfach wirkt und innen solide bleibt.',
-    sendEmail: 'E-Mail senden',
     topics: [
       {
         title: 'Ich baue klare, verlässliche Software',
@@ -102,7 +102,7 @@ const de = {
       {
         title: 'Ich schreibe und teile technische Notizen',
         bullets: [
-          'Auf DEV.to veröffentliche ich praktische Programmiernotizen und Artikel zum Software Engineering.',
+          'Auf Substack (penolox) und DEV.to veröffentliche ich praktische Programmiernotizen und Artikel zum Software Engineering.',
           'Ich verwandle gern das, was ich beim Bauen lerne, in Notizen, die auch anderen Entwicklern nützen.',
         ],
       },
@@ -114,6 +114,13 @@ const de = {
         ],
       },
     ],
+  },
+  articles: {
+    sectionAria: 'Artikel und Schreiben',
+    scrollLabel: 'Articles',
+    title: 'Articles',
+    viewAll: 'Alle auf Substack ansehen',
+    readOnSubstack: 'Auf Substack lesen',
   },
   footer: {
     crafted: (name) => ['Mit', `von ${name} erstellt`],
@@ -159,7 +166,7 @@ const de = {
         'DevNotes ist ein terminalfreundliches Notiz-Werkzeug für die Befehle, Schnipsel und Zusammenhänge, auf die du beim Bauen zurückgreifst.',
     },
     bdash: {
-      category: 'Web-App',
+      category: 'SaaS',
       subtitle: 'Verwaltungsplattform für kleine Unternehmen',
       description:
         'BDash ist eine fokussierte Verwaltungsplattform, die Produkte, Lagerbestand, Kosten, Kunden und Bestellungen auf einer klaren Arbeitsoberfläche bündelt. Sie verbindet eine schnelle TanStack-Start-Oberfläche mit Supabase Auth und Postgres und gibt kleinen Teams ein praktisches Dashboard für den Alltag, ohne einfache Abläufe unter Enterprise-Komplexität zu begraben.',
@@ -172,7 +179,7 @@ const de = {
         'BDash bringt Produkte, Lagerbestand, Kunden, Kosten und Bestellungen in ein schnelles Web-Dashboard, gebaut mit TanStack Start, Supabase und Bun.',
     },
     alice: {
-      category: 'Web-App',
+      category: 'Web Page',
       subtitle: 'Landingpage für eine Hochzeitslocation',
       description:
         'Ein sorgfältig gestaltetes Landingpage-Konzept für eine Hochzeitslocation, das Raum, Atmosphäre und wichtige Informationen klar für Paare in der Planung darstellt.',
@@ -185,7 +192,7 @@ const de = {
         'Alice ist ein klares Website-Konzept, das eine Hochzeitslocation ruhig, elegant und abschlussorientiert in Szene setzt.',
     },
     'betus-design': {
-      category: 'Web-App',
+      category: 'Web Page',
       subtitle: 'Landingpage für eine Manufaktur für Handarbeit',
       description:
         'Ein sorgfältig gestaltetes Landingpage-Konzept für eine Manufaktur für Handarbeit, das Produkte, Atmosphäre und wichtige Informationen klar für Kundinnen und Kunden darstellt.',

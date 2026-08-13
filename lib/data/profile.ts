@@ -8,8 +8,10 @@ const profile = {
   links: [
     { key: 'email', href: 'mailto:info@burakboduroglu.com.tr', icon: 'mail' },
     { key: 'linkedin', href: 'https://www.linkedin.com/in/burakboduroglu', icon: 'linkedin' },
-    { key: 'devto', href: 'https://dev.to/burakboduroglu', icon: 'devto' },
     { key: 'github', href: 'https://github.com/burakboduroglu', icon: 'github' },
+    { key: 'substack', href: 'https://substack.com/@penoloxai', icon: 'substack' },
+    { key: 'producthunt', href: 'https://www.producthunt.com/@burakboduroglu', icon: 'producthunt' },
+    { key: 'devto', href: 'https://dev.to/burakboduroglu', icon: 'devto' },
   ],
 } satisfies ProfileData
 

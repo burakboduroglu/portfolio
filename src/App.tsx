@@ -21,9 +21,6 @@ function App() {
               <span>{profile.name}</span>
             </div>
             <div className='page-top-actions'>
-              <a className='page-top-apps' href='#apps'>
-                {t.nav.apps}
-              </a>
               <LanguageSwitcher />
             </div>
           </div>

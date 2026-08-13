@@ -29,7 +29,6 @@ const de = {
       linkedin: 'LinkedIn',
       devto: 'DEV.to',
       github: 'GitHub',
-      npm: 'NPM',
     },
   },
   categories: {

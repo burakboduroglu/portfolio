@@ -16,7 +16,7 @@ The UI is **React** on **Vite** in TypeScript, with layout and typography in pla
 
 The site ships in Turkish, English, and German. There is no i18n dependency — `lib/i18n/index.ts` is a small context provider exposing `useT()`, `useLocale()`, and `useApps()`, which merges app metadata with the active translation.
 
-`lib/i18n/types.ts` defines a single `Messages` type that all three dictionaries `satisfies`. Because app copy and categories are keyed by union types, a missing or misspelled translation is a compile error — and `npm run build` runs `tsc --noEmit` first, so an incomplete translation cannot reach production.
+`lib/i18n/types.ts` defines a single `Messages` type that all three dictionaries `satisfies`. Because app copy and categories are keyed by union types, a missing or misspelled translation is a compile error — and `bun run build` runs `tsc --noEmit` first, so an incomplete translation cannot reach production.
 
 The active language is resolved as `?lang=` → `localStorage` → `navigator.language` → English, and the choice is written back to the URL so a link carries it. Search is normalised per locale, which matters for the Turkish dotted/dotless I.
 
@@ -24,4 +24,4 @@ To add a string: add it to `Messages`, then let the type errors point at each di
 
 ## If you cloned the repo
 
-You are looking at my site’s source, not a packaged product. Still, the usual Vite commands apply: `npm install`, `npm run dev` for local preview, and `npm run build` for production output. Pushes to `main` are deployed to **GitHub Pages** automatically through GitHub Actions; `npm run deploy` remains available as a manual fallback.
+You are looking at my site’s source, not a packaged product. Still, the usual Vite commands apply: `bun install`, `bun run dev` for local preview, and `bun run build` for production output. Pushes to `main` are deployed to **GitHub Pages** automatically through GitHub Actions; `bun run deploy` remains available as a manual fallback.

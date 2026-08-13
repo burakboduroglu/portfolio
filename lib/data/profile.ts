@@ -10,7 +10,6 @@ const profile = {
     { key: 'linkedin', href: 'https://www.linkedin.com/in/burakboduroglu', icon: 'linkedin' },
     { key: 'devto', href: 'https://dev.to/burakboduroglu', icon: 'devto' },
     { key: 'github', href: 'https://github.com/burakboduroglu', icon: 'github' },
-    { key: 'npm', href: 'https://www.npmjs.com/~burakboduroglu', icon: 'npm' },
   ],
 } satisfies ProfileData
 

@@ -18,7 +18,9 @@ function AppsSite() {
   const apps = useApps()
 
   const [activeCategory, setActiveCategory] = useState('all')
-  const [selectedApp, setSelectedApp] = useState<AppCard | null>(null)
+  // Keep only the stable id in state so a locale change can rehydrate the
+  // selected app with the newly translated copy.
+  const [selectedAppId, setSelectedAppId] = useState<AppCard['id'] | null>(null)
   const [searchQuery, setSearchQuery] = useState('')
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   const [currentPage, setCurrentPage] = useState(1)
@@ -35,7 +37,16 @@ function AppsSite() {
 
     return apps.filter((app) =>
       normalizeForSearch(
-        [app.title, app.subtitle, app.description, app.category, app.stack, app.platform].join(' '),
+        [
+          app.title,
+          app.subtitle,
+          app.description,
+          app.category,
+          app.stack,
+          app.platform,
+          app.heroTitle,
+          app.heroText,
+        ].join(' '),
         locale
       ).includes(query)
     )
@@ -64,28 +75,30 @@ function AppsSite() {
 
   function handleCategoryChange(categoryKey: string) {
     setActiveCategory(categoryKey)
-    setSelectedApp(null)
+    setSelectedAppId(null)
     setCurrentPage(1)
     setIsSidebarOpen(false)
   }
 
   function handleSearchChange(value: string) {
     setSearchQuery(value)
-    setSelectedApp(null)
+    setSelectedAppId(null)
     setCurrentPage(1)
   }
 
   function handleSelectApp(app: AppCard) {
     setIsSidebarOpen(false)
-    setSelectedApp(app)
+    setSelectedAppId(app.id)
   }
 
   function handleClearFilters() {
     setActiveCategory('all')
     setSearchQuery('')
-    setSelectedApp(null)
+    setSelectedAppId(null)
     setCurrentPage(1)
   }
+
+  const selectedApp = selectedAppId ? apps.find((app) => app.id === selectedAppId) ?? null : null
 
   return (
     <section
@@ -117,7 +130,7 @@ function AppsSite() {
         onSearchChange={handleSearchChange}
       />
       {selectedApp ? (
-        <AppsDetail app={selectedApp} onBack={() => setSelectedApp(null)} />
+        <AppsDetail app={selectedApp} onBack={() => setSelectedAppId(null)} />
       ) : (
         <AppsHome
           featuredApp={featuredApp}

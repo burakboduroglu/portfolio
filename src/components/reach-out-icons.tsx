@@ -1,4 +1,4 @@
-import { BookOpen, Hexagon, Mail } from 'lucide-react'
+import { BookOpen, Mail } from 'lucide-react'
 
 function SvgGitHub(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -27,8 +27,6 @@ function ReachOutLeadingIcon({ name }: { name: string }) {
       return <SvgLinkedIn />
     case 'devto':
       return <BookOpen {...stroke} />
-    case 'npm':
-      return <Hexagon {...stroke} />
     default:
       return null
   }

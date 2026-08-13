@@ -16,6 +16,22 @@ function SvgLinkedIn(props: React.SVGProps<SVGSVGElement>) {
   )
 }
 
+function SvgSubstack(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox='0 0 24 24' width={16} height={16} fill='currentColor' aria-hidden {...props}>
+      <path d='M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z' />
+    </svg>
+  )
+}
+
+function SvgProductHunt(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox='0 0 24 24' width={16} height={16} fill='currentColor' aria-hidden {...props}>
+      <path d='M13.604 8.4h-3.405V12h3.405a1.8 1.8 0 0 0 0-3.6zM12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm1.604 14.4h-3.405V18H7.801V6h5.803a4.2 4.2 0 1 1 0 8.4z' />
+    </svg>
+  )
+}
+
 function ReachOutLeadingIcon({ name }: { name: string }) {
   const stroke = { size: 16, strokeWidth: 2 }
   switch (name) {
@@ -25,6 +41,10 @@ function ReachOutLeadingIcon({ name }: { name: string }) {
       return <SvgGitHub />
     case 'linkedin':
       return <SvgLinkedIn />
+    case 'substack':
+      return <SvgSubstack />
+    case 'producthunt':
+      return <SvgProductHunt />
     case 'devto':
       return <BookOpen {...stroke} />
     default:

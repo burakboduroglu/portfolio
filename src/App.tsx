@@ -1,8 +1,9 @@
-import { ArrowUpRight, ChevronRight, MapPin } from 'lucide-react'
+import { ChevronRight } from 'lucide-react'
 import profile from '../lib/data/profile'
 import { useT } from '../lib/i18n'
 import AppsSite from './components/app-site/apps-site'
 import ExternalLink from './components/app-site/external-link'
+import ArticlesSection from './components/articles-section'
 import LanguageSwitcher from './components/language-switcher'
 import ReachOutLeadingIcon from './components/reach-out-icons'
 
@@ -11,23 +12,25 @@ function App() {
   const [craftedBefore, craftedAfter] = t.footer.crafted(profile.name)
 
   return (
-    <main>
+    <main className='site'>
       <header className='site-navbar' role='banner'>
-        <div className='page-top'>
-          <div className='page-label'>
-            <img src={profile.avatarUrl} alt='' />
-            <span>{profile.name}</span>
-          </div>
-          <div className='page-top-actions'>
-            <a className='page-top-apps' href='#apps'>
-              {t.nav.apps}
-            </a>
-            <LanguageSwitcher />
+        <div className='site-rail'>
+          <div className='page-top'>
+            <div className='page-label'>
+              <img src={profile.avatarUrl} alt='' />
+              <span>{profile.name}</span>
+            </div>
+            <div className='page-top-actions'>
+              <a className='page-top-apps' href='#apps'>
+                {t.nav.apps}
+              </a>
+              <LanguageSwitcher />
+            </div>
           </div>
         </div>
       </header>
 
-      <div className='page'>
+      <div className='site-rail page'>
         <header className='hero'>
           <div className='hero-photo-row'>
             <img className='profile-photo' src={profile.avatarUrl} alt={t.hero.photoAlt} />
@@ -37,41 +40,31 @@ function App() {
           <div className='hero-grid'>
             <div className='hero-copy-main'>
               <p>{t.profile.intro}</p>
-              <p>{t.profile.aiIntro}</p>
+              {t.profile.aiIntro ? <p>{t.profile.aiIntro}</p> : null}
             </div>
-            <p className='location-line location-line--hero'>
-              <MapPin size={15} /> {t.profile.location}
-            </p>
             <div className='reach-out-column'>
-              <p className='reach-out-pre'>{t.profile.reachOutPre}</p>
               <aside className='reach-out' aria-label={t.hero.contactLinksAria}>
                 <div className='reach-out-header'>
-                  <p className='reach-out-eyebrow'>{t.hero.connect}</p>
                   <h3 className='reach-out-title'>
                     <span className='reach-out-title-dot' aria-hidden='true' />
                     {t.hero.reachOut}
                   </h3>
                 </div>
                 <ul className='reach-out-list'>
-                  {profile.links.map((link) => (
-                    <li key={link.key}>
-                      <ExternalLink className='reach-out-link' href={link.href}>
-                        <span className='reach-out-link-lead'>
-                          <span className='reach-out-link-kind-wrap' aria-hidden='true'>
-                            <ReachOutLeadingIcon name={link.icon} />
-                          </span>
-                          <span className='reach-out-link-label'>
-                            {t.profile.links[link.key]}
-                          </span>
-                        </span>
-                        <ArrowUpRight
-                          size={17}
-                          className='reach-out-link-icon'
-                          aria-hidden='true'
-                        />
-                      </ExternalLink>
-                    </li>
-                  ))}
+                  {profile.links.map((link) => {
+                    const label = t.profile.links[link.key]
+                    return (
+                      <li key={link.key}>
+                        <ExternalLink
+                          className='reach-out-link'
+                          href={link.href}
+                          title={label}
+                          aria-label={label}>
+                          <ReachOutLeadingIcon name={link.icon} />
+                        </ExternalLink>
+                      </li>
+                    )
+                  })}
                 </ul>
               </aside>
             </div>
@@ -83,10 +76,6 @@ function App() {
         <section className='get-in-touch'>
           <h2>{t.contact.title}</h2>
           <p>{t.contact.intro}</p>
-          <p className='inline-link'>
-            <ArrowUpRight size={16} />{' '}
-            <ExternalLink href={`mailto:${profile.email}`}>{t.contact.sendEmail}</ExternalLink>
-          </p>
 
           <div className='contact-topics'>
             {t.contact.topics.map((topic, index) => (
@@ -104,6 +93,8 @@ function App() {
             ))}
           </div>
         </section>
+
+        <ArticlesSection />
 
         <footer className='site-footer'>
           <p className='site-footer-crafted'>

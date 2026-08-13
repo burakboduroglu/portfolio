@@ -1,4 +1,10 @@
-export type ProfileLinkKey = 'email' | 'linkedin' | 'devto' | 'github'
+export type ProfileLinkKey =
+  | 'email'
+  | 'linkedin'
+  | 'devto'
+  | 'github'
+  | 'substack'
+  | 'producthunt'
 
 export type ProfileLink = {
   key: ProfileLinkKey

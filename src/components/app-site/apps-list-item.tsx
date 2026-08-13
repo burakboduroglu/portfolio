@@ -19,15 +19,18 @@ function AppListItem({
       // Drives the staggered fade-in delay; ignored under reduced motion
       style={{ '--i': index } as CSSProperties}
       onClick={() => onSelect(app)}>
-      <AppIcon app={app} />
+      <div className='store-list-item-top'>
+        <AppIcon app={app} />
+        <span className='store-get-button'>{app.action}</span>
+      </div>
       <div className='store-list-copy'>
         <strong>{app.title}</strong>
         <span>{app.subtitle}</span>
         <small>
-          {app.category} · ★ {app.stars}
+          {app.category} · {app.platform}
         </small>
       </div>
-      <span className='store-get-button'>{app.action}</span>
+      <p className='store-list-description'>{app.description}</p>
     </button>
   )
 }

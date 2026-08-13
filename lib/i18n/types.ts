@@ -23,7 +23,6 @@ export type Messages = {
     description: string
   }
   nav: {
-    apps: string
     languageAria: string
   }
   hero: {

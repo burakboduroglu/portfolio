@@ -116,20 +116,6 @@ main.site {
   margin: 0;
 }
 
-.page-top-apps {
-  flex-shrink: 0;
-  color: #4f4b45;
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-}
-
-.page-top-apps:hover {
-  color: var(--link);
-}
-
 .page-top-actions {
   display: flex;
   align-items: center;
@@ -214,7 +200,14 @@ main.site {
 }
 
 .hero {
-  margin-bottom: 72px;
+  margin-bottom: 44px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(28px, 6vw, 84px);
+  align-items: start;
 }
 
 .hero-photo-row {
@@ -225,10 +218,10 @@ main.site {
 }
 
 .hero-photo-line {
-  flex: 0 1 auto;
+  flex: 1 1 auto;
   align-self: center;
-  width: min(220px, 32vw);
-  max-width: 42%;
+  min-width: 24px;
+  max-width: 200px;
   height: 1px;
   border-radius: 999px;
   margin-left: -2px;
@@ -250,7 +243,7 @@ main.site {
   width: 136px;
   height: 136px;
   margin-bottom: 0;
-  border-radius: 2px;
+  border-radius: 16px;
   object-fit: cover;
 }
 
@@ -272,16 +265,8 @@ h1 {
   letter-spacing: -0.045em;
 }
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(248px, 288px);
-  column-gap: 44px;
-  row-gap: 16px;
-  align-items: start;
-}
-
 .hero-copy-main {
-  grid-column: 1;
+  max-width: 650px;
   color: var(--text);
   font-size: 15px;
   font-weight: 500;
@@ -298,13 +283,11 @@ h1 {
 }
 
 .reach-out-column {
-  grid-column: 2;
-  grid-row: 1;
   display: flex;
+  flex-shrink: 0;
   min-width: 0;
   flex-direction: column;
-  align-self: start;
-  gap: 14px;
+  margin-left: auto;
 }
 
 blockquote {
@@ -325,7 +308,8 @@ blockquote {
 
 .reach-out {
   margin-top: 0;
-  width: 100%;
+  width: 320px;
+  max-width: 100%;
   padding: 12px 12px 14px;
   overflow: hidden;
   border: 1px solid rgba(55, 53, 47, 0.09);
@@ -1543,6 +1527,7 @@ blockquote {
 }
 
 .projects {
+  margin-top: 0;
   font-family: 'Inter', ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
@@ -2006,53 +1991,6 @@ blockquote {
     margin-top: 36px;
   }
 
-  .hero-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: none;
-    row-gap: 18px;
-    column-gap: 0;
-    gap: 12px;
-  }
-
-  .hero-copy-main {
-    grid-column: 1;
-  }
-
-  .reach-out-column {
-    grid-column: 1;
-    align-self: stretch;
-  }
-
-  .reach-out {
-    width: 100%;
-    max-width: 288px;
-    justify-self: start;
-    align-self: start;
-    margin-top: 0;
-  }
-
-  .hero-photo-row {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 16px;
-    margin-bottom: 26px;
-  }
-
-  .hero-photo-line {
-    flex: 0 0 auto;
-    align-self: stretch;
-    min-width: 0;
-    width: 100%;
-    margin-left: 0;
-    margin-top: 2px;
-    background: linear-gradient(
-      90deg,
-      rgba(199, 111, 104, 0.68) 0%,
-      rgba(199, 111, 104, 0.18) 52%,
-      transparent 94%
-    );
-  }
-
   .apps-site {
     position: relative;
     display: block;
@@ -2179,10 +2117,6 @@ blockquote {
     margin-top: 0;
   }
 
-  .page-top-apps {
-    font-size: 14px;
-  }
-
   .page-top-actions {
     gap: 10px;
   }
@@ -2204,6 +2138,68 @@ blockquote {
     width: 108px;
     height: 108px;
     margin-bottom: 0;
+  }
+
+  /* On phones, keep the photo and contact card as matching squares. */
+  .hero {
+    position: relative;
+  }
+
+  .hero-grid {
+    display: contents;
+  }
+
+  .hero-photo-row {
+    align-items: flex-start;
+  }
+
+  .hero-photo-line {
+    display: none;
+  }
+
+  .reach-out-column {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: auto;
+    max-width: calc(100% - 122px);
+    height: 108px;
+    margin: 0;
+  }
+
+  .reach-out {
+    width: auto;
+    min-width: 0;
+    height: 100%;
+    max-width: none;
+    padding: 10px 12px;
+  }
+
+  .reach-out-header {
+    padding: 1px 4px 9px;
+  }
+
+  .reach-out-title {
+    gap: 6px;
+    font-size: 12px;
+  }
+
+  .reach-out-list {
+    display: grid;
+    grid-template-columns: repeat(3, 28px);
+    justify-content: center;
+    gap: 6px 7px;
+  }
+
+  .reach-out-list li {
+    width: 28px;
+  }
+
+  .reach-out-link {
+    width: 28px;
+    height: 28px;
+    aspect-ratio: auto;
+    border-radius: 8px;
   }
 
   h1 {
@@ -2363,6 +2359,10 @@ blockquote {
     margin-top: 52px;
   }
 
+  .projects {
+    margin-top: 36px;
+  }
+
   .projects-header h2,
   .articles-header h2 {
     font-size: 24px;
@@ -2378,23 +2378,34 @@ blockquote {
 
   .project-card {
     grid-template-columns: 52px minmax(0, 1fr);
-    height: 120px;
-    min-height: 120px;
+    height: auto;
+    min-height: 0;
+  }
+
+  .project-card-media {
+    align-self: start;
+    min-height: 0;
+    padding: 7px 0 7px 7px;
+  }
+
+  .project-card-media .store-app-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    font-size: 12px;
+  }
+
+  .project-card-subtitle {
+    min-height: 0;
+    -webkit-line-clamp: 1;
+  }
+
+  .project-card-cta {
+    margin-top: 0;
   }
 
   .article-card {
     grid-template-columns: 72px minmax(0, 1fr);
-  }
-
-  .project-card-media {
-    padding: 8px 0 8px 8px;
-  }
-
-  .project-card-media .store-app-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    font-size: 13px;
   }
 
   .project-card-body,

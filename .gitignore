@@ -49,3 +49,6 @@ coverage/
 
 # Misc
 *.local
+
+# Personal, machine-local Claude notes
+CLAUDE.local.md

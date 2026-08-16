@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
-import { LocaleProvider } from '../lib/i18n';
+import { LocaleProvider } from './lib/i18n';
 import './styles.css';
 
 const root = document.getElementById('root');

@@ -1,4 +1,4 @@
-import { LOCALES, localeLabels, useLocale, useT } from '../../lib/i18n'
+import { LOCALES, localeLabels, useLocale, useT } from '../lib/i18n'
 
 function LanguageSwitcher() {
   const { locale, setLocale } = useLocale()

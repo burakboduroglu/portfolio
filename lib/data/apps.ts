@@ -10,9 +10,20 @@ const apps: AppMeta[] = [
     stars: '—',
     forks: '—',
     icon: 'B',
-    logoUrl: 'https://bdash.burakboduroglu.com.tr/assets/logo-icon-CwSWcM3c.png',
+    logoUrl: '/logos/bdash.png',
     accent: 'bdash',
     featured: true,
+  },
+  {
+    id: 'dizey',
+    categoryKey: 'web',
+    title: 'Dizey',
+    link: 'https://dizey.sh',
+    stars: '—',
+    forks: '—',
+    icon: 'D',
+    logoUrl: 'https://dizey.sh/favicon.svg',
+    accent: 'dizey',
   },
   {
     id: 'alice',
@@ -23,6 +34,7 @@ const apps: AppMeta[] = [
     stars: '0',
     forks: '0',
     icon: 'A',
+    logoUrl: '/logos/alice.png',
     accent: 'rose',
   },
   {
@@ -34,6 +46,7 @@ const apps: AppMeta[] = [
     stars: '0',
     forks: '0',
     icon: 'B',
+    logoUrl: '/logos/betus-design.png',
     accent: 'golden',
   },
   {

@@ -25,7 +25,6 @@ const de = {
       linkedin: 'LinkedIn',
       devto: 'DEV.to',
       github: 'GitHub',
-      substack: 'Substack',
       producthunt: 'Product Hunt',
     },
   },
@@ -100,7 +99,7 @@ const de = {
       {
         title: 'Ich schreibe über das, was ich lerne',
         bullets: [
-          'Auf Substack und DEV.to schreibe ich über Programmierung und Softwareentwicklung.',
+          'Auf DEV.to schreibe ich über Programmierung und Softwareentwicklung.',
           'Was ich beim Bauen lerne, halte ich in Notizen fest, zu denen ich später zurückkehren kann und die vielleicht auch anderen helfen.',
         ],
       },
@@ -112,13 +111,6 @@ const de = {
         ],
       },
     ],
-  },
-  articles: {
-    sectionAria: 'Artikel und Schreiben',
-    scrollLabel: 'Articles',
-    title: 'Articles',
-    viewAll: 'Alle auf Substack ansehen',
-    readOnSubstack: 'Auf Substack lesen',
   },
   footer: {
     crafted: (name) => ['Mit', `von ${name} erstellt`],
@@ -175,6 +167,19 @@ const de = {
       heroTitle: 'Das Unternehmen an einem Ort im Blick.',
       heroText:
         'BDash ermöglicht die Verwaltung der täglichen Abläufe über ein einziges Web-Dashboard.',
+    },
+    dizey: {
+      category: 'Web Page',
+      subtitle: 'Website für ein Softwarestudio',
+      description:
+        'Die Website von Dizey Yazılım, einem kleinen Engineering-Team, das Web-Plattformen, Cloud-Infrastruktur und Datensysteme baut. Sie zeigt die Leistungen, die Arbeitsweise des Teams und die Kontaktmöglichkeiten.',
+      stack: 'Web',
+      platform: 'Browser',
+      price: 'Kostenlos',
+      action: 'Ansehen',
+      heroTitle: 'Skalierbare Software, richtig aufgebaute Infrastruktur.',
+      heroText:
+        'Dizey ist die Website eines kleinen Engineering-Teams, das Software von der ersten Idee bis in die Produktion begleitet.',
     },
     alice: {
       category: 'Web Page',

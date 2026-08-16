@@ -3,7 +3,6 @@ import profile from '../lib/data/profile'
 import { useT } from '../lib/i18n'
 import AppsSite from './components/app-site/apps-site'
 import ExternalLink from './components/app-site/external-link'
-import ArticlesSection from './components/articles-section'
 import LanguageSwitcher from './components/language-switcher'
 import ReachOutLeadingIcon from './components/reach-out-icons'
 
@@ -90,8 +89,6 @@ function App() {
             ))}
           </div>
         </section>
-
-        <ArticlesSection />
 
         <footer className='site-footer'>
           <p className='site-footer-crafted'>

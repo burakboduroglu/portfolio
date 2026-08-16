@@ -71,13 +71,6 @@ export type Messages = {
     intro: string
     topics: { title: string; bullets: string[] }[]
   }
-  articles: {
-    sectionAria: string
-    scrollLabel: string
-    title: string
-    viewAll: string
-    readOnSubstack: string
-  }
   footer: {
     /** [before ❤️, after ❤️] — DE and TR put the heart in a different position */
     crafted: (name: string) => [string, string]

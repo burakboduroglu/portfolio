@@ -1,4 +1,11 @@
-export type AppId = 'macshelf' | 'portkill' | 'dev-notes' | 'bdash' | 'alice' | 'betus-design'
+export type AppId =
+  | 'macshelf'
+  | 'portkill'
+  | 'dev-notes'
+  | 'bdash'
+  | 'alice'
+  | 'betus-design'
+  | 'dizey'
 
 /** Language-independent structure — lives in lib/data/apps.ts */
 export type AppMeta = {

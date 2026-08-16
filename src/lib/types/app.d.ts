@@ -7,7 +7,7 @@ export type AppId =
   | 'betus-design'
   | 'dizey'
 
-/** Language-independent structure — lives in lib/data/apps.ts */
+/** Language-independent structure — lives in src/lib/data/apps.ts */
 export type AppMeta = {
   id: AppId
   categoryKey: string
@@ -24,7 +24,7 @@ export type AppMeta = {
   featured?: boolean
 }
 
-/** Translated prose — lives in lib/i18n/{en,tr,de}.ts, keyed by AppId */
+/** Translated prose — lives in src/lib/i18n/{en,tr,de}.ts, keyed by AppId */
 export type AppCopy = {
   category: string
   subtitle: string

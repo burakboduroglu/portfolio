@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react'
-import { useApps, useT } from '../../../lib/i18n'
+import { useApps, useT } from '../../lib/i18n'
 import AppIcon from './app-icon'
 import AppTitle from './app-title'
 import ExternalLink from './external-link'

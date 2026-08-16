@@ -1,4 +1,4 @@
-import type { AppCard } from '../../../lib/types/app'
+import type { AppCard } from '../../lib/types/app'
 
 function AppIcon({ app, large = false }: { app: AppCard; large?: boolean }) {
   return (

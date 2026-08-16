@@ -1,6 +1,6 @@
 import { ChevronRight } from 'lucide-react'
-import profile from '../lib/data/profile'
-import { useT } from '../lib/i18n'
+import profile from './lib/data/profile'
+import { useT } from './lib/i18n'
 import AppsSite from './components/app-site/apps-site'
 import ExternalLink from './components/app-site/external-link'
 import LanguageSwitcher from './components/language-switcher'

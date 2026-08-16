@@ -22,6 +22,7 @@ const apps: AppMeta[] = [
     stars: '—',
     forks: '—',
     icon: 'D',
+    logoUrl: '/logos/dizey.svg',
     accent: 'dizey',
   },
   {

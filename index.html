@@ -32,6 +32,11 @@
         <link rel="icon" type="image/png" href="/profile-avatar.png" />
         <link rel="apple-touch-icon" href="/profile-avatar.png" />
         <title>Burak Boduroglu</title>
+        <script>
+            if (localStorage.getItem('burak_theme') === 'dark') {
+                document.documentElement.classList.add('dark')
+            }
+        </script>
     </head>
     <body>
         <div id="root"></div>

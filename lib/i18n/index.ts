@@ -139,25 +139,3 @@ export function useApps(): AppCard[] {
   )
 }
 
-const CHAR_FOLDS: Record<string, string> = {
-  ı: 'i',
-  ş: 's',
-  ğ: 'g',
-  ç: 'c',
-  ö: 'o',
-  ü: 'u',
-  ß: 'ss',
-}
-
-/**
- * Locale-aware search normalisation. Plain `toLowerCase()` mangles the Turkish
- * dotted/dotless I pair, so we lower-case in the active locale first, then fold
- * diacritics so "Turkiye" also matches "Türkiye".
- */
-export function normalizeForSearch(value: string, locale: Locale): string {
-  return value
-    .toLocaleLowerCase(locale)
-    .normalize('NFD')
-    .replace(/\p{Diacritic}/gu, '')
-    .replace(/[ışğçöüß]/g, (char) => CHAR_FOLDS[char] ?? char)
-}

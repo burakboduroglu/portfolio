@@ -41,10 +41,10 @@ function App() {
             <div className='reach-out-column'>
               <aside className='reach-out' aria-label={t.hero.contactLinksAria}>
                 <div className='reach-out-header'>
-                  <h3 className='reach-out-title'>
+                  <h2 className='reach-out-title'>
                     <span className='reach-out-title-dot' aria-hidden='true' />
                     {t.hero.reachOut}
-                  </h3>
+                  </h2>
                 </div>
                 <ul className='reach-out-list'>
                   {profile.links.map((link) => {

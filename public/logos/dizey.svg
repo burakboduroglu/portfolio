@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Dizey">
+  <rect width="512" height="512" rx="116" fill="#0d1117" />
+
+  <!-- brackets -->
+  <g fill="#f1f5f9">
+    <path d="M118 56H48v400h70v-28H76V84h42z" />
+    <path d="M394 56h70v400h-70v-28h42V84h-42z" />
+  </g>
+
+  <!-- diagonal of filled cells -->
+  <g fill="#2560ff">
+    <rect x="108" y="108" width="80" height="80" rx="20" />
+    <rect x="216" y="216" width="80" height="80" rx="20" />
+    <rect x="324" y="324" width="80" height="80" rx="20" />
+  </g>
+
+  <!-- remaining cells -->
+  <g fill="#334155">
+    <circle cx="256" cy="148" r="14" />
+    <circle cx="364" cy="148" r="14" />
+    <circle cx="148" cy="256" r="14" />
+    <circle cx="364" cy="256" r="14" />
+    <circle cx="148" cy="364" r="14" />
+    <circle cx="256" cy="364" r="14" />
+  </g>
+</svg>

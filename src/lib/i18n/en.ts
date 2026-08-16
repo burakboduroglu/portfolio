@@ -9,6 +9,9 @@ const en = {
   },
   nav: {
     languageAria: 'Language',
+    themeAria: 'Theme',
+    themeDark: 'Dark mode',
+    themeLight: 'Light mode',
   },
   hero: {
     photoAlt: 'Burak Boduroğlu',

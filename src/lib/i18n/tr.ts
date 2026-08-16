@@ -9,6 +9,9 @@ const tr = {
   },
   nav: {
     languageAria: 'Dil',
+    themeAria: 'Tema',
+    themeDark: 'Koyu mod',
+    themeLight: 'Açık mod',
   },
   hero: {
     photoAlt: 'Burak Boduroğlu',

@@ -5,6 +5,7 @@ import AppsSite from './components/app-site/apps-site'
 import ExternalLink from './components/app-site/external-link'
 import LanguageSwitcher from './components/language-switcher'
 import ReachOutLeadingIcon from './components/reach-out-icons'
+import ThemeSwitch from './components/theme-switch'
 
 function App() {
   const t = useT()
@@ -20,6 +21,7 @@ function App() {
               <span>{profile.name}</span>
             </div>
             <div className='page-top-actions'>
+              <ThemeSwitch />
               <LanguageSwitcher />
             </div>
           </div>

@@ -24,6 +24,9 @@ export type Messages = {
   }
   nav: {
     languageAria: string
+    themeAria: string
+    themeDark: string
+    themeLight: string
   }
   hero: {
     photoAlt: string

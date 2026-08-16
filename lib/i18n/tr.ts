@@ -25,7 +25,6 @@ const tr = {
       linkedin: 'LinkedIn',
       devto: 'DEV.to',
       github: 'GitHub',
-      substack: 'Substack',
       producthunt: 'Product Hunt',
     },
   },
@@ -100,7 +99,7 @@ const tr = {
       {
         title: 'Öğrendiklerimi yazıyorum',
         bullets: [
-          'Substack’te ve DEV.to’da programlama ve yazılım mühendisliği üzerine yazıyorum.',
+          'DEV.to’da programlama ve yazılım mühendisliği üzerine yazıyorum.',
           'Bir şey inşa ederken öğrendiklerimi, daha sonra dönüp bakabileceğim ve başkasının da işine yarayabilecek notlara çeviriyorum.',
         ],
       },
@@ -112,13 +111,6 @@ const tr = {
         ],
       },
     ],
-  },
-  articles: {
-    sectionAria: 'Yazılar',
-    scrollLabel: 'Yazılar',
-    title: 'Yazılar',
-    viewAll: 'Tümünü Substack’te gör',
-    readOnSubstack: 'Substack’te oku',
   },
   footer: {
     crafted: (name) => [`${name} tarafından`, 'yapıldı'],
@@ -175,6 +167,19 @@ const tr = {
       heroTitle: 'Küçük işletmenin bütün işleri tek yerde.',
       heroText:
         'BDash, işletmenin günlük operasyonlarını tek bir web panelinden takip etmeni sağlar.',
+    },
+    dizey: {
+      category: 'Web Page',
+      subtitle: 'Yazılım stüdyosu için web sitesi',
+      description:
+        'Web platformları, bulut altyapısı ve veri sistemleri kuran Dizey Yazılım ekibinin web sitesi. Verilen hizmetleri, ekibin çalışma biçimini ve iletişim bilgilerini sade bir şekilde sunar.',
+      stack: 'Web',
+      platform: 'Tarayıcı',
+      price: 'Ücretsiz',
+      action: 'Görüntüle',
+      heroTitle: 'Ölçeklenebilir yazılım, doğru kurgulanmış altyapı.',
+      heroText:
+        'Dizey, yazılımı ilk fikirden üretime kadar birlikte taşıyan küçük bir mühendislik ekibinin web sitesi.',
     },
     alice: {
       category: 'Web Page',

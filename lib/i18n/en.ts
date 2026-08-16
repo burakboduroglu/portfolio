@@ -25,7 +25,6 @@ const en = {
       linkedin: 'LinkedIn',
       devto: 'DEV.to',
       github: 'GitHub',
-      substack: 'Substack',
       producthunt: 'Product Hunt',
     },
   },
@@ -100,7 +99,7 @@ const en = {
       {
         title: 'I write about what I learn',
         bullets: [
-          'I write about programming and software engineering on Substack and DEV.to.',
+          'I write about programming and software engineering on DEV.to.',
           'I turn what I learn while building into notes I can return to and that may be useful to other people too.',
         ],
       },
@@ -112,13 +111,6 @@ const en = {
         ],
       },
     ],
-  },
-  articles: {
-    sectionAria: 'Articles and writing',
-    scrollLabel: 'Articles',
-    title: 'Articles',
-    viewAll: 'View all on Substack',
-    readOnSubstack: 'Read on Substack',
   },
   footer: {
     crafted: (name) => ['Crafted with', `by ${name}`],
@@ -175,6 +167,19 @@ const en = {
       heroTitle: 'Keep the business in one place.',
       heroText:
         'BDash lets you track the business’s daily operations from a single web dashboard.',
+    },
+    dizey: {
+      category: 'Web Page',
+      subtitle: 'Website for a software studio',
+      description:
+        'The website of Dizey Yazılım, a small engineering team building web platforms, cloud infrastructure, and data systems. It presents the services, the way the team works, and how to get in touch.',
+      stack: 'Web',
+      platform: 'Browser',
+      price: 'Free',
+      action: 'View',
+      heroTitle: 'Scalable software, infrastructure built right.',
+      heroText:
+        'Dizey is the website of a small engineering team that carries software from the first idea through to production.',
     },
     alice: {
       category: 'Web Page',

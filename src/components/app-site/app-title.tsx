@@ -1,4 +1,4 @@
-import type { AppCard } from '../../../lib/types/app'
+import type { AppCard } from '../../lib/types/app'
 
 function AppTitle({ app }: { app: AppCard }) {
   return app.id === 'portkill' ? (

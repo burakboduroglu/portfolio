@@ -28,6 +28,7 @@ const en = {
       linkedin: 'LinkedIn',
       devto: 'DEV.to',
       github: 'GitHub',
+      substack: 'Substack',
       producthunt: 'Product Hunt',
     },
   },
@@ -102,7 +103,7 @@ const en = {
       {
         title: 'I write about what I learn',
         bullets: [
-          'I write about programming and software engineering on DEV.to.',
+          'I write about programming and software engineering on Substack and DEV.to.',
           'I turn what I learn while building into notes I can return to and that may be useful to other people too.',
         ],
       },
@@ -114,6 +115,11 @@ const en = {
         ],
       },
     ],
+  },
+  articles: {
+    sectionAria: 'Articles and writing',
+    title: 'Articles',
+    readOnSubstack: 'Read on Substack',
   },
   footer: {
     crafted: (name) => ['Crafted with', `by ${name}`],

@@ -28,6 +28,7 @@ const tr = {
       linkedin: 'LinkedIn',
       devto: 'DEV.to',
       github: 'GitHub',
+      substack: 'Substack',
       producthunt: 'Product Hunt',
     },
   },
@@ -102,7 +103,7 @@ const tr = {
       {
         title: 'Öğrendiklerimi yazıyorum',
         bullets: [
-          'DEV.to’da programlama ve yazılım mühendisliği üzerine yazıyorum.',
+          'Substack’te ve DEV.to’da programlama ve yazılım mühendisliği üzerine yazıyorum.',
           'Bir şey inşa ederken öğrendiklerimi, daha sonra dönüp bakabileceğim ve başkasının da işine yarayabilecek notlara çeviriyorum.',
         ],
       },
@@ -114,6 +115,11 @@ const tr = {
         ],
       },
     ],
+  },
+  articles: {
+    sectionAria: 'Yazılar',
+    title: 'Yazılar',
+    readOnSubstack: 'Substack’te oku',
   },
   footer: {
     crafted: (name) => [`${name} tarafından`, 'yapıldı'],

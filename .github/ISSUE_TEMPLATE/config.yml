@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/burakboduroglu/portfolio/security/advisories/new
+    about: Report privately through a security advisory — never as a public issue.
+  - name: Question or general contact
+    url: https://github.com/burakboduroglu
+    about: Not a bug or a proposal? Reach out through the links on my profile.

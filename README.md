@@ -25,3 +25,15 @@ To add a string: add it to `Messages`, then let the type errors point at each di
 ## If you cloned the repo
 
 You are looking at my site’s source, not a packaged product. Still, the usual Vite commands apply: `bun install`, `bun run dev` for local preview, and `bun run build` for production output. Pushes to `main` are deployed to **GitHub Pages** automatically through GitHub Actions; `bun run deploy` remains available as a manual fallback.
+
+## Contributing
+
+Bug reports, accessibility issues, and translation fixes are welcome; the personal content itself is not up for pull requests. [CONTRIBUTING.md](CONTRIBUTING.md) covers the setup, the project layout, and how a change gets reviewed.
+
+- [Contributing guide](CONTRIBUTING.md) — setup, style, commits, pull requests
+- [Code of Conduct](CODE_OF_CONDUCT.md) — how we treat each other here
+- [Security policy](SECURITY.md) — report vulnerabilities privately, never as an issue
+
+## License
+
+The code is released under the [MIT License](LICENSE). The personal content — my writing, photo, and the third-party logos under `public/` — is not covered by that grant; fork the code, bring your own content.

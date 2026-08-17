@@ -9,6 +9,7 @@ const profile = {
     { key: 'email', href: 'mailto:info@burakboduroglu.com.tr', icon: 'mail' },
     { key: 'linkedin', href: 'https://www.linkedin.com/in/burakboduroglu', icon: 'linkedin' },
     { key: 'github', href: 'https://github.com/burakboduroglu', icon: 'github' },
+    { key: 'substack', href: 'https://substack.com/@burakboduroglu', icon: 'substack' },
     { key: 'producthunt', href: 'https://www.producthunt.com/@burakboduroglu', icon: 'producthunt' },
     { key: 'devto', href: 'https://dev.to/burakboduroglu', icon: 'devto' },
   ],

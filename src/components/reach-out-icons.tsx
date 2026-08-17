@@ -16,6 +16,14 @@ function SvgLinkedIn(props: React.SVGProps<SVGSVGElement>) {
   )
 }
 
+function SvgSubstack(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox='0 0 24 24' width={16} height={16} fill='currentColor' aria-hidden {...props}>
+      <path d='M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z' />
+    </svg>
+  )
+}
+
 function SvgProductHunt(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox='0 0 24 24' width={16} height={16} fill='currentColor' aria-hidden {...props}>
@@ -33,6 +41,8 @@ function ReachOutLeadingIcon({ name }: { name: string }) {
       return <SvgGitHub />
     case 'linkedin':
       return <SvgLinkedIn />
+    case 'substack':
+      return <SvgSubstack />
     case 'producthunt':
       return <SvgProductHunt />
     case 'devto':

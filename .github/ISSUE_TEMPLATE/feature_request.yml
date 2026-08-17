@@ -1,0 +1,60 @@
+name: Improvement or idea
+description: Suggest a change to the site's behaviour, structure, or tooling
+title: 'feat: '
+labels: ['enhancement']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is a personal portfolio, so changes to the personal content itself
+        (bio, photo, contact links, which projects are listed) are out of scope.
+        See [CONTRIBUTING.md](https://github.com/burakboduroglu/portfolio/blob/main/CONTRIBUTING.md)
+        for what fits here.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: Describe the friction or gap, not the solution yet.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: What would you do about it?
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+    validations:
+      required: false
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Accessibility
+        - Localisation (tr / en / de)
+        - Styling and layout
+        - Performance
+        - Build, tooling, or CI
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched the existing issues and this is not a duplicate.
+          required: true
+        - label: I have read CONTRIBUTING.md and this is in scope.
+          required: true

@@ -1,0 +1,69 @@
+name: Bug report
+description: Something on the site is broken or behaves unexpectedly
+title: 'fix: '
+labels: ['bug']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. Please do **not** use this form for security
+        issues — see [SECURITY.md](https://github.com/burakboduroglu/portfolio/blob/main/SECURITY.md).
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Describe the problem, and what you expected instead.
+      placeholder: The language switcher resets to English after a reload…
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      value: |
+        1. Go to …
+        2. Click on …
+        3. See …
+    validations:
+      required: true
+
+  - type: dropdown
+    id: language
+    attributes:
+      label: Site language
+      description: Which language was the site in? (the `?lang=` parameter)
+      options:
+        - Turkish (tr)
+        - English (en)
+        - German (de)
+        - Not relevant
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Browser and device
+      placeholder: Chrome 141 on Windows 11 / Safari on iPhone 15, 393px wide
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots or console output
+      description: Drag images in directly. Paste any console errors as text.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched the existing issues and this is not a duplicate.
+          required: true
+        - label: This is not a security vulnerability.
+          required: true

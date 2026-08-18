@@ -4,6 +4,9 @@ export type ProfileLinkKey =
   | 'devto'
   | 'github'
   | 'substack'
+  | 'x'
+  | 'reddit'
+  | 'youtube'
   | 'producthunt'
 
 export type ProfileLink = {

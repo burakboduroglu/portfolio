@@ -3,7 +3,7 @@ import type { Article } from '../types/article'
 const articles: Article[] = [
   {
     id: 'anthropic-deleted-80-of-claude-codes',
-    href: 'https://burakboduroglu.substack.com/p/anthropic-deleted-80-of-claude-codes',
+    href: 'https://substack.com/home/post/p-210508879',
     title: "Anthropic deleted 80% of Claude Code's system prompt",
     subtitle:
       'Nothing measurable broke. Here is what that means for the CLAUDE.md, skills, and prompts you have quietly been collecting.',

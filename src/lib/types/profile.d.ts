@@ -8,6 +8,7 @@ export type ProfileLinkKey =
   | 'reddit'
   | 'youtube'
   | 'producthunt'
+  | 'kick'
 
 export type ProfileLink = {
   key: ProfileLinkKey

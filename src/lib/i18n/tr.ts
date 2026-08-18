@@ -21,7 +21,7 @@ const tr = {
   },
   profile: {
     intro:
-      'Yazılım mühendisiyim. Dağınık fikirleri sade, kullanışlı ve gerçekten işe yarayan ürünlere dönüştürmeyi seviyorum. Problemi anlamaktan ürünü yayına almaya kadar sürecin içinde olmayı tercih ederim. Küçük adımlarla ilerler, doğru araçları kullanır ve okunabilir, sürdürülebilir kod yazmaya önem veririm.',
+      'Yazılım mühendisiyim. Dağınık fikirleri sade, gerçekten işe yarayan ürünlere dönüştürmeyi seviyorum. Problemi anlamaktan ürünü yayına almaya kadar sürecin her aşamasında olmayı tercih ederim. Küçük adımlarla ilerlerim, işe uygun aracı seçerim; okunması da bakımı da kolay kod yazmaya önem veririm.',
     aiIntro: '',
     links: {
       email: 'E-posta',
@@ -33,6 +33,7 @@ const tr = {
       reddit: 'Reddit',
       youtube: 'YouTube',
       producthunt: 'Product Hunt',
+      kick: 'Kick',
     },
   },
   categories: {
@@ -61,7 +62,7 @@ const tr = {
     resultCount: (count) => `${count} sonuç`,
     clearFilter: 'Filtreleri temizle',
     emptyTitle: 'Uygulama bulunamadı',
-    emptyBody: 'Uygulama adı, kategori, platform veya dil ile aramayı dene.',
+    emptyBody: 'Uygulama adı, kategori, platform ya da dil ile aramayı dene.',
     prevPage: 'Önceki sayfa',
     nextPage: 'Sonraki sayfa',
     pageOf: (current, total) => `Sayfa ${current} / ${total}`,
@@ -80,40 +81,40 @@ const tr = {
   contact: {
     title: 'Konuşalım',
     intro:
-      'Kapsamı belli ürünler, geliştirici araçları ve iyi düşünülmüş mühendislik süreçleri ilgimi çekiyor. Dışarıdan basit görünen ama işini güvenilir biçimde yapan yazılımları seviyorum.',
+      'Kapsamı belli ürünler, geliştirici araçları ve iyi kurgulanmış mühendislik süreçleri ilgimi çekiyor. Dışarıdan sade görünen ama altında sağlam duran yazılımları seviyorum.',
     topics: [
       {
-        title: 'Ürünü ve kodu birlikte düşünüyorum',
+        title: 'Ürünü ve kodu birlikte düşünürüm',
         bullets: [
-          'Gerçek bir ihtiyacı çözen, kapsamı belli ürünler ve iç araçlar üzerinde çalışmayı seviyorum.',
-          'Problemi, kullanıcıyı ve teknik çözümü birlikte düşündüğüm projelerde daha iyi iş çıkarıyorum.',
+          'Gerçek bir ihtiyaca dokunan, kapsamı net ürünler ve iç araçlar üzerinde çalışmayı seviyorum.',
+          'Problemi, kullanıcıyı ve teknik çözümü aynı anda düşünebildiğim işlerde çok daha iyi iş çıkarıyorum.',
         ],
       },
       {
-        title: 'Küçük ama işe yarayan araçlar',
+        title: 'Küçük ama işini yapan araçlar',
         bullets: [
-          'MacShelf ve .portkill, sevdiğim yaklaşımı iyi anlatıyor: tek bir işi yapan ve o işi düzgün yapan araçlar.',
-          'Geliştiricilerin veya ekiplerin günlük işini kolaylaştıran bir şey yapıyorsan konuşmak isterim.',
+          'MacShelf ve .portkill sevdiğim yaklaşımı iyi özetliyor: tek bir işi yapan, onu da düzgün yapan araçlar.',
+          'Geliştiricilerin ya da ekiplerin günlük işini kolaylaştıran bir şey yapıyorsan seve seve konuşurum.',
         ],
       },
       {
-        title: 'Yapay zekâyı işin içinde kullanıyorum',
+        title: 'Yapay zekâyı işin içine katıyorum',
         bullets: [
-          'Context engineering, ajan akışları ve kod inceleme süreçleri üzerine düşünüyorum.',
-          'Yapay zekâ benim için düşünmenin yerine geçen bir araç değil; iyi bir mühendislik sürecini hızlandıran bir yardımcı.',
+          'Context engineering, ajan akışları ve kod inceleme süreçleri üzerine kafa yoruyorum.',
+          'Yapay zekâ düşünmenin yerine geçmiyor; iyi kurulmuş bir mühendislik sürecini hızlandırıyor.',
         ],
       },
       {
         title: 'Öğrendiklerimi yazıyorum',
         bullets: [
-          'Substack’te ve DEV.to’da programlama ve yazılım mühendisliği üzerine yazıyorum.',
-          'Bir şey inşa ederken öğrendiklerimi, daha sonra dönüp bakabileceğim ve başkasının da işine yarayabilecek notlara çeviriyorum.',
+          'Substack ve DEV.to’da programlama ve yazılım mühendisliği üzerine yazıyorum.',
+          'Bir şey geliştirirken öğrendiklerimi, sonradan dönüp bakabileceğim; belki başkasının da işine yarayacak notlara çeviriyorum.',
         ],
       },
       {
         title: 'Konuşmak istersen yaz',
         bullets: [
-          'Yazılım, geliştirici araçları, yapay zekâ veya üzerinde çalıştığın bir ürün hakkında konuşabiliriz.',
+          'Yazılım, geliştirici araçları, yapay zekâ ya da üzerinde çalıştığın bir ürün; ne olursa konuşabiliriz.',
           'Bana ulaşmanın en kolay yolu e-posta: info@burakboduroglu.com.tr.',
         ],
       },
@@ -132,85 +133,85 @@ const tr = {
       category: 'macOS Uygulaması',
       subtitle: 'macOS için pano yöneticisi',
       description:
-        'Daha önce kopyaladığın metin ve görselleri saklayan macOS uygulaması. İhtiyacın olduğunda aradığını kolayca bulup tekrar kullanmanı sağlar.',
+        'Kopyaladığın metinleri ve görselleri saklayan bir macOS uygulaması. İhtiyacın olduğunda aradığını hemen bulup yeniden kullanırsın.',
       stack: 'Swift',
       platform: 'macOS',
       price: 'Ücretsiz',
       action: 'İndir',
-      heroTitle: 'Panondaki şeyleri kaybetme.',
+      heroTitle: 'Kopyaladığın hiçbir şey kaybolmasın.',
       heroText:
-        'MacShelf, kopyaladığın şeyleri kaybetmemen için arka planda çalışır ve ihtiyaç olduğunda hepsini elinin altında tutar.',
+        'MacShelf arka planda sessizce çalışır; kopyaladığın her şeyi saklar, lazım olduğunda elinin altına getirir.',
     },
     portkill: {
       category: 'CLI Uygulaması',
-      subtitle: 'Kullanılan TCP portlarını tek komutla kapat',
+      subtitle: 'Meşgul TCP portunu tek komutla boşalt',
       description:
-        'macOS ve Linux’ta bir portu kullanan süreci bulup kapatmaya yarayan bir CLI. İşlemi uygulamadan önce kontrol etmek, port aralığı taramak ve açık portları listelemek mümkün.',
+        'macOS ve Linux’ta bir portu tutan süreci bulup kapatan bir CLI. Kapatmadan önce önizleme, port aralığı tarama ve açık portları listeleme de var.',
       stack: 'TypeScript',
       platform: 'macOS / Linux',
       price: 'Ücretsiz',
       action: 'İndir',
-      heroTitle: 'Portu kullanan süreci hemen bul.',
+      heroTitle: 'Portu kim tutuyor, hemen gör.',
       heroText:
-        'Bir portu hangi sürecin kullandığını bulup gerektiğinde tek komutla kapat.',
+        'Bir portu hangi sürecin kullandığını bul, gerekirse tek komutla kapat.',
     },
     'dev-notes': {
       category: 'CLI / Geliştirici Aracı',
       subtitle: 'Geliştirici notlarını terminalde tut',
       description:
-        'Komutları, kod parçalarını ve proje notlarını terminalden çıkmadan kaydetmeni ve ihtiyaç olduğunda bulmanı sağlayan bir CLI.',
+        'Komutları, kod parçalarını ve proje notlarını terminalden çıkmadan kaydetmeni, sonra da hızlıca bulmanı sağlayan bir CLI.',
       stack: 'Geliştirici Aracı',
       platform: 'CLI',
       price: 'Ücretsiz',
       action: 'İndir',
-      heroTitle: 'Notların terminalden uzaklaşmasın.',
+      heroTitle: 'Notların terminalden uzakta kalmasın.',
       heroText:
-        'DevNotes, geliştirirken sık kullandığın komutları, kod parçalarını ve proje detaylarını tek yerde tutar.',
+        'DevNotes; geliştirirken sık kullandığın komutları, kod parçalarını ve proje detaylarını tek yerde toplar.',
     },
     bdash: {
       category: 'SaaS',
       subtitle: 'İşletmeler için yönetim paneli',
       description:
-        'BDash; ürün, stok, maliyet, müşteri ve sipariş takibini tek panelde bir araya getirir. Küçük ekiplerin günlük işlerini daha kolay takip edebilmesi için tasarlandı.',
+        'BDash; ürün, stok, maliyet, müşteri ve sipariş takibini tek panelde toplar. Küçük ekiplerin günlük işlerini gereksiz karmaşaya girmeden takip edebilmesi için tasarlandı.',
       stack: 'TypeScript',
       platform: 'Web',
       price: 'Özel',
       action: 'Görüntüle',
-      heroTitle: 'Küçük işletmenin bütün işleri tek yerde.',
+      heroTitle: 'İşletmenin tamamı tek yerde.',
       heroText:
-        'BDash, işletmenin günlük operasyonlarını tek bir web panelinden takip etmeni sağlar.',
+        'BDash ile işletmenin günlük operasyonlarını tek bir web panelinden takip edersin.',
     },
     dizey: {
-      category: 'Web Page',
+      category: 'Web Sitesi',
       subtitle: 'Yazılım stüdyosu için web sitesi',
       description:
-        'Web platformları, bulut altyapısı ve veri sistemleri kuran Dizey Yazılım ekibinin web sitesi. Verilen hizmetleri, ekibin çalışma biçimini ve iletişim bilgilerini sade bir şekilde sunar.',
+        'Web platformları, bulut altyapısı ve veri sistemleri kuran Dizey Yazılım’ın web sitesi. Ekibin verdiği hizmetleri, çalışma biçimini ve iletişim bilgilerini sade bir dille anlatıyor.',
       stack: 'Web',
       platform: 'Tarayıcı',
       price: 'Ücretsiz',
       action: 'Görüntüle',
       heroTitle: 'Ölçeklenebilir yazılım, doğru kurgulanmış altyapı.',
       heroText:
-        'Dizey, yazılımı ilk fikirden üretime kadar birlikte taşıyan küçük bir mühendislik ekibinin web sitesi.',
+        'Dizey, yazılımı ilk fikirden üretime kadar taşıyan küçük bir mühendislik ekibinin web sitesi.',
     },
     alice: {
-      category: 'Web Page',
+      category: 'Web Sitesi',
       subtitle: 'Düğün mekânı için tanıtım sayfası',
       description:
-        'Bir düğün mekânını tanıtmak için hazırlanmış web sitesi konsepti. Mekânın atmosferini, hizmetlerini ve önemli bilgileri sade bir şekilde sunar.',
+        'Bir düğün mekânı için hazırlanmış web sitesi konsepti. Mekânın atmosferini, hizmetlerini ve bilinmesi gerekenleri sade bir şekilde aktarıyor.',
       stack: 'Web',
       platform: 'Tarayıcı',
       price: 'Ücretsiz',
       action: 'Görüntüle',
-      heroTitle: 'Mekânı daha ilk bakışta hissettir.',
+      heroTitle: 'Mekânı ilk bakışta hissettir.',
       heroText:
         'Alice, bir düğün mekânının atmosferini ve sunduğu deneyimi öne çıkaran sade bir web sitesi konsepti.',
     },
     'betus-design': {
-      category: 'Web Page',
+      category: 'Web Sitesi',
       subtitle: 'El yapımı atölye için tanıtım sayfası',
       description:
-        'El yapımı ürünler üreten bir atölye için hazırlanmış web sitesi konsepti. Ürünleri, atölyenin hikâyesini ve önemli bilgileri sade bir şekilde sunar.',
+        'El yapımı ürünler üreten bir atölye için hazırlanmış web sitesi konsepti. Ürünleri, atölyenin hikâyesini ve bilinmesi gerekenleri sade bir şekilde aktarıyor.',
       stack: 'Web',
       platform: 'Tarayıcı',
       price: 'Ücretsiz',

@@ -395,8 +395,8 @@ blockquote {
 }
 
 .reach-out-list {
-  display: flex;
-  flex-wrap: nowrap;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   gap: 6px;
   margin: 0;
   padding: 0;
@@ -404,7 +404,6 @@ blockquote {
 }
 
 .reach-out-list li {
-  flex: 1 1 0;
   min-width: 0;
   margin: 0;
 }
@@ -1235,7 +1234,7 @@ blockquote {
 
   .reach-out-list {
     display: grid;
-    grid-template-columns: repeat(3, 28px);
+    grid-template-columns: repeat(5, 28px);
     justify-content: center;
     gap: 6px 7px;
   }

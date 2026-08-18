@@ -4,7 +4,7 @@ updates:
     directory: /
     schedule:
       interval: monthly
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 0
     target-branch: dev
     commit-message:
       prefix: chore
@@ -25,6 +25,7 @@ updates:
     directory: /
     schedule:
       interval: monthly
+    open-pull-requests-limit: 0
     target-branch: dev
     commit-message:
       prefix: chore

@@ -15,6 +15,7 @@ const profile = {
     { key: 'youtube', href: 'https://www.youtube.com/@penoloxai', icon: 'youtube' },
     { key: 'producthunt', href: 'https://www.producthunt.com/@burakboduroglu', icon: 'producthunt' },
     { key: 'devto', href: 'https://dev.to/burakboduroglu', icon: 'devto' },
+    { key: 'kick', href: 'https://kick.com/penolox', icon: 'kick' },
   ],
 } satisfies ProfileData
 

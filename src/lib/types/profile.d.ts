@@ -9,11 +9,22 @@ export type ProfileLinkKey =
   | 'youtube'
   | 'producthunt'
   | 'kick'
+  | 'figma'
+  | 'bsky'
+  | 'gdev'
+  | 'microsoft'
+  | 'aws'
+  | 'lovable'
+  | 'cursor'
+  | 'medium'
+  | 'npm'
+
 
 export type ProfileLink = {
   key: ProfileLinkKey
   href: string
   icon: string
+  handle?: string
 }
 
 export type ProfileData = {
@@ -21,5 +32,8 @@ export type ProfileData = {
   avatarUrl: string
   email: string
   githubUrl: string
+  primaryLinks: ProfileLink[]
+  developerProfiles: ProfileLink[]
   links: ProfileLink[]
 }
+

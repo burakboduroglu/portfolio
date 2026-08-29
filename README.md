@@ -25,7 +25,7 @@ This repository holds the source for my personal site: a single page that introd
 
 ## What it is
 
-The page pairs a calm, editorial hero (photo, short positioning copy, location) with a **Reach out** block for direct links. Below that sits an **Apps** section styled like a focused product shelf: each entry is a real project carrying its own category, platform, and accent color, instead of a generic grid of cards. An **Articles** section surfaces what I publish on Substack.
+The page pairs a calm, editorial hero (photo, short positioning copy, location) with a **Reach out** block for direct links. Below that sits an **Apps** section styled like a focused product shelf: each entry is a real project carrying its own category, platform, and accent color, instead of a generic grid of cards. An **Articles** section surfaces technical writing, and a **Developer Profiles & Communities** section connects to cloud, AI, design, and developer platforms.
 
 Visually I leaned toward clarity and restraint: monospace type, light structure, a single accent color, and enough whitespace that the content — not chrome — carries the impression.
 
@@ -38,12 +38,13 @@ Visually I leaned toward clarity and restraint: monospace type, light structure,
 | 🌗 | **Dark mode, no flash** | A tiny inline script in `index.html` sets the class before first paint; the toggle persists to `localStorage`. |
 | 🔗 | **Language lives in the URL** | `?lang=` → `localStorage` → `navigator.language` → `en`, written back so a shared link carries it. |
 | 🏬 | **Apps shelf, not a card grid** | Each card carries its own category, platform, and accent, and links straight out; paginated four at a time. |
+| 🪪 | **Developer Profiles Hub** | Clean badges for Google Developers, Microsoft Learn, AWS, Cursor, Lovable, Figma, npm, Medium, and more. |
 | ♿ | **Accessible by default** | Intact heading hierarchy, `focus-visible` styling that survives the dark panel, `prefers-reduced-motion` respected. |
 | 🪶 | **Small** | The whole page ships in roughly 78 kB gzipped — no CSS framework, no state library, no i18n runtime. |
 
 ## Stack
 
-**React 19** on **Vite** in **TypeScript**, with layout and typography in plain CSS — no framework, no CSS-in-JS. Icons come from **Lucide** where it fits; a couple of brand marks are inlined where the icon set does not ship them. **Bun** is the package manager and script runner.
+**React 19** on **Vite** in **TypeScript**, with layout and typography in plain CSS — no framework, no CSS-in-JS. Icons come from **Lucide** where it fits; lightweight custom SVG brand marks are inlined for developer platforms. **Bun** is the package manager and script runner.
 
 Content lives in code so the whole thing stays easy to revise and deploy as static files.
 
@@ -68,15 +69,20 @@ bun run dev
 
 ```
 src/
-├─ App.tsx              Page composition
-├─ main.tsx             Entry point
-├─ styles.css           All styling — plain CSS, one file
+├─ App.tsx                     Page composition
+├─ main.tsx                    Entry point
+├─ styles.css                  All styling — plain CSS, one file
 ├─ components/
-│  └─ app-site/         The Apps shelf and its leaf components
+│  ├─ app-site/                The Apps shelf and its leaf components
+│  ├─ articles-section.tsx     Substack articles grid
+│  ├─ developer-profiles-section.tsx  Developer & community platform links
+│  ├─ language-switcher.tsx    TR / EN / DE switcher
+│  ├─ reach-out-icons.tsx      Inlined SVG brand & platform icons
+│  └─ theme-switch.tsx         Light / Dark mode toggle
 └─ lib/
-   ├─ data/             Language-independent structure (ids, links, icons, accents)
-   ├─ i18n/             tr / en / de + the useT / useLocale / useApps context
-   └─ types/            Shared type declarations
+   ├─ data/                    Language-independent structure (apps, articles, profiles)
+   ├─ i18n/                    tr / en / de + useT / useLocale / useApps context
+   └─ types/                   Shared type declarations
 ```
 
 The split between `lib/data/` and `lib/i18n/` is the load-bearing idea: `data/` holds only what is identical in every language, and `useApps()` merges it with the active translation at render time. Leaf components never learn that translation exists.

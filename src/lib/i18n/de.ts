@@ -3,9 +3,9 @@ import type { Messages } from './types'
 const de = {
   localeLabel: 'Deutsch',
   meta: {
-    title: 'Burak Boduroglu',
+    title: 'Burak Boduroğlu — Softwareentwickler',
     description:
-      'Eine minimalistische persönliche Website von Burak Boduroğlu mit eingebetteter App-Übersicht, gebaut mit React und Vite.',
+      'Burak Boduroğlu — Softwareentwickler. Persönliche Website mit entwickelten Apps, Entwickler-Tools, technischen Artikeln und Profilen.',
   },
   nav: {
     languageAria: 'Sprache',
@@ -21,7 +21,7 @@ const de = {
   },
   profile: {
     intro:
-      'Ich bin Softwareentwickler. Aus unsortierten Ideen einfache, nützliche Produkte zu machen, die Leute wirklich benutzen – das mag ich. Am liebsten bin ich von Anfang bis Ende dabei: vom Verstehen des Problems bis zum Launch. Ich gehe in kleinen Schritten vor, nehme das passende Werkzeug für die Aufgabe und lege Wert auf Code, den man lesen und pflegen kann.',
+      'Ich bin Softwareentwickler. Aus komplexen Ideen einfache, nützliche Produkte zu machen, die Leute wirklich benutzen – das mag ich. Am liebsten bin ich von Anfang bis Ende dabei: vom Angehen des Problems bis zum Launch. Ich gehe in kleinen Schritten vor, nehme das passende Werkzeug für die Aufgabe und lege Wert auf Code, den man lesen und pflegen kann.',
     aiIntro: '',
     links: {
       email: 'E-Mail senden',
@@ -34,6 +34,15 @@ const de = {
       youtube: 'YouTube',
       producthunt: 'Product Hunt',
       kick: 'Kick',
+      figma: 'Figma',
+      bsky: 'Bluesky',
+      gdev: 'Google for Developers',
+      microsoft: 'Microsoft Learn',
+      aws: 'AWS Builder Community',
+      lovable: 'Lovable',
+      cursor: 'Cursor',
+      medium: 'Medium',
+      npm: 'npm',
     },
   },
   categories: {
@@ -125,7 +134,16 @@ const de = {
     title: 'Artikel',
     readOnSubstack: 'Auf Substack lesen',
   },
+  developerProfiles: {
+    sectionAria: 'Entwickler-Profile und Plattformen',
+    title: 'Entwickler-Profile & Communitys',
+    subtitle: 'Meine Profile in Cloud-, KI-, Coding- und Design-Ökosystemen.',
+  },
+  toast: {
+    emailCopied: 'E-Mail-Adresse in die Zwischenablage kopiert!',
+  },
   footer: {
+
     crafted: (name) => ['Mit', `von ${name} erstellt`],
   },
   appCopy: {

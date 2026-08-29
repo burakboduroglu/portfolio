@@ -79,7 +79,17 @@ export type Messages = {
     title: string
     readOnSubstack: string
   }
+  developerProfiles: {
+    sectionAria: string
+    title: string
+    subtitle: string
+  }
+  toast: {
+    emailCopied: string
+  }
   footer: {
+
+
     /** [before ❤️, after ❤️] — DE and TR put the heart in a different position */
     crafted: (name: string) => [string, string]
   }

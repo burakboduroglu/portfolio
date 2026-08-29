@@ -3,9 +3,9 @@ import type { Messages } from './types'
 const en = {
   localeLabel: 'English',
   meta: {
-    title: 'Burak Boduroglu',
+    title: 'Burak Boduroğlu — Software Engineer',
     description:
-      'A minimal personal site for Burak Boduroğlu, with an embedded apps showcase built with React and Vite.',
+      'Burak Boduroğlu — Software Engineer. Personal site featuring shipped applications, tools, technical articles, and developer profiles.',
   },
   nav: {
     languageAria: 'Language',
@@ -21,7 +21,7 @@ const en = {
   },
   profile: {
     intro:
-      'I’m a software engineer. I like turning messy ideas into simple, useful products that people actually reach for. I’d rather be involved end to end, from working out the problem to shipping the thing. I work in small steps, pick the right tools for the job, and care about writing code that’s readable and easy to live with.',
+      'I’m a software engineer. I like turning complex ideas into simple, useful products that people actually reach for. I’d rather be involved end to end, from addressing the problem to shipping the product. I work in small steps, pick the right tools for the job, and care about writing code that’s readable and easy to live with.',
     aiIntro: '',
     links: {
       email: 'Send email',
@@ -34,6 +34,15 @@ const en = {
       youtube: 'YouTube',
       producthunt: 'Product Hunt',
       kick: 'Kick',
+      figma: 'Figma',
+      bsky: 'Bluesky',
+      gdev: 'Google for Developers',
+      microsoft: 'Microsoft Learn',
+      aws: 'AWS Builder Community',
+      lovable: 'Lovable',
+      cursor: 'Cursor',
+      medium: 'Medium',
+      npm: 'npm',
     },
   },
   categories: {
@@ -125,7 +134,17 @@ const en = {
     title: 'Articles',
     readOnSubstack: 'Read on Substack',
   },
+  developerProfiles: {
+    sectionAria: 'Developer profiles and platforms',
+    title: 'Developer Profiles & Communities',
+    subtitle: 'My profiles across cloud, AI, coding, and design ecosystems.',
+  },
+  toast: {
+    emailCopied: 'Email address copied to clipboard!',
+  },
   footer: {
+
+
     crafted: (name) => ['Crafted with', `by ${name}`],
   },
   appCopy: {

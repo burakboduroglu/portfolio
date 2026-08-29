@@ -143,7 +143,8 @@ const de = {
     emailCopied: 'E-Mail-Adresse in die Zwischenablage kopiert!',
   },
   footer: {
-
+    shortcutTheme: 'Theme',
+    shortcutLang: 'Sprache',
     crafted: (name) => ['Mit', `von ${name} erstellt`],
   },
   appCopy: {

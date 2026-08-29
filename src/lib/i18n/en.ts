@@ -143,8 +143,8 @@ const en = {
     emailCopied: 'Email address copied to clipboard!',
   },
   footer: {
-
-
+    shortcutTheme: 'theme',
+    shortcutLang: 'language',
     crafted: (name) => ['Crafted with', `by ${name}`],
   },
   appCopy: {

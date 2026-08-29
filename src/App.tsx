@@ -160,6 +160,15 @@ function App() {
         <DeveloperProfilesSection />
 
         <footer className='site-footer'>
+          <div className='site-footer-shortcuts' aria-hidden='true'>
+            <span className='shortcut-badge'>
+              <kbd>T</kbd> {t.footer.shortcutTheme}
+            </span>
+            <span className='shortcut-dot'>•</span>
+            <span className='shortcut-badge'>
+              <kbd>L</kbd> {t.footer.shortcutLang}
+            </span>
+          </div>
           <p className='site-footer-crafted'>
             {craftedBefore} <span className='site-footer-heart'>❤️</span> {craftedAfter}
           </p>

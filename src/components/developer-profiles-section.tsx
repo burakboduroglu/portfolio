@@ -26,6 +26,7 @@ function DeveloperProfilesSection() {
             <li key={item.key}>
               <ExternalLink
                 className='developer-profile-card'
+                data-platform={item.key}
                 href={item.href}
                 aria-label={`${platformName}: ${item.handle || item.href}`}>
                 <span className='developer-profile-icon' aria-hidden='true'>

@@ -88,8 +88,8 @@ export type Messages = {
     emailCopied: string
   }
   footer: {
-
-
+    shortcutTheme: string
+    shortcutLang: string
     /** [before ❤️, after ❤️] — DE and TR put the heart in a different position */
     crafted: (name: string) => [string, string]
   }

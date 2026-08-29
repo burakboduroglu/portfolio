@@ -1,3 +1,13 @@
+import type { AnchorHTMLAttributes, ReactNode } from 'react'
+
+interface ExternalLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
+  href: string
+  children: ReactNode
+  className?: string
+  title?: string
+  'aria-label'?: string
+}
+
 function ExternalLink({
   href,
   children,
@@ -5,14 +15,8 @@ function ExternalLink({
   title,
   'aria-label': ariaLabel,
   onClick,
-}: {
-  href: string
-  children: React.ReactNode
-  className?: string
-  title?: string
-  'aria-label'?: string
-  onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void
-}) {
+  ...props
+}: ExternalLinkProps) {
   return (
     <a
       className={className}
@@ -21,10 +25,12 @@ function ExternalLink({
       rel='noreferrer noopener'
       title={title}
       aria-label={ariaLabel}
-      onClick={onClick}>
+      onClick={onClick}
+      {...props}>
       {children}
     </a>
   )
 }
 
 export default ExternalLink
+

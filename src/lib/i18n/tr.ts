@@ -143,8 +143,8 @@ const tr = {
     emailCopied: 'E-posta adresi panoya kopyalandı!',
   },
   footer: {
-
-
+    shortcutTheme: 'tema',
+    shortcutLang: 'dil',
     crafted: (name) => [`${name} tarafından`, 'yapıldı'],
   },
   appCopy: {

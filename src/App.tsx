@@ -1,16 +1,70 @@
-import { ChevronRight } from 'lucide-react'
+import { useCallback, useEffect, useRef, useState } from 'react'
+import { Check, ChevronRight } from 'lucide-react'
 import profile from './lib/data/profile'
-import { useT } from './lib/i18n'
+import { LOCALES, useLocale, useT } from './lib/i18n'
 import AppsSite from './components/app-site/apps-site'
 import ExternalLink from './components/app-site/external-link'
 import ArticlesSection from './components/articles-section'
+import DeveloperProfilesSection from './components/developer-profiles-section'
 import LanguageSwitcher from './components/language-switcher'
 import ReachOutLeadingIcon from './components/reach-out-icons'
-import ThemeSwitch from './components/theme-switch'
+import ThemeSwitch, { toggleTheme } from './components/theme-switch'
 
 function App() {
   const t = useT()
+  const { locale, setLocale } = useLocale()
   const [craftedBefore, craftedAfter] = t.footer.crafted(profile.name)
+  const [toastMessage, setToastMessage] = useState<string | null>(null)
+  const toastTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  const showToast = useCallback((msg: string) => {
+    if (toastTimeoutRef.current) {
+      clearTimeout(toastTimeoutRef.current)
+    }
+    setToastMessage(msg)
+    toastTimeoutRef.current = setTimeout(() => {
+      setToastMessage(null)
+    }, 2400)
+  }, [])
+
+  const handleLinkClick = (key: string) => {
+    if (key === 'email') {
+      try {
+        navigator.clipboard?.writeText(profile.email)
+        showToast(t.toast.emailCopied)
+      } catch {
+        /* fallback if clipboard API is restricted */
+      }
+    }
+  }
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Don't trigger shortcuts if user is typing in form/search inputs
+      const target = e.target as HTMLElement | null
+      if (
+        target &&
+        (target.tagName === 'INPUT' ||
+          target.tagName === 'TEXTAREA' ||
+          target.isContentEditable)
+      ) {
+        return
+      }
+
+      if (e.key === 't' || e.key === 'T') {
+        e.preventDefault()
+        toggleTheme()
+      } else if (e.key === 'l' || e.key === 'L') {
+        e.preventDefault()
+        const currentIndex = LOCALES.indexOf(locale)
+        const nextLocale = LOCALES[(currentIndex + 1) % LOCALES.length]
+        setLocale(nextLocale)
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [locale, setLocale])
 
   return (
     <main className='site'>
@@ -18,7 +72,7 @@ function App() {
         <div className='site-rail'>
           <div className='page-top'>
             <div className='page-label'>
-              <img src={profile.avatarUrl} alt='' />
+              <img src={profile.avatarUrl} alt='' width='20' height='20' decoding='async' />
               <span>{profile.name}</span>
             </div>
             <div className='page-top-actions'>
@@ -32,7 +86,14 @@ function App() {
       <div className='site-rail page'>
         <header className='hero'>
           <div className='hero-photo-row'>
-            <img className='profile-photo' src={profile.avatarUrl} alt={t.hero.photoAlt} />
+            <img
+              className='profile-photo'
+              src={profile.avatarUrl}
+              alt={t.hero.photoAlt}
+              width='108'
+              height='108'
+              decoding='async'
+            />
             <div className='hero-photo-line' aria-hidden='true' />
           </div>
           <h1>{profile.name}</h1>
@@ -50,13 +111,14 @@ function App() {
                   </h2>
                 </div>
                 <ul className='reach-out-list'>
-                  {profile.links.map((link) => {
+                  {profile.primaryLinks.map((link) => {
                     const label = t.profile.links[link.key]
                     return (
                       <li key={link.key}>
                         <ExternalLink
                           className='reach-out-link'
                           href={link.href}
+                          onClick={() => handleLinkClick(link.key)}
                           title={label}
                           aria-label={label}>
                           <ReachOutLeadingIcon name={link.icon} />
@@ -95,14 +157,25 @@ function App() {
 
         <ArticlesSection />
 
+        <DeveloperProfilesSection />
+
         <footer className='site-footer'>
           <p className='site-footer-crafted'>
             {craftedBefore} <span className='site-footer-heart'>❤️</span> {craftedAfter}
           </p>
         </footer>
       </div>
+
+      <div
+        className={`site-toast ${toastMessage ? 'visible' : ''}`}
+        role='status'
+        aria-live='polite'>
+        <Check size={14} aria-hidden='true' />
+        <span>{toastMessage}</span>
+      </div>
     </main>
   )
 }
 
 export default App
+

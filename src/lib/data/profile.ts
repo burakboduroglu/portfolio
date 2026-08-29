@@ -1,22 +1,40 @@
-import { ProfileData } from '../types/profile'
+import { ProfileData, ProfileLink } from '../types/profile'
+
+const primaryLinks: ProfileLink[] = [
+  { key: 'email', href: 'mailto:info@burakboduroglu.com.tr', icon: 'mail' },
+  { key: 'linkedin', href: 'https://www.linkedin.com/in/burakboduroglu', icon: 'linkedin' },
+  { key: 'github', href: 'https://github.com/burakboduroglu', icon: 'github' },
+  { key: 'x', href: 'https://x.com/penoloxai', icon: 'x' },
+  { key: 'bsky', href: 'https://bsky.app/profile/penoloxai.bsky.social', icon: 'bsky' },
+  { key: 'substack', href: 'https://substack.com/@penoloxai', icon: 'substack' },
+  { key: 'youtube', href: 'https://www.youtube.com/@penoloxai', icon: 'youtube' },
+  { key: 'producthunt', href: 'https://www.producthunt.com/@burakboduroglu', icon: 'producthunt' },
+  { key: 'reddit', href: 'https://www.reddit.com/user/penoloxai/', icon: 'reddit' },
+  { key: 'figma', href: 'https://www.figma.com/@burakboduroglu', icon: 'figma' },
+]
+
+const developerProfiles: ProfileLink[] = [
+  { key: 'gdev', href: 'https://g.dev/burakboduroglu', icon: 'gdev', handle: 'g.dev/burakboduroglu' },
+  { key: 'microsoft', href: 'https://learn.microsoft.com/en-us/users/burakboduroglu/', icon: 'microsoft', handle: '@burakboduroglu' },
+  { key: 'aws', href: 'https://builder.aws.com/community/@burakboduroglu', icon: 'aws', handle: '@burakboduroglu' },
+  { key: 'cursor', href: 'https://cursor.com/@penolox', icon: 'cursor', handle: '@penolox' },
+  { key: 'lovable', href: 'https://lovable.dev/@burakboduroglu', icon: 'lovable', handle: '@burakboduroglu' },
+  { key: 'figma', href: 'https://www.figma.com/@burakboduroglu', icon: 'figma', handle: '@burakboduroglu' },
+  { key: 'github', href: 'https://github.com/burakboduroglu', icon: 'github', handle: 'burakboduroglu' },
+  { key: 'devto', href: 'https://dev.to/burakboduroglu', icon: 'devto', handle: 'burakboduroglu' },
+  { key: 'medium', href: 'https://medium.com/@burakboduroglu', icon: 'medium', handle: '@burakboduroglu' },
+  { key: 'npm', href: 'https://www.npmjs.com/~burakboduroglu', icon: 'npm', handle: '~burakboduroglu' },
+  { key: 'kick', href: 'https://kick.com/penolox', icon: 'kick', handle: 'penolox' },
+]
 
 const profile = {
   name: 'Burak Boduroğlu',
   avatarUrl: 'https://avatars.githubusercontent.com/u/80620802?v=4',
   email: 'info@burakboduroglu.com.tr',
   githubUrl: 'https://github.com/burakboduroglu',
-  links: [
-    { key: 'email', href: 'mailto:info@burakboduroglu.com.tr', icon: 'mail' },
-    { key: 'linkedin', href: 'https://www.linkedin.com/in/burakboduroglu', icon: 'linkedin' },
-    { key: 'github', href: 'https://github.com/burakboduroglu', icon: 'github' },
-    { key: 'substack', href: 'https://substack.com/@penoloxai', icon: 'substack' },
-    { key: 'x', href: 'https://x.com/penoloxai', icon: 'x' },
-    { key: 'reddit', href: 'https://www.reddit.com/user/penoloxai/', icon: 'reddit' },
-    { key: 'youtube', href: 'https://www.youtube.com/@penoloxai', icon: 'youtube' },
-    { key: 'producthunt', href: 'https://www.producthunt.com/@burakboduroglu', icon: 'producthunt' },
-    { key: 'devto', href: 'https://dev.to/burakboduroglu', icon: 'devto' },
-    { key: 'kick', href: 'https://kick.com/penolox', icon: 'kick' },
-  ],
+  primaryLinks,
+  developerProfiles,
+  links: primaryLinks,
 } satisfies ProfileData
 
 export default profile

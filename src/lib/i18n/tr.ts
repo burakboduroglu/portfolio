@@ -3,9 +3,9 @@ import type { Messages } from './types'
 const tr = {
   localeLabel: 'Türkçe',
   meta: {
-    title: 'Burak Boduroğlu',
+    title: 'Burak Boduroğlu — Yazılım Mühendisi',
     description:
-      'Burak Boduroğlu’nun kişisel sitesi; yaptığı işler, uygulamalar ve teknik notlar.',
+      'Burak Boduroğlu — Yazılım Mühendisi. Kişisel web sitesi; geliştirdiği uygulamalar, projeler, teknik yazılar ve geliştirici profilleri.',
   },
   nav: {
     languageAria: 'Dil',
@@ -21,7 +21,7 @@ const tr = {
   },
   profile: {
     intro:
-      'Yazılım mühendisiyim. Dağınık fikirleri sade, gerçekten işe yarayan ürünlere dönüştürmeyi seviyorum. Problemi anlamaktan ürünü yayına almaya kadar sürecin her aşamasında olmayı tercih ederim. Küçük adımlarla ilerlerim, işe uygun aracı seçerim; okunması da bakımı da kolay kod yazmaya önem veririm.',
+      'Yazılım mühendisiyim. Karmaşık fikirleri sade, işe yarayan ürünlere dönüştürmeyi seviyorum. Problemi ele almaktan ürünü yayına almaya kadar sürecin her aşamasında olmayı tercih ederim. Küçük adımlarla ilerlerim, işe uygun aracı seçerim; okunması da bakımı da kolay kod yazmaya önem veririm.',
     aiIntro: '',
     links: {
       email: 'E-posta',
@@ -34,6 +34,15 @@ const tr = {
       youtube: 'YouTube',
       producthunt: 'Product Hunt',
       kick: 'Kick',
+      figma: 'Figma',
+      bsky: 'Bluesky',
+      gdev: 'Google for Developers',
+      microsoft: 'Microsoft Learn',
+      aws: 'AWS Builder Community',
+      lovable: 'Lovable',
+      cursor: 'Cursor',
+      medium: 'Medium',
+      npm: 'npm',
     },
   },
   categories: {
@@ -125,7 +134,17 @@ const tr = {
     title: 'Yazılar',
     readOnSubstack: 'Substack’te oku',
   },
+  developerProfiles: {
+    sectionAria: 'Geliştirici profilleri ve platformlar',
+    title: 'Geliştirici Profilleri & Topluluklar',
+    subtitle: 'Bulut, yapay zekâ, kodlama ve tasarım ekosistemlerindeki profillerim.',
+  },
+  toast: {
+    emailCopied: 'E-posta adresi panoya kopyalandı!',
+  },
   footer: {
+
+
     crafted: (name) => [`${name} tarafından`, 'yapıldı'],
   },
   appCopy: {

@@ -1124,7 +1124,7 @@ blockquote {
 
 .developer-profiles-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 10px;
   margin: 0;
   padding: 0;
@@ -1236,6 +1236,11 @@ blockquote {
   background: rgba(242, 78, 30, 0.12);
 }
 
+.developer-profile-card[data-platform='framer']:hover .developer-profile-icon {
+  color: #0099ff;
+  background: rgba(0, 153, 255, 0.12);
+}
+
 .developer-profile-card[data-platform='gdev']:hover .developer-profile-icon {
   color: #4285f4;
   background: rgba(66, 133, 244, 0.12);
@@ -1269,6 +1274,26 @@ blockquote {
 .developer-profile-card[data-platform='kick']:hover .developer-profile-icon {
   color: #53fc18;
   background: rgba(83, 252, 24, 0.14);
+}
+
+.developer-profile-card[data-platform='producthunt']:hover .developer-profile-icon {
+  color: #da552f;
+  background: rgba(218, 85, 47, 0.12);
+}
+
+.developer-profile-card[data-platform='substack']:hover .developer-profile-icon {
+  color: #ff6719;
+  background: rgba(255, 103, 25, 0.12);
+}
+
+.developer-profile-card[data-platform='youtube']:hover .developer-profile-icon {
+  color: #ff0000;
+  background: rgba(255, 0, 0, 0.12);
+}
+
+.developer-profile-card[data-platform='bsky']:hover .developer-profile-icon {
+  color: #0085ff;
+  background: rgba(0, 133, 255, 0.12);
 }
 
 .site-footer {
@@ -1620,7 +1645,7 @@ blockquote {
   }
 
   .developer-profiles-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
   }
 

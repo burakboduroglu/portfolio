@@ -148,6 +148,14 @@ function SvgNpm({ size = 16, ...props }: IconProps) {
   )
 }
 
+function SvgFramer({ size = 16, ...props }: IconProps) {
+  return (
+    <svg viewBox='0 0 24 24' width={size} height={size} fill='currentColor' aria-hidden {...props}>
+      <path d='M4 0h16v8h-8zm0 8h8l8 8H4zm0 8h8v8z' />
+    </svg>
+  )
+}
+
 export function ReachOutLeadingIcon({
   name,
   size = 16,
@@ -195,6 +203,8 @@ export function ReachOutLeadingIcon({
       return <SvgMedium size={size} className={className} />
     case 'npm':
       return <SvgNpm size={size} className={className} />
+    case 'framer':
+      return <SvgFramer size={size} className={className} />
     case 'kick':
       return <SvgKick size={size} className={className} />
     default:

@@ -18,6 +18,7 @@ export type ProfileLinkKey =
   | 'cursor'
   | 'medium'
   | 'npm'
+  | 'framer'
 
 
 export type ProfileLink = {

@@ -226,6 +226,19 @@ const de = {
       heroText:
         'Dizey ist die Website eines kleinen Engineering-Teams, das Software von der ersten Idee bis in die Produktion bringt.',
     },
+    portfolio: {
+      category: 'Website',
+      subtitle: 'Die Seite, die du gerade ansiehst',
+      description:
+        'Diese Seite selbst. Eine React-App mit drei Sprachen, hellem und dunklem Theme und einer eigenen Seite für jedes Projekt. Keine i18n-Bibliothek, kein Router, kein CSS-Framework — alles von Hand geschrieben, der Quellcode ist offen.',
+      stack: 'React / TypeScript',
+      platform: 'Browser',
+      price: 'Open Source',
+      action: 'Website öffnen',
+      heroTitle: 'Eine ruhige, von Hand gebaute persönliche Seite.',
+      heroText:
+        'Eine Seite darüber, wer ich bin, wie ich arbeite und welche kleinen Produkte ich baue — in drei Sprachen, mit kurzer Abhängigkeitsliste.',
+    },
     alice: {
       category: 'Website',
       subtitle: 'Landingpage für eine Hochzeitslocation',

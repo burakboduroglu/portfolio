@@ -92,6 +92,17 @@ const apps: AppMeta[] = [
     accent: 'devnotes',
     install: [{ manager: 'npm', command: 'npm install -g devnotetr' }],
   },
+  {
+    id: 'portfolio',
+    categoryKey: 'web',
+    title: 'Portfolio',
+    repo: 'https://github.com/burakboduroglu/portfolio',
+    link: 'https://burakboduroglu.com.tr',
+    stars: '2',
+    forks: '0',
+    icon: 'P',
+    accent: 'portfolio',
+  },
 ]
 
 export default apps

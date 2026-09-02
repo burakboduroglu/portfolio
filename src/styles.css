@@ -602,6 +602,14 @@ blockquote {
   box-shadow: 0 0 10px rgba(53, 230, 111, 0.5);
 }
 
+/* The portfolio's tile carries the site's own accent — --link, warmed up */
+.store-app-icon.portfolio,
+.project-hero.portfolio {
+  --accent-plate:
+    radial-gradient(circle at 24% 18%, rgba(199, 111, 104, 0.24), transparent 30px),
+    linear-gradient(135deg, #1d1210, #5c322e 54%, #241614);
+}
+
 .store-app-icon.rose,
 .project-hero.rose {
   --accent-plate: linear-gradient(135deg, #a33c58, #f19585);

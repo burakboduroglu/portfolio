@@ -187,18 +187,18 @@ const tr = {
       heroText:
         'Bir portu hangi sürecin tuttuğunu gör, sinyal göndermeden önce önizle, sonra terminalden ya da yerel web arayüzünden kapat.',
     },
-    'dev-notes': {
+    penote: {
       category: 'CLI / Geliştirici Aracı',
-      subtitle: 'Geliştirici notlarını terminalde tut',
+      subtitle: 'Ajanların da insanların da okuyabildiği programlama notları',
       description:
-        'Komutları, kod parçalarını ve proje notlarını terminalden çıkmadan kaydetmeni, sonra da hızlıca bulmanı sağlayan bir CLI.',
-      stack: 'Geliştirici Aracı',
+        'Java, JavaScript, Python, SQL ve MongoDB notlarını Markdown olarak tutan bir kitaplık; sıfır bağımlılıklı CLI, TUI ve yerel web arayüzüyle gezilir. AGENTS.md sayesinde kod ajanları da aynı dosyaları okuyup genişletebilir.',
+      stack: 'JavaScript',
       platform: 'CLI',
       price: 'Ücretsiz',
       action: 'İndir',
-      heroTitle: 'Notların terminalden uzakta kalmasın.',
+      heroTitle: 'Hem insanın hem ajanın okuduğu notlar.',
       heroText:
-        'DevNotes; geliştirirken sık kullandığın komutları, kod parçalarını ve proje detaylarını tek yerde toplar.',
+        'Java, JavaScript, Python, SQL ve MongoDB notları düz Markdown olarak duruyor — terminalden, TUI’den ya da tarayıcıdan aç; derleme adımı da çalışma zamanı bağımlılığı da yok.',
     },
     bdash: {
       category: 'SaaS',

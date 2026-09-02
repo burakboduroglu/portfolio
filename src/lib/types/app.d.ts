@@ -1,7 +1,7 @@
 export type AppId =
   | 'macshelf'
   | 'portkill'
-  | 'dev-notes'
+  | 'penote'
   | 'bdash'
   | 'alice'
   | 'betus-design'

@@ -47,7 +47,7 @@ async function gh<T>(path: string): Promise<T | null> {
 }
 
 /**
- * READMEs are not consistently cased across repos — dev-notes ships `readme.md`
+ * READMEs are not consistently cased across repos — some ship `readme.md`
  * — so the root listing is matched case-insensitively rather than guessed at.
  */
 async function readmeNames(repo: Omit<Repo, 'branch'>): Promise<string[]> {

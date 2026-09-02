@@ -36,7 +36,9 @@ export function parseRoute(pathname: string): Route {
   }
 
   if (path.startsWith(PROJECT_PREFIX)) {
-    const id = decodeURIComponent(path.slice(PROJECT_PREFIX.length))
+    const raw = decodeURIComponent(path.slice(PROJECT_PREFIX.length))
+    // penote was previously published and linked as dev-notes
+    const id = raw === 'dev-notes' ? 'penote' : raw
     if (isAppId(id)) {
       return { name: 'project', id }
     }
@@ -63,11 +65,26 @@ export function navigate(path: string) {
   window.dispatchEvent(new Event(NAVIGATE_EVENT))
 }
 
+function rewriteLegacyPath() {
+  const path = window.location.pathname.replace(/\/+$/, '')
+  if (path === `${PROJECT_PREFIX}dev-notes`) {
+    const url = new URL(window.location.href)
+    url.pathname = projectPath('penote')
+    window.history.replaceState(null, '', url)
+  }
+}
+
 export function useRoute(): Route {
-  const [route, setRoute] = useState<Route>(() => parseRoute(window.location.pathname))
+  const [route, setRoute] = useState<Route>(() => {
+    rewriteLegacyPath()
+    return parseRoute(window.location.pathname)
+  })
 
   useEffect(() => {
-    const sync = () => setRoute(parseRoute(window.location.pathname))
+    const sync = () => {
+      rewriteLegacyPath()
+      setRoute(parseRoute(window.location.pathname))
+    }
     window.addEventListener('popstate', sync)
     window.addEventListener(NAVIGATE_EVENT, sync)
 

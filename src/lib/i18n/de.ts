@@ -187,18 +187,18 @@ const de = {
       heroText:
         'Sieh, welcher Prozess einen Port hält, prüfe vor dem Signal, dann stoppe ihn — im Terminal oder in einer lokalen Web-UI.',
     },
-    'dev-notes': {
+    penote: {
       category: 'CLI / DevTool',
-      subtitle: 'Entwicklernotizen im Terminal festhalten',
+      subtitle: 'Programmiernotizen für Menschen und Agents',
       description:
-        'Ein CLI, mit dem du Befehle, Code-Schnipsel und Projektnotizen speicherst, ohne das Terminal zu verlassen – und sie später wiederfindest.',
-      stack: 'Entwickler-Tool',
+        'Eine Markdown-Bibliothek mit Notizen zu Java, JavaScript, Python, SQL und MongoDB, erschlossen über ein CLI, ein TUI und eine lokale Web-UI ohne Abhängigkeiten. Über AGENTS.md lesen und erweitern auch Coding-Agents dieselben Dateien.',
+      stack: 'JavaScript',
       platform: 'CLI',
       price: 'Kostenlos',
       action: 'Laden',
-      heroTitle: 'Notizen da, wo du arbeitest.',
+      heroTitle: 'Notizen, die Mensch und Agent lesen.',
       heroText:
-        'DevNotes sammelt die Befehle, Code-Schnipsel und Projektdetails, die du beim Bauen brauchst, an einem Ort.',
+        'Notizen zu Java, JavaScript, Python, SQL und MongoDB liegen als reines Markdown vor — geöffnet im Terminal, im TUI oder im Browser, ohne Build-Schritt und ohne Laufzeitabhängigkeiten.',
     },
     bdash: {
       category: 'SaaS',

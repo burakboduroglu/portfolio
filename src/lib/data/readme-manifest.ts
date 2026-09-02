@@ -15,7 +15,7 @@ export const readmeManifest: Partial<Record<AppId, Locale[]>> = {
   "macshelf": [
     "en"
   ],
-  "dev-notes": [
+  "penote": [
     "en"
   ],
   "portfolio": [

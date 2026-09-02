@@ -99,12 +99,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://burakboduroglu.com.tr/projects/dev-notes</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://burakboduroglu.com.tr/projects/dev-notes?lang=tr" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://burakboduroglu.com.tr/projects/dev-notes?lang=en" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://burakboduroglu.com.tr/projects/dev-notes?lang=de" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://burakboduroglu.com.tr/projects/dev-notes" />
-    <lastmod>2026-09-02</lastmod>
+    <loc>https://burakboduroglu.com.tr/projects/penote</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://burakboduroglu.com.tr/projects/penote?lang=tr" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://burakboduroglu.com.tr/projects/penote?lang=en" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://burakboduroglu.com.tr/projects/penote?lang=de" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://burakboduroglu.com.tr/projects/penote" />
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

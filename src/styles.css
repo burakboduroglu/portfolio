@@ -542,11 +542,11 @@ blockquote {
     linear-gradient(135deg, #05130b, #12311d 52%, #06150b);
 }
 
-.store-app-icon.devnotes,
-.project-hero.devnotes {
+.store-app-icon.penote,
+.project-hero.penote {
   --accent-plate:
-    radial-gradient(circle at 28% 18%, rgba(250, 204, 21, 0.2), transparent 28px),
-    linear-gradient(135deg, #15110a, #332414 52%, #0e1827);
+    radial-gradient(circle at 28% 18%, rgba(165, 180, 252, 0.22), transparent 28px),
+    linear-gradient(135deg, #0b1026, #3730a3 52%, #1e1b4b);
 }
 
 .store-app-icon.bdash,

@@ -187,18 +187,18 @@ const en = {
       heroText:
         'See which process owns a port, preview before anything is signalled, then stop it — from the terminal or a local web UI.',
     },
-    'dev-notes': {
+    penote: {
       category: 'CLI / DevTool',
-      subtitle: 'Keep developer notes in the terminal',
+      subtitle: 'Programming notes agents and humans can both read',
       description:
-        'A CLI for saving commands, code snippets and project notes without leaving the terminal, then finding them again later.',
-      stack: 'Developer Tool',
+        'A Markdown library of Java, JavaScript, Python, SQL and MongoDB notes, browsed through a zero-dependency CLI, TUI or local web UI. AGENTS.md lets coding agents read and extend the same files.',
+      stack: 'JavaScript',
       platform: 'CLI',
       price: 'Free',
       action: 'Get',
-      heroTitle: 'Keep your notes where you work.',
+      heroTitle: 'Notes that read well to people and to agents.',
       heroText:
-        'DevNotes gathers the commands, code snippets and project details you rely on while building into one place.',
+        'Java, JavaScript, Python, SQL and MongoDB notes in plain Markdown — open them from a terminal, a TUI or a browser, with no build step and no runtime dependencies.',
     },
     bdash: {
       category: 'SaaS',

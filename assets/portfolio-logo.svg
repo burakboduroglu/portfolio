@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="Portfolio logo">
+  <defs>
+    <radialGradient id="portfolio-plate" cx="0.3" cy="0.22" r="0.85">
+      <stop offset="0" stop-color="#6d3229" />
+      <stop offset="0.55" stop-color="#3a1c17" />
+      <stop offset="1" stop-color="#150a08" />
+    </radialGradient>
+    <linearGradient id="portfolio-rim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e8b9a8" stop-opacity="0.35" />
+      <stop offset="1" stop-color="#e8b9a8" stop-opacity="0.06" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1024" height="1024" rx="232" fill="url(#portfolio-plate)" />
+  <rect x="26" y="26" width="972" height="972" rx="208" fill="none"
+        stroke="url(#portfolio-rim)" stroke-width="6" />
+
+  <!-- Collar -->
+  <path d="M236 226 L512 520 L406 610 L214 396 Z" fill="#f6ece9" />
+  <path d="M788 226 L512 520 L618 610 L810 396 Z" fill="#f6ece9" />
+
+  <!-- Tie, in the site's accent -->
+  <path d="M446 300 H578 L562 404 H462 Z" fill="#c76f68" />
+  <path d="M456 424 H568 L610 700 L512 812 L414 700 Z" fill="#c76f68" />
+</svg>

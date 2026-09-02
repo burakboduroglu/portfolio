@@ -1,0 +1,96 @@
+<!--
+  GitHub social preview card, 1280x640. The SVG is the source; regenerate the PNG with:
+    rsvg-convert -w 1280 -h 640 assets/social-preview.svg -o assets/social-preview.png
+  GitHub has no API for the social preview, so the PNG is uploaded by hand under
+  Settings > General > Social preview.
+-->
+<svg width="1280" height="640" viewBox="0 0 1280 640" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="640" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2A1512"/><stop offset="0.55" stop-color="#1A0E0C"/><stop offset="1" stop-color="#100807"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="640" y1="0" x2="1280" y2="640" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C76F68" stop-opacity="0.18"/><stop offset="1" stop-color="#C76F68" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="mark" cx="0.3" cy="0.22" r="0.85">
+      <stop offset="0" stop-color="#6D3229"/><stop offset="0.55" stop-color="#3A1C17"/><stop offset="1" stop-color="#150A08"/>
+    </radialGradient>
+    <filter id="paneShadow" x="-30%" y="-30%" width="170%" height="170%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="24" stdDeviation="30" flood-color="#000000" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="640" fill="url(#bg)"/>
+  <rect width="1280" height="640" fill="url(#glow)"/>
+
+  <!-- mark: the collar and tie, in a rounded tile -->
+  <g transform="translate(88, 96)">
+    <rect width="96" height="96" rx="26" fill="url(#mark)"/>
+    <g transform="scale(0.09375)">
+      <path d="M236 226 L512 520 L406 610 L214 396 Z" fill="#F6ECE9"/>
+      <path d="M788 226 L512 520 L618 610 L810 396 Z" fill="#F6ECE9"/>
+      <path d="M446 300 H578 L562 404 H462 Z" fill="#C76F68"/>
+      <path d="M456 424 H568 L610 700 L512 812 L414 700 Z" fill="#C76F68"/>
+    </g>
+  </g>
+
+  <text x="88" y="292" font-family="-apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, sans-serif"
+        font-size="80" font-weight="700" fill="#FFFFFF" letter-spacing="-2">Portfolio</text>
+
+  <text x="90" y="352" font-family="-apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, sans-serif"
+        font-size="29" font-weight="500" fill="#EFD8D2">A calm, hand-built personal site.</text>
+  <text x="90" y="394" font-family="-apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, sans-serif"
+        font-size="29" font-weight="500" fill="#B08880">Three languages. No framework tax.</text>
+
+  <g font-family="-apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, sans-serif"
+     font-size="22" font-weight="600" fill="#F3DAD4">
+    <rect x="90" y="456" width="176" height="46" rx="23" fill="#FFFFFF" fill-opacity="0.08" stroke="#C76F68" stroke-opacity="0.35"/>
+    <text x="178" y="486" text-anchor="middle">TR · EN · DE</text>
+    <rect x="282" y="456" width="188" height="46" rx="23" fill="#FFFFFF" fill-opacity="0.08" stroke="#C76F68" stroke-opacity="0.35"/>
+    <text x="376" y="486" text-anchor="middle">React 19 · Vite</text>
+    <rect x="486" y="456" width="110" height="46" rx="23" fill="#FFFFFF" fill-opacity="0.08" stroke="#C76F68" stroke-opacity="0.35"/>
+    <text x="541" y="486" text-anchor="middle">MIT</text>
+  </g>
+
+  <text x="90" y="566" font-family="SF Mono, Menlo, Consolas, monospace"
+        font-size="19" fill="#8A6259">burakboduroglu.com.tr</text>
+
+  <!-- browser window: the site's own shelf, abstracted -->
+  <g filter="url(#paneShadow)">
+    <rect x="700" y="140" width="500" height="368" rx="16" fill="#FBF9F8" stroke="#3A241F" stroke-width="1"/>
+  </g>
+  <rect x="700" y="140" width="500" height="44" rx="16" fill="#F1EAE7"/>
+  <rect x="700" y="168" width="500" height="16" fill="#F1EAE7"/>
+  <g fill="#C9B7B1">
+    <circle cx="726" cy="162" r="6"/><circle cx="748" cy="162" r="6"/><circle cx="770" cy="162" r="6"/>
+  </g>
+  <rect x="800" y="152" width="300" height="20" rx="10" fill="#E2D6D2"/>
+
+  <!-- hero line and copy -->
+  <rect x="730" y="214" width="196" height="26" rx="8" fill="#37352F"/>
+  <rect x="730" y="256" width="300" height="12" rx="6" fill="#D8CCC8"/>
+  <rect x="730" y="278" width="256" height="12" rx="6" fill="#D8CCC8"/>
+
+  <!-- project shelf -->
+  <g>
+    <rect x="730" y="320" width="212" height="76" rx="12" fill="#F4EEEC" stroke="#E4D9D5"/>
+    <rect x="744" y="340" width="36" height="36" rx="10" fill="#2EC46B"/>
+    <rect x="792" y="344" width="118" height="10" rx="5" fill="#37352F"/>
+    <rect x="792" y="364" width="88" height="8" rx="4" fill="#C3B5B0"/>
+
+    <rect x="958" y="320" width="212" height="76" rx="12" fill="#F4EEEC" stroke="#E4D9D5"/>
+    <rect x="972" y="340" width="36" height="36" rx="10" fill="#3FB6A8"/>
+    <rect x="1020" y="344" width="118" height="10" rx="5" fill="#37352F"/>
+    <rect x="1020" y="364" width="88" height="8" rx="4" fill="#C3B5B0"/>
+
+    <rect x="730" y="408" width="212" height="76" rx="12" fill="#F4EEEC" stroke="#E4D9D5"/>
+    <rect x="744" y="428" width="36" height="36" rx="10" fill="url(#mark)"/>
+    <rect x="792" y="432" width="118" height="10" rx="5" fill="#37352F"/>
+    <rect x="792" y="452" width="88" height="8" rx="4" fill="#C3B5B0"/>
+
+    <rect x="958" y="408" width="212" height="76" rx="12" fill="#F4EEEC" stroke="#E4D9D5"/>
+    <rect x="972" y="428" width="36" height="36" rx="10" fill="#1B2A4A"/>
+    <rect x="1020" y="432" width="118" height="10" rx="5" fill="#37352F"/>
+    <rect x="1020" y="452" width="88" height="8" rx="4" fill="#C3B5B0"/>
+  </g>
+</svg>

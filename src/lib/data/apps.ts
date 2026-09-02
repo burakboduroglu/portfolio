@@ -7,12 +7,17 @@ const apps: AppMeta[] = [
     categoryKeys: ['cli', 'developer'],
     title: '.portkill',
     repo: 'https://github.com/burakboduroglu/portkill',
-    link: 'https://github.com/burakboduroglu/portkill',
+    link: 'https://www.npmjs.com/package/@burakboduroglu/portkill',
     stars: '2',
     forks: '0',
     icon: 'p',
+    logoUrl:
+      'https://raw.githubusercontent.com/burakboduroglu/portkill/main/assets/portkill-logo.svg',
     accent: 'portkill',
-    install: [{ manager: 'Homebrew', command: 'brew install burakboduroglu/portkill/portkill' }],
+    install: [
+      { manager: 'Homebrew', command: 'brew install burakboduroglu/portkill/portkill' },
+      { manager: 'npm', command: 'npm i -g @burakboduroglu/portkill' },
+    ],
   },
   {
     id: 'macshelf',
@@ -20,14 +25,20 @@ const apps: AppMeta[] = [
     categoryKeys: ['macos', 'productivity'],
     title: 'MacShelf',
     repo: 'https://github.com/burakboduroglu/macshelf',
-    link: 'https://github.com/burakboduroglu/macshelf',
+    link: 'https://github.com/burakboduroglu/macshelf/releases/latest',
     stars: '2',
     forks: '0',
     icon: 'M',
     logoUrl:
       'https://github.com/burakboduroglu/macshelf/raw/main/assets/macshelf-logo.svg',
     accent: 'dark',
-    install: [{ manager: 'Homebrew', command: 'brew install burakboduroglu/macshelf/macshelf' }],
+    install: [
+      {
+        manager: 'After the DMG',
+        command: 'xattr -dr com.apple.quarantine /Applications/MacShelf.app',
+      },
+      { manager: 'Homebrew', command: 'brew install burakboduroglu/macshelf/macshelf' },
+    ],
   },
   {
     id: 'bdash',

@@ -163,29 +163,29 @@ const en = {
   appCopy: {
     macshelf: {
       category: 'macOS App',
-      subtitle: 'Clipboard manager for macOS',
+      subtitle: 'Clipboard shelf for the menu bar',
       description:
-        'A macOS app that hangs on to the text and images you copy, so you can find them again whenever you need them.',
-      stack: 'Swift',
-      platform: 'macOS',
+        'A native macOS menu bar app that keeps the text and images you copy — searchable, keyboard-first, no Dock icon and no account.',
+      stack: 'Swift 6',
+      platform: 'macOS 14+',
       price: 'Free',
       action: 'Get',
       heroTitle: 'Never lose what you copied.',
       heroText:
-        'MacShelf quietly keeps everything you copy and puts it back within reach the moment you need it.',
+        'Press Cmd+Shift+V and a popover drops from the menu bar with your clipboard history — text and images, ready to put back.',
     },
     portkill: {
       category: 'CLI App',
-      subtitle: 'Free up a busy TCP port with one command',
+      subtitle: 'Free a stuck TCP port with one command',
       description:
-        'A CLI for macOS and Linux that tracks down the process holding a port and shuts it down. It also handles previews, port ranges and listing whatever’s open.',
+        'A CLI for macOS and Linux that finds the process holding a port and stops it. Preview with --dry-run, walk ranges, list what’s open, or open the same logic in a local web UI.',
       stack: 'TypeScript',
       platform: 'macOS / Linux',
       price: 'Free',
       action: 'Get',
       heroTitle: 'Find out what’s holding your port.',
       heroText:
-        'Work out which process is using a port, then close it with a single command.',
+        'See which process owns a port, preview before anything is signalled, then stop it — from the terminal or a local web UI.',
     },
     'dev-notes': {
       category: 'CLI / DevTool',

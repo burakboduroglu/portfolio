@@ -65,7 +65,7 @@ function AppDetail({ app }: { app: AppCard }) {
   const t = useT()
   const stars = countOf(app.stars)
   const forks = countOf(app.forks)
-  // portkill and MacShelf point `link` at their repo — one button, not two
+  // Show GitHub when `repo` is set and differs from the primary Get link
   const hasSeparateRepo = Boolean(app.repo) && app.repo !== app.link
 
   return (

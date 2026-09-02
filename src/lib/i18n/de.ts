@@ -163,29 +163,29 @@ const de = {
   appCopy: {
     macshelf: {
       category: 'macOS-App',
-      subtitle: 'Zwischenablage-Manager für macOS',
+      subtitle: 'Zwischenablage-Regal in der Menüleiste',
       description:
-        'Eine macOS-App, die alles Kopierte aufbewahrt – Text wie Bilder –, damit du es später mit einem Griff wiederfindest.',
-      stack: 'Swift',
-      platform: 'macOS',
+        'Eine native macOS-Menüleisten-App, die Text und Bilder behält, die du kopierst — durchsuchbar, tastaturorientiert, ohne Dock-Icon und ohne Konto.',
+      stack: 'Swift 6',
+      platform: 'macOS 14+',
       price: 'Kostenlos',
       action: 'Laden',
       heroTitle: 'Nie wieder verlieren, was du kopiert hast.',
       heroText:
-        'MacShelf sichert im Hintergrund alles, was du kopierst, und legt es dir wieder hin, sobald du es brauchst.',
+        'Cmd+Shift+V öffnet ein Popover aus der Menüleiste mit deiner Zwischenablage-Historie — Text und Bilder, bereit zum Zurücklegen.',
     },
     portkill: {
       category: 'CLI-App',
-      subtitle: 'Belegten TCP-Port mit einem Befehl freigeben',
+      subtitle: 'Blockierten TCP-Port mit einem Befehl freigeben',
       description:
-        'Ein CLI für macOS und Linux, das den Prozess aufspürt, der einen Port blockiert, und ihn beendet. Mit Vorschau, Port-Bereichen und einer Liste aller offenen Ports.',
+        'Ein CLI für macOS und Linux, das den Prozess findet, der einen Port hält, und ihn beendet. Vorschau mit --dry-run, Bereiche ablaufen, offene Ports listen oder dieselbe Logik in einer lokalen Web-UI öffnen.',
       stack: 'TypeScript',
       platform: 'macOS / Linux',
       price: 'Kostenlos',
       action: 'Laden',
       heroTitle: 'Finde heraus, wer deinen Port blockiert.',
       heroText:
-        'Sieh nach, welcher Prozess einen Port belegt, und beende ihn mit einem einzigen Befehl.',
+        'Sieh, welcher Prozess einen Port hält, prüfe vor dem Signal, dann stoppe ihn — im Terminal oder in einer lokalen Web-UI.',
     },
     'dev-notes': {
       category: 'CLI / DevTool',

@@ -226,6 +226,19 @@ const tr = {
       heroText:
         'Dizey, yazılımı ilk fikirden üretime kadar taşıyan küçük bir mühendislik ekibinin web sitesi.',
     },
+    portfolio: {
+      category: 'Web Sitesi',
+      subtitle: 'Şu an baktığın site',
+      description:
+        'Bu sitenin kendisi. Tek bir React uygulaması; üç dil, açık ve koyu tema, her proje için ayrı bir sayfa. Ne i18n kütüphanesi var ne router ne de CSS framework’ü — hepsi elle yazıldı ve kaynağı açık.',
+      stack: 'React / TypeScript',
+      platform: 'Tarayıcı',
+      price: 'Açık kaynak',
+      action: 'Siteyi aç',
+      heroTitle: 'Elle yazılmış, sade bir kişisel site.',
+      heroText:
+        'Kim olduğumu, nasıl çalıştığımı ve ürettiğim küçük ürünleri anlatan bir sayfa — üç dilde, bağımlılığı az tutularak.',
+    },
     alice: {
       category: 'Web Sitesi',
       subtitle: 'Düğün mekânı için tanıtım sayfası',

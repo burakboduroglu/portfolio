@@ -108,4 +108,14 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://burakboduroglu.com.tr/projects/portfolio</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://burakboduroglu.com.tr/projects/portfolio?lang=tr" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://burakboduroglu.com.tr/projects/portfolio?lang=en" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://burakboduroglu.com.tr/projects/portfolio?lang=de" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://burakboduroglu.com.tr/projects/portfolio" />
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

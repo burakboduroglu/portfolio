@@ -226,6 +226,19 @@ const en = {
       heroText:
         'Dizey is the site of a small engineering team that takes software from the first idea through to production.',
     },
+    portfolio: {
+      category: 'Web Page',
+      subtitle: 'The site you are looking at',
+      description:
+        'This site itself. One React app carrying three languages, a light and dark theme, and a page of its own for every project. No i18n library, no router, no CSS framework — all hand-written, and the source is open.',
+      stack: 'React / TypeScript',
+      platform: 'Browser',
+      price: 'Open source',
+      action: 'Open site',
+      heroTitle: 'A calm personal site, built by hand.',
+      heroText:
+        'One page introducing who I am, how I work and the small products I ship — in three languages, with the dependency list kept short.',
+    },
     alice: {
       category: 'Web Page',
       subtitle: 'Landing page for a wedding venue',

@@ -11,6 +11,9 @@ import type { AppId } from '../types/app'
 export const readmeManifest: Partial<Record<AppId, Locale[]>> = {
   "macshelf": [
     "en"
+  ],
+  "portfolio": [
+    "en"
   ]
 }
 

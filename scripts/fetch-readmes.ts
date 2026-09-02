@@ -10,7 +10,7 @@
  * English and the page says so.
  */
 
-import { mkdir, writeFile } from 'node:fs/promises'
+import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { Marked } from 'marked'
 import sanitizeHtml from 'sanitize-html'
@@ -191,6 +191,48 @@ function render(markdown: string, repo: Repo): string {
   })
 }
 
+/**
+ * Reads the manifest back out of public/readme/ rather than from whatever this
+ * run touched — otherwise `bun run readmes macshelf` would drop every other
+ * project's documentation section from the site.
+ */
+async function buildManifest(): Promise<Partial<Record<AppId, Locale[]>>> {
+  const ids = new Set<string>(apps.map((app) => app.id))
+  const files = await readdir(OUT_DIR)
+  const found = new Map<AppId, Set<Locale>>()
+
+  for (const file of files) {
+    const match = /^(.+)\.([a-z]{2})\.json$/.exec(file)
+    if (!match || !ids.has(match[1])) {
+      continue
+    }
+
+    const id = match[1] as AppId
+    const document = JSON.parse(await readFile(resolve(OUT_DIR, file), 'utf8')) as {
+      locale: Locale
+      sourceLocale: Locale
+    }
+
+    if (!found.has(id)) {
+      found.set(id, new Set())
+    }
+
+    if (document.sourceLocale === document.locale) {
+      found.get(id)?.add(document.locale)
+    }
+  }
+
+  const manifest: Partial<Record<AppId, Locale[]>> = {}
+  for (const app of apps) {
+    const locales = found.get(app.id)
+    if (locales) {
+      manifest[app.id] = LOCALES.filter((locale) => locales.has(locale))
+    }
+  }
+
+  return manifest
+}
+
 async function main() {
   const only = process.argv.slice(2).filter((arg) => !arg.startsWith('-'))
   const targets = apps.filter(
@@ -198,7 +240,6 @@ async function main() {
   )
 
   await mkdir(OUT_DIR, { recursive: true })
-  const manifest: Partial<Record<AppId, Locale[]>> = {}
 
   for (const app of targets) {
     const parsed = parseRepo(app.repo as string)
@@ -254,9 +295,10 @@ async function main() {
       }
     }
 
-    manifest[app.id] = translated
     console.log(`✓ ${app.id}  translated: ${translated.join(', ') || '—'}`)
   }
+
+  const manifest = await buildManifest()
 
   const body = `import type { Locale } from '../i18n/types'
 import type { AppId } from '../types/app'

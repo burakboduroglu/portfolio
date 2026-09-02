@@ -6,6 +6,7 @@ export type AppId =
   | 'alice'
   | 'betus-design'
   | 'dizey'
+  | 'portfolio'
 
 /** Language-independent structure — lives in src/lib/data/apps.ts */
 export type AppMeta = {

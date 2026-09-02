@@ -1,3 +1,4 @@
+import portfolioLogo from '../../../assets/portfolio-logo.svg'
 import { AppMeta } from '../types/app'
 
 const apps: AppMeta[] = [
@@ -88,6 +89,7 @@ const apps: AppMeta[] = [
     stars: '2',
     forks: '0',
     icon: 'P',
+    logoUrl: portfolioLogo,
     accent: 'portfolio',
   },
   {

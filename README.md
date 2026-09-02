@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="assets/portfolio-logo.svg" alt="Portfolio logo" width="140">
+
 # Portfolio
 
 **A calm, hand-built personal site — three languages, its own router, no framework tax.**
@@ -22,6 +24,11 @@
 ---
 
 This repository holds the source for my personal site: a page that introduces who I am, how I work, and the small products and tools I ship, plus a detail page for each of those products. It is meant to read like a hand-built portfolio — not a reusable template, not a library for others to install.
+
+<div align="center">
+  <img src="assets/screenshot-home.png" alt="The hero: photo, name, positioning copy and a Reach out block" width="760">
+  <img src="assets/screenshot-shelf.png" alt="The project shelf: four project cards with category, platform and accent colour" width="760">
+</div>
 
 ## What it is
 
@@ -98,6 +105,8 @@ scripts/
 └─ fetch-readmes.ts            Pulls project READMEs, writes sanitized HTML
 
 public/readme/                 Generated README HTML — committed, not built
+
+assets/                        The site's own mark, social preview and screenshots
 ```
 
 The split between `lib/data/` and `lib/i18n/` is the load-bearing idea: `data/` holds only what is identical in every language, and `useApps()` merges it with the active translation at render time. Leaf components never learn that translation exists.
@@ -113,6 +122,10 @@ The active language resolves as `?lang=` → `localStorage` → `navigator.langu
 **To add a string:** add it to `Messages`, run `bun run typecheck`, and let the errors point at each dictionary.
 
 ## How the project pages work
+
+<div align="center">
+  <img src="assets/screenshot-project.png" alt="A project page: full-bleed hero in the project's accent colour, with install and repository buttons" width="760">
+</div>
 
 `src/lib/router.ts` resolves `/projects/:id` over the History API in about 85 lines. Cards render a real `href` and intercept only the plain left click, so middle-click and ⌘-click still open a new tab. GitHub Pages has no rewrite rules, so the build copies `index.html` to `404.html` — that is what makes a hard refresh or a shared link resolve instead of showing the Pages error page.
 
@@ -132,6 +145,7 @@ The build also emits `404.html` alongside `index.html` so Pages resolves the pro
 
 Bug reports, accessibility issues, and translation fixes are welcome; the personal content itself is not up for pull requests.
 
+- [**Changelog**](CHANGELOG.md) — what changed, release by release
 - [**Contributing guide**](CONTRIBUTING.md) — setup, project layout, style, commits, pull requests
 - [**Code of Conduct**](CODE_OF_CONDUCT.md) — how we treat each other here
 - [**Security policy**](SECURITY.md) — report vulnerabilities privately, never as an issue

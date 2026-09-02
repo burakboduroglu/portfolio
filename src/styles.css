@@ -643,6 +643,7 @@ blockquote {
 }
 
 .store-app-icon.portkill.has-logo,
+.store-app-icon.portfolio.has-logo,
 .store-app-icon.dark.has-logo {
   border-color: rgba(255, 255, 255, 0.08);
   background: transparent;
@@ -650,6 +651,7 @@ blockquote {
 }
 
 .store-app-icon.dizey img,
+.store-app-icon.portfolio.has-logo img,
 .store-app-icon.portkill.has-logo img {
   width: 100%;
   height: 100%;

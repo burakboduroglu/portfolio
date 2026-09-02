@@ -17,7 +17,7 @@ const apps: AppMeta[] = [
     accent: 'portkill',
     install: [
       { manager: 'Homebrew', command: 'brew install burakboduroglu/portkill/portkill' },
-      { manager: 'npm', command: 'npm i -g @burakboduroglu/portkill' },
+      { manager: 'bun', command: 'bun add -g @burakboduroglu/portkill' },
     ],
   },
   {

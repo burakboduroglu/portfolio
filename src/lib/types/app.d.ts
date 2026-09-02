@@ -28,7 +28,7 @@ export type AppMeta = {
 }
 
 export type InstallCommand = {
-  /** Package manager name as it is written — 'Homebrew', 'npm' */
+  /** Package manager name as it is written — 'Homebrew', 'bun' */
   manager: string
   command: string
 }

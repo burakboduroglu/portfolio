@@ -2,7 +2,7 @@
 
 # Portfolio
 
-**A calm, hand-built personal site — one page, three languages, no framework tax.**
+**A calm, hand-built personal site — three languages, its own router, no framework tax.**
 
 [**burakboduroglu.com.tr →**](https://burakboduroglu.com.tr/)
 
@@ -21,11 +21,13 @@
 
 ---
 
-This repository holds the source for my personal site: a single page that introduces who I am, how I work, and the small products and tools I ship. It is meant to read like a hand-built portfolio — not a reusable template, not a library for others to install.
+This repository holds the source for my personal site: a page that introduces who I am, how I work, and the small products and tools I ship, plus a detail page for each of those products. It is meant to read like a hand-built portfolio — not a reusable template, not a library for others to install.
 
 ## What it is
 
 The page pairs a calm, editorial hero (photo, short positioning copy, location) with a **Reach out** block for direct links. Below that sits an **Apps** section styled like a focused product shelf: each entry is a real project carrying its own category, platform, and accent color, instead of a generic grid of cards. An **Articles** section surfaces technical writing, and a **Developer Profiles & Communities** section connects to cloud, AI, design, and developer platforms.
+
+Every project on that shelf opens its own page at `/projects/:id` — a full-bleed hero in the project's accent color, its platform and language, a copy-paste install command, and the project's own README rendered underneath.
 
 Visually I leaned toward clarity and restraint: monospace type, light structure, a single accent color, and enough whitespace that the content — not chrome — carries the impression.
 
@@ -37,10 +39,11 @@ Visually I leaned toward clarity and restraint: monospace type, light structure,
 | 🛡️ | **Translations can't be forgotten** | A missing key is a *compile error*, and `build` typechecks first — so it never reaches production. |
 | 🌗 | **Dark mode, no flash** | A tiny inline script in `index.html` sets the class before first paint; the toggle persists to `localStorage`. |
 | 🔗 | **Language lives in the URL** | `?lang=` → `localStorage` → `navigator.language` → `en`, written back so a shared link carries it. |
-| 🏬 | **Apps shelf, not a card grid** | Each card carries its own category, platform, and accent, and links straight out; paginated four at a time. |
+| 🗂️ | **Project pages, no router dependency** | Every project has a real route at `/projects/:id`, resolved by ~85 lines over the History API. One dynamic route did not justify a routing library. |
+| 📖 | **READMEs render on the site** | `bun run readmes` pulls each project's README from GitHub and commits sanitized HTML, so the build never touches the network. |
 | 🪪 | **Developer Profiles Hub** | Clean badges for Google Developers, Microsoft Learn, AWS, Cursor, Lovable, Figma, npm, Medium, and more. |
 | ♿ | **Accessible by default** | Intact heading hierarchy, `focus-visible` styling that survives the dark panel, `prefers-reduced-motion` respected. |
-| 🪶 | **Small** | The whole page ships in roughly 78 kB gzipped — no CSS framework, no state library, no i18n runtime. |
+| 🪶 | **Small** | The page ships in roughly 87 kB gzipped — no CSS framework, no state library, no i18n runtime, no markdown parser in the bundle. |
 
 ## Stack
 
@@ -63,26 +66,38 @@ bun run dev
 | `bun run typecheck` | `tsc --noEmit` over the whole project               |
 | `bun run build`     | Typechecks first, then builds into `dist/`          |
 | `bun run preview`   | Serves the production build locally                 |
+| `bun run readmes`   | Pulls project READMEs from GitHub into `public/readme/`  |
 | `bun run deploy`    | Manual `gh-pages` deploy — CI normally handles this |
 
 ## Structure
 
 ```
 src/
-├─ App.tsx                     Page composition
+├─ App.tsx                     Route shell — home, project page, not found
 ├─ main.tsx                    Entry point
 ├─ styles.css                  All styling — plain CSS, one file
 ├─ components/
-│  ├─ app-site/                The Apps shelf and its leaf components
+│  ├─ app-site/
+│  │  ├─ apps-site.tsx         The project shelf on the home page
+│  │  ├─ app-detail.tsx        /projects/:id — hero, facts, install command
+│  │  └─ readme-section.tsx    Renders the generated README HTML
+│  ├─ home-page.tsx            Everything that lives on /
+│  ├─ internal-link.tsx        Real href, intercepts only the plain left click
 │  ├─ articles-section.tsx     Substack articles grid
 │  ├─ developer-profiles-section.tsx  Developer & community platform links
 │  ├─ language-switcher.tsx    TR / EN / DE switcher
 │  ├─ reach-out-icons.tsx      Inlined SVG brand & platform icons
 │  └─ theme-switch.tsx         Light / Dark mode toggle
 └─ lib/
+   ├─ router.ts                History API routing, no dependency
    ├─ data/                    Language-independent structure (apps, articles, profiles)
    ├─ i18n/                    tr / en / de + useT / useLocale / useApps context
    └─ types/                   Shared type declarations
+
+scripts/
+└─ fetch-readmes.ts            Pulls project READMEs, writes sanitized HTML
+
+public/readme/                 Generated README HTML — committed, not built
 ```
 
 The split between `lib/data/` and `lib/i18n/` is the load-bearing idea: `data/` holds only what is identical in every language, and `useApps()` merges it with the active translation at render time. Leaf components never learn that translation exists.
@@ -93,13 +108,25 @@ There is no i18n dependency. `src/lib/i18n/index.ts` is a small context provider
 
 `src/lib/i18n/types.ts` defines a single `Messages` type that all three dictionaries `satisfies`. Because app copy and categories are keyed by union types, a missing or misspelled translation is a compile error — and `bun run build` runs `tsc --noEmit` first, so an incomplete translation cannot reach production.
 
-The active language resolves as `?lang=` → `localStorage` → `navigator.language` → English, and the choice is written back to the URL so a link carries it. Search is normalised per locale, which the Turkish dotted/dotless İ/ı requires.
+The active language resolves as `?lang=` → `localStorage` → `navigator.language` → English, and the choice is written back to the URL so a link carries it — including on navigation, so going back never lands on a URL that disagrees with the rendered page.
 
 **To add a string:** add it to `Messages`, run `bun run typecheck`, and let the errors point at each dictionary.
+
+## How the project pages work
+
+`src/lib/router.ts` resolves `/projects/:id` over the History API in about 85 lines. Cards render a real `href` and intercept only the plain left click, so middle-click and ⌘-click still open a new tab. GitHub Pages has no rewrite rules, so the build copies `index.html` to `404.html` — that is what makes a hard refresh or a shared link resolve instead of showing the Pages error page.
+
+Each page then renders the project's own README. `bun run readmes` fetches it from GitHub, drops the opening centred block and badge rows the hero already covers, shifts every heading down a level, rewrites relative URLs to absolute — in raw HTML as well as markdown — and writes sanitized HTML to `public/readme/`.
+
+That output is **committed**, and the build never runs it. CI stays offline and a GitHub outage cannot fail a deploy; the cost is that a README edit needs `bun run readmes <id>` and a commit to reach the site. `marked` and `sanitize-html` are devDependencies, so no markdown parser ships to the browser.
+
+**Translations follow the repo:** `README.md` is English, `README.tr.md` and `README.de.md` are the translations. A missing one falls back to English and the page says so.
 
 ## Deployment
 
 Pushes to `main` build and deploy to **GitHub Pages** automatically via [`deploy-pages.yml`](.github/workflows/deploy-pages.yml). Pull requests into `main` or `dev` run typecheck and build through [`ci.yml`](.github/workflows/ci.yml). `bun run deploy` remains available as a manual fallback.
+
+The build also emits `404.html` alongside `index.html` so Pages resolves the project routes. Because the rendered READMEs are committed rather than fetched, a deploy needs no network access beyond installing dependencies.
 
 ## Contributing
 

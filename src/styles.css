@@ -629,17 +629,34 @@ blockquote {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
-/* Dizey ships a finished app icon — dark plate and rounding baked in — so it
-   fills the tile edge to edge instead of sitting inset on the light plate. */
+/* Finished app icons (rounding and fill baked into the SVG) fill the tile
+   edge to edge instead of sitting inset on the light plate. MacShelf uses the
+   shared `dark` accent. */
 .store-app-icon.dizey.has-logo {
   border-color: rgba(255, 255, 255, 0.08);
   background: #0d1117;
   box-shadow: none;
 }
 
-.store-app-icon.dizey img {
+.store-app-icon.portkill.has-logo,
+.store-app-icon.dark.has-logo {
+  border-color: rgba(255, 255, 255, 0.08);
+  background: transparent;
+  box-shadow: none;
+}
+
+.store-app-icon.dizey img,
+.store-app-icon.portkill.has-logo img {
   width: 100%;
   height: 100%;
+}
+
+/* MacShelf's SVG pads a 896px mark inside a 1024 viewBox — scale past that
+   transparent margin so the teal plate meets the tile edge. */
+.store-app-icon.dark.has-logo img {
+  width: 100%;
+  height: 100%;
+  transform: scale(calc(1024 / 896));
 }
 
 .get-in-touch {

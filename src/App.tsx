@@ -1,42 +1,69 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
-import { Check, ChevronRight } from 'lucide-react'
-import profile from './lib/data/profile'
-import { LOCALES, useLocale, useT } from './lib/i18n'
-import AppsSite from './components/app-site/apps-site'
-import ExternalLink from './components/app-site/external-link'
-import ArticlesSection from './components/articles-section'
-import DeveloperProfilesSection from './components/developer-profiles-section'
+import { useEffect, useMemo, useRef } from 'react'
+import { ArrowLeft } from 'lucide-react'
+import { applyDocumentMeta, LOCALES, syncLocaleParam, useApps, useLocale, useT } from './lib/i18n'
+import { useRoute } from './lib/router'
+import AppDetail from './components/app-site/app-detail'
+import HomePage from './components/home-page'
+import InternalLink from './components/internal-link'
 import LanguageSwitcher from './components/language-switcher'
-import ReachOutLeadingIcon from './components/reach-out-icons'
 import ThemeSwitch, { toggleTheme } from './components/theme-switch'
+
+function NotFoundPage() {
+  const t = useT()
+
+  return (
+    <div className='site-rail page project-missing'>
+      <h1>{t.apps.missingTitle}</h1>
+      <p>{t.apps.missingBody}</p>
+      <InternalLink className='project-back' href='/'>
+        <ArrowLeft size={15} aria-hidden='true' />
+        <span>{t.apps.backToProjects}</span>
+      </InternalLink>
+    </div>
+  )
+}
 
 function App() {
   const t = useT()
   const { locale, setLocale } = useLocale()
-  const [craftedBefore, craftedAfter] = t.footer.crafted(profile.name)
-  const [toastMessage, setToastMessage] = useState<string | null>(null)
-  const toastTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const route = useRoute()
+  const apps = useApps()
 
-  const showToast = useCallback((msg: string) => {
-    if (toastTimeoutRef.current) {
-      clearTimeout(toastTimeoutRef.current)
-    }
-    setToastMessage(msg)
-    toastTimeoutRef.current = setTimeout(() => {
-      setToastMessage(null)
-    }, 2400)
-  }, [])
+  const activeApp = useMemo(
+    () => (route.name === 'project' ? (apps.find((app) => app.id === route.id) ?? null) : null),
+    [apps, route]
+  )
 
-  const handleLinkClick = (key: string) => {
-    if (key === 'email') {
-      try {
-        navigator.clipboard?.writeText(profile.email)
-        showToast(t.toast.emailCopied)
-      } catch {
-        /* fallback if clipboard API is restricted */
-      }
+  const routeKey = route.name === 'project' ? route.id : route.name
+  const previousRouteKey = useRef(routeKey)
+
+  // A fresh page starts at the top; a deep link into #apps must not be undone
+  useEffect(() => {
+    if (previousRouteKey.current !== routeKey) {
+      previousRouteKey.current = routeKey
+      window.scrollTo(0, 0)
     }
-  }
+  }, [routeKey])
+
+  useEffect(() => {
+    syncLocaleParam(locale)
+    const canonical = `${window.location.origin}${window.location.pathname}`
+
+    if (activeApp) {
+      applyDocumentMeta({
+        title: `${activeApp.title} — ${activeApp.subtitle}`,
+        description: activeApp.description,
+        canonical,
+      })
+      return
+    }
+
+    applyDocumentMeta({
+      title: t.meta.title,
+      description: t.meta.description,
+      canonical,
+    })
+  }, [activeApp, locale, routeKey, t])
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -68,123 +95,28 @@ function App() {
 
   return (
     <main className='site'>
-      <header className='site-navbar' role='banner'>
-        <div className='site-rail'>
-          <div className='page-top'>
-            <div className='page-label'>
-              <img src={profile.avatarUrl} alt='' width='20' height='20' decoding='async' />
-              <span>{profile.name}</span>
-            </div>
-            <div className='page-top-actions'>
-              <ThemeSwitch />
-              <LanguageSwitcher />
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <div className='site-rail page'>
-        <header className='hero'>
-          <div className='hero-photo-row'>
-            <img
-              className='profile-photo'
-              src={profile.avatarUrl}
-              alt={t.hero.photoAlt}
-              width='108'
-              height='108'
-              decoding='async'
-            />
-            <div className='hero-photo-line' aria-hidden='true' />
-          </div>
-          <h1>{profile.name}</h1>
-          <div className='hero-grid'>
-            <div className='hero-copy-main'>
-              <p>{t.profile.intro}</p>
-              {t.profile.aiIntro ? <p>{t.profile.aiIntro}</p> : null}
-            </div>
-            <div className='reach-out-column'>
-              <aside className='reach-out' aria-label={t.hero.contactLinksAria}>
-                <div className='reach-out-header'>
-                  <h2 className='reach-out-title'>
-                    <span className='reach-out-title-dot' aria-hidden='true' />
-                    {t.hero.reachOut}
-                  </h2>
+      {activeApp ? (
+        <AppDetail app={activeApp} />
+      ) : route.name === 'home' ? (
+        <HomePage />
+      ) : (
+        <>
+          <header className='site-navbar' role='banner'>
+            <div className='site-rail'>
+              <div className='page-top'>
+                <span />
+                <div className='page-top-actions'>
+                  <ThemeSwitch />
+                  <LanguageSwitcher />
                 </div>
-                <ul className='reach-out-list'>
-                  {profile.primaryLinks.map((link) => {
-                    const label = t.profile.links[link.key]
-                    return (
-                      <li key={link.key}>
-                        <ExternalLink
-                          className='reach-out-link'
-                          href={link.href}
-                          onClick={() => handleLinkClick(link.key)}
-                          title={label}
-                          aria-label={label}>
-                          <ReachOutLeadingIcon name={link.icon} />
-                        </ExternalLink>
-                      </li>
-                    )
-                  })}
-                </ul>
-              </aside>
+              </div>
             </div>
-          </div>
-        </header>
-
-        <AppsSite />
-
-        <section className='get-in-touch'>
-          <h2>{t.contact.title}</h2>
-          <p>{t.contact.intro}</p>
-
-          <div className='contact-topics'>
-            {t.contact.topics.map((topic, index) => (
-              <details className='contact-topic' key={topic.title} open={index === 0}>
-                <summary>
-                  <ChevronRight size={16} aria-hidden='true' />
-                  <span>{topic.title}</span>
-                </summary>
-                <ul>
-                  {topic.bullets.map((bullet) => (
-                    <li key={bullet}>{bullet}</li>
-                  ))}
-                </ul>
-              </details>
-            ))}
-          </div>
-        </section>
-
-        <ArticlesSection />
-
-        <DeveloperProfilesSection />
-
-        <footer className='site-footer'>
-          <div className='site-footer-shortcuts' aria-hidden='true'>
-            <span className='shortcut-badge'>
-              <kbd>T</kbd> {t.footer.shortcutTheme}
-            </span>
-            <span className='shortcut-dot'>•</span>
-            <span className='shortcut-badge'>
-              <kbd>L</kbd> {t.footer.shortcutLang}
-            </span>
-          </div>
-          <p className='site-footer-crafted'>
-            {craftedBefore} <span className='site-footer-heart'>❤️</span> {craftedAfter}
-          </p>
-        </footer>
-      </div>
-
-      <div
-        className={`site-toast ${toastMessage ? 'visible' : ''}`}
-        role='status'
-        aria-live='polite'>
-        <Check size={14} aria-hidden='true' />
-        <span>{toastMessage}</span>
-      </div>
+          </header>
+          <NotFoundPage />
+        </>
+      )}
     </main>
   )
 }
 
 export default App
-

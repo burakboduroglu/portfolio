@@ -1,9 +1,10 @@
 import { useMemo, useState } from 'react'
 import { ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react'
 import { useApps, useT } from '../../lib/i18n'
+import { projectPath } from '../../lib/router'
+import InternalLink from '../internal-link'
 import AppIcon from './app-icon'
 import AppTitle from './app-title'
-import ExternalLink from './external-link'
 
 const ITEMS_PER_PAGE = 4
 
@@ -28,7 +29,7 @@ function AppsSite() {
       <ul className='projects-grid'>
         {pageApps.map((app) => (
           <li key={app.id}>
-            <ExternalLink className='project-card' href={app.link}>
+            <InternalLink className='project-card' href={projectPath(app.id)}>
               <span className='project-card-media'>
                 <AppIcon app={app} />
               </span>
@@ -42,11 +43,11 @@ function AppsSite() {
                 </strong>
                 <span className='project-card-subtitle'>{app.subtitle}</span>
                 <span className='project-card-cta'>
-                  {app.action}
+                  {t.apps.viewDetails}
                   <ArrowUpRight size={14} aria-hidden='true' />
                 </span>
               </span>
-            </ExternalLink>
+            </InternalLink>
           </li>
         ))}
       </ul>

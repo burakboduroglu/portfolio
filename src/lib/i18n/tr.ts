@@ -80,6 +80,18 @@ const tr = {
     viewOnGitHub: 'GitHub’da aç',
     preview: 'Önizleme',
     description: 'Açıklama',
+    viewDetails: 'Detaylar',
+    detailAria: (title) => `${title} proje detayı`,
+    openSite: 'Siteyi aç',
+    install: 'Kurulum',
+    copyCommand: 'Komutu kopyala',
+    commandCopied: 'Kopyalandı',
+    documentation: 'Dokümantasyon',
+    readmeFallback: 'Bu doküman henüz Türkçeye çevrilmedi — İngilizcesi gösteriliyor.',
+    readmeError: 'Doküman yüklenemedi.',
+    missingTitle: 'Böyle bir proje yok',
+    missingBody: 'Aradığın sayfa taşınmış ya da hiç var olmamış olabilir.',
+    backToProjects: 'Projeler',
     stats: {
       stars: 'Yıldız',
       forks: 'Fork',
@@ -151,29 +163,29 @@ const tr = {
   appCopy: {
     macshelf: {
       category: 'macOS Uygulaması',
-      subtitle: 'macOS için pano yöneticisi',
+      subtitle: 'Menü çubuğunda clipboard rafı',
       description:
-        'Kopyaladığın metinleri ve görselleri saklayan bir macOS uygulaması. İhtiyacın olduğunda aradığını hemen bulup yeniden kullanırsın.',
-      stack: 'Swift',
-      platform: 'macOS',
+        'Kopyaladığın metin ve görselleri tutan yerel bir macOS menü çubuğu uygulaması — aranabilir, klavye odaklı, Dock ikonu yok, hesap yok.',
+      stack: 'Swift 6',
+      platform: 'macOS 14+',
       price: 'Ücretsiz',
       action: 'İndir',
       heroTitle: 'Kopyaladığın hiçbir şey kaybolmasın.',
       heroText:
-        'MacShelf arka planda sessizce çalışır; kopyaladığın her şeyi saklar, lazım olduğunda elinin altına getirir.',
+        'Cmd+Shift+V ile menü çubuğundan clipboard geçmişin açılır — metin ve görseller, tekrar panoya koymaya hazır.',
     },
     portkill: {
       category: 'CLI Uygulaması',
-      subtitle: 'Meşgul TCP portunu tek komutla boşalt',
+      subtitle: 'Takılı TCP portunu tek komutla boşalt',
       description:
-        'macOS ve Linux’ta bir portu tutan süreci bulup kapatan bir CLI. Kapatmadan önce önizleme, port aralığı tarama ve açık portları listeleme de var.',
+        'macOS ve Linux’ta bir portu tutan süreci bulup kapatan bir CLI. --dry-run ile önizle, aralık tara, açık portları listele ya da aynı mantığı yerel bir web arayüzünde aç.',
       stack: 'TypeScript',
       platform: 'macOS / Linux',
       price: 'Ücretsiz',
       action: 'İndir',
       heroTitle: 'Portu kim tutuyor, hemen gör.',
       heroText:
-        'Bir portu hangi sürecin kullandığını bul, gerekirse tek komutla kapat.',
+        'Bir portu hangi sürecin tuttuğunu gör, sinyal göndermeden önce önizle, sonra terminalden ya da yerel web arayüzünden kapat.',
     },
     'dev-notes': {
       category: 'CLI / Geliştirici Aracı',
@@ -213,6 +225,19 @@ const tr = {
       heroTitle: 'Ölçeklenebilir yazılım, doğru kurgulanmış altyapı.',
       heroText:
         'Dizey, yazılımı ilk fikirden üretime kadar taşıyan küçük bir mühendislik ekibinin web sitesi.',
+    },
+    portfolio: {
+      category: 'Web Sitesi',
+      subtitle: 'Şu an baktığın site',
+      description:
+        'Bu sitenin kendisi. Tek bir React uygulaması; üç dil, açık ve koyu tema, her proje için ayrı bir sayfa. Ne i18n kütüphanesi var ne router ne de CSS framework’ü — hepsi elle yazıldı ve kaynağı açık.',
+      stack: 'React / TypeScript',
+      platform: 'Tarayıcı',
+      price: 'Açık kaynak',
+      action: 'Siteyi aç',
+      heroTitle: 'Elle yazılmış, sade bir kişisel site.',
+      heroText:
+        'Kim olduğumu, nasıl çalıştığımı ve ürettiğim küçük ürünleri anlatan bir sayfa — üç dilde, bağımlılığı az tutularak.',
     },
     alice: {
       category: 'Web Sitesi',

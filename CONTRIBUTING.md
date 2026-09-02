@@ -34,6 +34,7 @@ bun run dev
 | `bun run typecheck` | `tsc --noEmit` over the whole project                |
 | `bun run build`     | Runs `typecheck` first, then builds into `dist/`     |
 | `bun run preview`   | Serves the production build locally                  |
+| `bun run readmes`   | Pulls project READMEs from GitHub into `public/readme/` |
 | `bun run deploy`    | Manual `gh-pages` deploy (CI normally handles this)  |
 
 `bun run build` is the gate that matters: it fails on any type error, so a green
@@ -43,16 +44,20 @@ build means the change compiles and every translation is complete.
 
 ```
 src/
-  App.tsx                 Page composition
+  App.tsx                 Route shell — home, project page, not found
   main.tsx                Entry point
   styles.css              All styling — plain CSS, no framework
   components/             UI components
-    app-site/             The Apps shelf and its leaf components
+    app-site/             The project shelf, the /projects/:id page, the README
   lib/
+    router.ts             History API routing, no dependency
     data/                 Language-independent structure (ids, links, icons, accents)
     i18n/                 tr / en / de dictionaries + the useT/useLocale/useApps context
     types/                Shared type declarations
+scripts/
+  fetch-readmes.ts        Pulls project READMEs, writes sanitized HTML
 public/                   Static assets served as-is
+  readme/                 Generated README HTML — committed, regenerate with `bun run readmes`
 ```
 
 The split between `lib/data/` and `lib/i18n/` is deliberate: data holds only

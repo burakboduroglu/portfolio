@@ -6,6 +6,7 @@ export type AppId =
   | 'alice'
   | 'betus-design'
   | 'dizey'
+  | 'portfolio'
 
 /** Language-independent structure — lives in src/lib/data/apps.ts */
 export type AppMeta = {
@@ -22,6 +23,14 @@ export type AppMeta = {
   logoUrl?: string
   accent: string
   featured?: boolean
+  /** Copy-paste install commands, shown on the detail page. Never translated. */
+  install?: InstallCommand[]
+}
+
+export type InstallCommand = {
+  /** Package manager name as it is written — 'Homebrew', 'npm' */
+  manager: string
+  command: string
 }
 
 /** Translated prose — lives in src/lib/i18n/{en,tr,de}.ts, keyed by AppId */

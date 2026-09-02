@@ -487,6 +487,7 @@ blockquote {
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   color: #fff;
+  background: var(--accent-plate, linear-gradient(135deg, #2b2b2b, #4a4a4a));
   font-size: 20px;
   font-weight: 800;
 }
@@ -520,35 +521,44 @@ blockquote {
   font-size: 48px;
 }
 
-.store-app-icon.dark {
-  background: linear-gradient(135deg, #191919, #4a4a4a);
+.store-app-icon.dark,
+.project-hero.dark {
+  --accent-plate: linear-gradient(135deg, #191919, #4a4a4a);
 }
 
-.store-app-icon.blue {
-  background: linear-gradient(135deg, #0d48db, #66a0ff);
+.store-app-icon.blue,
+.project-hero.blue {
+  --accent-plate: linear-gradient(135deg, #0d48db, #66a0ff);
 }
 
 .store-app-icon.portkill {
   color: #cdf8dc;
-  background:
+}
+
+.store-app-icon.portkill,
+.project-hero.portkill {
+  --accent-plate:
     radial-gradient(circle at 20% 20%, rgba(74, 222, 128, 0.18), transparent 22px),
     linear-gradient(135deg, #05130b, #12311d 52%, #06150b);
 }
 
-.store-app-icon.devnotes {
-  background:
+.store-app-icon.devnotes,
+.project-hero.devnotes {
+  --accent-plate:
     radial-gradient(circle at 28% 18%, rgba(250, 204, 21, 0.2), transparent 28px),
     linear-gradient(135deg, #15110a, #332414 52%, #0e1827);
 }
 
-.store-app-icon.bdash {
-  background:
+.store-app-icon.bdash,
+.project-hero.bdash {
+  --accent-plate:
     radial-gradient(circle at 22% 18%, rgba(45, 212, 191, 0.18), transparent 30px),
     linear-gradient(135deg, #051416, #0d2831 54%, #111827);
 }
 
-.store-app-icon.dizey {
-  background:
+.store-app-icon.dizey,
+.project-hero.dizey {
+  --accent-plate:
     radial-gradient(circle at 24% 18%, rgba(37, 96, 255, 0.22), transparent 30px),
     linear-gradient(135deg, #050b1c, #101f45 54%, #070d20);
 }
@@ -592,12 +602,22 @@ blockquote {
   box-shadow: 0 0 10px rgba(53, 230, 111, 0.5);
 }
 
-.store-app-icon.rose {
-  background: linear-gradient(135deg, #a33c58, #f19585);
+/* The portfolio's tile carries the site's own accent — --link, warmed up */
+.store-app-icon.portfolio,
+.project-hero.portfolio {
+  --accent-plate:
+    radial-gradient(circle at 24% 18%, rgba(199, 111, 104, 0.24), transparent 30px),
+    linear-gradient(135deg, #1d1210, #5c322e 54%, #241614);
 }
 
-.store-app-icon.golden {
-  background: linear-gradient(135deg, #b08968, #f7c873);
+.store-app-icon.rose,
+.project-hero.rose {
+  --accent-plate: linear-gradient(135deg, #a33c58, #f19585);
+}
+
+.store-app-icon.golden,
+.project-hero.golden {
+  --accent-plate: linear-gradient(135deg, #b08968, #f7c873);
 }
 
 /* Real logos come in every ink colour — gold script, black serif, light teal —
@@ -609,17 +629,34 @@ blockquote {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
-/* Dizey ships a finished app icon — dark plate and rounding baked in — so it
-   fills the tile edge to edge instead of sitting inset on the light plate. */
+/* Finished app icons (rounding and fill baked into the SVG) fill the tile
+   edge to edge instead of sitting inset on the light plate. MacShelf uses the
+   shared `dark` accent. */
 .store-app-icon.dizey.has-logo {
   border-color: rgba(255, 255, 255, 0.08);
   background: #0d1117;
   box-shadow: none;
 }
 
-.store-app-icon.dizey img {
+.store-app-icon.portkill.has-logo,
+.store-app-icon.dark.has-logo {
+  border-color: rgba(255, 255, 255, 0.08);
+  background: transparent;
+  box-shadow: none;
+}
+
+.store-app-icon.dizey img,
+.store-app-icon.portkill.has-logo img {
   width: 100%;
   height: 100%;
+}
+
+/* MacShelf's SVG pads a 896px mark inside a 1024 viewBox — scale past that
+   transparent margin so the teal plate meets the tile edge. */
+.store-app-icon.dark.has-logo img {
+  width: 100%;
+  height: 100%;
+  transform: scale(calc(1024 / 896));
 }
 
 .get-in-touch {
@@ -1801,3 +1838,510 @@ blockquote {
 
 
 
+
+/* ── Project detail page ──────────────────────────────────────────────── */
+
+.project-detail-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  margin-left: calc(-1 * var(--site-gutter));
+  margin-right: calc(-1 * var(--site-gutter));
+  padding: 14px var(--site-gutter);
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 8%, transparent);
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.project-detail-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.project-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 10px 5px 6px;
+  border-radius: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    color 0.16s ease,
+    background-color 0.16s ease;
+}
+
+.project-back:hover {
+  color: var(--text);
+  background: var(--card-soft);
+}
+
+/* Full bleed: the hero breaks out of the page gutter main.site imposes */
+.project-hero {
+  margin-left: calc(-1 * var(--site-gutter));
+  margin-right: calc(-1 * var(--site-gutter));
+  padding: 56px var(--site-gutter) 48px;
+  color: #fff;
+  background:
+    radial-gradient(120% 140% at 12% 0%, rgba(255, 255, 255, 0.14), transparent 60%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.12)),
+    var(--accent-plate, linear-gradient(135deg, #2b2b2b, #4a4a4a));
+}
+
+.project-hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.project-hero .store-app-icon.large {
+  margin-bottom: 22px;
+}
+
+.project-hero-eyebrow {
+  margin: 0 0 8px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.project-hero h1 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(34px, 7vw, 46px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+}
+
+.project-hero-tagline {
+  margin: 14px 0 0;
+  max-width: 34ch;
+  color: #fff;
+  font-size: clamp(18px, 3.4vw, 22px);
+  font-weight: 700;
+  line-height: 1.28;
+  letter-spacing: -0.02em;
+}
+
+.project-hero-text {
+  margin: 12px 0 0;
+  max-width: 52ch;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.project-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.project-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 13.5px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    transform 0.16s ease,
+    background-color 0.16s ease,
+    border-color 0.16s ease;
+}
+
+.project-action:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
+.project-action.primary {
+  border-color: #fff;
+  color: #16150f;
+  background: #fff;
+}
+
+.project-action.primary:hover {
+  color: #16150f;
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.project-detail-body {
+  padding-bottom: 8px;
+}
+
+.project-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 28px;
+  margin: 0;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+  list-style: none;
+}
+
+.project-facts li {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.project-fact-label {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.project-fact-value {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.project-section {
+  margin-top: 38px;
+}
+
+.project-section h2 {
+  margin: 0 0 12px;
+  color: var(--text);
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.project-section p {
+  margin: 0;
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.68;
+}
+
+.project-install + .project-install {
+  margin-top: 16px;
+}
+
+.project-install-manager {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.project-command {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 12px 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--card-soft);
+}
+
+.project-command code {
+  overflow-x: auto;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.project-command-prompt {
+  margin-right: 9px;
+  color: var(--muted);
+  user-select: none;
+}
+
+.project-command-copy {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 6px;
+  padding: 7px 11px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--muted);
+  background: var(--card);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    color 0.16s ease,
+    border-color 0.16s ease;
+}
+
+.project-command-copy:hover {
+  border-color: color-mix(in srgb, var(--link) 45%, var(--line));
+  color: var(--text);
+}
+
+.project-missing {
+  padding-bottom: 96px;
+}
+
+.project-missing h1 {
+  margin: 0 0 12px;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.project-missing p {
+  margin: 0 0 22px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.project-missing .project-back {
+  padding-left: 0;
+}
+
+@media (max-width: 600px) {
+  .project-hero {
+    padding-top: 40px;
+    padding-bottom: 36px;
+  }
+
+  .project-command {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .project-command-copy {
+    justify-content: center;
+  }
+}
+
+.dark .project-command {
+  background: var(--card-soft);
+}
+
+.dark .project-command-copy {
+  background: var(--card);
+}
+
+.dark .project-action.primary {
+  color: #101010;
+}
+
+/* ── Rendered README ──────────────────────────────────────────────────── */
+
+.project-readme-section {
+  margin-top: 48px;
+  padding-top: 36px;
+  border-top: 1px solid var(--line);
+}
+
+.project-readme-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.project-readme-head h2 {
+  margin: 0;
+}
+
+.project-readme-source {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12.5px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.project-readme-source:hover {
+  color: var(--link);
+}
+
+.project-readme-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 20px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  color: var(--muted);
+  background: var(--card-soft);
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+/* The README is authored elsewhere and can contain anything, so this block
+   restyles it wholesale rather than assuming the page's own element styles. */
+.project-readme {
+  color: var(--text);
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+.project-readme > *:first-child {
+  margin-top: 0;
+}
+
+.project-readme h3,
+.project-readme h4,
+.project-readme h5,
+.project-readme h6 {
+  margin: 34px 0 10px;
+  color: var(--text);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+.project-readme h3 {
+  font-size: 19px;
+}
+
+.project-readme h4 {
+  font-size: 16px;
+}
+
+.project-readme h5,
+.project-readme h6 {
+  font-size: 14px;
+}
+
+.project-readme p {
+  margin: 0 0 14px;
+}
+
+.project-readme a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.project-readme ul,
+.project-readme ol {
+  margin: 0 0 14px;
+  padding-left: 22px;
+}
+
+.project-readme li {
+  margin-bottom: 6px;
+}
+
+.project-readme code {
+  padding: 2px 5px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--card-soft);
+  font-family: inherit;
+  font-size: 0.9em;
+}
+
+.project-readme pre {
+  overflow-x: auto;
+  margin: 0 0 16px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--card-soft);
+  line-height: 1.55;
+}
+
+.project-readme pre code {
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 13px;
+}
+
+.project-readme blockquote {
+  margin: 0 0 16px;
+  padding: 2px 0 2px 16px;
+  border-left: 3px solid color-mix(in srgb, var(--link) 55%, transparent);
+  color: var(--muted);
+}
+
+.project-readme blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.project-readme img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  vertical-align: middle;
+}
+
+.project-readme div[align='center'] {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.project-readme hr {
+  height: 1px;
+  margin: 30px 0;
+  border: 0;
+  background: var(--line);
+}
+
+/* GFM tables are the densest thing a README throws at the layout; the wrapper
+   scrolls rather than letting a wide table stretch the page. */
+.project-readme table {
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+  margin: 0 0 18px;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.project-readme th,
+.project-readme td {
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.project-readme th {
+  background: var(--card-soft);
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.project-readme sub {
+  color: var(--muted);
+}

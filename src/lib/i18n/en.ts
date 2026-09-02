@@ -80,6 +80,18 @@ const en = {
     viewOnGitHub: 'View on GitHub',
     preview: 'Preview',
     description: 'Description',
+    viewDetails: 'Details',
+    detailAria: (title) => `${title} project details`,
+    openSite: 'Open site',
+    install: 'Install',
+    copyCommand: 'Copy command',
+    commandCopied: 'Copied',
+    documentation: 'Documentation',
+    readmeFallback: 'This document has no translation yet — showing the English original.',
+    readmeError: 'The document could not be loaded.',
+    missingTitle: 'No such project',
+    missingBody: 'The page you are looking for may have moved, or never existed.',
+    backToProjects: 'Projects',
     stats: {
       stars: 'Stars',
       forks: 'Forks',
@@ -151,29 +163,29 @@ const en = {
   appCopy: {
     macshelf: {
       category: 'macOS App',
-      subtitle: 'Clipboard manager for macOS',
+      subtitle: 'Clipboard shelf for the menu bar',
       description:
-        'A macOS app that hangs on to the text and images you copy, so you can find them again whenever you need them.',
-      stack: 'Swift',
-      platform: 'macOS',
+        'A native macOS menu bar app that keeps the text and images you copy — searchable, keyboard-first, no Dock icon and no account.',
+      stack: 'Swift 6',
+      platform: 'macOS 14+',
       price: 'Free',
       action: 'Get',
       heroTitle: 'Never lose what you copied.',
       heroText:
-        'MacShelf quietly keeps everything you copy and puts it back within reach the moment you need it.',
+        'Press Cmd+Shift+V and a popover drops from the menu bar with your clipboard history — text and images, ready to put back.',
     },
     portkill: {
       category: 'CLI App',
-      subtitle: 'Free up a busy TCP port with one command',
+      subtitle: 'Free a stuck TCP port with one command',
       description:
-        'A CLI for macOS and Linux that tracks down the process holding a port and shuts it down. It also handles previews, port ranges and listing whatever’s open.',
+        'A CLI for macOS and Linux that finds the process holding a port and stops it. Preview with --dry-run, walk ranges, list what’s open, or open the same logic in a local web UI.',
       stack: 'TypeScript',
       platform: 'macOS / Linux',
       price: 'Free',
       action: 'Get',
       heroTitle: 'Find out what’s holding your port.',
       heroText:
-        'Work out which process is using a port, then close it with a single command.',
+        'See which process owns a port, preview before anything is signalled, then stop it — from the terminal or a local web UI.',
     },
     'dev-notes': {
       category: 'CLI / DevTool',
@@ -213,6 +225,19 @@ const en = {
       heroTitle: 'Software that scales, infrastructure built properly.',
       heroText:
         'Dizey is the site of a small engineering team that takes software from the first idea through to production.',
+    },
+    portfolio: {
+      category: 'Web Page',
+      subtitle: 'The site you are looking at',
+      description:
+        'This site itself. One React app carrying three languages, a light and dark theme, and a page of its own for every project. No i18n library, no router, no CSS framework — all hand-written, and the source is open.',
+      stack: 'React / TypeScript',
+      platform: 'Browser',
+      price: 'Open source',
+      action: 'Open site',
+      heroTitle: 'A calm personal site, built by hand.',
+      heroText:
+        'One page introducing who I am, how I work and the small products I ship — in three languages, with the dependency list kept short.',
     },
     alice: {
       category: 'Web Page',

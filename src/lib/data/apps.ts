@@ -72,7 +72,7 @@ const apps: AppMeta[] = [
     forks: '0',
     icon: 'M',
     logoUrl:
-      'https://raw.githubusercontent.com/burakboduroglu/macshelf/main/assets/macshelf-logo.svg',
+      'https://github.com/burakboduroglu/macshelf/raw/main/assets/macshelf-logo.svg',
     accent: 'dark',
   },
   {

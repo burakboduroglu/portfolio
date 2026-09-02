@@ -70,21 +70,54 @@ function setMetaContent(selector: string, content: string) {
   }
 }
 
-/** Keeps document metadata and the ?lang= param in sync */
-function syncDocument(locale: Locale, messages: Messages) {
-  document.documentElement.lang = locale
-  document.title = messages.meta.title
-  setMetaContent('meta[name="description"]', messages.meta.description)
-  setMetaContent('meta[property="og:title"]', messages.meta.title)
-  setMetaContent('meta[property="og:description"]', messages.meta.description)
-  setMetaContent('meta[name="twitter:title"]', messages.meta.title)
-  setMetaContent('meta[name="twitter:description"]', messages.meta.description)
+export type DocumentMeta = {
+  title: string
+  description: string
+  /** Absolute URL of the page currently rendered */
+  canonical: string
+  image?: string
+}
 
+/**
+ * Title, description and social tags depend on the route as well as the
+ * language, so the caller that knows the route owns this — see App.tsx.
+ */
+export function applyDocumentMeta({ title, description, canonical, image }: DocumentMeta) {
+  document.title = title
+  setMetaContent('meta[name="description"]', description)
+  setMetaContent('meta[property="og:title"]', title)
+  setMetaContent('meta[property="og:description"]', description)
+  setMetaContent('meta[property="og:url"]', canonical)
+  setMetaContent('meta[name="twitter:title"]', title)
+  setMetaContent('meta[name="twitter:description"]', description)
+
+  if (image) {
+    setMetaContent('meta[property="og:image"]', image)
+    setMetaContent('meta[name="twitter:image"]', image)
+  }
+
+  const link = document.querySelector('link[rel="canonical"]')
+  if (link) {
+    link.setAttribute('href', canonical)
+  }
+}
+
+/**
+ * Rewrites ?lang= to the active language. History entries carry whichever
+ * language was active when they were pushed, so this also runs on navigation —
+ * otherwise going back lands on a URL that disagrees with the rendered page.
+ */
+export function syncLocaleParam(locale: Locale) {
   const url = new URL(window.location.href)
   if (url.searchParams.get('lang') !== locale) {
     url.searchParams.set('lang', locale)
     window.history.replaceState(null, '', url)
   }
+}
+
+function syncDocument(locale: Locale) {
+  document.documentElement.lang = locale
+  syncLocaleParam(locale)
 }
 
 type LocaleContextValue = {
@@ -102,8 +135,8 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     persistLocale(locale)
-    syncDocument(locale, t)
-  }, [locale, t])
+    syncDocument(locale)
+  }, [locale])
 
   const value = useMemo<LocaleContextValue>(() => ({ locale, setLocale, t }), [locale, t])
 

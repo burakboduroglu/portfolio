@@ -8,7 +8,8 @@
     "typecheck": "tsc --noEmit",
     "build": "bun run typecheck && vite build",
     "preview": "vite preview",
-    "deploy": "bun run build && bunx gh-pages -d dist"
+    "deploy": "bun run build && bunx gh-pages -d dist",
+    "readmes": "bun run scripts/fetch-readmes.ts"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
@@ -20,7 +21,10 @@
   "devDependencies": {
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
+    "@types/sanitize-html": "^2.16.1",
     "gh-pages": "^6.3.0",
+    "marked": "^18.0.11",
+    "sanitize-html": "^2.17.7",
     "typescript": "^6.0.3"
   }
 }

@@ -38,4 +38,74 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://burakboduroglu.com.tr/projects/bdash</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://burakboduroglu.com.tr/projects/bdash?lang=tr" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://burakboduroglu.com.tr/projects/bdash?lang=en" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://burakboduroglu.com.tr/projects/bdash?lang=de" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://burakboduroglu.com.tr/projects/bdash" />
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://burakboduroglu.com.tr/projects/dizey</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://burakboduroglu.com.tr/projects/dizey?lang=tr" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://burakboduroglu.com.tr/projects/dizey?lang=en" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://burakboduroglu.com.tr/projects/dizey?lang=de" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://burakboduroglu.com.tr/projects/dizey" />
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://burakboduroglu.com.tr/projects/alice</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://burakboduroglu.com.tr/projects/alice?lang=tr" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://burakboduroglu.com.tr/projects/alice?lang=en" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://burakboduroglu.com.tr/projects/alice?lang=de" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://burakboduroglu.com.tr/projects/alice" />
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://burakboduroglu.com.tr/projects/betus-design</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://burakboduroglu.com.tr/projects/betus-design?lang=tr" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://burakboduroglu.com.tr/projects/betus-design?lang=en" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://burakboduroglu.com.tr/projects/betus-design?lang=de" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://burakboduroglu.com.tr/projects/betus-design" />
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://burakboduroglu.com.tr/projects/portkill</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://burakboduroglu.com.tr/projects/portkill?lang=tr" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://burakboduroglu.com.tr/projects/portkill?lang=en" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://burakboduroglu.com.tr/projects/portkill?lang=de" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://burakboduroglu.com.tr/projects/portkill" />
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://burakboduroglu.com.tr/projects/macshelf</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://burakboduroglu.com.tr/projects/macshelf?lang=tr" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://burakboduroglu.com.tr/projects/macshelf?lang=en" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://burakboduroglu.com.tr/projects/macshelf?lang=de" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://burakboduroglu.com.tr/projects/macshelf" />
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://burakboduroglu.com.tr/projects/dev-notes</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://burakboduroglu.com.tr/projects/dev-notes?lang=tr" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://burakboduroglu.com.tr/projects/dev-notes?lang=en" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://burakboduroglu.com.tr/projects/dev-notes?lang=de" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://burakboduroglu.com.tr/projects/dev-notes" />
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

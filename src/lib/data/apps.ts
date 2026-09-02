@@ -60,6 +60,7 @@ const apps: AppMeta[] = [
     forks: '0',
     icon: 'p',
     accent: 'portkill',
+    install: [{ manager: 'Homebrew', command: 'brew install burakboduroglu/portkill/portkill' }],
   },
   {
     id: 'macshelf',
@@ -74,6 +75,7 @@ const apps: AppMeta[] = [
     logoUrl:
       'https://github.com/burakboduroglu/macshelf/raw/main/assets/macshelf-logo.svg',
     accent: 'dark',
+    install: [{ manager: 'Homebrew', command: 'brew install burakboduroglu/macshelf/macshelf' }],
   },
   {
     id: 'dev-notes',
@@ -88,6 +90,7 @@ const apps: AppMeta[] = [
     logoUrl:
       'https://raw.githubusercontent.com/burakboduroglu/dev-notes/main/assets/devnotes-logo.svg',
     accent: 'devnotes',
+    install: [{ manager: 'npm', command: 'npm install -g devnotetr' }],
   },
 ]
 

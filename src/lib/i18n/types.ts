@@ -68,6 +68,20 @@ export type Messages = {
     preview: string
     description: string
     stats: Record<'stars' | 'forks' | 'price' | 'platform' | 'language', string>
+    /** Detail page */
+    viewDetails: string
+    detailAria: (title: string) => string
+    openSite: string
+    install: string
+    copyCommand: string
+    commandCopied: string
+    documentation: string
+    /** Shown when a project has no README in the active language */
+    readmeFallback: string
+    readmeError: string
+    missingTitle: string
+    missingBody: string
+    backToProjects: string
   }
   contact: {
     title: string

@@ -44,6 +44,8 @@ const tr = {
       medium: 'Medium',
       npm: 'npm',
       framer: 'Framer',
+      kaggle: 'Kaggle',
+      huggingface: 'Hugging Face',
     },
   },
   categories: {

@@ -1341,6 +1341,16 @@ blockquote {
   background: rgba(0, 133, 255, 0.12);
 }
 
+.developer-profile-card[data-platform='kaggle']:hover .developer-profile-icon {
+  color: #20beff;
+  background: rgba(32, 190, 255, 0.12);
+}
+
+.developer-profile-card[data-platform='huggingface']:hover .developer-profile-icon {
+  color: #ffd21e;
+  background: rgba(255, 210, 30, 0.16);
+}
+
 .site-footer {
   margin-top: 88px;
   padding-top: 36px;

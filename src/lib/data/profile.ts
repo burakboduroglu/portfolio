@@ -12,11 +12,9 @@ const developerProfiles: ProfileLink[] = [
   { key: 'gdev', href: 'https://g.dev/burakboduroglu', icon: 'gdev', handle: 'g.dev/burakboduroglu' },
   { key: 'microsoft', href: 'https://learn.microsoft.com/en-us/users/burakboduroglu/', icon: 'microsoft', handle: '@burakboduroglu' },
   { key: 'aws', href: 'https://builder.aws.com/community/@burakboduroglu', icon: 'aws', handle: '@burakboduroglu' },
-  { key: 'cursor', href: 'https://cursor.com/@penolox', icon: 'cursor', handle: '@penolox' },
   { key: 'huggingface', href: 'https://huggingface.co/penoloxai', icon: 'huggingface', handle: '@penoloxai' },
   { key: 'kaggle', href: 'https://www.kaggle.com/penolox', icon: 'kaggle', handle: '@penolox' },
   { key: 'lovable', href: 'https://lovable.dev/@burakboduroglu', icon: 'lovable', handle: '@burakboduroglu' },
-  { key: 'producthunt', href: 'https://www.producthunt.com/@burakboduroglu', icon: 'producthunt', handle: '@burakboduroglu' },
   { key: 'figma', href: 'https://www.figma.com/@burakboduroglu', icon: 'figma', handle: '@burakboduroglu' },
   { key: 'framer', href: 'https://www.framer.com/@burak-boduroglu/', icon: 'framer', handle: '@burak-boduroglu' },
   { key: 'github', href: 'https://github.com/burakboduroglu', icon: 'github', handle: 'burakboduroglu' },
@@ -25,7 +23,6 @@ const developerProfiles: ProfileLink[] = [
   { key: 'medium', href: 'https://medium.com/@burakboduroglu', icon: 'medium', handle: '@burakboduroglu' },
   { key: 'substack', href: 'https://substack.com/@penoloxai', icon: 'substack', handle: '@penoloxai' },
   { key: 'youtube', href: 'https://www.youtube.com/@penoloxai', icon: 'youtube', handle: '@penoloxai' },
-  { key: 'bsky', href: 'https://bsky.app/profile/penoloxai.bsky.social', icon: 'bsky', handle: '@penoloxai' },
   { key: 'kick', href: 'https://kick.com/penolox', icon: 'kick', handle: 'penolox' },
 ]
 

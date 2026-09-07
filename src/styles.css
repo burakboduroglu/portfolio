@@ -1321,10 +1321,6 @@ blockquote {
   background: rgba(83, 252, 24, 0.14);
 }
 
-.developer-profile-card[data-platform='producthunt']:hover .developer-profile-icon {
-  color: #da552f;
-  background: rgba(218, 85, 47, 0.12);
-}
 
 .developer-profile-card[data-platform='substack']:hover .developer-profile-icon {
   color: #ff6719;
@@ -1336,10 +1332,6 @@ blockquote {
   background: rgba(255, 0, 0, 0.12);
 }
 
-.developer-profile-card[data-platform='bsky']:hover .developer-profile-icon {
-  color: #0085ff;
-  background: rgba(0, 133, 255, 0.12);
-}
 
 .developer-profile-card[data-platform='kaggle']:hover .developer-profile-icon {
   color: #20beff;

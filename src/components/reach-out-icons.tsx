@@ -52,14 +52,6 @@ function SvgYouTube({ size = 16, ...props }: IconProps) {
   )
 }
 
-function SvgProductHunt({ size = 16, ...props }: IconProps) {
-  return (
-    <svg viewBox='0 0 24 24' width={size} height={size} fill='currentColor' aria-hidden {...props}>
-      <path d='M13.604 8.4h-3.405V12h3.405a1.8 1.8 0 0 0 0-3.6zM12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm1.604 14.4h-3.405V18H7.801V6h5.803a4.2 4.2 0 1 1 0 8.4z' />
-    </svg>
-  )
-}
-
 function SvgKick({ size = 16, ...props }: IconProps) {
   return (
     <svg viewBox='0 0 24 24' width={size} height={size} fill='currentColor' aria-hidden {...props}>
@@ -80,14 +72,6 @@ function SvgFigma({ size = 16, ...props }: IconProps) {
   return (
     <svg viewBox='0 0 24 24' width={size} height={size} fill='currentColor' aria-hidden {...props}>
       <path d='M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539zm-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019 1.705 0 3.093-1.376 3.093-3.068v-2.97H8.148zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49zm-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-.098z' />
-    </svg>
-  )
-}
-
-function SvgBsky({ size = 16, ...props }: IconProps) {
-  return (
-    <svg viewBox='0 0 24 24' width={size} height={size} fill='currentColor' aria-hidden {...props}>
-      <path d='M5.202 2.857C7.954 4.922 10.913 9.11 12 11.358c1.087-2.247 4.046-6.436 6.798-8.501C20.783 1.366 24 .213 24 3.883c0 .732-.42 6.156-.667 7.037-.856 3.061-3.978 3.842-6.755 3.37 4.854.826 6.089 3.562 3.422 6.299-5.065 5.196-7.28-1.304-7.847-2.97-.104-.305-.152-.448-.153-.327 0-.121-.05.022-.153.327-.568 1.666-2.782 8.166-7.847 2.97-2.667-2.737-1.432-5.473 3.422-6.3-2.777.473-5.899-.308-6.755-3.369C.42 10.04 0 4.615 0 3.883c0-3.67 3.217-2.517 5.202-1.026' />
     </svg>
   )
 }
@@ -120,14 +104,6 @@ function SvgLovable({ size = 16, ...props }: IconProps) {
   return (
     <svg viewBox='0 0 24 24' width={size} height={size} fill='currentColor' aria-hidden {...props}>
       <path d='M7.082 0c3.91 0 7.081 3.179 7.081 7.1v2.7h2.357c3.91 0 7.082 3.178 7.082 7.1 0 3.923-3.17 7.1-7.082 7.1H0V7.1C0 3.18 3.17 0 7.082 0z' />
-    </svg>
-  )
-}
-
-function SvgCursor({ size = 16, ...props }: IconProps) {
-  return (
-    <svg viewBox='0 0 24 24' width={size} height={size} fill='currentColor' aria-hidden {...props}>
-      <path d='M11.503.131 1.891 5.678a.84.84 0 0 0-.42.726v11.188c0 .3.162.575.42.724l9.609 5.55a1 1 0 0 0 .998 0l9.61-5.55a.84.84 0 0 0 .42-.724V6.404a.84.84 0 0 0-.42-.726L12.497.131a1.01 1.01 0 0 0-.996 0M2.657 6.338h18.55c.263 0 .43.287.297.515L12.23 22.918c-.062.107-.229.064-.229-.06V12.335a.59.59 0 0 0-.295-.51l-9.11-5.257c-.109-.063-.064-.23.061-.23' />
     </svg>
   )
 }
@@ -197,14 +173,10 @@ export function ReachOutLeadingIcon({
       return <SvgReddit size={size} className={className} />
     case 'youtube':
       return <SvgYouTube size={size} className={className} />
-    case 'producthunt':
-      return <SvgProductHunt size={size} className={className} />
     case 'devto':
       return <SvgDevTo size={size} className={className} />
     case 'figma':
       return <SvgFigma size={size} className={className} />
-    case 'bsky':
-      return <SvgBsky size={size} className={className} />
     case 'gdev':
       return <SvgGdev size={size} className={className} />
     case 'microsoft':
@@ -213,8 +185,6 @@ export function ReachOutLeadingIcon({
       return <SvgAws size={size} className={className} />
     case 'lovable':
       return <SvgLovable size={size} className={className} />
-    case 'cursor':
-      return <SvgCursor size={size} className={className} />
     case 'medium':
       return <SvgMedium size={size} className={className} />
     case 'npm':
@@ -233,5 +203,4 @@ export function ReachOutLeadingIcon({
 }
 
 export default ReachOutLeadingIcon
-
 

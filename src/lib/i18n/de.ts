@@ -41,7 +41,6 @@ const de = {
       medium: 'Medium',
       npm: 'npm',
       framer: 'Framer',
-      kaggle: 'Kaggle',
       huggingface: 'Hugging Face',
     },
   },

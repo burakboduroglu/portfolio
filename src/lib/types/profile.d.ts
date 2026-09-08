@@ -16,7 +16,6 @@ export type ProfileLinkKey =
   | 'medium'
   | 'npm'
   | 'framer'
-  | 'kaggle'
   | 'huggingface'
 
 

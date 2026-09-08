@@ -1,4 +1,4 @@
-import { Clapperboard, Mail } from 'lucide-react'
+import { Mail } from 'lucide-react'
 
 type IconProps = React.SVGProps<SVGSVGElement> & {
   size?: number
@@ -148,6 +148,25 @@ function SvgSuno({ size = 16, ...props }: IconProps) {
   )
 }
 
+/**
+ * Higgsfield publishes no vector logo — not in simple-icons, Iconify, or on
+ * their own site — so their 192px app icon is served as an image rather than
+ * approximated as a path.
+ */
+function ImgHiggsfield({ size = 16, className }: { size?: number; className?: string }) {
+  return (
+    <img
+      src='/logos/higgsfield.png'
+      width={size}
+      height={size}
+      alt=''
+      aria-hidden
+      className={className}
+      style={{ borderRadius: 3 }}
+    />
+  )
+}
+
 export function ReachOutLeadingIcon({
   name,
   size = 16,
@@ -196,7 +215,7 @@ export function ReachOutLeadingIcon({
     case 'huggingface':
       return <SvgHuggingFace size={size} className={className} />
     case 'higgsfield':
-      return <Clapperboard {...stroke} />
+      return <ImgHiggsfield size={size} className={className} />
     case 'suno':
       return <SvgSuno size={size} className={className} />
     default:

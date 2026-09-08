@@ -42,6 +42,8 @@ const tr = {
       npm: 'npm',
       framer: 'Framer',
       huggingface: 'Hugging Face',
+      higgsfield: 'Higgsfield',
+      suno: 'Suno',
     },
   },
   categories: {

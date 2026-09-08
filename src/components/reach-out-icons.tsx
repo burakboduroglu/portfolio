@@ -1,4 +1,4 @@
-import { Mail } from 'lucide-react'
+import { Clapperboard, Mail } from 'lucide-react'
 
 type IconProps = React.SVGProps<SVGSVGElement> & {
   size?: number
@@ -140,6 +140,14 @@ function SvgHuggingFace({ size = 16, ...props }: IconProps) {
   )
 }
 
+function SvgSuno({ size = 16, ...props }: IconProps) {
+  return (
+    <svg viewBox='0 0 24 24' width={size} height={size} fill='currentColor' aria-hidden {...props}>
+      <path d='M16.5 0C20.642 0 24 5.373 24 12h-9c0 6.627-3.358 12-7.5 12C3.358 24 0 18.627 0 12h9c0-6.627 3.358-12 7.5-12Z' />
+    </svg>
+  )
+}
+
 export function ReachOutLeadingIcon({
   name,
   size = 16,
@@ -187,6 +195,10 @@ export function ReachOutLeadingIcon({
       return <SvgKick size={size} className={className} />
     case 'huggingface':
       return <SvgHuggingFace size={size} className={className} />
+    case 'higgsfield':
+      return <Clapperboard {...stroke} />
+    case 'suno':
+      return <SvgSuno size={size} className={className} />
     default:
       return null
   }

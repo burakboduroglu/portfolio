@@ -23,6 +23,8 @@ const developerProfiles: ProfileLink[] = [
   { key: 'substack', href: 'https://substack.com/@penoloxai', icon: 'substack', handle: '@penoloxai' },
   { key: 'youtube', href: 'https://www.youtube.com/@penoloxai', icon: 'youtube', handle: '@penoloxai' },
   { key: 'kick', href: 'https://kick.com/penolox', icon: 'kick', handle: 'penolox' },
+  { key: 'higgsfield', href: 'https://higgsfield.ai/@penoloxai', icon: 'higgsfield', handle: '@penoloxai' },
+  { key: 'suno', href: 'https://suno.com/@penoloxai', icon: 'suno', handle: '@penoloxai' },
 ]
 
 const profile = {

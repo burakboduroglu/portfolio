@@ -17,6 +17,8 @@ export type ProfileLinkKey =
   | 'npm'
   | 'framer'
   | 'huggingface'
+  | 'higgsfield'
+  | 'suno'
 
 
 export type ProfileLink = {

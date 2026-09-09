@@ -661,17 +661,10 @@ blockquote {
 .store-app-icon.dizey img,
 .store-app-icon.skadi.has-logo img,
 .store-app-icon.portfolio.has-logo img,
-.store-app-icon.portkill.has-logo img {
-  width: 100%;
-  height: 100%;
-}
-
-/* MacShelf's SVG pads a 896px mark inside a 1024 viewBox — scale past that
-   transparent margin so the teal plate meets the tile edge. */
+.store-app-icon.portkill.has-logo img,
 .store-app-icon.dark.has-logo img {
   width: 100%;
   height: 100%;
-  transform: scale(calc(1024 / 896));
 }
 
 .get-in-touch {

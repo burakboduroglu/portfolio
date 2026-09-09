@@ -6,6 +6,15 @@ follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+- The project shelf carries one icon family instead of four systems. .portkill,
+  MacShelf and the portfolio were redrawn against the language Skadi arrived
+  with: flat geometry, two inks, a near-black plate, edge to edge, legible at
+  32 px. Each mark keeps its own colour, so the shelf reads as a set without
+  the projects losing their identity. MacShelf's tile no longer needs the
+  `scale(1024 / 896)` rule that pushed its padded SVG out to the tile edge.
+
 ### Added
 
 - Skadi on the project shelf, with its own page at `/projects/skadi` and its

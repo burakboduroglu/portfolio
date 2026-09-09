@@ -12,9 +12,6 @@
     <linearGradient id="glow" x1="640" y1="0" x2="1280" y2="640" gradientUnits="userSpaceOnUse">
       <stop stop-color="#C76F68" stop-opacity="0.18"/><stop offset="1" stop-color="#C76F68" stop-opacity="0"/>
     </linearGradient>
-    <radialGradient id="mark" cx="0.3" cy="0.22" r="0.85">
-      <stop offset="0" stop-color="#6D3229"/><stop offset="0.55" stop-color="#3A1C17"/><stop offset="1" stop-color="#150A08"/>
-    </radialGradient>
     <filter id="paneShadow" x="-30%" y="-30%" width="170%" height="170%" color-interpolation-filters="sRGB">
       <feDropShadow dx="0" dy="24" stdDeviation="30" flood-color="#000000" flood-opacity="0.55"/>
     </filter>
@@ -25,12 +22,12 @@
 
   <!-- mark: the collar and tie, in a rounded tile -->
   <g transform="translate(88, 96)">
-    <rect width="96" height="96" rx="26" fill="url(#mark)"/>
+    <rect width="96" height="96" rx="26" fill="#150A08"/>
     <g transform="scale(0.09375)">
-      <path d="M236 226 L512 520 L406 610 L214 396 Z" fill="#F6ECE9"/>
-      <path d="M788 226 L512 520 L618 610 L810 396 Z" fill="#F6ECE9"/>
-      <path d="M446 300 H578 L562 404 H462 Z" fill="#C76F68"/>
-      <path d="M456 424 H568 L610 700 L512 812 L414 700 Z" fill="#C76F68"/>
+      <path d="M296 160 L492 352 L372 452 L246 262 Z" fill="#F6ECE9"/>
+      <path d="M728 160 L532 352 L652 452 L778 262 Z" fill="#F6ECE9"/>
+      <path d="M512 344 L584 400 L548 442 L476 442 L440 400 Z" fill="#C76F68"/>
+      <path d="M464 442 L560 442 L604 800 L512 905 L420 800 Z" fill="#C76F68"/>
     </g>
   </g>
 

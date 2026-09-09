@@ -18,8 +18,6 @@ export type AppMeta = {
   title: string
   link: string
   repo?: string
-  stars: string
-  forks: string
   icon: string
   logoUrl?: string
   accent: string
@@ -47,5 +45,11 @@ export type AppCopy = {
   heroText: string
 }
 
+/** Star and fork counts, refreshed by `bun run sync`, never hand-written */
+export type RepoStats = {
+  stars: number
+  forks: number
+}
+
 /** Merged at runtime by useApps() — the shape every component consumes */
-export type AppCard = AppMeta & AppCopy
+export type AppCard = AppMeta & AppCopy & Partial<RepoStats>

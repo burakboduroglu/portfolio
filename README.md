@@ -48,6 +48,7 @@ Visually I leaned toward clarity and restraint: monospace type, light structure,
 | 🔗 | **Language lives in the URL** | `?lang=` → `localStorage` → `navigator.language` → `en`, written back so a shared link carries it. |
 | 🗂️ | **Project pages, no router dependency** | Every project has a real route at `/projects/:id`, resolved by ~85 lines over the History API. One dynamic route did not justify a routing library. |
 | 📖 | **READMEs render on the site** | `bun run readmes` pulls each project's README from GitHub and commits sanitized HTML, so the build never touches the network. |
+| 🔄 | **Counts and articles are synced, not typed** | `bun run sync` reads the GitHub API and the Substack feed and commits the result, so nothing goes stale by hand and no visitor's browser calls an API. |
 | 🪪 | **Developer Profiles Hub** | Clean badges for Google Developers, Microsoft Learn, AWS, Cursor, Lovable, Figma, npm, Medium, and more. |
 | ♿ | **Accessible by default** | Intact heading hierarchy, `focus-visible` styling that survives the dark panel, `prefers-reduced-motion` respected. |
 | 🪶 | **Small** | The page ships in roughly 87 kB gzipped — no CSS framework, no state library, no i18n runtime, no markdown parser in the bundle. |
@@ -74,6 +75,7 @@ bun run dev
 | `bun run build`     | Typechecks first, then builds into `dist/`          |
 | `bun run preview`   | Serves the production build locally                 |
 | `bun run readmes`   | Pulls project READMEs from GitHub into `public/readme/`  |
+| `bun run sync`      | Refreshes star/fork counts and the article list          |
 | `bun run deploy`    | Manual `gh-pages` deploy — CI normally handles this |
 
 ## Structure
@@ -97,12 +99,14 @@ src/
 │  └─ theme-switch.tsx         Light / Dark mode toggle
 └─ lib/
    ├─ router.ts                History API routing, no dependency
-   ├─ data/                    Language-independent structure (apps, articles, profiles)
+   ├─ data/                    Language-independent structure (apps, profiles)
+   │                           repo-stats.ts and articles.ts are generated
    ├─ i18n/                    tr / en / de + useT / useLocale / useApps context
    └─ types/                   Shared type declarations
 
 scripts/
-└─ fetch-readmes.ts            Pulls project READMEs, writes sanitized HTML
+├─ fetch-readmes.ts            Pulls project READMEs, writes sanitized HTML
+└─ sync-data.ts                Pulls star/fork counts and the Substack feed
 
 public/readme/                 Generated README HTML — committed, not built
 
@@ -132,6 +136,15 @@ The active language resolves as `?lang=` → `localStorage` → `navigator.langu
 Each page then renders the project's own README. `bun run readmes` fetches it from GitHub, drops the opening centred block and badge rows the hero already covers, shifts every heading down a level, rewrites relative URLs to absolute — in raw HTML as well as markdown — and writes sanitized HTML to `public/readme/`.
 
 That output is **committed**, and the build never runs it. CI stays offline and a GitHub outage cannot fail a deploy; the cost is that a README edit needs `bun run readmes <id>` and a commit to reach the site. `marked` and `sanitize-html` are devDependencies, so no markdown parser ships to the browser.
+
+`bun run sync` follows the same rule for the two things that go stale on their
+own. It reads star and fork counts from the GitHub API into
+`src/lib/data/repo-stats.ts`, and the Substack feed into
+`src/lib/data/articles.ts`; both files carry a "generated, do not edit" header
+and both are committed. `apps.ts` stays hand-written — it holds the decisions
+(which projects, in what order, with what accent) and the script never touches
+it. A project whose repo GitHub will not answer for simply renders without
+counts, which is what a project with no repo already did.
 
 **Translations follow the repo:** `README.md` is English, `README.tr.md` and `README.de.md` are the translations. A missing one falls back to English and the page says so.
 

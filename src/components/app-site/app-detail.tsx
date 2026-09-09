@@ -11,10 +11,9 @@ import AppTitle from './app-title'
 import ExternalLink from './external-link'
 import ReadmeSection from './readme-section'
 
-/** '—' for a site with no repo, '0' for one nobody has starred yet */
-function countOf(value: string): number | null {
-  const parsed = Number.parseInt(value, 10)
-  return Number.isNaN(parsed) || parsed < 1 ? null : parsed
+/** Absent for a site with no repo, 0 for one nobody has starred yet */
+function countOf(value: number | undefined): number | null {
+  return value === undefined || value < 1 ? null : value
 }
 
 function InstallCommand({ command }: { command: string }) {

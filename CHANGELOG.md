@@ -8,6 +8,12 @@ follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 
+- Star and fork counts and the article list are **synced, not typed**.
+  `bun run sync` reads them from the GitHub API and the Substack feed into
+  `src/lib/data/repo-stats.ts` and `src/lib/data/articles.ts`, both generated
+  and committed — the same rule `bun run readmes` already follows, so the build
+  stays offline and no visitor's browser calls an API. `apps.ts` keeps the
+  decisions and loses the two fields that went stale on their own.
 - The project shelf carries one icon family instead of four systems. .portkill,
   MacShelf and the portfolio were redrawn against the language Skadi arrived
   with: flat geometry, two inks, a near-black plate, edge to edge, legible at

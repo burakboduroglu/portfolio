@@ -1,6 +1,7 @@
 import { createContext, createElement, useContext, useEffect, useMemo, useState } from 'react'
 import type { ReactNode } from 'react'
 import appMeta from '../data/apps'
+import repoStats from '../data/repo-stats'
 import type { AppCard } from '../types/app'
 import de from './de'
 import en from './en'
@@ -162,12 +163,12 @@ export function useLocale() {
   return { locale, setLocale }
 }
 
-/** Merges the language-independent app metadata with the active translation */
+/** Merges the app metadata with the active translation and the synced counts */
 export function useApps(): AppCard[] {
   const t = useT()
 
   return useMemo(
-    () => appMeta.map((app) => ({ ...app, ...t.appCopy[app.id] })),
+    () => appMeta.map((app) => ({ ...app, ...t.appCopy[app.id], ...repoStats[app.id] })),
     [t]
   )
 }

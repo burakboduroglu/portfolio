@@ -9,7 +9,8 @@
     "build": "bun run typecheck && vite build",
     "preview": "vite preview",
     "deploy": "bun run build && bunx gh-pages -d dist",
-    "readmes": "bun run scripts/fetch-readmes.ts"
+    "readmes": "bun run scripts/fetch-readmes.ts",
+    "sync": "bun run scripts/sync-data.ts"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",

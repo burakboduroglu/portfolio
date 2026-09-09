@@ -213,6 +213,19 @@ const tr = {
       heroText:
         'BDash ile işletmenin günlük operasyonlarını tek bir web panelinden takip edersin.',
     },
+    skadi: {
+      category: 'CLI / Self-hosted',
+      subtitle: 'Hâlihazırda çalışan bir PocketBase’e binen abonelik takibi',
+      description:
+        'Var olan bir PocketBase’in içine kopyalanan üç migration, iki hook dosyası ve tek bir statik sayfa — konteyner, ikinci veritabanı ya da fazladan port yok. Bir link yapıştırınca isim ve logoyu sunucu çözüyor; ödeme tarihleri kendiliğinden ilerliyor; toplamlar TRY, USD, EUR veya GBP cinsinden veriliyor ve bayat kur gizlenmek yerine bayat olarak etiketleniyor.',
+      stack: 'JavaScript / PocketBase',
+      platform: 'Self-hosted',
+      price: 'Ücretsiz',
+      action: 'İndir',
+      heroTitle: 'Abonelikler, zaten sahip olduğun sunucuda.',
+      heroText:
+        'Skadi kurup dağıttığın bir uygulama değil. Veritabanını, kimlik doğrulamasını ve yedeğini zaten çalıştıran bir PocketBase örneğinin içine giren birkaç dosya.',
+    },
     dizey: {
       category: 'Web Sitesi',
       subtitle: 'Yazılım stüdyosu için web sitesi',

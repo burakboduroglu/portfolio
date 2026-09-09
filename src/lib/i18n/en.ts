@@ -213,6 +213,19 @@ const en = {
       heroText:
         'BDash lets you keep an eye on day-to-day operations from a single web dashboard.',
     },
+    skadi: {
+      category: 'CLI / Self-hosted',
+      subtitle: 'Subscription tracking that rides a PocketBase you already run',
+      description:
+        'Three migrations, two hook files and one static page copied into an existing PocketBase — no container, no second database, no extra port. Paste a link and the server resolves a name and a logo; charge dates roll forward on their own; totals are quoted in TRY, USD, EUR or GBP with stale rates labelled rather than hidden.',
+      stack: 'JavaScript / PocketBase',
+      platform: 'Self-hosted',
+      price: 'Free',
+      action: 'Get',
+      heroTitle: 'Subscriptions on the server you already have.',
+      heroText:
+        'Skadi is not an application you deploy. It is a handful of files inside a PocketBase instance that is already running its own database, auth and backups.',
+    },
     dizey: {
       category: 'Web Page',
       subtitle: 'Website for a software studio',

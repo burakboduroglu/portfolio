@@ -2,6 +2,7 @@ export type AppId =
   | 'macshelf'
   | 'portkill'
   | 'penote'
+  | 'skadi'
   | 'bdash'
   | 'alice'
   | 'betus-design'

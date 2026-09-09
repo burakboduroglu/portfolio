@@ -213,6 +213,19 @@ const de = {
       heroText:
         'Mit BDash behältst du das Tagesgeschäft über ein einziges Web-Dashboard im Blick.',
     },
+    skadi: {
+      category: 'CLI / Self-hosted',
+      subtitle: 'Abo-Tracking auf einer PocketBase, die ohnehin läuft',
+      description:
+        'Drei Migrationen, zwei Hook-Dateien und eine statische Seite, kopiert in eine bestehende PocketBase — kein Container, keine zweite Datenbank, kein zusätzlicher Port. Ein eingefügter Link wird serverseitig zu Name und Logo aufgelöst, Abbuchungstermine rücken von selbst weiter, und Summen erscheinen in TRY, USD, EUR oder GBP, wobei veraltete Kurse als solche gekennzeichnet statt verschwiegen werden.',
+      stack: 'JavaScript / PocketBase',
+      platform: 'Self-hosted',
+      price: 'Kostenlos',
+      action: 'Laden',
+      heroTitle: 'Abos auf dem Server, den du schon hast.',
+      heroText:
+        'Skadi ist keine Anwendung, die du deployst. Es sind ein paar Dateien in einer PocketBase-Instanz, die Datenbank, Auth und Backups längst selbst betreibt.',
+    },
     dizey: {
       category: 'Website',
       subtitle: 'Website für ein Softwarestudio',

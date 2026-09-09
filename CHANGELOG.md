@@ -8,6 +8,9 @@ follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added
 
+- Skadi on the project shelf, with its own page at `/projects/skadi` and its
+  README rendered underneath. It takes the fourth slot on the first page, so
+  Dizey moves to the second and the shelf now runs to three pages.
 - The site has its own mark: a collar and tie on the warm plate the portfolio
   already used as its accent. It is the README header, the tile on the project
   shelf and the hero of `/projects/portfolio`, all from the single SVG in

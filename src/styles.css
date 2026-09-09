@@ -556,6 +556,13 @@ blockquote {
     linear-gradient(135deg, #051416, #0d2831 54%, #111827);
 }
 
+.store-app-icon.skadi,
+.project-hero.skadi {
+  --accent-plate:
+    radial-gradient(circle at 26% 16%, rgba(96, 165, 250, 0.24), transparent 30px),
+    linear-gradient(135deg, #0a1020, #16233f 54%, #0b1120);
+}
+
 .store-app-icon.dizey,
 .project-hero.dizey {
   --accent-plate:
@@ -636,7 +643,8 @@ blockquote {
 /* Finished app icons (rounding and fill baked into the SVG) fill the tile
    edge to edge instead of sitting inset on the light plate. MacShelf uses the
    shared `dark` accent. */
-.store-app-icon.dizey.has-logo {
+.store-app-icon.dizey.has-logo,
+.store-app-icon.skadi.has-logo {
   border-color: rgba(255, 255, 255, 0.08);
   background: #0d1117;
   box-shadow: none;
@@ -651,6 +659,7 @@ blockquote {
 }
 
 .store-app-icon.dizey img,
+.store-app-icon.skadi.has-logo img,
 .store-app-icon.portfolio.has-logo img,
 .store-app-icon.portkill.has-logo img {
   width: 100%;

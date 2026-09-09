@@ -55,6 +55,22 @@ const apps: AppMeta[] = [
     featured: true,
   },
   {
+    id: 'skadi',
+    categoryKey: 'cli',
+    categoryKeys: ['cli', 'productivity'],
+    title: 'Skadi',
+    repo: 'https://github.com/burakboduroglu/skadi',
+    link: 'https://www.npmjs.com/package/@burakboduroglu/skadi',
+    stars: '1',
+    forks: '0',
+    icon: 'S',
+    logoUrl: 'https://raw.githubusercontent.com/burakboduroglu/skadi/main/assets/logo.png',
+    accent: 'skadi',
+    install: [
+      { manager: 'bun', command: 'bunx @burakboduroglu/skadi install /path/to/pocketbase' },
+    ],
+  },
+  {
     id: 'dizey',
     categoryKey: 'web',
     title: 'Dizey',

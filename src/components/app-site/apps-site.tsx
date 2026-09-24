@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
-import { ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react'
 import { useApps, useT } from '../../lib/i18n'
 import { projectPath } from '../../lib/router'
+import { IconChevronLeft, IconChevronRight, IconExternal } from '../icons'
 import InternalLink from '../internal-link'
 import AppIcon from './app-icon'
 import AppTitle from './app-title'
@@ -44,7 +44,7 @@ function AppsSite() {
                 <span className='project-card-subtitle'>{app.subtitle}</span>
                 <span className='project-card-cta'>
                   {t.apps.viewDetails}
-                  <ArrowUpRight size={14} aria-hidden='true' />
+                  <IconExternal />
                 </span>
               </span>
             </InternalLink>
@@ -60,7 +60,7 @@ function AppsSite() {
             disabled={safePage === 1}
             onClick={() => setCurrentPage(safePage - 1)}
             aria-label={t.apps.prevPage}>
-            <ChevronLeft size={18} />
+            <IconChevronLeft size={24} />
           </button>
           <span className='projects-pagination-info'>{t.apps.pageOf(safePage, totalPages)}</span>
           <button
@@ -69,7 +69,7 @@ function AppsSite() {
             disabled={safePage === totalPages}
             onClick={() => setCurrentPage(safePage + 1)}
             aria-label={t.apps.nextPage}>
-            <ChevronRight size={18} />
+            <IconChevronRight size={24} />
           </button>
         </div>
       ) : null}

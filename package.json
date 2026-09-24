@@ -3,29 +3,31 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
+  "packageManager": "bun@1.4.2",
   "scripts": {
     "dev": "vite",
     "typecheck": "tsc --noEmit",
-    "build": "bun run typecheck && vite build",
+    "test": "bun test",
+    "build": "bun run typecheck && vite build && bun run scripts/prerender.ts",
     "preview": "vite preview",
     "deploy": "bun run build && bunx gh-pages -d dist",
     "readmes": "bun run scripts/fetch-readmes.ts",
     "sync": "bun run scripts/sync-data.ts"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "latest",
-    "lucide-react": "^1.14.0",
-    "react": "latest",
-    "react-dom": "latest",
-    "vite": "latest"
+    "pixelarticons": "^2.4.1",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
   },
   "devDependencies": {
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.1.1",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
     "@types/sanitize-html": "^2.16.1",
     "gh-pages": "^6.3.0",
-    "marked": "^18.0.11",
+    "marked": "^18.0.14",
     "sanitize-html": "^2.17.7",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "vite": "^8.3.0"
   }
 }

@@ -12,7 +12,6 @@ export type ProfileLinkKey =
   | 'gdev'
   | 'microsoft'
   | 'aws'
-  | 'lovable'
   | 'medium'
   | 'npm'
   | 'framer'

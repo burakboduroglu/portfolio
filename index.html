@@ -9,6 +9,10 @@
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400..900&family=JetBrains+Mono:wght@400..800&display=swap"
+        />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme: dark)" />
@@ -39,13 +43,16 @@
         />
         <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/80620802?v=4" />
 
-        <link rel="icon" type="image/png" href="/profile-avatar.png" />
-        <link rel="apple-touch-icon" href="/profile-avatar.png" />
+        <link rel="icon" type="image/png" href="/icon-192.png" />
+        <link rel="apple-touch-icon" href="/icon-192.png" />
         <title>Burak Boduroğlu — Yazılım Mühendisi</title>
         <script>
-            if (localStorage.getItem('burak_theme') === 'dark') {
-                document.documentElement.classList.add('dark')
-            }
+            // A saved choice wins; a first visit follows the OS setting
+            try {
+                var saved = localStorage.getItem('burak_theme')
+                var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches
+                document.documentElement.classList.toggle('dark', dark)
+            } catch (e) {}
         </script>
         <script type="application/ld+json">
             {
@@ -81,7 +88,6 @@
                     "https://g.dev/burakboduroglu",
                     "https://learn.microsoft.com/en-us/users/burakboduroglu/",
                     "https://builder.aws.com/community/@burakboduroglu",
-                    "https://lovable.dev/@burakboduroglu",
                     "https://www.reddit.com/user/penoloxai/",
                     "https://kick.com/penolox",
                     "https://huggingface.co/penoloxai"

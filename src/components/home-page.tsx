@@ -1,13 +1,13 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { Check, ChevronRight } from 'lucide-react'
 import profile from '../lib/data/profile'
 import { useT } from '../lib/i18n'
 import AppsSite from './app-site/apps-site'
 import ExternalLink from './app-site/external-link'
 import ArticlesSection from './articles-section'
 import DeveloperProfilesSection from './developer-profiles-section'
+import { BrandIcon, IconCheck, IconChevronRight, IconHeart } from './icons'
 import LanguageSwitcher from './language-switcher'
-import ReachOutLeadingIcon from './reach-out-icons'
+import Penguin from './penguin'
 import ThemeSwitch from './theme-switch'
 
 function HomePage() {
@@ -27,13 +27,14 @@ function HomePage() {
   }, [])
 
   const handleLinkClick = (key: string) => {
+    // The mailto: link still opens either way; the toast only claims what happened
     if (key === 'email') {
-      try {
-        navigator.clipboard?.writeText(profile.email)
-        showToast(t.toast.emailCopied)
-      } catch {
-        /* fallback if clipboard API is restricted */
-      }
+      navigator.clipboard
+        ?.writeText(profile.email)
+        .then(() => showToast(t.toast.emailCopied))
+        .catch(() => {
+          /* clipboard blocked — no toast, the mail client still opens */
+        })
     }
   }
 
@@ -92,7 +93,7 @@ function HomePage() {
                           onClick={() => handleLinkClick(link.key)}
                           title={label}
                           aria-label={label}>
-                          <ReachOutLeadingIcon name={link.icon} />
+                          <BrandIcon name={link.icon} size={24} />
                         </ExternalLink>
                       </li>
                     )
@@ -113,7 +114,7 @@ function HomePage() {
             {t.contact.topics.map((topic, index) => (
               <details className='contact-topic' key={topic.title} open={index === 0}>
                 <summary>
-                  <ChevronRight size={16} aria-hidden='true' />
+                  <IconChevronRight />
                   <span>{topic.title}</span>
                 </summary>
                 <ul>
@@ -131,6 +132,7 @@ function HomePage() {
         <DeveloperProfilesSection />
 
         <footer className='site-footer'>
+          <Penguin />
           <div className='site-footer-shortcuts' aria-hidden='true'>
             <span className='shortcut-badge'>
               <kbd>T</kbd> {t.footer.shortcutTheme}
@@ -141,7 +143,7 @@ function HomePage() {
             </span>
           </div>
           <p className='site-footer-crafted'>
-            {craftedBefore} <span className='site-footer-heart'>❤️</span> {craftedAfter}
+            {craftedBefore} <IconHeart className='site-footer-heart' /> {craftedAfter}
           </p>
         </footer>
       </div>
@@ -150,7 +152,7 @@ function HomePage() {
         className={`site-toast ${toastMessage ? 'visible' : ''}`}
         role='status'
         aria-live='polite'>
-        <Check size={14} aria-hidden='true' />
+        <IconCheck />
         <span>{toastMessage}</span>
       </div>
     </>

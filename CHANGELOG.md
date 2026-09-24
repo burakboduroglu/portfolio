@@ -8,6 +8,19 @@ follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 
+- Every icon is pixel art. `lucide-react` is gone; UI icons and the brands it
+  covers come from `pixelarticons` (MIT), and the marks it lacks — AWS, DEV,
+  Framer, Higgsfield, Hugging Face, Kick, Medium, Microsoft, Reddit, Substack,
+  Suno — are hand-drawn 12×12 bitmaps in `src/components/icons.tsx`. All sit on
+  the same 2-unit cell grid and render at 12 or 24 px so no cell lands
+  mid-pixel. The footer heart is a pixel heart instead of an emoji.
+- Fonts load from a `<link>` instead of a CSS `@import`, as variable fonts —
+  the 550/650/750 weights the stylesheet asks for now render as written.
+- A first visit follows the OS light/dark setting; a saved choice still wins.
+- Dependencies are pinned to semver ranges instead of `latest`, build tools
+  moved to `devDependencies`, and CI reads the Bun version from
+  `packageManager` in `package.json`.
+
 - Star and fork counts and the article list are **synced, not typed**.
   `bun run sync` reads them from the GitHub API and the Substack feed into
   `src/lib/data/repo-stats.ts` and `src/lib/data/articles.ts`, both generated
@@ -23,6 +36,28 @@ follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added
 
+- A pixel penguin waddles along the footer line (`src/components/penguin.tsx`):
+  hand-drawn 16×16 frames — idle, blink, two waddle steps, a hop — drawn at
+  3 px per cell. It stops at the edges to blink before turning back, hops and
+  sends up a heart when clicked, pauses off screen and in background tabs, and
+  stands still under `prefers-reduced-motion`.
+- Screenshots on every project page: previous/next controls, a counter, a
+  thumbnail strip, arrow keys and swipe, and a full-size view in a native
+  `<dialog>`. Images are local WebP under `public/screenshots/`, sized in
+  `src/lib/data/screenshots.ts` so nothing shifts on load, with alt text in all
+  three languages. A project without screenshots shows no section; an image
+  that fails to load is dropped from the set.
+- `scripts/prerender.ts`, run by `bun run build`, writes
+  `dist/projects/<id>.html` with the project's own title, description,
+  canonical URL and preview image — project pages now answer 200 instead of
+  the 404 GitHub Pages sends with the SPA fallback — and generates
+  `sitemap.xml` from `apps.ts`, so a new project can no longer be missing
+  from it.
+- `bun test`: route parsing, and a check that every screenshot file exists,
+  matches its declared size and has alt text in every language. CI runs it.
+- A weekly workflow runs `bun run sync` and opens a pull request when stars or
+  articles changed.
+- Manifest icons at the sizes they claim (192 and 512 px, real PNGs).
 - Skadi on the project shelf, with its own page at `/projects/skadi` and its
   README rendered underneath. It takes the fourth slot on the first page, so
   Dizey moves to the second and the shelf now runs to three pages.
@@ -35,7 +70,18 @@ follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   and a project page. The repository had no preview of the thing it builds.
 - This changelog.
 
+### Removed
+
+- The Lovable developer profile link. The badge, its data entry, its icon and
+  translation label, and the JSON-LD `sameAs` entry are gone.
+- Leftover styles of the old store layout: `.apps-site`, `.store-menu-toggle`,
+  `.store-backdrop`.
+
 ### Fixed
+
+- "Email copied" and the install command's "Copied" only show once the
+  clipboard write actually succeeded; before, a blocked clipboard still
+  claimed success.
 
 - Project card titles no longer show a trailing ellipsis. The title clamped to
   one line with `-webkit-line-clamp`, and the leading square in the `.portkill`

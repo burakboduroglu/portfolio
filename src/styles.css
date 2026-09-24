@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap');
+/* Fonts load from a <link> in index.html — an @import here would wait for this
+   whole stylesheet before even starting the font CSS request. */
 
 :root {
   color: var(--text);
@@ -356,7 +357,7 @@ blockquote {
 
 .reach-out {
   margin-top: 0;
-  width: 320px;
+  width: fit-content;
   max-width: 100%;
   padding: 12px 12px 14px;
   overflow: hidden;
@@ -405,8 +406,8 @@ blockquote {
 }
 
 .reach-out-list {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 6px;
   margin: 0;
   padding: 0;
@@ -421,10 +422,10 @@ blockquote {
 .reach-out-link {
   display: grid;
   place-items: center;
-  width: 100%;
-  aspect-ratio: 1;
+  width: 46px;
+  height: 46px;
   margin: 0;
-  border-radius: 10px;
+  border-radius: 12px;
   color: var(--muted);
   background: color-mix(in srgb, var(--ink) 4%, transparent);
   text-decoration: none;
@@ -454,28 +455,6 @@ blockquote {
   .reach-out {
     max-width: 288px;
   }
-}
-
-.apps-site {
-  font-family: 'Inter', ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  scroll-margin-top: 24px;
-  display: grid;
-  grid-template-columns: 230px minmax(0, 1fr);
-  width: min(1120px, calc(100vw - 48px));
-  min-height: 680px;
-  margin: 64px 0 0 50%;
-  overflow: hidden;
-  border: 1px solid #252525;
-  border-radius: 18px;
-  color: #f5f5f7;
-  background: #020202;
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
-  transform: translateX(-50%);
-}
-
-.store-menu-toggle,
-.store-backdrop {
-  display: none;
 }
 
 .store-app-icon {
@@ -1216,8 +1195,8 @@ blockquote {
   display: grid;
   place-items: center;
   flex-shrink: 0;
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   border-radius: 8px;
   color: var(--text);
   background: color-mix(in srgb, var(--ink) 5%, transparent);
@@ -1301,11 +1280,6 @@ blockquote {
 .developer-profile-card[data-platform='aws']:hover .developer-profile-icon {
   color: #ff9900;
   background: rgba(255, 153, 0, 0.14);
-}
-
-.developer-profile-card[data-platform='lovable']:hover .developer-profile-icon {
-  color: #ff3366;
-  background: rgba(255, 51, 102, 0.12);
 }
 
 .developer-profile-card[data-platform='medium']:hover .developer-profile-icon {
@@ -1397,53 +1371,14 @@ blockquote {
 .site-footer-heart {
   display: inline-block;
   margin: 0 1px;
-  font-size: 1em;
-  line-height: 1;
-  vertical-align: -0.04em;
+  color: #e5484d;
+  fill: currentColor;
+  vertical-align: -0.08em;
 }
 
 @media (max-width: 960px) {
   .page {
     margin-top: 36px;
-  }
-
-  .apps-site {
-    position: relative;
-    display: block;
-    width: 100%;
-    margin-left: 0;
-    transform: none;
-    overflow: hidden;
-    min-height: 100dvh;
-    isolation: isolate;
-  }
-
-  .store-menu-toggle {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    z-index: 4;
-    display: grid;
-    place-items: center;
-    width: 44px;
-    height: 44px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 999px;
-    color: #f5f5f7;
-    background: rgba(28, 28, 28, 0.92);
-    backdrop-filter: blur(14px);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
-    cursor: pointer;
-  }
-
-  .store-backdrop {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-    display: block;
-    border: 0;
-    background: rgba(0, 0, 0, 0.42);
-    cursor: pointer;
   }
 }
 
@@ -1520,6 +1455,9 @@ blockquote {
   }
 
   .reach-out {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: auto;
     min-width: 0;
     height: 100%;
@@ -1538,20 +1476,20 @@ blockquote {
 
   .reach-out-list {
     display: grid;
-    grid-template-columns: repeat(5, 28px);
+    grid-template-columns: repeat(5, 36px);
     justify-content: center;
     gap: 6px 7px;
   }
 
   .reach-out-list li {
-    width: 28px;
+    width: 36px;
   }
 
   .reach-out-link {
-    width: 28px;
-    height: 28px;
+    width: 36px;
+    height: 36px;
     aspect-ratio: auto;
-    border-radius: 8px;
+    border-radius: 10px;
   }
 
   h1 {
@@ -1565,12 +1503,6 @@ blockquote {
 
   blockquote {
     font-size: 14px;
-  }
-
-  .apps-site {
-    width: 100%;
-    margin-left: 0;
-    transform: none;
   }
 
   .store-app-icon.large {
@@ -2142,6 +2074,13 @@ blockquote {
     align-items: stretch;
   }
 
+  /* A long command has nowhere to hide on a narrow screen — wrap it instead
+     of leaving it clipped behind an invisible scrollbar. */
+  .project-command code {
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+  }
+
   .project-command-copy {
     justify-content: center;
   }
@@ -2351,4 +2290,334 @@ blockquote {
 
 .project-readme sub {
   color: var(--muted);
+}
+
+@media (max-width: 600px) {
+  /* A long README code line (a git clone URL, a full CLI invocation) has no
+     room to run on a narrow screen — wrap it instead of clipping it behind
+     an invisible horizontal scrollbar. Keeps embedded newlines intact. */
+  .project-readme pre code {
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+  }
+}
+
+/* Screenshot gallery — stage, pixel arrow controls, thumbnail strip, and a
+   native <dialog> for the full-size view. Sizes come from the width/height
+   attributes, so each slide keeps its own aspect ratio without a layout jump. */
+.gallery-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.gallery-head h2 {
+  margin: 0;
+}
+
+.gallery-count {
+  color: var(--muted);
+  font-size: 12.5px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.gallery-stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--card-soft);
+  touch-action: pan-y;
+}
+
+.gallery-open {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: none;
+  cursor: zoom-in;
+}
+
+.gallery-open img,
+.gallery-dialog-viewport img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  user-select: none;
+}
+
+.gallery-open img {
+  max-height: 440px;
+  width: auto;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.gallery-open:focus-visible,
+.gallery-nav:focus-visible,
+.gallery-thumb:focus-visible,
+.gallery-tool:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+}
+
+.gallery-zoom {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  transition: opacity 0.16s ease;
+}
+
+.gallery-open:hover .gallery-zoom,
+.gallery-open:focus-visible .gallery-zoom {
+  opacity: 1;
+}
+
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--text);
+  background: var(--card);
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition:
+    color 0.16s ease,
+    border-color 0.16s ease;
+}
+
+.gallery-nav:hover {
+  color: var(--link);
+  border-color: color-mix(in srgb, var(--link) 45%, var(--line));
+}
+
+.gallery-nav.prev {
+  left: 10px;
+}
+
+.gallery-nav.next {
+  right: 10px;
+}
+
+.gallery-thumbs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  margin: 10px 0 0;
+  padding: 2px;
+  list-style: none;
+}
+
+.gallery-thumb {
+  display: block;
+  width: 84px;
+  height: 56px;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--card-soft);
+  cursor: pointer;
+  opacity: 0.6;
+  transition:
+    opacity 0.16s ease,
+    border-color 0.16s ease;
+}
+
+.gallery-thumb:hover {
+  opacity: 1;
+}
+
+.gallery-thumb[aria-current='true'] {
+  border-color: var(--link);
+  opacity: 1;
+}
+
+.gallery-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* The full-size view fills the screen: the image gets every pixel the window
+   has, and a click on it zooms to the file's own resolution. */
+.gallery-dialog {
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: #e8e8e8;
+  background: rgba(10, 10, 10, 0.94);
+}
+
+.gallery-dialog[open] {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+}
+
+.gallery-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.gallery-dialog-viewport {
+  display: grid;
+  /* Force the single implicit cell to the viewport's own available space
+     instead of the image's intrinsic size — otherwise the img's max-height:
+     100% has no real percentage basis to resolve against (the cell would
+     size itself to fit the image, so "100%" ends up equal to the image's
+     own natural size and never actually clamps it). */
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+  place-items: center;
+  min-height: 0;
+  overflow: auto;
+  padding: 64px 72px 8px;
+  touch-action: pan-y;
+}
+
+.gallery-dialog-viewport img {
+  width: auto;
+  max-height: 100%;
+  cursor: zoom-in;
+}
+
+.gallery-dialog-viewport.zoomed {
+  place-items: start;
+  touch-action: auto;
+}
+
+.gallery-dialog-viewport.zoomed img {
+  max-width: none;
+  max-height: none;
+  margin: auto;
+  cursor: zoom-out;
+}
+
+.gallery-dialog-caption {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 0;
+  padding: 10px 24px 16px;
+  color: #a8a8a8;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.gallery-dialog-caption span {
+  flex-shrink: 0;
+  color: #f2f2f2;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.gallery-dialog-tools {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.gallery-tool,
+.gallery-dialog .gallery-nav {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 10px;
+  color: #f2f2f2;
+  background: rgba(30, 30, 30, 0.9);
+  cursor: pointer;
+}
+
+.gallery-tool:hover,
+.gallery-dialog .gallery-nav:hover {
+  color: #f0b3ad;
+  border-color: rgba(240, 179, 173, 0.5);
+}
+
+.gallery-tool[aria-pressed='true'] {
+  color: #f0b3ad;
+}
+
+.gallery-dialog .gallery-nav {
+  position: fixed;
+}
+
+@media (max-width: 600px) {
+  .gallery-stage {
+    padding: 8px;
+  }
+
+  .gallery-open img {
+    max-height: 300px;
+  }
+
+  .gallery-nav {
+    width: 34px;
+    height: 34px;
+  }
+
+  .gallery-nav.prev {
+    left: 6px;
+  }
+
+  .gallery-nav.next {
+    right: 6px;
+  }
+
+  .gallery-dialog-viewport {
+    padding: 60px 8px 8px;
+  }
+
+  .gallery-dialog .gallery-nav {
+    top: auto;
+    bottom: 12px;
+    transform: none;
+  }
+
+  .gallery-dialog-caption {
+    padding: 10px 56px 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-nav,
+  .gallery-thumb,
+  .gallery-zoom {
+    transition: none;
+  }
 }

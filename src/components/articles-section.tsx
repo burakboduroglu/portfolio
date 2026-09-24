@@ -1,7 +1,7 @@
-import { ArrowUpRight } from 'lucide-react'
 import articles from '../lib/data/articles'
 import { useLocale, useT } from '../lib/i18n'
 import ExternalLink from './app-site/external-link'
+import { IconExternal } from './icons'
 
 function formatArticleDate(date: string, locale: string) {
   const parsed = new Date(`${date}T12:00:00`)
@@ -44,7 +44,7 @@ function ArticlesSection() {
                 <span className='article-card-subtitle'>{article.subtitle}</span>
                 <span className='article-card-cta'>
                   {t.articles.readOnSubstack}
-                  <ArrowUpRight size={14} aria-hidden='true' />
+                  <IconExternal />
                 </span>
               </span>
             </ExternalLink>

@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useRef } from 'react'
-import { ArrowLeft } from 'lucide-react'
 import { applyDocumentMeta, LOCALES, syncLocaleParam, useApps, useLocale, useT } from './lib/i18n'
 import { useRoute } from './lib/router'
 import AppDetail from './components/app-site/app-detail'
+import { IconArrowLeft } from './components/icons'
 import HomePage from './components/home-page'
 import InternalLink from './components/internal-link'
 import LanguageSwitcher from './components/language-switcher'
@@ -16,7 +16,7 @@ function NotFoundPage() {
       <h1>{t.apps.missingTitle}</h1>
       <p>{t.apps.missingBody}</p>
       <InternalLink className='project-back' href='/'>
-        <ArrowLeft size={15} aria-hidden='true' />
+        <IconArrowLeft />
         <span>{t.apps.backToProjects}</span>
       </InternalLink>
     </div>

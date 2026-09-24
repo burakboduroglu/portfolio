@@ -82,6 +82,15 @@ export type Messages = {
     missingTitle: string
     missingBody: string
     backToProjects: string
+    /** Screenshot gallery on the detail page */
+    screenshots: string
+    galleryAria: (title: string) => string
+    prevShot: string
+    nextShot: string
+    shotOf: (current: number, total: number) => string
+    showShot: (index: number) => string
+    enlargeShot: string
+    closeShot: string
   }
   contact: {
     title: string

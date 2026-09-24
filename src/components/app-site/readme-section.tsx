@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react'
-import { Info } from 'lucide-react'
 import readmeManifest from '../../lib/data/readme-manifest'
 import { useLocale, useT } from '../../lib/i18n'
 import type { Locale } from '../../lib/i18n'
 import type { AppCard } from '../../lib/types/app'
 import ExternalLink from './external-link'
-import ReachOutLeadingIcon from '../reach-out-icons'
+import { BrandIcon, IconInfo } from '../icons'
 
 type ReadmeDocument = {
   sourceLocale: Locale
@@ -60,7 +59,7 @@ function ReadmeSection({ app }: { app: AppCard }) {
         <h2>{t.apps.documentation}</h2>
         {app.repo ? (
           <ExternalLink className='project-readme-source' href={app.repo}>
-            <ReachOutLeadingIcon name='github' size={14} />
+            <BrandIcon name='github' />
             <span>{t.apps.viewOnGitHub}</span>
           </ExternalLink>
         ) : null}
@@ -72,7 +71,7 @@ function ReadmeSection({ app }: { app: AppCard }) {
         <>
           {document.sourceLocale !== locale ? (
             <p className='project-readme-note'>
-              <Info size={14} aria-hidden='true' />
+              <IconInfo />
               <span>{t.apps.readmeFallback}</span>
             </p>
           ) : null}

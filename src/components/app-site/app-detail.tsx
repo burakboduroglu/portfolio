@@ -1,15 +1,23 @@
 import { useEffect, useRef, useState } from 'react'
-import { ArrowLeft, ArrowUpRight, Check, Copy, GitFork, Star } from 'lucide-react'
 import { useT } from '../../lib/i18n'
 import type { AppCard } from '../../lib/types/app'
 import InternalLink from '../internal-link'
-import ReachOutLeadingIcon from '../reach-out-icons'
+import {
+  BrandIcon,
+  IconArrowLeft,
+  IconCheck,
+  IconCopy,
+  IconExternal,
+  IconFork,
+  IconStar,
+} from '../icons'
 import ThemeSwitch from '../theme-switch'
 import LanguageSwitcher from '../language-switcher'
 import AppIcon from './app-icon'
 import AppTitle from './app-title'
 import ExternalLink from './external-link'
 import ReadmeSection from './readme-section'
+import ScreenshotGallery from './screenshot-gallery'
 
 /** Absent for a site with no repo, 0 for one nobody has starred yet */
 function countOf(value: number | undefined): number | null {
@@ -28,16 +36,18 @@ function InstallCommand({ command }: { command: string }) {
   }, [])
 
   const copy = () => {
-    try {
-      navigator.clipboard?.writeText(command)
-      setCopied(true)
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current)
-      }
-      timeoutRef.current = setTimeout(() => setCopied(false), 2000)
-    } catch {
-      /* clipboard API can be blocked — the command stays selectable either way */
-    }
+    navigator.clipboard
+      ?.writeText(command)
+      .then(() => {
+        setCopied(true)
+        if (timeoutRef.current) {
+          clearTimeout(timeoutRef.current)
+        }
+        timeoutRef.current = setTimeout(() => setCopied(false), 2000)
+      })
+      .catch(() => {
+        /* clipboard API can be blocked — the command stays selectable either way */
+      })
   }
 
   return (
@@ -53,7 +63,7 @@ function InstallCommand({ command }: { command: string }) {
         className='project-command-copy'
         onClick={copy}
         aria-label={copied ? t.apps.commandCopied : t.apps.copyCommand}>
-        {copied ? <Check size={14} /> : <Copy size={14} />}
+        {copied ? <IconCheck /> : <IconCopy />}
         <span>{copied ? t.apps.commandCopied : t.apps.copyCommand}</span>
       </button>
     </div>
@@ -72,7 +82,7 @@ function AppDetail({ app }: { app: AppCard }) {
       <div className='project-detail-bar'>
         <div className='site-rail project-detail-bar-inner'>
           <InternalLink className='project-back' href='/'>
-            <ArrowLeft size={15} aria-hidden='true' />
+            <IconArrowLeft />
             <span>{t.apps.backToProjects}</span>
           </InternalLink>
           <div className='page-top-actions'>
@@ -94,11 +104,11 @@ function AppDetail({ app }: { app: AppCard }) {
           <div className='project-hero-actions'>
             <ExternalLink className='project-action primary' href={app.link}>
               <span>{app.action}</span>
-              <ArrowUpRight size={15} aria-hidden='true' />
+              <IconExternal />
             </ExternalLink>
             {hasSeparateRepo ? (
               <ExternalLink className='project-action' href={app.repo as string}>
-                <ReachOutLeadingIcon name='github' size={15} />
+                <BrandIcon name='github' />
                 <span>{t.apps.viewOnGitHub}</span>
               </ExternalLink>
             ) : null}
@@ -124,7 +134,7 @@ function AppDetail({ app }: { app: AppCard }) {
             <li>
               <span className='project-fact-label'>{t.apps.stats.stars}</span>
               <span className='project-fact-value'>
-                <Star size={13} aria-hidden='true' />
+                <IconStar />
                 {stars}
               </span>
             </li>
@@ -133,12 +143,14 @@ function AppDetail({ app }: { app: AppCard }) {
             <li>
               <span className='project-fact-label'>{t.apps.stats.forks}</span>
               <span className='project-fact-value'>
-                <GitFork size={13} aria-hidden='true' />
+                <IconFork />
                 {forks}
               </span>
             </li>
           ) : null}
         </ul>
+
+        <ScreenshotGallery key={app.id} app={app} />
 
         <section className='project-section'>
           <h2>{t.apps.description}</h2>

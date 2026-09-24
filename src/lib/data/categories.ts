@@ -1,12 +1,12 @@
-import { Code2, Globe, Grid2X2, Monitor, Terminal } from 'lucide-react'
+import { IconCode, IconGlobe, IconGrid, IconMonitor, IconTerminal } from '../../components/icons'
 import { AppCategory } from '../types/category'
 
 const categories: AppCategory[] = [
-  { key: 'macos', icon: Monitor },
-  { key: 'web', icon: Globe },
-  { key: 'developer', icon: Code2 },
-  { key: 'cli', icon: Terminal },
-  { key: 'productivity', icon: Grid2X2 },
+  { key: 'macos', icon: IconMonitor },
+  { key: 'web', icon: IconGlobe },
+  { key: 'developer', icon: IconCode },
+  { key: 'cli', icon: IconTerminal },
+  { key: 'productivity', icon: IconGrid },
 ]
 
 export default categories

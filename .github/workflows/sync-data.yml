@@ -1,0 +1,69 @@
+name: Sync data
+
+# Refreshes star/fork counts and the article list (`bun run sync`) and opens a
+# pull request when anything changed. Builds stay offline — this only proposes
+# the committed data files, it never deploys by itself.
+#
+# `bun run readmes` is deliberately not here: it stamps every README with the
+# run date, so it would open a pull request every week even with no change.
+#
+# Note: a pull request opened with GITHUB_TOKEN does not trigger the CI
+# workflow. Close and reopen it (or push to the branch) to get a CI run.
+
+on:
+  schedule:
+    - cron: '0 6 * * 1' # Mondays 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: sync-data
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    name: Sync stars and articles
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version-file: package.json
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Sync
+        run: bun run sync
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Open or update pull request
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: chore/sync-data
+        run: |
+          if git diff --quiet -- src/lib/data; then
+            echo "Nothing changed."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -C "$BRANCH"
+          git add src/lib/data/repo-stats.ts src/lib/data/articles.ts
+          git commit -m "chore(data): sync star counts and articles"
+          git push --force origin "$BRANCH"
+
+          if [ -z "$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')" ]; then
+            gh pr create --base main --head "$BRANCH" \
+              --title "chore(data): sync star counts and articles" \
+              --body "Weekly \`bun run sync\` found changes in repo stats or the article list."
+          fi

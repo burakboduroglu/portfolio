@@ -1,8 +1,7 @@
-import { ArrowUpRight } from 'lucide-react'
 import profile from '../lib/data/profile'
 import { useT } from '../lib/i18n'
 import ExternalLink from './app-site/external-link'
-import ReachOutLeadingIcon from './reach-out-icons'
+import { BrandIcon, IconExternal } from './icons'
 
 function DeveloperProfilesSection() {
   const t = useT()
@@ -30,7 +29,7 @@ function DeveloperProfilesSection() {
                 href={item.href}
                 aria-label={`${platformName}: ${item.handle || item.href}`}>
                 <span className='developer-profile-icon' aria-hidden='true'>
-                  <ReachOutLeadingIcon name={item.icon} size={18} />
+                  <BrandIcon name={item.icon} size={24} />
                 </span>
                 <span className='developer-profile-info'>
                   <strong className='developer-profile-name'>{platformName}</strong>
@@ -39,7 +38,7 @@ function DeveloperProfilesSection() {
                   ) : null}
                 </span>
                 <span className='developer-profile-arrow' aria-hidden='true'>
-                  <ArrowUpRight size={14} />
+                  <IconExternal />
                 </span>
               </ExternalLink>
             </li>

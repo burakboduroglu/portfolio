@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { Moon, Sun } from 'lucide-react'
 import { useT } from '../lib/i18n'
+import { IconMoon, IconSun } from './icons'
 
 const THEME_KEY = 'burak_theme'
 
@@ -42,9 +42,9 @@ function ThemeSwitch() {
       onClick={() => toggleTheme()}
       title={`${t.nav.themeAria}: ${label}`}
       aria-label={`${t.nav.themeAria}: ${label}`}>
-      {dark ? <Moon size={12} aria-hidden='true' /> : <Sun size={12} aria-hidden='true' />}
+      {dark ? <IconMoon /> : <IconSun />}
     </button>
   )
 }
 
-export default ThemeSwitch
+export default ThemeSwitch

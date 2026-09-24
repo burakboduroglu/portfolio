@@ -49,7 +49,7 @@ Visually I leaned toward clarity and restraint: monospace type, light structure,
 | 🗂️ | **Project pages, no router dependency** | Every project has a real route at `/projects/:id`, resolved by ~85 lines over the History API. One dynamic route did not justify a routing library. |
 | 📖 | **READMEs render on the site** | `bun run readmes` pulls each project's README from GitHub and commits sanitized HTML, so the build never touches the network. |
 | 🔄 | **Counts and articles are synced, not typed** | `bun run sync` reads the GitHub API and the Substack feed and commits the result, so nothing goes stale by hand and no visitor's browser calls an API. |
-| 🪪 | **Developer Profiles Hub** | Clean badges for Google Developers, Microsoft Learn, AWS, Cursor, Lovable, Figma, npm, Medium, and more. |
+| 🪪 | **Developer Profiles Hub** | Clean badges for Google Developers, Microsoft Learn, AWS, Cursor, Figma, npm, Medium, and more. |
 | ♿ | **Accessible by default** | Intact heading hierarchy, `focus-visible` styling that survives the dark panel, `prefers-reduced-motion` respected. |
 | 🪶 | **Small** | The page ships in roughly 87 kB gzipped — no CSS framework, no state library, no i18n runtime, no markdown parser in the bundle. |
 

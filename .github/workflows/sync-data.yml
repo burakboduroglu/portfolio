@@ -3,6 +3,11 @@ name: Sync data
 # Refreshes star/fork counts and the article list (`bun run sync`) and commits
 # the result straight to main when anything changed, then deploys.
 #
+# In practice this refreshes star counts only: Substack answers 403 to GitHub
+# Actions IPs (feed, browser UA and archive API alike), so the article step
+# logs a warning and leaves the list as it was. Run `bun run sync` locally
+# after publishing a post.
+#
 # `bun run readmes` is deliberately not here: it stamps every README with the
 # run date, so it would commit every week even with no real change.
 #

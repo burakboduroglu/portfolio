@@ -1,14 +1,13 @@
 name: Sync data
 
-# Refreshes star/fork counts and the article list (`bun run sync`) and opens a
-# pull request when anything changed. Builds stay offline — this only proposes
-# the committed data files, it never deploys by itself.
+# Refreshes star/fork counts and the article list (`bun run sync`) and commits
+# the result straight to main when anything changed, then deploys.
 #
 # `bun run readmes` is deliberately not here: it stamps every README with the
-# run date, so it would open a pull request every week even with no change.
+# run date, so it would commit every week even with no real change.
 #
-# Note: a pull request opened with GITHUB_TOKEN does not trigger the CI
-# workflow. Close and reopen it (or push to the branch) to get a CI run.
+# A push made with GITHUB_TOKEN does not trigger other workflows, so the deploy
+# is started explicitly with workflow_dispatch — the one event it may trigger.
 
 on:
   schedule:
@@ -17,7 +16,7 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
+  actions: write
 
 concurrency:
   group: sync-data
@@ -45,25 +44,22 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Open or update pull request
+      - name: Commit and deploy
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: chore/sync-data
         run: |
           if git diff --quiet -- src/lib/data; then
             echo "Nothing changed."
             exit 0
           fi
 
+          # The data files are typed; a malformed feed must not reach main
+          bun run typecheck
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git switch -C "$BRANCH"
           git add src/lib/data/repo-stats.ts src/lib/data/articles.ts
           git commit -m "chore(data): sync star counts and articles"
-          git push --force origin "$BRANCH"
+          git push origin HEAD:main
 
-          if [ -z "$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')" ]; then
-            gh pr create --base main --head "$BRANCH" \
-              --title "chore(data): sync star counts and articles" \
-              --body "Weekly \`bun run sync\` found changes in repo stats or the article list."
-          fi
+          gh workflow run deploy-pages.yml --ref main

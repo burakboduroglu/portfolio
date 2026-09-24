@@ -55,8 +55,8 @@ follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   from it.
 - `bun test`: route parsing, and a check that every screenshot file exists,
   matches its declared size and has alt text in every language. CI runs it.
-- A weekly workflow runs `bun run sync` and opens a pull request when stars or
-  articles changed.
+- A weekly workflow runs `bun run sync` and, when stars or articles changed,
+  commits them to main and starts a deploy.
 - Manifest icons at the sizes they claim (192 and 512 px, real PNGs).
 - Skadi on the project shelf, with its own page at `/projects/skadi` and its
   README rendered underneath. It takes the fourth slot on the first page, so

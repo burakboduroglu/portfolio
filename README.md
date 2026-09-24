@@ -89,13 +89,15 @@ src/
 │  ├─ app-site/
 │  │  ├─ apps-site.tsx         The project shelf on the home page
 │  │  ├─ app-detail.tsx        /projects/:id — hero, facts, install command
-│  │  └─ readme-section.tsx    Renders the generated README HTML
+│  │  ├─ readme-section.tsx    Renders the generated README HTML
+│  │  └─ screenshot-gallery.tsx  Screenshots, prev/next, fullscreen zoom
 │  ├─ home-page.tsx            Everything that lives on /
+│  ├─ icons.tsx                Pixel icons: pixelarticons + hand-drawn brand bitmaps
 │  ├─ internal-link.tsx        Real href, intercepts only the plain left click
 │  ├─ articles-section.tsx     Substack articles grid
 │  ├─ developer-profiles-section.tsx  Developer & community platform links
 │  ├─ language-switcher.tsx    TR / EN / DE switcher
-│  ├─ reach-out-icons.tsx      Inlined SVG brand & platform icons
+│  ├─ penguin.tsx              The pixel penguin walking on the footer line
 │  └─ theme-switch.tsx         Light / Dark mode toggle
 └─ lib/
    ├─ router.ts                History API routing, no dependency
@@ -106,7 +108,8 @@ src/
 
 scripts/
 ├─ fetch-readmes.ts            Pulls project READMEs, writes sanitized HTML
-└─ sync-data.ts                Pulls star/fork counts and the Substack feed
+├─ sync-data.ts                Pulls star/fork counts and the Substack feed
+└─ prerender.ts                Post-build: per-project HTML and sitemap.xml
 
 public/readme/                 Generated README HTML — committed, not built
 

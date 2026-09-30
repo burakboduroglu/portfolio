@@ -18,6 +18,7 @@ const apps: AppMeta[] = [
     categoryKey: 'web',
     categoryKeys: ['web', 'productivity'],
     title: 'BDash',
+    repo: 'https://github.com/burakboduroglu/bdash',
     link: 'https://bdash.burakboduroglu.com.tr',
     icon: 'B',
     logoUrl: '/logos/bdash.png',

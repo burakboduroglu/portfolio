@@ -1,0 +1,7 @@
+{
+  "id": "betus-design",
+  "locale": "de",
+  "sourceLocale": "en",
+  "html": "<p>Showcase website for Betus Design, live at <a href=\"https://btsdesign.com.tr\" target=\"_blank\" rel=\"noreferrer noopener\">btsdesign.com.tr</a>.\nA client project, completed and delivered.</p>\n<p>Built with React and TypeScript on Vite, routed with TanStack Router and styled\nwith Tailwind CSS and shadcn/ui components.</p>\n<h3 id=\"development\">Development</h3>\n<pre><code>bun install\nbun run dev      # Vite dev server\nbun run build    # production build\nbun run lint\nbun run typecheck # tsc --noEmit\nbun run format   # Prettier\n</code></pre>\n<h3 id=\"deployment\">Deployment</h3>\n<p>Pushes to <code>main</code> are built and published to GitHub Pages by\n<code>.github/workflows/deploy.yml</code>, under the custom domain in <code>CNAME</code>.\nThe workflow runs lint and typecheck before building, and the build copies\n<code>index.html</code> to <code>404.html</code> so deep links fall back to the client-side router.</p>",
+  "updatedAt": "2026-09-30"
+}

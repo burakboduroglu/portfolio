@@ -12,6 +12,9 @@ export const readmeManifest: Partial<Record<AppId, Locale[]>> = {
   "social-web": [
     "en"
   ],
+  "bdash": [
+    "en"
+  ],
   "portkill": [
     "en"
   ],
@@ -28,6 +31,12 @@ export const readmeManifest: Partial<Record<AppId, Locale[]>> = {
     "en"
   ],
   "portfolio": [
+    "en"
+  ],
+  "alice": [
+    "en"
+  ],
+  "betus-design": [
     "en"
   ]
 }

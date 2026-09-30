@@ -1,0 +1,7 @@
+{
+  "id": "alice",
+  "locale": "tr",
+  "sourceLocale": "en",
+  "html": "<p>Website for Alice Palazzo, live at <a href=\"https://alicepalazzo.com\" target=\"_blank\" rel=\"noreferrer noopener\">alicepalazzo.com</a>.</p>\n<p>Built with Next.js, React and TypeScript, styled with Tailwind CSS and shadcn/ui\ncomponents, with photo galleries laid out by <code>react-photo-album</code>.</p>\n<h3 id=\"development\">Development</h3>\n<pre><code>bun install\nbun run dev      # Next.js dev server with Turbopack\nbun run build    # production build\nbun run lint\n</code></pre>\n<h3 id=\"deployment\">Deployment</h3>\n<p>Every push to <code>main</code> builds the site with GitHub Actions\n(<code>.github/workflows/nextjs.yml</code>) and publishes it to GitHub Pages under the\ncustom domain in <code>CNAME</code>. CI installs from <code>package-lock.json</code>.</p>\n<h3 id=\"licence\">Licence</h3>\n<p>See <a href=\"https://github.com/burakboduroglu/alice/blob/main/LICENSE\" target=\"_blank\" rel=\"noreferrer noopener\">LICENSE</a>.</p>",
+  "updatedAt": "2026-09-30"
+}

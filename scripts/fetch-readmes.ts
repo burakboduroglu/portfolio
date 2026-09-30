@@ -73,8 +73,15 @@ function pickReadme(names: string[], locale: Locale): string | null {
 }
 
 async function fetchRaw(repo: Repo, file: string): Promise<string | null> {
+  // Private repos answer 404 on raw.githubusercontent.com without a token
+  const headers: Record<string, string> = {}
+  if (process.env.GITHUB_TOKEN) {
+    headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`
+  }
+
   const response = await fetch(
-    `https://raw.githubusercontent.com/${repo.owner}/${repo.name}/${repo.branch}/${file}`
+    `https://raw.githubusercontent.com/${repo.owner}/${repo.name}/${repo.branch}/${file}`,
+    { headers }
   )
   return response.ok ? await response.text() : null
 }

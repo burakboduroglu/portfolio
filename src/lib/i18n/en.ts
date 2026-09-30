@@ -311,6 +311,19 @@ const en = {
       heroText:
         'Betus Design is a simple site concept built around the products and story of a handmade workshop.',
     },
+    hezarfen: {
+      category: 'Learning Platform',
+      subtitle: 'School dashboard and learning portal',
+      description:
+        'The frontend of the Hezarfen campus and learning management system: a status dashboard plus role-scoped learning and school-management workflows in Turkish and English.',
+      stack: 'SolidJS / TanStack Router / Tailwind',
+      platform: 'Web',
+      price: 'Team project',
+      action: 'Open demo',
+      heroTitle: 'A campus that runs in the browser.',
+      heroText:
+        'The school dashboard and learning portal for Hezarfen — courses, homework, exams and AI study tools behind role-scoped workflows.',
+    },
   },
 } satisfies Messages
 

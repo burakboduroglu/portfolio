@@ -21,6 +21,9 @@ export const readmeManifest: Partial<Record<AppId, Locale[]>> = {
   "skadi": [
     "en"
   ],
+  "hezarfen": [
+    "en"
+  ],
   "nors": [
     "en"
   ],

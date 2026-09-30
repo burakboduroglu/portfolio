@@ -563,6 +563,13 @@ blockquote {
     linear-gradient(135deg, #050b1c, #101f45 54%, #070d20);
 }
 
+.store-app-icon.hezarfen,
+.project-hero.hezarfen {
+  --accent-plate:
+    radial-gradient(circle at 24% 18%, rgba(0, 173, 216, 0.26), transparent 30px),
+    linear-gradient(135deg, #070b0d, #0e2a33 54%, #111827);
+}
+
 .portkill-mark {
   display: inline-flex;
   align-items: center;
@@ -633,14 +640,16 @@ blockquote {
 }
 
 .store-app-icon.social-web.has-logo,
-.store-app-icon.bdash.has-logo {
+.store-app-icon.bdash.has-logo,
+.store-app-icon.hezarfen.has-logo {
   border-color: rgba(255, 255, 255, 0.1);
   background: var(--accent-plate);
   box-shadow: none;
 }
 
 .store-app-icon.social-web.has-logo img,
-.store-app-icon.bdash.has-logo img {
+.store-app-icon.bdash.has-logo img,
+.store-app-icon.hezarfen.has-logo img {
   width: 100%;
   height: 100%;
 }

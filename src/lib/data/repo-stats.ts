@@ -19,6 +19,10 @@ export const repoStats: Partial<Record<AppId, { stars: number; forks: number }>>
     "stars": 1,
     "forks": 0
   },
+  "hezarfen": {
+    "stars": 0,
+    "forks": 0
+  },
   "nors": {
     "stars": 2,
     "forks": 0

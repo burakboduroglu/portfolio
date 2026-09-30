@@ -311,6 +311,19 @@ const tr = {
       heroText:
         'Betus Design, el yapımı bir atölyenin ürünlerini ve hikâyesini öne çıkaran sade bir web sitesi konsepti.',
     },
+    hezarfen: {
+      category: 'Öğrenme Platformu',
+      subtitle: 'Okul panosu ve öğrenme portalı',
+      description:
+        'Hezarfen kampüs ve öğrenme yönetim sisteminin arayüzü: durum panosu ile Türkçe ve İngilizce, role göre şekillenen öğrenme ve okul yönetimi akışları.',
+      stack: 'SolidJS / TanStack Router / Tailwind',
+      platform: 'Web',
+      price: 'Ekip projesi',
+      action: 'Demoyu aç',
+      heroTitle: 'Tarayıcıda çalışan bir kampüs.',
+      heroText:
+        'Hezarfen için okul panosu ve öğrenme portalı — role göre şekillenen akışlarla dersler, ödevler, sınavlar ve yapay zekâ destekli çalışma araçları.',
+    },
   },
 } satisfies Messages
 

@@ -56,6 +56,17 @@ const apps: AppMeta[] = [
     ],
   },
   {
+    id: 'hezarfen',
+    categoryKey: 'web',
+    categoryKeys: ['web'],
+    title: 'Hezarfen',
+    repo: 'https://github.com/Hezarfen-Co/hezarfen_frontend',
+    link: 'https://hezarfen.dizey.sh',
+    icon: 'H',
+    logoUrl: '/logos/hezarfen.svg',
+    accent: 'hezarfen',
+  },
+  {
     id: 'nors',
     categoryKey: 'cli',
     categoryKeys: ['cli', 'productivity'],

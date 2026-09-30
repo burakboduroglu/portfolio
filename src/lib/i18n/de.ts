@@ -311,6 +311,19 @@ const de = {
       heroText:
         'Betus Design ist ein schlichtes Website-Konzept rund um die Produkte und die Geschichte einer Manufaktur.',
     },
+    hezarfen: {
+      category: 'Lernplattform',
+      subtitle: 'Schul-Dashboard und Lernportal',
+      description:
+        'Das Frontend des Hezarfen-Campus- und Lernmanagementsystems: Status-Dashboard sowie rollenbasierte Lern- und Schulverwaltungsabläufe auf Türkisch und Englisch.',
+      stack: 'SolidJS / TanStack Router / Tailwind',
+      platform: 'Web',
+      price: 'Teamprojekt',
+      action: 'Demo öffnen',
+      heroTitle: 'Ein Campus, der im Browser läuft.',
+      heroText:
+        'Schul-Dashboard und Lernportal für Hezarfen — Kurse, Hausaufgaben, Prüfungen und KI-Lernwerkzeuge in rollenbasierten Abläufen.',
+    },
   },
 } satisfies Messages
 

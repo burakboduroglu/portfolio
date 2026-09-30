@@ -28,13 +28,9 @@ const BASE_LOCALE: Locale = 'en'
 
 /**
  * READMEs that the site should take from a branch other than the repo default.
- * social-web's current text is on feat/social-web-supabase; main still describes
- * the old Next.js app. Until that branch is on GitHub, the sibling checkout is
- * rendered instead.
+ * Empty for now — every project renders its default branch.
  */
-const README_BRANCH: Partial<Record<AppId, { branch: string; localDir: string }>> = {
-  'social-web': { branch: 'feat/social-web-supabase', localDir: 'social-web' },
-}
+const README_BRANCH: Partial<Record<AppId, { branch: string; localDir: string }>> = {}
 
 type Repo = { owner: string; name: string; branch: string }
 

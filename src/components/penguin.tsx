@@ -3,7 +3,7 @@ import { IconHeart } from './icons'
 import './penguin.css'
 
 /**
- * A pixel penguin that waddles along the footer line. Hand-drawn, 16×16 cells,
+ * A pixel penguin that stays centered on the footer line. Hand-drawn, 16×16 cells,
  * in the same bitmap idiom as the brand marks in ./icons — `k` body, `w` belly,
  * `o` beak and feet, `e` eyes. Each frame compiles to one path per colour.
  *
@@ -31,23 +31,9 @@ const IDLE = [
   '................',
 ]
 
-/** Waddle: the upper body leans one cell, the far foot lifts against the belly */
-function waddle(lean: -1 | 1): string[] {
-  const shift = (row: string) =>
-    lean > 0 ? `.${row.slice(0, -1)}` : `${row.slice(1)}.`
-  return IDLE.map((row, y) => {
-    if (y <= 7) return shift(row)
-    if (y === 13) return lean > 0 ? '...ooookkkkk....' : '....kkkkkoooo...'
-    if (y === 14) return lean > 0 ? '.........oooo...' : '...oooo.........'
-    return row
-  })
-}
-
 const FRAMES = {
   idle: IDLE,
   blink: IDLE.map((row, y) => (y === 5 ? row.replace(/e/g, 'w') : row)),
-  left: waddle(-1),
-  right: waddle(1),
   hop: [
     '......kkkk......',
     '....kkkkkkkk....',
@@ -95,45 +81,16 @@ const TICK_MS = 160
 const HOP_TICKS = 4
 
 type State = {
-  x: number
-  dir: -1 | 1
   frame: Frame
-  /** Ticks left standing still; 0 means walking */
-  rest: number
   hop: number
-  step: number
 }
 
-function next(state: State, maxX: number): State {
+function next(state: State): State {
   if (state.hop > 0) {
-    return { ...state, hop: state.hop - 1, frame: state.hop > 1 ? 'hop' : 'idle' }
+    return { hop: state.hop - 1, frame: state.hop > 1 ? 'hop' : 'idle' }
   }
 
-  if (state.rest > 0) {
-    // Blink now and then while standing
-    const frame: Frame = Math.random() < 0.08 ? 'blink' : 'idle'
-    return { ...state, rest: state.rest - 1, frame }
-  }
-
-  const x = state.x + state.dir * CELL
-  if (x <= 0 || x >= maxX) {
-    // Reached an edge: stand a while, then turn back
-    return {
-      ...state,
-      x: Math.max(0, Math.min(x, maxX)),
-      dir: state.dir === 1 ? -1 : 1,
-      rest: 18 + Math.floor(Math.random() * 24),
-      frame: 'idle',
-    }
-  }
-
-  // An occasional stop mid-walk reads as curiosity rather than a patrol route
-  if (Math.random() < 0.012) {
-    return { ...state, x, rest: 10 + Math.floor(Math.random() * 16), frame: 'idle' }
-  }
-
-  const step = state.step + 1
-  return { ...state, x, step, frame: step % 2 === 0 ? 'left' : 'right' }
+  return { ...state, frame: Math.random() < 0.08 ? 'blink' : 'idle' }
 }
 
 function usePrefersReducedMotion(): boolean {
@@ -154,43 +111,23 @@ function usePrefersReducedMotion(): boolean {
 
 function Penguin() {
   const stripRef = useRef<HTMLDivElement>(null)
-  const maxX = useRef(0)
   const reduced = usePrefersReducedMotion()
   const [visible, setVisible] = useState(false)
-  const [hearts, setHearts] = useState<{ id: number; x: number }[]>([])
+  const [hearts, setHearts] = useState<number[]>([])
   const [state, setState] = useState<State>({
-    x: 0,
-    dir: 1,
     frame: 'idle',
-    rest: 12,
     hop: 0,
-    step: 0,
   })
 
-  // Track the walkable width, and start in the middle once it is known
+  // Pause decorative blinking and hopping whenever the footer is off screen.
   useEffect(() => {
     const strip = stripRef.current
     if (!strip) return
 
-    const measure = () => {
-      const width = Math.max(0, strip.clientWidth - SIZE)
-      maxX.current = width - (width % CELL)
-      setState((s) => ({ ...s, x: Math.min(s.x, maxX.current) }))
-    }
-
-    measure()
-    const middle = Math.round(maxX.current / 2 / CELL) * CELL
-    setState((s) => ({ ...s, x: middle }))
-    const resize = new ResizeObserver(measure)
-    resize.observe(strip)
-
     const seen = new IntersectionObserver(([entry]) => setVisible(entry.isIntersecting))
     seen.observe(strip)
 
-    return () => {
-      resize.disconnect()
-      seen.disconnect()
-    }
+    return () => seen.disconnect()
   }, [])
 
   useEffect(() => {
@@ -198,7 +135,7 @@ function Penguin() {
 
     const id = window.setInterval(() => {
       if (document.hidden) return
-      setState((s) => next(s, maxX.current))
+      setState((s) => next(s))
     }, TICK_MS)
 
     return () => window.clearInterval(id)
@@ -208,8 +145,8 @@ function Penguin() {
     if (reduced) return
     setState((s) => ({ ...s, hop: HOP_TICKS, frame: 'hop' }))
     const id = Date.now()
-    setHearts((list) => [...list.slice(-4), { id, x: state.x }])
-    window.setTimeout(() => setHearts((list) => list.filter((h) => h.id !== id)), 1200)
+    setHearts((list) => [...list.slice(-4), id])
+    window.setTimeout(() => setHearts((list) => list.filter((h) => h !== id)), 1200)
   }
 
   const paths = PATHS[state.frame]
@@ -218,10 +155,7 @@ function Penguin() {
   return (
     <div ref={stripRef} className='penguin-strip' aria-hidden='true'>
       {hearts.map((heart) => (
-        <span
-          key={heart.id}
-          className='penguin-heart'
-          style={{ transform: `translateX(${heart.x + SIZE / 2 - 6}px)` }}>
+        <span key={heart} className='penguin-heart'>
           <IconHeart />
         </span>
       ))}
@@ -231,7 +165,7 @@ function Penguin() {
         width={SIZE}
         height={SIZE}
         shapeRendering='crispEdges'
-        style={{ transform: `translate(${state.x}px, ${lift}px)` }}
+        style={{ transform: `translate(-50%, ${lift}px)` }}
         onClick={hop}>
         <path className='penguin-body' d={paths.k} />
         <path className='penguin-belly' d={paths.w} />

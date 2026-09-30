@@ -1,4 +1,4 @@
-/* The footer penguin walks on the footer's top border: the strip hangs off
+/* The footer penguin stays centered on the footer's top border: the strip hangs off
    the footer, its bottom edge on that line. */
 .site-footer {
   position: relative;
@@ -26,11 +26,11 @@
   position: absolute;
   /* The sprite's bottom row is empty; drop one cell so the feet touch the line */
   bottom: -3px;
-  left: 0;
+  left: 50%;
   display: block;
   pointer-events: auto;
   cursor: pointer;
-  /* Steps, not a glide: the penguin moves whole cells like the sprite it is */
+  /* A click lifts the sprite vertically without changing its horizontal position. */
   transition: transform 160ms steps(1, end);
 }
 
@@ -50,7 +50,7 @@
 .penguin-heart {
   position: absolute;
   bottom: 48px;
-  left: 0;
+  left: calc(50% - 6px);
   color: #e5484d;
   animation: penguin-heart 1.1s steps(8, end) forwards;
 }

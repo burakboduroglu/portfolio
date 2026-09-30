@@ -9,13 +9,16 @@ import type { AppId } from '../types/app'
  * back to English and the page says so.
  */
 export const readmeManifest: Partial<Record<AppId, Locale[]>> = {
+  "social-web": [
+    "en"
+  ],
   "portkill": [
     "en"
   ],
-  "macshelf": [
+  "skadi": [
     "en"
   ],
-  "skadi": [
+  "macshelf": [
     "en"
   ],
   "penote": [

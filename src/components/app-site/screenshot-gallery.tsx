@@ -1,5 +1,5 @@
 import { useLayoutEffect, useMemo, useRef, useState } from 'react'
-import type { KeyboardEvent, MouseEvent, PointerEvent } from 'react'
+import type { CSSProperties, KeyboardEvent, MouseEvent, PointerEvent } from 'react'
 import screenshots from '../../lib/data/screenshots'
 import { useLocale, useT } from '../../lib/i18n'
 import type { AppCard } from '../../lib/types/app'
@@ -68,6 +68,7 @@ function ScreenshotGallery({ app }: { app: AppCard }) {
   const current = Math.min(index, count - 1)
   const shot = shots[current]
   const hasMany = count > 1
+  const shotRatio = { '--shot-ratio': `${shot.width} / ${shot.height}` } as CSSProperties
 
   const go = (next: number) => {
     setZoom(null)
@@ -169,6 +170,7 @@ function ScreenshotGallery({ app }: { app: AppCard }) {
             alt={shot.alt[locale]}
             width={shot.width}
             height={shot.height}
+            style={shotRatio}
             decoding='async'
             draggable={false}
             onError={() => markFailed(shot.src)}
@@ -229,7 +231,7 @@ function ScreenshotGallery({ app }: { app: AppCard }) {
             height={shot.height}
             decoding='async'
             draggable={false}
-            style={zoom ? { width: zoom.width } : undefined}
+            style={zoom ? { ...shotRatio, width: zoom.width } : shotRatio}
             onClick={toggleZoom}
           />
         </div>

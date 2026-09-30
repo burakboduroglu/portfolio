@@ -2353,11 +2353,14 @@ blockquote {
   border-radius: 12px;
   background: var(--card-soft);
   touch-action: pan-y;
+  /* inline-size so the slide can size against the stage, not against itself */
+  container-type: inline-size;
 }
 
 .gallery-open {
   position: relative;
   display: block;
+  width: max-content;
   max-width: 100%;
   padding: 0;
   border: 0;
@@ -2369,15 +2372,19 @@ blockquote {
 .gallery-open img,
 .gallery-dialog-viewport img {
   display: block;
-  max-width: 100%;
   height: auto;
   border-radius: 8px;
   user-select: none;
 }
 
+/* Width is the smaller of the stage and the height cap times the file's own
+   ratio. A max-width: 100% on the image itself is cyclic — the button shrinks
+   to the image — and WebKit then applies the height cap a second time on every
+   slide change, so the picture keeps getting smaller. */
 .gallery-open img {
-  max-height: 440px;
-  width: auto;
+  --shot-max-h: min(72vh, 680px);
+  width: min(100cqi, calc(var(--shot-max-h) * var(--shot-ratio, 1)));
+  max-height: var(--shot-max-h);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
@@ -2521,10 +2528,12 @@ blockquote {
   overflow: auto;
   padding: 64px 72px 8px;
   touch-action: pan-y;
+  container-type: size;
 }
 
 .gallery-dialog-viewport img {
-  width: auto;
+  width: min(100cqi, calc(100cqb * var(--shot-ratio, 1)));
+  max-width: 100%;
   max-height: 100%;
   cursor: zoom-in;
 }
@@ -2602,7 +2611,7 @@ blockquote {
   }
 
   .gallery-open img {
-    max-height: 300px;
+    --shot-max-h: 72svh;
   }
 
   .gallery-nav {

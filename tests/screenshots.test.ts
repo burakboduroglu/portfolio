@@ -7,11 +7,14 @@ import { LOCALES } from '../src/lib/i18n/types'
 
 const PUBLIC = resolve(import.meta.dirname, '../public')
 
-/** Pixel size from a WebP header — lossy (VP8), lossless (VP8L) or extended (VP8X) */
-function webpSize(file: string): { width: number; height: number } {
+/** Pixel size from PNG or WebP headers without decoding the image. */
+function imageSize(file: string): { width: number; height: number } {
   const b = readFileSync(file)
+  if (b.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]))) {
+    return { width: b.readUInt32BE(16), height: b.readUInt32BE(20) }
+  }
   if (b.toString('ascii', 0, 4) !== 'RIFF' || b.toString('ascii', 8, 12) !== 'WEBP') {
-    throw new Error(`${file} is not a WebP file`)
+    throw new Error(`${file} is not a PNG or WebP file`)
   }
 
   const chunk = b.toString('ascii', 12, 16)
@@ -54,7 +57,7 @@ describe('screenshots', () => {
         // The gallery reserves the box from these numbers; a mismatch is a
         // layout shift or a stretched image
         test('declared size matches the file', () => {
-          expect(webpSize(file)).toEqual({ width: shot.width, height: shot.height })
+          expect(imageSize(file)).toEqual({ width: shot.width, height: shot.height })
         })
 
         test('has alt text in every language', () => {

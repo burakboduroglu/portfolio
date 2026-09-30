@@ -10,6 +10,7 @@
  * English and the page says so.
  */
 
+import { copyFileSync, existsSync, mkdirSync } from 'node:fs'
 import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { Marked } from 'marked'
@@ -25,7 +26,20 @@ const MANIFEST = resolve(ROOT, 'src/lib/data/readme-manifest.ts')
 
 const BASE_LOCALE: Locale = 'en'
 
+/**
+ * READMEs that the site should take from a branch other than the repo default.
+ * social-web's current text is on feat/social-web-supabase; main still describes
+ * the old Next.js app. Until that branch is on GitHub, the sibling checkout is
+ * rendered instead and its images are copied under public/readme/media.
+ */
+const README_BRANCH: Partial<Record<AppId, { branch: string; localDir: string }>> = {
+  'social-web': { branch: 'feat/social-web-supabase', localDir: 'social-web' },
+}
+
 type Repo = { owner: string; name: string; branch: string }
+
+/** Set while rendering a local checkout, so its images are hosted with the site. */
+type LocalImages = { root: string; id: AppId }
 
 function parseRepo(url: string): Omit<Repo, 'branch'> | null {
   const match = /^https:\/\/github\.com\/([^/]+)\/([^/]+)/.exec(url)
@@ -50,9 +64,10 @@ async function gh<T>(path: string): Promise<T | null> {
  * READMEs are not consistently cased across repos — some ship `readme.md`
  * — so the root listing is matched case-insensitively rather than guessed at.
  */
-async function readmeNames(repo: Omit<Repo, 'branch'>): Promise<string[]> {
+async function readmeNames(repo: Omit<Repo, 'branch'>, ref?: string): Promise<string[]> {
+  const query = ref ? `?ref=${encodeURIComponent(ref)}` : ''
   const entries = await gh<{ name: string; type: string }[]>(
-    `/repos/${repo.owner}/${repo.name}/contents`
+    `/repos/${repo.owner}/${repo.name}/contents${query}`
   )
 
   return (entries ?? []).filter((entry) => entry.type === 'file').map((entry) => entry.name)
@@ -106,12 +121,23 @@ function stripRedundantHeader(markdown: string): string {
   return out.trim()
 }
 
-function absoluteUrl(repo: Repo, url: string, kind: 'image' | 'link'): string {
+function absoluteUrl(repo: Repo, url: string, kind: 'image' | 'link', local?: LocalImages): string {
   if (/^(https?:|mailto:|#|data:)/i.test(url)) {
     return url
   }
 
   const path = url.replace(/^\.\//, '').replace(/^\//, '')
+  if (kind === 'image' && local) {
+    const source = resolve(local.root, path)
+    const name = path.split('/').pop()
+    if (name && existsSync(source)) {
+      const dir = resolve(OUT_DIR, 'media', local.id)
+      mkdirSync(dir, { recursive: true })
+      copyFileSync(source, resolve(dir, name))
+      return `/readme/media/${local.id}/${name}`
+    }
+  }
+
   return kind === 'image'
     ? `https://raw.githubusercontent.com/${repo.owner}/${repo.name}/${repo.branch}/${path}`
     : `https://github.com/${repo.owner}/${repo.name}/blob/${repo.branch}/${path}`
@@ -125,7 +151,7 @@ function slugify(text: string): string {
     .replace(/^-+|-+$/g, '')
 }
 
-function render(markdown: string, repo: Repo): string {
+function render(markdown: string, repo: Repo, local?: LocalImages): string {
   const marked = new Marked({ gfm: true, breaks: false })
 
   marked.use({
@@ -138,13 +164,13 @@ function render(markdown: string, repo: Repo): string {
         return `<h${level} id="${slugify(text)}">${text}</h${level}>\n`
       },
       image({ href, title, text }) {
-        const src = absoluteUrl(repo, href, 'image')
+        const src = absoluteUrl(repo, href, 'image', local)
         const titleAttr = title ? ` title="${title}"` : ''
         return `<img src="${src}" alt="${text}"${titleAttr} loading="lazy" />`
       },
       link({ href, title, tokens }) {
         const text = this.parser.parseInline(tokens)
-        const url = absoluteUrl(repo, href, 'link')
+        const url = absoluteUrl(repo, href, 'link', local)
         const titleAttr = title ? ` title="${title}"` : ''
         return `<a href="${url}"${titleAttr}>${text}</a>`
       },
@@ -160,7 +186,7 @@ function render(markdown: string, repo: Repo): string {
   const html = rendered.replace(
     /\b(src|href)="([^"]*)"/g,
     (match, attribute: string, url: string) => {
-      const absolute = absoluteUrl(repo, url, attribute === 'src' ? 'image' : 'link')
+      const absolute = absoluteUrl(repo, url, attribute === 'src' ? 'image' : 'link', local)
       return absolute === url ? match : `${attribute}="${absolute}"`
     }
   )
@@ -254,16 +280,50 @@ async function main() {
       continue
     }
 
-    const repo: Repo = { ...parsed, branch: info.default_branch }
-    const names = await readmeNames(parsed)
+    const override = README_BRANCH[app.id]
+    let branch = info.default_branch
+    let localRoot: string | null = null
+
+    if (override) {
+      const published = await gh<{ name: string }>(
+        `/repos/${parsed.owner}/${parsed.name}/branches/${encodeURIComponent(override.branch)}`
+      )
+      if (published) {
+        branch = override.branch
+      } else {
+        const dir = resolve(ROOT, '..', override.localDir)
+        if (!existsSync(resolve(dir, 'README.md')) && !existsSync(resolve(dir, 'readme.md'))) {
+          console.warn(
+            `! ${app.id}: ${override.branch} is not on GitHub and ${dir} has no README — left the rendered copy alone`
+          )
+          continue
+        }
+        localRoot = dir
+        branch = override.branch
+        console.warn(`! ${app.id}: using the local ${override.branch} checkout, the branch is not on GitHub yet`)
+      }
+    }
+
+    const repo: Repo = { ...parsed, branch }
+    const local = localRoot ? { root: localRoot, id: app.id } : undefined
 
     const sources = new Map<Locale, string>()
-    for (const locale of LOCALES) {
-      const file = pickReadme(names, locale)
-      if (!file) continue
-      const raw = await fetchRaw(repo, file)
-      if (raw) {
-        sources.set(locale, raw)
+    if (localRoot) {
+      const names = await readdir(localRoot)
+      for (const locale of LOCALES) {
+        const file = pickReadme(names, locale)
+        if (!file) continue
+        sources.set(locale, await readFile(resolve(localRoot, file), 'utf8'))
+      }
+    } else {
+      const names = await readmeNames(parsed, override ? branch : undefined)
+      for (const locale of LOCALES) {
+        const file = pickReadme(names, locale)
+        if (!file) continue
+        const raw = await fetchRaw(repo, file)
+        if (raw) {
+          sources.set(locale, raw)
+        }
       }
     }
 
@@ -283,7 +343,7 @@ async function main() {
           : ([...sources.keys()][0] as Locale)
 
       const markdown = sources.get(sourceLocale) as string
-      const html = render(stripRedundantHeader(markdown), repo)
+      const html = render(stripRedundantHeader(markdown), repo, local)
 
       await writeFile(
         resolve(OUT_DIR, `${app.id}.${locale}.json`),

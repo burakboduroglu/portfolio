@@ -5,9 +5,9 @@ import type { AppId } from '../types/app'
  * Project screenshots, served from public/screenshots/<id>/ as WebP.
  *
  * Copies are local on purpose: a README image on raw.githubusercontent.com can
- * be renamed or deleted in its repo, and the gallery would break silently. The
- * repo projects' images come from their READMEs; the sites without a repo were
- * captured from the live page at 1440×900.
+ * be renamed or deleted in its repo, and the gallery would break silently.
+ * Detail pages show these files only — README figures are stripped when the
+ * document is rendered. The sites without a repo were captured at 1440×900.
  *
  * `width` and `height` are the file's real pixel size — the gallery reserves
  * the box before the image arrives, so nothing shifts when it loads. Every alt
@@ -29,10 +29,10 @@ const shot = (id: AppId, file: string, width: number, height: number, alt: Recor
 
 export const screenshots: Partial<Record<AppId, Screenshot[]>> = {
   'social-web': [
-    shot('social-web', 'feed-desktop', 1190, 540, {
-      en: 'Social-web desktop feed with community discovery and conversation cards',
-      tr: 'Topluluk keşfi ve konuşma kartlarıyla social-web masaüstü akışı',
-      de: 'Social-web-Desktop-Feed mit Community-Entdeckung und Konversationskarten',
+    shot('social-web', 'feed-desktop', 1962, 1226, {
+      en: 'social-web on the For you tab: composer, a post, and the community discovery column',
+      tr: 'Senin için sekmesinde social-web: gönderi kutusu, bir gönderi ve topluluk keşfi sütunu',
+      de: 'social-web im Tab „Für dich“: Beitragsfeld, ein Beitrag und die Spalte zum Entdecken von Communitys',
     }),
   ],
   portkill: [

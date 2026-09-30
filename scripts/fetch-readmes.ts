@@ -10,7 +10,7 @@
  * English and the page says so.
  */
 
-import { copyFileSync, existsSync, mkdirSync } from 'node:fs'
+import { existsSync } from 'node:fs'
 import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { Marked } from 'marked'
@@ -30,16 +30,13 @@ const BASE_LOCALE: Locale = 'en'
  * READMEs that the site should take from a branch other than the repo default.
  * social-web's current text is on feat/social-web-supabase; main still describes
  * the old Next.js app. Until that branch is on GitHub, the sibling checkout is
- * rendered instead and its images are copied under public/readme/media.
+ * rendered instead.
  */
 const README_BRANCH: Partial<Record<AppId, { branch: string; localDir: string }>> = {
   'social-web': { branch: 'feat/social-web-supabase', localDir: 'social-web' },
 }
 
 type Repo = { owner: string; name: string; branch: string }
-
-/** Set while rendering a local checkout, so its images are hosted with the site. */
-type LocalImages = { root: string; id: AppId }
 
 function parseRepo(url: string): Omit<Repo, 'branch'> | null {
   const match = /^https:\/\/github\.com\/([^/]+)\/([^/]+)/.exec(url)
@@ -121,26 +118,40 @@ function stripRedundantHeader(markdown: string): string {
   return out.trim()
 }
 
-function absoluteUrl(repo: Repo, url: string, kind: 'image' | 'link', local?: LocalImages): string {
+function absoluteUrl(repo: Repo, url: string, kind: 'image' | 'link'): string {
   if (/^(https?:|mailto:|#|data:)/i.test(url)) {
     return url
   }
 
   const path = url.replace(/^\.\//, '').replace(/^\//, '')
-  if (kind === 'image' && local) {
-    const source = resolve(local.root, path)
-    const name = path.split('/').pop()
-    if (name && existsSync(source)) {
-      const dir = resolve(OUT_DIR, 'media', local.id)
-      mkdirSync(dir, { recursive: true })
-      copyFileSync(source, resolve(dir, name))
-      return `/readme/media/${local.id}/${name}`
-    }
-  }
 
   return kind === 'image'
     ? `https://raw.githubusercontent.com/${repo.owner}/${repo.name}/${repo.branch}/${path}`
     : `https://github.com/${repo.owner}/${repo.name}/blob/${repo.branch}/${path}`
+}
+
+/**
+ * The detail page already has a screenshot gallery, so a README figure would
+ * show the same picture twice. Drop markdown and raw HTML images, then drop a
+ * centred block that held only those figures and a caption underneath them.
+ */
+export function stripReadmeFigures(html: string): string {
+  const withoutImages = html
+    .replace(/\[!\[[^\]]*\]\([^)]*\)\]\([^)]*\)/g, '')
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, '')
+    .replace(/<img\b[^>]*>/gi, '')
+    .replace(/<a\b[^>]*>\s*<\/a>/gi, '')
+
+  return withoutImages
+    .replace(/<div align="center">([\s\S]*?)<\/div>/gi, (_match, inner: string) => {
+      const withoutCaption = inner
+        .replace(/<p>\s*<sub>[\s\S]*?<\/sub>\s*<\/p>/gi, '')
+        .replace(/<sub>[\s\S]*?<\/sub>/gi, '')
+      const text = withoutCaption.replace(/<[^>]+>/g, '').replace(/&nbsp;|\s/g, '')
+      return text.length === 0 ? '' : `<div align="center">${inner.trim()}</div>`
+    })
+    .replace(/\n{3,}/g, '\n\n')
+    .trim()
 }
 
 function slugify(text: string): string {
@@ -151,7 +162,7 @@ function slugify(text: string): string {
     .replace(/^-+|-+$/g, '')
 }
 
-function render(markdown: string, repo: Repo, local?: LocalImages): string {
+function render(markdown: string, repo: Repo): string {
   const marked = new Marked({ gfm: true, breaks: false })
 
   marked.use({
@@ -163,21 +174,19 @@ function render(markdown: string, repo: Repo, local?: LocalImages): string {
         const level = Math.min(depth + 1, 6)
         return `<h${level} id="${slugify(text)}">${text}</h${level}>\n`
       },
-      image({ href, title, text }) {
-        const src = absoluteUrl(repo, href, 'image', local)
-        const titleAttr = title ? ` title="${title}"` : ''
-        return `<img src="${src}" alt="${text}"${titleAttr} loading="lazy" />`
+      image() {
+        return ''
       },
       link({ href, title, tokens }) {
         const text = this.parser.parseInline(tokens)
-        const url = absoluteUrl(repo, href, 'link', local)
+        const url = absoluteUrl(repo, href, 'link')
         const titleAttr = title ? ` title="${title}"` : ''
         return `<a href="${url}"${titleAttr}>${text}</a>`
       },
     },
   })
 
-  const rendered = (marked.parse(markdown, { async: false }) as string)
+  const rendered = (marked.parse(stripReadmeFigures(markdown), { async: false }) as string)
     // READMEs space centred images apart with &nbsp;, which turns into an
     // anonymous flex item here and wraps the row. Drop runs that sit alone
     // between two tags; nbsp inside prose is left alone.
@@ -186,20 +195,19 @@ function render(markdown: string, repo: Repo, local?: LocalImages): string {
   const html = rendered.replace(
     /\b(src|href)="([^"]*)"/g,
     (match, attribute: string, url: string) => {
-      const absolute = absoluteUrl(repo, url, attribute === 'src' ? 'image' : 'link', local)
+      const absolute = absoluteUrl(repo, url, attribute === 'src' ? 'image' : 'link')
       return absolute === url ? match : `${attribute}="${absolute}"`
     }
   )
 
-  return sanitizeHtml(html, {
+  return stripReadmeFigures(sanitizeHtml(html, {
     allowedTags: [
       'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'a', 'ul', 'ol', 'li', 'blockquote', 'code', 'pre',
-      'em', 'strong', 'del', 'hr', 'br', 'img', 'table', 'thead', 'tbody', 'tr', 'th', 'td',
+      'em', 'strong', 'del', 'hr', 'br', 'table', 'thead', 'tbody', 'tr', 'th', 'td',
       'div', 'span', 'sub', 'sup', 'kbd', 'details', 'summary',
     ],
     allowedAttributes: {
       a: ['href', 'title', 'target', 'rel'],
-      img: ['src', 'alt', 'title', 'width', 'height', 'loading'],
       div: ['align'],
       p: ['align'],
       th: ['align'],
@@ -214,7 +222,7 @@ function render(markdown: string, repo: Repo, local?: LocalImages): string {
           ? { tagName, attribs }
           : { tagName, attribs: { ...attribs, target: '_blank', rel: 'noreferrer noopener' } },
     },
-  })
+  }))
 }
 
 /**
@@ -305,7 +313,6 @@ async function main() {
     }
 
     const repo: Repo = { ...parsed, branch }
-    const local = localRoot ? { root: localRoot, id: app.id } : undefined
 
     const sources = new Map<Locale, string>()
     if (localRoot) {
@@ -343,7 +350,7 @@ async function main() {
           : ([...sources.keys()][0] as Locale)
 
       const markdown = sources.get(sourceLocale) as string
-      const html = render(stripRedundantHeader(markdown), repo, local)
+      const html = render(stripRedundantHeader(markdown), repo)
 
       await writeFile(
         resolve(OUT_DIR, `${app.id}.${locale}.json`),

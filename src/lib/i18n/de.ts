@@ -220,6 +220,19 @@ const de = {
       heroText:
         'Mit BDash behältst du das Tagesgeschäft über ein einziges Web-Dashboard im Blick.',
     },
+    'social-web': {
+      category: 'Soziale Plattform',
+      subtitle: 'Ein Ort für Gespräche und Communities, nur mit Einladung',
+      description:
+        'Eine responsive soziale Plattform zum Teilen von Beiträgen, Antworten auf Gespräche und Entdecken von Menschen über Community-Feeds. Beiträge unterstützen Emoji, GIFs sowie YouTube- und Spotify-Vorschauen.',
+      stack: 'React / TanStack Router / Bun / Supabase',
+      platform: 'Web',
+      price: 'Nur auf Einladung',
+      action: 'Auf GitHub ansehen',
+      heroTitle: 'Gespräche an einem Ort, der verbindet.',
+      heroText:
+        'Ein sozialer Raum nur mit Einladung: mit fokussierten Feeds, Community-Entdeckung und einer responsiven Oberfläche für Desktop und Mobilgeräte.',
+    },
     skadi: {
       category: 'CLI / Self-hosted',
       subtitle: 'Abo-Tracking auf einer PocketBase, die ohnehin läuft',

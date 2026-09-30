@@ -535,6 +535,13 @@ blockquote {
     linear-gradient(135deg, #051416, #0d2831 54%, #111827);
 }
 
+.store-app-icon.social-web,
+.project-hero.social-web {
+  --accent-plate:
+    radial-gradient(circle at 24% 18%, rgba(184, 171, 255, 0.24), transparent 30px),
+    linear-gradient(135deg, #17102e, #35216a 54%, #111827);
+}
+
 .store-app-icon.skadi,
 .project-hero.skadi {
   --accent-plate:
@@ -610,13 +617,25 @@ blockquote {
   --accent-plate: linear-gradient(135deg, #b08968, #f7c873);
 }
 
-/* Real logos come in every ink colour — gold script, black serif, light teal —
-   so tiles that render one drop the accent gradient for a single light plate.
-   Declared last so it wins over the accent rules above at equal specificity. */
+/* Most logos use a light tile; the social-web and BDash marks keep their dark
+   project accents for contrast. Declared after the accent rules. */
 .store-app-icon.has-logo {
   border-color: rgba(0, 0, 0, 0.14);
   background: linear-gradient(150deg, #ffffff, #e8e8ec);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.store-app-icon.social-web.has-logo,
+.store-app-icon.bdash.has-logo {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: var(--accent-plate);
+  box-shadow: none;
+}
+
+.store-app-icon.social-web.has-logo img,
+.store-app-icon.bdash.has-logo img {
+  width: 100%;
+  height: 100%;
 }
 
 /* Finished app icons (rounding and fill baked into the SVG) fill the tile

@@ -220,6 +220,19 @@ const en = {
       heroText:
         'BDash lets you keep an eye on day-to-day operations from a single web dashboard.',
     },
+    'social-web': {
+      category: 'Social Platform',
+      subtitle: 'An invite-only home for conversations and communities',
+      description:
+        'A responsive social platform for sharing posts, replying to conversations, and finding people through community feeds. Rich posts support emoji, GIFs, and YouTube or Spotify previews.',
+      stack: 'React / TanStack Router / Bun / Supabase',
+      platform: 'Web',
+      price: 'Invite only',
+      action: 'View on GitHub',
+      heroTitle: 'Conversations with a place to belong.',
+      heroText:
+        'An invite-only social space with focused feeds, community discovery, and a responsive interface built for desktop and mobile.',
+    },
     skadi: {
       category: 'CLI / Self-hosted',
       subtitle: 'Subscription tracking that rides a PocketBase you already run',

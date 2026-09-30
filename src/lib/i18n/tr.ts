@@ -220,6 +220,19 @@ const tr = {
       heroText:
         'BDash ile işletmenin günlük operasyonlarını tek bir web panelinden takip edersin.',
     },
+    'social-web': {
+      category: 'Sosyal Platform',
+      subtitle: 'Sohbetler ve topluluklar için davetle katılınan bir alan',
+      description:
+        'Gönderi paylaşmayı, konuşmalara yanıt vermeyi ve topluluk akışlarında insanları keşfetmeyi sağlayan duyarlı bir sosyal platform. Gönderiler emoji, GIF ve YouTube ya da Spotify önizlemelerini destekler.',
+      stack: 'React / TanStack Router / Bun / Supabase',
+      platform: 'Web',
+      price: 'Davetle katılım',
+      action: 'GitHub’da görüntüle',
+      heroTitle: 'Sohbetlerin ait olduğu bir yer.',
+      heroText:
+        'Odaklı akışları, topluluk keşfini ve masaüstü ile mobilde çalışan duyarlı arayüzü olan, davetle katılınan bir sosyal alan.',
+    },
     skadi: {
       category: 'CLI / Self-hosted',
       subtitle: 'Hâlihazırda çalışan bir PocketBase’e binen abonelik takibi',

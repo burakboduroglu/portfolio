@@ -3,6 +3,28 @@ import { AppMeta } from '../types/app'
 
 const apps: AppMeta[] = [
   {
+    id: 'social-web',
+    categoryKey: 'web',
+    categoryKeys: ['web'],
+    title: 'social-web',
+    repo: 'https://github.com/burakboduroglu/eru-social-web-app',
+    link: 'https://github.com/burakboduroglu/eru-social-web-app',
+    icon: 'S',
+    logoUrl: '/logos/social-web.svg',
+    accent: 'social-web',
+  },
+  {
+    id: 'bdash',
+    categoryKey: 'web',
+    categoryKeys: ['web', 'productivity'],
+    title: 'BDash',
+    link: 'https://bdash.burakboduroglu.com.tr',
+    icon: 'B',
+    logoUrl: '/logos/bdash.png',
+    accent: 'bdash',
+    featured: true,
+  },
+  {
     id: 'portkill',
     categoryKey: 'cli',
     categoryKeys: ['cli', 'developer'],
@@ -16,6 +38,20 @@ const apps: AppMeta[] = [
     install: [
       { manager: 'Homebrew', command: 'brew install burakboduroglu/portkill/portkill' },
       { manager: 'bun', command: 'bun add -g @burakboduroglu/portkill' },
+    ],
+  },
+  {
+    id: 'skadi',
+    categoryKey: 'cli',
+    categoryKeys: ['cli', 'productivity'],
+    title: 'Skadi',
+    repo: 'https://github.com/burakboduroglu/skadi',
+    link: 'https://www.npmjs.com/package/@burakboduroglu/skadi',
+    icon: 'S',
+    logoUrl: 'https://raw.githubusercontent.com/burakboduroglu/skadi/main/assets/logo.png',
+    accent: 'skadi',
+    install: [
+      { manager: 'bun', command: 'bunx @burakboduroglu/skadi install /path/to/pocketbase' },
     ],
   },
   {
@@ -35,31 +71,6 @@ const apps: AppMeta[] = [
         command: 'xattr -dr com.apple.quarantine /Applications/MacShelf.app',
       },
       { manager: 'Homebrew', command: 'brew install burakboduroglu/macshelf/macshelf' },
-    ],
-  },
-  {
-    id: 'bdash',
-    categoryKey: 'web',
-    categoryKeys: ['web', 'productivity'],
-    title: 'BDash',
-    link: 'https://bdash.burakboduroglu.com.tr',
-    icon: 'B',
-    logoUrl: '/logos/bdash.png',
-    accent: 'bdash',
-    featured: true,
-  },
-  {
-    id: 'skadi',
-    categoryKey: 'cli',
-    categoryKeys: ['cli', 'productivity'],
-    title: 'Skadi',
-    repo: 'https://github.com/burakboduroglu/skadi',
-    link: 'https://www.npmjs.com/package/@burakboduroglu/skadi',
-    icon: 'S',
-    logoUrl: 'https://raw.githubusercontent.com/burakboduroglu/skadi/main/assets/logo.png',
-    accent: 'skadi',
-    install: [
-      { manager: 'bun', command: 'bunx @burakboduroglu/skadi install /path/to/pocketbase' },
     ],
   },
   {

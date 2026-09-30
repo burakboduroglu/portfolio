@@ -4,6 +4,7 @@ export type AppId =
   | 'penote'
   | 'skadi'
   | 'bdash'
+  | 'social-web'
   | 'alice'
   | 'betus-design'
   | 'dizey'

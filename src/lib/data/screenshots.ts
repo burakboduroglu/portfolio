@@ -28,6 +28,13 @@ const shot = (id: AppId, file: string, width: number, height: number, alt: Recor
 })
 
 export const screenshots: Partial<Record<AppId, Screenshot[]>> = {
+  'social-web': [
+    shot('social-web', 'feed-desktop', 1190, 540, {
+      en: 'Social-web desktop feed with community discovery and conversation cards',
+      tr: 'Topluluk keşfi ve konuşma kartlarıyla social-web masaüstü akışı',
+      de: 'Social-web-Desktop-Feed mit Community-Entdeckung und Konversationskarten',
+    }),
+  ],
   portkill: [
     shot('portkill', 'demo', 900, 520, {
       en: 'portkill listing three TCP listeners, previewing two with --dry-run, then stopping the one on port 3000',
@@ -52,6 +59,11 @@ export const screenshots: Partial<Record<AppId, Screenshot[]>> = {
       en: 'BDash sign-in page beside the pitch: orders, stock and revenue reports in one panel',
       tr: 'BDash giriş sayfası ve yanında tanıtım: siparişler, stok ve ciro raporları tek panelde',
       de: 'BDash-Anmeldeseite neben der Übersicht: Bestellungen, Lager und Umsatzberichte in einem Panel',
+    }),
+    shot('bdash', 'dashboard', 1440, 742, {
+      en: 'BDash dashboard overview with business names, figures and chart values obscured',
+      tr: 'İşletme adları, tutarlar ve grafik değerleri bulanıklaştırılmış BDash genel bakış paneli',
+      de: 'BDash-Dashboard mit unkenntlich gemachten Firmennamen, Beträgen und Diagrammwerten',
     }),
   ],
   skadi: [

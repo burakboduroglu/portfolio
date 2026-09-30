@@ -549,6 +549,13 @@ blockquote {
     linear-gradient(135deg, #0a1020, #16233f 54%, #0b1120);
 }
 
+.store-app-icon.nors,
+.project-hero.nors {
+  --accent-plate:
+    radial-gradient(circle at 26% 16%, rgba(110, 200, 255, 0.26), transparent 30px),
+    linear-gradient(135deg, #0b0d10, #16202e 54%, #0b1118);
+}
+
 .store-app-icon.dizey,
 .project-hero.dizey {
   --accent-plate:
@@ -642,7 +649,8 @@ blockquote {
    edge to edge instead of sitting inset on the light plate. MacShelf uses the
    shared `dark` accent. */
 .store-app-icon.dizey.has-logo,
-.store-app-icon.skadi.has-logo {
+.store-app-icon.skadi.has-logo,
+.store-app-icon.nors.has-logo {
   border-color: rgba(255, 255, 255, 0.08);
   background: #0d1117;
   box-shadow: none;
@@ -658,6 +666,7 @@ blockquote {
 
 .store-app-icon.dizey img,
 .store-app-icon.skadi.has-logo img,
+.store-app-icon.nors.has-logo img,
 .store-app-icon.portfolio.has-logo img,
 .store-app-icon.portkill.has-logo img,
 .store-app-icon.dark.has-logo img {

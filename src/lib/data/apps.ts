@@ -55,6 +55,20 @@ const apps: AppMeta[] = [
     ],
   },
   {
+    id: 'nors',
+    categoryKey: 'cli',
+    categoryKeys: ['cli', 'productivity'],
+    title: 'Nors',
+    repo: 'https://github.com/burakboduroglu/nors',
+    link: 'https://www.npmjs.com/package/@burakboduroglu/nors',
+    icon: 'N',
+    logoUrl: 'https://raw.githubusercontent.com/burakboduroglu/nors/main/assets/nors-mark.svg',
+    accent: 'nors',
+    install: [
+      { manager: 'bun', command: 'bunx @burakboduroglu/nors install /path/to/pocketbase' },
+    ],
+  },
+  {
     id: 'macshelf',
     categoryKey: 'macos',
     categoryKeys: ['macos', 'productivity'],

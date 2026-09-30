@@ -3,6 +3,7 @@ export type AppId =
   | 'portkill'
   | 'penote'
   | 'skadi'
+  | 'nors'
   | 'bdash'
   | 'social-web'
   | 'alice'

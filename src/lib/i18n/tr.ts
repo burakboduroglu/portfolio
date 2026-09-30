@@ -246,6 +246,19 @@ const tr = {
       heroText:
         'Skadi kurup dağıttığın bir uygulama değil. Veritabanını, kimlik doğrulamasını ve yedeğini zaten çalıştıran bir PocketBase örneğinin içine giren birkaç dosya.',
     },
+    nors: {
+      category: 'CLI / Self-hosted',
+      subtitle: 'Zaten çalışan bir PocketBase üzerinde kişisel ops notları',
+      description:
+        'Var olan bir PocketBase’in içine kopyalanan tek bir migration ve tek bir statik sayfa — konteyner, ikinci veritabanı ya da fazladan port yok. Notlar Markdown ve Mermaid desteğiyle dört tür altında kart olarak durur; sürükle-bırak sıralama, tekrar çalıştırılabilir seed içe aktarma ve kaydedilmemiş iş uyarısı içerir.',
+      stack: 'SolidJS / PocketBase',
+      platform: 'Self-hosted',
+      price: 'Ücretsiz',
+      action: 'İndir',
+      heroTitle: 'Ops notları, zaten sahip olduğun sunucuda.',
+      heroText:
+        'Nors kurup dağıttığın bir uygulama değil. Veritabanını, kimlik doğrulamasını ve yedeğini zaten çalıştıran bir PocketBase örneğinin içine giren bir migration ve tek bir statik sayfa.',
+    },
     dizey: {
       category: 'Web Sitesi',
       subtitle: 'Yazılım stüdyosu için web sitesi',

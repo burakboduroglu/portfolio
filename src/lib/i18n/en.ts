@@ -246,6 +246,19 @@ const en = {
       heroText:
         'Skadi is not an application you deploy. It is a handful of files inside a PocketBase instance that is already running its own database, auth and backups.',
     },
+    nors: {
+      category: 'CLI / Self-hosted',
+      subtitle: 'Personal ops notes on a PocketBase you already run',
+      description:
+        'One migration and one static page copied into an existing PocketBase — no container, no second database, no extra port. Notes live as cards under four kinds with Markdown and Mermaid rendering, drag-to-reorder, seed upserts and an unsaved-work guard.',
+      stack: 'SolidJS / PocketBase',
+      platform: 'Self-hosted',
+      price: 'Free',
+      action: 'Get',
+      heroTitle: 'Ops notes on the server you already have.',
+      heroText:
+        'Nors is not an application you deploy. It is one migration and one static page inside a PocketBase instance that is already running its own database, auth and backups.',
+    },
     dizey: {
       category: 'Web Page',
       subtitle: 'Website for a software studio',

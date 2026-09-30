@@ -83,6 +83,18 @@ export const screenshots: Partial<Record<AppId, Screenshot[]>> = {
       de: 'Sprache und Anzeigewährung, beides pro Browser gespeichert',
     }),
   ],
+  nors: [
+    shot('nors', 'dash', 1280, 800, {
+      en: 'Nors dashboard with note cards grouped under kind tabs',
+      tr: 'Tür sekmeleri altında not kartlarını gösteren Nors panosu',
+      de: 'Nors-Dashboard mit Notizkarten unter Kind-Tabs',
+    }),
+    shot('nors', 'reader', 1280, 800, {
+      en: 'Nors reader showing a note with rendered Mermaid diagrams',
+      tr: 'Render edilmiş Mermaid diyagramlarıyla bir notu gösteren Nors okuyucu',
+      de: 'Nors-Reader mit einer Notiz und gerenderten Mermaid-Diagrammen',
+    }),
+  ],
   dizey: [
     shot('dizey', 'home', 1440, 900, {
       en: 'Dizey Lab home page: "From science to product, end to end"',

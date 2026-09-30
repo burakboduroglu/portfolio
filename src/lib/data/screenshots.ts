@@ -2,7 +2,7 @@ import type { Locale } from '../i18n/types'
 import type { AppId } from '../types/app'
 
 /**
- * Project screenshots, served from public/screenshots/<id>/ as WebP.
+ * Project screenshots, served from public/screenshots/<id>/ as WebP or PNG.
  *
  * Copies are local on purpose: a README image on raw.githubusercontent.com can
  * be renamed or deleted in its repo, and the gallery would break silently.
@@ -29,11 +29,16 @@ const shot = (id: AppId, file: string, width: number, height: number, alt: Recor
 
 export const screenshots: Partial<Record<AppId, Screenshot[]>> = {
   'social-web': [
-    shot('social-web', 'feed-desktop', 1962, 1226, {
-      en: 'social-web on the For you tab: composer, a post, and the community discovery column',
-      tr: 'Senin için sekmesinde social-web: gönderi kutusu, bir gönderi ve topluluk keşfi sütunu',
-      de: 'social-web im Tab „Für dich“: Beitragsfeld, ein Beitrag und die Spalte zum Entdecken von Communitys',
-    }),
+    {
+      src: '/screenshots/social-web/feed-desktop.png',
+      width: 2880,
+      height: 1800,
+      alt: {
+        en: 'social-web on the For you tab: composer, posts, and the community discovery column',
+        tr: 'Senin için sekmesinde social-web: gönderi kutusu, gönderiler ve topluluk keşfi sütunu',
+        de: 'social-web im Tab „Für dich“: Beitragsfeld, Beiträge und die Spalte zum Entdecken von Communitys',
+      },
+    },
   ],
   portkill: [
     shot('portkill', 'demo', 900, 520, {

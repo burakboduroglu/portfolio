@@ -23,6 +23,7 @@ export type AppMeta = {
   repo?: string
   icon: string
   logoUrl?: string
+  logoFit?: 'square' | 'wide'
   accent: string
   featured?: boolean
   /** Copy-paste install commands, shown on the detail page. Never translated. */

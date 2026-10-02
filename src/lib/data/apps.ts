@@ -22,6 +22,7 @@ const apps: AppMeta[] = [
     link: 'https://bdash.burakboduroglu.com.tr',
     icon: 'B',
     logoUrl: '/logos/bdash.png',
+    logoFit: 'wide',
     accent: 'bdash',
     featured: true,
   },
@@ -139,6 +140,7 @@ const apps: AppMeta[] = [
     link: 'https://alicepalazzo.com',
     icon: 'A',
     logoUrl: '/logos/alice.png',
+    logoFit: 'wide',
     accent: 'rose',
   },
   {
@@ -149,6 +151,7 @@ const apps: AppMeta[] = [
     link: 'https://btsdesign.com.tr',
     icon: 'B',
     logoUrl: '/logos/betus-design.png',
+    logoFit: 'wide',
     accent: 'golden',
   },
 ]

@@ -471,11 +471,12 @@ blockquote {
   font-weight: 800;
 }
 
-/* Every logo is fitted inside the tile rather than cropped, so wide wordmarks
-   and square app icons all get the same breathing room. */
+/* Keep every source logo inside the same optical frame. This leaves room for
+   both square app marks and wide wordmarks without letting either touch the
+   tile edge. */
 .store-app-icon img {
-  width: 78%;
-  height: 78%;
+  width: 82%;
+  height: 82%;
   object-fit: contain;
 }
 
@@ -631,56 +632,30 @@ blockquote {
   --accent-plate: linear-gradient(135deg, #b08968, #f7c873);
 }
 
-/* Most logos use a light tile; the social-web and BDash marks keep their dark
-   project accents for contrast. Declared after the accent rules. */
+/* Source logos come from different project assets. Give them a shared frame
+   so those differences read as brand marks instead of mismatched tiles. */
 .store-app-icon.has-logo {
-  border-color: rgba(0, 0, 0, 0.14);
-  background: linear-gradient(150deg, #ffffff, #e8e8ec);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
-}
-
-.store-app-icon.social-web.has-logo,
-.store-app-icon.bdash.has-logo,
-.store-app-icon.hezarfen.has-logo {
   border-color: rgba(255, 255, 255, 0.1);
-  background: var(--accent-plate);
-  box-shadow: none;
+  background: linear-gradient(150deg, #202329, #14161a);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
 }
 
-.store-app-icon.social-web.has-logo img,
-.store-app-icon.bdash.has-logo img,
-.store-app-icon.hezarfen.has-logo img {
-  width: 100%;
-  height: 100%;
+.store-app-icon.logo-wide img {
+  width: 92%;
+  height: auto;
+  max-height: 82%;
 }
 
-/* Finished app icons (rounding and fill baked into the SVG) fill the tile
-   edge to edge instead of sitting inset on the light plate. MacShelf uses the
-   shared `dark` accent. */
-.store-app-icon.dizey.has-logo,
-.store-app-icon.skadi.has-logo,
-.store-app-icon.nors.has-logo {
-  border-color: rgba(255, 255, 255, 0.08);
-  background: #0d1117;
-  box-shadow: none;
+.store-app-icon.bdash.logo-wide img {
+  width: 84%;
 }
 
-.store-app-icon.portkill.has-logo,
-.store-app-icon.portfolio.has-logo,
-.store-app-icon.dark.has-logo {
-  border-color: rgba(255, 255, 255, 0.08);
-  background: transparent;
-  box-shadow: none;
-}
-
-.store-app-icon.dizey img,
-.store-app-icon.skadi.has-logo img,
-.store-app-icon.nors.has-logo img,
-.store-app-icon.portfolio.has-logo img,
-.store-app-icon.portkill.has-logo img,
-.store-app-icon.dark.has-logo img {
-  width: 100%;
-  height: 100%;
+/* These supplied wordmarks use dark ink, so keep their shared tile light. */
+.store-app-icon.rose.has-logo,
+.store-app-icon.golden.has-logo {
+  border-color: rgba(0, 0, 0, 0.12);
+  background: linear-gradient(150deg, #ffffff, #ece9e4);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.92);
 }
 
 .get-in-touch {

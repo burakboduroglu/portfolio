@@ -1,4 +1,5 @@
 export type AppId =
+  | 'ratekit'
   | 'macshelf'
   | 'portkill'
   | 'penote'

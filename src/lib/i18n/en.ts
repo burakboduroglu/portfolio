@@ -168,6 +168,19 @@ const en = {
     crafted: (name) => ['Crafted with', `by ${name}`],
   },
   appCopy: {
+    ratekit: {
+      category: 'Backend / Billing',
+      subtitle: 'Usage metering, pricing and prepaid billing',
+      description:
+        'An open-source usage metering and rating engine built with Java 21 and Spring Boot. Three services ingest usage events through Kafka, price them against versioned tariffs, deduct prepaid balances and generate monthly invoices in PostgreSQL. Idempotent processing prevents duplicate charges, with retries and a dead-letter topic for failed events.',
+      stack: 'Java 21 / Spring Boot / Kafka / PostgreSQL',
+      platform: 'Self-hosted',
+      price: 'Free / Apache-2.0',
+      action: 'View on GitHub',
+      heroTitle: 'Turn usage events into priced charges.',
+      heroText:
+        'Meter usage, apply flat rates, graduated tiers or free quotas, and invoice each account monthly with exact decimal amounts.',
+    },
     macshelf: {
       category: 'macOS App',
       subtitle: 'Clipboard shelf for the menu bar',

@@ -3,6 +3,17 @@ import { AppMeta } from '../types/app'
 
 const apps: AppMeta[] = [
   {
+    id: 'ratekit',
+    categoryKey: 'developer',
+    categoryKeys: ['developer'],
+    title: 'RateKit',
+    repo: 'https://github.com/burakboduroglu/ratekit',
+    link: 'https://github.com/burakboduroglu/ratekit',
+    icon: 'R',
+    logoUrl: '/logos/ratekit.svg',
+    accent: 'dark',
+  },
+  {
     id: 'social-web',
     categoryKey: 'web',
     categoryKeys: ['web'],

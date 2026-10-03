@@ -168,6 +168,19 @@ const tr = {
     crafted: (name) => [`${name} tarafından`, 'yapıldı'],
   },
   appCopy: {
+    ratekit: {
+      category: 'Backend / Faturalama',
+      subtitle: 'Kullanım ölçümü, ücretlendirme ve ön ödemeli faturalama',
+      description:
+        'Java 21 ve Spring Boot ile geliştirilmiş açık kaynak bir kullanım ölçümü ve ücretlendirme motoru. Üç servis, kullanım olaylarını Kafka üzerinden alır, sürümlenmiş tarifelerle fiyatlandırır, ön ödemeli bakiyeden düşer ve PostgreSQL üzerinde aylık faturalar oluşturur. İdempotent işleme mükerrer ücretleri önler; başarısız olaylar yeniden denenir veya dead-letter topic’e aktarılır.',
+      stack: 'Java 21 / Spring Boot / Kafka / PostgreSQL',
+      platform: 'Self-hosted',
+      price: 'Ücretsiz / Apache-2.0',
+      action: 'GitHub’da görüntüle',
+      heroTitle: 'Kullanım olaylarını ücretlere dönüştür.',
+      heroText:
+        'Kullanımı ölç, sabit fiyat, kademeli tarife veya ücretsiz kota uygula; her hesap için kesin ondalık tutarlarla aylık fatura oluştur.',
+    },
     macshelf: {
       category: 'macOS Uygulaması',
       subtitle: 'Menü çubuğunda clipboard rafı',

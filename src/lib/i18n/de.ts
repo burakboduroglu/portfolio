@@ -168,6 +168,19 @@ const de = {
     crafted: (name) => ['Mit', `von ${name} erstellt`],
   },
   appCopy: {
+    ratekit: {
+      category: 'Backend / Abrechnung',
+      subtitle: 'Nutzungsmessung, Preisberechnung und Prepaid-Abrechnung',
+      description:
+        'Eine Open-Source-Engine für Nutzungsmessung und Preisberechnung mit Java 21 und Spring Boot. Drei Dienste nehmen Nutzungsereignisse über Kafka entgegen, berechnen Preise anhand versionierter Tarife, ziehen Beträge vom Prepaid-Guthaben ab und erstellen monatliche Rechnungen in PostgreSQL. Idempotente Verarbeitung verhindert doppelte Belastungen; fehlgeschlagene Ereignisse werden erneut versucht oder in ein Dead-Letter-Topic geschrieben.',
+      stack: 'Java 21 / Spring Boot / Kafka / PostgreSQL',
+      platform: 'Self-hosted',
+      price: 'Kostenlos / Apache-2.0',
+      action: 'Auf GitHub ansehen',
+      heroTitle: 'Aus Nutzungsereignissen werden berechnete Kosten.',
+      heroText:
+        'Nutzung messen, feste Preise, gestaffelte Tarife oder Freikontingente anwenden und für jedes Konto monatliche Rechnungen mit exakten Dezimalbeträgen erstellen.',
+    },
     macshelf: {
       category: 'macOS-App',
       subtitle: 'Zwischenablage-Regal in der Menüleiste',

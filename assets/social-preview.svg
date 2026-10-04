@@ -81,7 +81,7 @@
     <rect x="1020" y="364" width="88" height="8" rx="4" fill="#C3B5B0"/>
 
     <rect x="730" y="408" width="212" height="76" rx="12" fill="#F4EEEC" stroke="#E4D9D5"/>
-    <rect x="744" y="428" width="36" height="36" rx="10" fill="url(#mark)"/>
+    <rect x="744" y="428" width="36" height="36" rx="10" fill="#C76F68"/>
     <rect x="792" y="432" width="118" height="10" rx="5" fill="#37352F"/>
     <rect x="792" y="452" width="88" height="8" rx="4" fill="#C3B5B0"/>
 

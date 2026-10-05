@@ -7,8 +7,12 @@ import type { AppId } from '../types/app'
  * renders without counts, which is also what a project with no repo does.
  */
 export const repoStats: Partial<Record<AppId, { stars: number; forks: number }>> = {
-  "social-web": {
+  "ratekit": {
     "stars": 0,
+    "forks": 0
+  },
+  "social-web": {
+    "stars": 1,
     "forks": 0
   },
   "portkill": {

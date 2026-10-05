@@ -33,6 +33,7 @@ const en = {
       reddit: 'Reddit',
       youtube: 'YouTube',
       kick: 'Kick',
+      behance: 'Behance',
       figma: 'Figma',
       gdev: 'Google Dev',
       microsoft: 'MS Learn',

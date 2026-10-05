@@ -82,6 +82,20 @@ export const IconZoom = pixel(ZoomIn)
  * cells, `#` filled — hand-drawn from the brand's own logo at 12×12.
  */
 const brandBitmaps = {
+  behance: [
+    '............',
+    '.......###..',
+    '.####.......',
+    '.#...#......',
+    '.#...#..###.',
+    '.####..#...#',
+    '.#...#.#####',
+    '.#...#.#....',
+    '.####...###.',
+    '............',
+    '............',
+    '............',
+  ],
   aws: [
     '............',
     '............',
@@ -279,6 +293,7 @@ const brandIcons: Record<string, Icon> = {
   figma: pixel(Figma),
   npm: pixel(Npm),
   gdev: pixel(Google),
+  behance: bitmap(brandBitmaps.behance),
   aws: bitmap(brandBitmaps.aws),
   devto: bitmap(brandBitmaps.devto),
   framer: bitmap(brandBitmaps.framer),

@@ -8,6 +8,7 @@ export type ProfileLinkKey =
   | 'reddit'
   | 'youtube'
   | 'kick'
+  | 'behance'
   | 'figma'
   | 'gdev'
   | 'microsoft'

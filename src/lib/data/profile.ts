@@ -13,6 +13,7 @@ const developerProfiles: ProfileLink[] = [
   { key: 'microsoft', href: 'https://learn.microsoft.com/en-us/users/burakboduroglu/', icon: 'microsoft', handle: '@burakboduroglu' },
   { key: 'aws', href: 'https://builder.aws.com/community/@burakboduroglu', icon: 'aws', handle: '@burakboduroglu' },
   { key: 'huggingface', href: 'https://huggingface.co/penoloxai', icon: 'huggingface', handle: '@penoloxai' },
+  { key: 'behance', href: 'https://www.behance.net/burakboduroglu', icon: 'behance', handle: '@burakboduroglu' },
   { key: 'figma', href: 'https://www.figma.com/@burakboduroglu', icon: 'figma', handle: '@burakboduroglu' },
   { key: 'framer', href: 'https://www.framer.com/@burak-boduroglu/', icon: 'framer', handle: '@burak-boduroglu' },
   { key: 'github', href: 'https://github.com/burakboduroglu', icon: 'github', handle: 'burakboduroglu' },

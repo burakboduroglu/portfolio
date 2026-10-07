@@ -131,7 +131,7 @@ The active language resolves as `?lang=` → `localStorage` → `navigator.langu
 ## How the project pages work
 
 <div align="center">
-  <img src="assets/screenshot-project.png" alt="A project page: full-bleed hero in the project's accent colour, with install and repository buttons" width="760">
+  <img src="assets/screenshot-project.png" alt="The RateKit project page: full-bleed hero with the project mark, description and GitHub link" width="760">
 </div>
 
 `src/lib/router.ts` resolves `/projects/:id` over the History API in about 85 lines. Cards render a real `href` and intercept only the plain left click, so middle-click and ⌘-click still open a new tab. GitHub Pages has no rewrite rules, so the build copies `index.html` to `404.html` — that is what makes a hard refresh or a shared link resolve instead of showing the Pages error page.

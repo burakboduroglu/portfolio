@@ -28,19 +28,19 @@ export const repoStats: Partial<Record<AppId, { stars: number; forks: number }>>
     "forks": 0
   },
   "nors": {
-    "stars": 2,
+    "stars": 1,
     "forks": 0
   },
   "macshelf": {
-    "stars": 2,
+    "stars": 1,
     "forks": 0
   },
   "penote": {
-    "stars": 30,
+    "stars": 29,
     "forks": 2
   },
   "portfolio": {
-    "stars": 2,
+    "stars": 1,
     "forks": 0
   }
 }

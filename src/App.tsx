@@ -1,11 +1,13 @@
 import { useEffect, useMemo, useRef } from 'react'
 import { applyDocumentMeta, LOCALES, syncLocaleParam, useApps, useLocale, useT } from './lib/i18n'
+import profile from './lib/data/profile'
 import { useRoute } from './lib/router'
 import AppDetail from './components/app-site/app-detail'
 import { IconArrowLeft } from './components/icons'
 import HomePage from './components/home-page'
 import InternalLink from './components/internal-link'
 import LanguageSwitcher from './components/language-switcher'
+import MobileControls from './components/mobile-controls'
 import ThemeSwitch, { toggleTheme } from './components/theme-switch'
 
 function NotFoundPage() {
@@ -49,6 +51,16 @@ function App() {
     syncLocaleParam(locale)
     const canonical = `${window.location.origin}${window.location.pathname}`
 
+    if (route.name === 'notFound') {
+      applyDocumentMeta({
+        title: `${t.apps.missingTitle} — ${profile.name}`,
+        description: t.apps.missingBody,
+        canonical,
+        noindex: true,
+      })
+      return
+    }
+
     if (activeApp) {
       applyDocumentMeta({
         title: `${activeApp.title} — ${activeApp.subtitle}`,
@@ -75,6 +87,10 @@ function App() {
           target.tagName === 'TEXTAREA' ||
           target.isContentEditable)
       ) {
+        return
+      }
+
+      if (e.metaKey || e.ctrlKey || e.altKey) {
         return
       }
 
@@ -115,6 +131,7 @@ function App() {
           <NotFoundPage />
         </>
       )}
+      <MobileControls />
     </main>
   )
 }

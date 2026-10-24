@@ -12,6 +12,8 @@ const en = {
     themeAria: 'Theme',
     themeDark: 'Dark mode',
     themeLight: 'Light mode',
+    mobileControlsAria: 'Appearance and language',
+    close: 'Close',
   },
   hero: {
     photoAlt: 'Burak Boduroğlu',
@@ -35,6 +37,7 @@ const en = {
       kick: 'Kick',
       behance: 'Behance',
       figma: 'Figma',
+      cursor: 'Cursor',
       gdev: 'Google Dev',
       microsoft: 'MS Learn',
       aws: 'AWS Builder',

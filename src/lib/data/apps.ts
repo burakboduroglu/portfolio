@@ -45,8 +45,7 @@ const apps: AppMeta[] = [
     repo: 'https://github.com/burakboduroglu/portkill',
     link: 'https://www.npmjs.com/package/@burakboduroglu/portkill',
     icon: 'p',
-    logoUrl:
-      'https://raw.githubusercontent.com/burakboduroglu/portkill/main/assets/portkill-logo.svg',
+    logoUrl: '/logos/portkill.svg',
     accent: 'portkill',
     install: [
       { manager: 'Homebrew', command: 'brew install burakboduroglu/portkill/portkill' },
@@ -61,7 +60,7 @@ const apps: AppMeta[] = [
     repo: 'https://github.com/burakboduroglu/skadi',
     link: 'https://www.npmjs.com/package/@burakboduroglu/skadi',
     icon: 'S',
-    logoUrl: 'https://raw.githubusercontent.com/burakboduroglu/skadi/main/assets/logo.png',
+    logoUrl: '/logos/skadi.webp',
     accent: 'skadi',
     install: [
       { manager: 'bun', command: 'bunx @burakboduroglu/skadi install /path/to/pocketbase' },
@@ -86,7 +85,7 @@ const apps: AppMeta[] = [
     repo: 'https://github.com/burakboduroglu/nors',
     link: 'https://www.npmjs.com/package/@burakboduroglu/nors',
     icon: 'N',
-    logoUrl: 'https://raw.githubusercontent.com/burakboduroglu/nors/main/assets/nors-mark.svg',
+    logoUrl: '/logos/nors.svg',
     accent: 'nors',
     install: [
       { manager: 'bun', command: 'bunx @burakboduroglu/nors install /path/to/pocketbase' },
@@ -100,8 +99,7 @@ const apps: AppMeta[] = [
     repo: 'https://github.com/burakboduroglu/macshelf',
     link: 'https://github.com/burakboduroglu/macshelf/releases/latest',
     icon: 'M',
-    logoUrl:
-      'https://github.com/burakboduroglu/macshelf/raw/main/assets/macshelf-logo.svg',
+    logoUrl: '/logos/macshelf.svg',
     accent: 'dark',
     install: [
       {
@@ -128,8 +126,7 @@ const apps: AppMeta[] = [
     repo: 'https://github.com/burakboduroglu/penote',
     link: 'https://www.npmjs.com/package/@burakboduroglu/penote',
     icon: 'PN',
-    logoUrl:
-      'https://raw.githubusercontent.com/burakboduroglu/penote/main/assets/penote-logo.svg',
+    logoUrl: '/logos/penote.svg',
     accent: 'penote',
     install: [{ manager: 'bun', command: 'bun add -g @burakboduroglu/penote' }],
   },

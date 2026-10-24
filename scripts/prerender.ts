@@ -172,6 +172,14 @@ ${entries.join('\n')}
 `
   await writeFile(resolve(DIST, 'sitemap.xml'), sitemap)
 
+  // GitHub Pages serves this file with a 404 status for unknown paths. The
+  // app renders its own missing-page view, but crawlers and unfurlers only see
+  // this static shell, so give it the right title and keep it out of the index.
+  const notFound = shell
+    .replace(/<title>[^<]*<\/title>/, '<title>Page not found — Burak Boduroğlu</title>')
+    .replace('</head>', '        <meta name="robots" content="noindex" />\n    </head>')
+  await writeFile(resolve(DIST, '404.html'), notFound)
+
   console.log(`prerender: ${apps.length} project pages + sitemap (${entries.length} urls)`)
 }
 

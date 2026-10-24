@@ -1,0 +1,28 @@
+<!--
+  MacShelf mark: three sheets on a shelf, the top one in the light tint. Two
+  inks on a near-black plate — the family language set by Skadi on 2026-09-08.
+  Geometry traced from the chosen Higgsfield concept
+  (studio/output/logo-family/macshelf-v4.png).
+
+  Construction, so it can be edited without guessing: one 2:1 rhombus repeated
+  three times, each 139 units below the last. Each sheet is drawn as a full
+  rhombus and the one above is stamped over it, once in plate at 1.1375 scale to
+  cut the gap and once in its own ink. Bottom-up, so the stack reads correctly.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="MacShelf logo">
+  <rect width="1024" height="1024" fill="#0D1117"/>
+
+  <!-- shelf -->
+  <rect x="160" y="772" width="704" height="76" fill="#2AA39C"/>
+
+  <!-- third sheet -->
+  <path d="M512 459 L843 619 L512 779 L181 619 Z" fill="#2AA39C"/>
+
+  <!-- gap, then the second sheet -->
+  <path d="M512 298 L889 480 L512 662 L135 480 Z" fill="#0D1117"/>
+  <path d="M512 320 L843 480 L512 640 L181 480 Z" fill="#2AA39C"/>
+
+  <!-- gap, then the top sheet -->
+  <path d="M512 159 L889 341 L512 523 L135 341 Z" fill="#0D1117"/>
+  <path d="M512 181 L843 341 L512 501 L181 341 Z" fill="#F2FBFA"/>
+</svg>

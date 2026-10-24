@@ -32,7 +32,7 @@ function ArticlesSection() {
             <ExternalLink className='article-card' href={article.href}>
               {article.imageUrl ? (
                 <span className='article-card-media'>
-                  <img src={article.imageUrl} alt='' loading='lazy' />
+                  <img src={article.imageUrl} alt='' loading='lazy' decoding='async' />
                 </span>
               ) : null}
               <span className='article-card-body'>

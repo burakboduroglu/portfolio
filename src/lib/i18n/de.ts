@@ -3,15 +3,17 @@ import type { Messages } from './types'
 const de = {
   localeLabel: 'Deutsch',
   meta: {
-    title: 'Burak Boduroğlu — Softwareentwickler',
+    title: 'Burak Boduroğlu, Softwareentwickler',
     description:
-      'Burak Boduroğlu — Softwareentwickler. Persönliche Website mit entwickelten Apps, Entwickler-Tools, technischen Artikeln und Profilen.',
+      'Burak Boduroğlu ist Softwareentwickler. Persönliche Website mit meinen Apps, Entwickler-Tools, technischen Artikeln und Profilen.',
   },
   nav: {
     languageAria: 'Sprache',
     themeAria: 'Theme',
     themeDark: 'Dunkler Modus',
     themeLight: 'Heller Modus',
+    mobileControlsAria: 'Darstellung und Sprache',
+    close: 'Schließen',
   },
   hero: {
     photoAlt: 'Burak Boduroğlu',
@@ -21,7 +23,7 @@ const de = {
   },
   profile: {
     intro:
-      'Ich bin Softwareentwickler. Aus komplexen Ideen einfache, nützliche Produkte zu machen, die Leute wirklich benutzen – das mag ich. Am liebsten bin ich von Anfang bis Ende dabei: vom Angehen des Problems bis zum Launch. Ich gehe in kleinen Schritten vor, nehme das passende Werkzeug für die Aufgabe und lege Wert auf Code, den man lesen und pflegen kann.',
+      'Ich bin Softwareentwickler. Ich mag es, aus komplexen Ideen einfache, nützliche Produkte zu machen, die Leute wirklich benutzen. Am liebsten bin ich von Anfang bis Ende dabei, von der Problemstellung bis zum Launch. Ich gehe in kleinen Schritten vor, nehme das passende Werkzeug für die Aufgabe und lege Wert auf Code, den man lesen und pflegen kann.',
     aiIntro: '',
     links: {
       email: 'E-Mail senden',
@@ -35,6 +37,7 @@ const de = {
       kick: 'Kick',
       behance: 'Behance',
       figma: 'Figma',
+      cursor: 'Cursor',
       gdev: 'Google Dev',
       microsoft: 'MS Learn',
       aws: 'AWS Builder',
@@ -55,7 +58,7 @@ const de = {
   },
   apps: {
     title: 'Projekte',
-    sectionAria: 'Eingebettete App-Übersicht',
+    sectionAria: 'Übersicht der eingebetteten Apps',
     navAria: 'App-Navigation',
     openNav: 'Navigation öffnen',
     closeNav: 'Navigation schließen',
@@ -72,7 +75,7 @@ const de = {
     resultCount: (count) => `${count} ${count === 1 ? 'Ergebnis' : 'Ergebnisse'}`,
     clearFilter: 'Filter zurücksetzen',
     emptyTitle: 'Keine Apps gefunden',
-    emptyBody: 'Such nach App-Name, Kategorie, Plattform oder Sprache.',
+    emptyBody: 'Suche nach App-Name, Kategorie, Plattform oder Sprache.',
     prevPage: 'Vorherige Seite',
     nextPage: 'Nächste Seite',
     pageOf: (current, total) => `Seite ${current} von ${total}`,
@@ -87,10 +90,10 @@ const de = {
     copyCommand: 'Befehl kopieren',
     commandCopied: 'Kopiert',
     documentation: 'Dokumentation',
-    readmeFallback: 'Dieses Dokument ist noch nicht übersetzt — es wird das englische Original gezeigt.',
+    readmeFallback: 'Dieses Dokument ist noch nicht übersetzt. Es wird das englische Original gezeigt.',
     readmeError: 'Das Dokument konnte nicht geladen werden.',
     missingTitle: 'Kein solches Projekt',
-    missingBody: 'Die gesuchte Seite wurde vielleicht verschoben oder hat nie existiert.',
+    missingBody: 'Die gesuchte Seite wurde möglicherweise verschoben oder existiert nicht.',
     backToProjects: 'Projekte',
     screenshots: 'Screenshots',
     galleryAria: (title) => `Screenshots von ${title}`,
@@ -123,28 +126,28 @@ const de = {
       {
         title: 'Kleine Tools, die wirklich etwas taugen',
         bullets: [
-          'MacShelf und .portkill stehen für die Software, die ich mag: Tools, die eine Sache machen – und die richtig.',
-          'Wenn du etwas baust, das Entwicklern oder Teams den Alltag erleichtert, hör ich mir das gern an.',
+          'MacShelf und .portkill stehen für die Software, die ich mag: Tools, die eine Sache richtig machen.',
+          'Wenn du etwas baust, das Entwicklern oder Teams den Alltag erleichtert, höre ich mir das gern an.',
         ],
       },
       {
         title: 'KI gehört bei mir zur Arbeit',
         bullets: [
           'Context Engineering, Agenten-Workflows und Code-Review beschäftigen mich.',
-          'KI ersetzt das Denken nicht, sie macht einen guten Engineering-Prozess schneller.',
+          'KI ersetzt das Denken nicht, sondern macht einen guten Engineering-Prozess schneller.',
         ],
       },
       {
         title: 'Ich schreibe über das, was ich lerne',
         bullets: [
           'Auf Substack und DEV.to schreibe ich über Programmierung und Softwareentwicklung.',
-          'Was ich beim Bauen lerne, wird zu Notizen, auf die ich später zurückkomme – und die vielleicht auch anderen weiterhelfen.',
+          'Was ich beim Bauen lerne, wird zu Notizen, auf die ich später zurückkomme und die vielleicht auch anderen weiterhelfen.',
         ],
       },
       {
         title: 'Schreib mir einfach',
         bullets: [
-          'Über Software, Entwickler-Tools, KI oder ein Produkt, an dem du gerade sitzt – jederzeit gern.',
+          'Über Software, Entwickler-Tools, KI oder ein Produkt, an dem du gerade sitzt, kannst du mir jederzeit schreiben.',
           'Am einfachsten erreichst du mich per E-Mail: info@burakboduroglu.com.tr.',
         ],
       },
@@ -156,9 +159,9 @@ const de = {
     readOnSubstack: 'Auf Substack lesen',
   },
   developerProfiles: {
-    sectionAria: 'Entwickler-Profile und Plattformen',
-    title: 'Entwickler-Profile & Communitys',
-    subtitle: 'Meine Profile in Cloud-, KI-, Coding- und Design-Ökosystemen.',
+    sectionAria: 'Entwicklerprofile und Plattformen',
+    title: 'Entwicklerprofile & Communitys',
+    subtitle: 'Meine Profile in den Bereichen Cloud, KI, Coding und Design.',
   },
   toast: {
     emailCopied: 'E-Mail-Adresse in die Zwischenablage kopiert!',
@@ -186,40 +189,40 @@ const de = {
       category: 'macOS-App',
       subtitle: 'Zwischenablage-Regal in der Menüleiste',
       description:
-        'Eine native macOS-Menüleisten-App, die Text und Bilder behält, die du kopierst — durchsuchbar, tastaturorientiert, ohne Dock-Icon und ohne Konto.',
+        'Eine native macOS-Menüleisten-App, die Text und Bilder behält, die du kopierst: durchsuchbar, tastaturorientiert, ohne Dock-Icon und ohne Konto.',
       stack: 'Swift 6',
       platform: 'macOS 14+',
       price: 'Kostenlos',
       action: 'Laden',
       heroTitle: 'Nie wieder verlieren, was du kopiert hast.',
       heroText:
-        'Cmd+Shift+V öffnet ein Popover aus der Menüleiste mit deiner Zwischenablage-Historie — Text und Bilder, bereit zum Zurücklegen.',
+        'Cmd+Shift+V öffnet ein Popover aus der Menüleiste mit deiner Zwischenablage-Historie: Text und Bilder, bereit zum Zurücklegen.',
     },
     portkill: {
       category: 'CLI-App',
       subtitle: 'Blockierten TCP-Port mit einem Befehl freigeben',
       description:
-        'Ein CLI für macOS und Linux, das den Prozess findet, der einen Port hält, und ihn beendet. Vorschau mit --dry-run, Bereiche ablaufen, offene Ports listen oder dieselbe Logik in einer lokalen Web-UI öffnen.',
+        'Ein CLI-Tool für macOS und Linux, das den Prozess findet, der einen Port belegt, und ihn beendet. Vorschau mit --dry-run, Portbereiche durchgehen, offene Ports auflisten oder dieselbe Logik in einer lokalen Web-UI öffnen.',
       stack: 'TypeScript',
       platform: 'macOS / Linux',
       price: 'Kostenlos',
       action: 'Laden',
       heroTitle: 'Finde heraus, wer deinen Port blockiert.',
       heroText:
-        'Sieh, welcher Prozess einen Port hält, prüfe vor dem Signal, dann stoppe ihn — im Terminal oder in einer lokalen Web-UI.',
+        'Sieh nach, welcher Prozess einen Port belegt, prüfe ihn, bevor du ein Signal sendest, und stoppe ihn dann: im Terminal oder in einer lokalen Web-UI.',
     },
     penote: {
       category: 'CLI / DevTool',
-      subtitle: 'Programmiernotizen für Menschen und Agents',
+      subtitle: 'Programmiernotizen für Menschen und Agenten',
       description:
-        'Eine Markdown-Bibliothek mit Notizen zu Java, JavaScript, Python, SQL und MongoDB, erschlossen über ein CLI, ein TUI und eine lokale Web-UI ohne Abhängigkeiten. Über AGENTS.md lesen und erweitern auch Coding-Agents dieselben Dateien.',
+        'Eine Markdown-Bibliothek mit Notizen zu Java, JavaScript, Python, SQL und MongoDB, erschlossen über ein CLI, ein TUI und eine lokale Web-UI ohne Abhängigkeiten. Über AGENTS.md lesen und erweitern auch KI-Agenten dieselben Dateien.',
       stack: 'JavaScript',
       platform: 'CLI',
       price: 'Kostenlos',
       action: 'Laden',
-      heroTitle: 'Notizen, die Mensch und Agent lesen.',
+      heroTitle: 'Notizen, die Menschen und Agenten lesen.',
       heroText:
-        'Notizen zu Java, JavaScript, Python, SQL und MongoDB liegen als reines Markdown vor — geöffnet im Terminal, im TUI oder im Browser, ohne Build-Schritt und ohne Laufzeitabhängigkeiten.',
+        'Notizen zu Java, JavaScript, Python, SQL und MongoDB liegen als reines Markdown vor. Du öffnest sie im Terminal, im TUI oder im Browser, ohne Build-Schritt und ohne Laufzeitabhängigkeiten.',
     },
     bdash: {
       category: 'SaaS',
@@ -238,7 +241,7 @@ const de = {
       category: 'Soziale Plattform',
       subtitle: 'Ein Ort für Gespräche und Communities, nur mit Einladung',
       description:
-        'Eine responsive soziale Plattform zum Teilen von Beiträgen, Antworten auf Gespräche und Entdecken von Menschen über Community-Feeds. Beiträge unterstützen Emoji, GIFs sowie YouTube- und Spotify-Vorschauen.',
+        'Eine responsive soziale Plattform zum Teilen von Beiträgen, zum Antworten auf Gespräche und zum Entdecken von Menschen über Community-Feeds. Beiträge unterstützen Emoji, GIFs sowie YouTube- und Spotify-Vorschauen.',
       stack: 'React / TanStack Router / Bun / Supabase',
       platform: 'Web',
       price: 'Nur auf Einladung',
@@ -251,7 +254,7 @@ const de = {
       category: 'CLI / Self-hosted',
       subtitle: 'Abo-Tracking auf einer PocketBase, die ohnehin läuft',
       description:
-        'Drei Migrationen, zwei Hook-Dateien und eine statische Seite, kopiert in eine bestehende PocketBase — kein Container, keine zweite Datenbank, kein zusätzlicher Port. Ein eingefügter Link wird serverseitig zu Name und Logo aufgelöst, Abbuchungstermine rücken von selbst weiter, und Summen erscheinen in TRY, USD, EUR oder GBP, wobei veraltete Kurse als solche gekennzeichnet statt verschwiegen werden.',
+        'Drei Migrationen, zwei Hook-Dateien und eine statische Seite, kopiert in eine bestehende PocketBase: kein Container, keine zweite Datenbank, kein zusätzlicher Port. Ein eingefügter Link wird serverseitig zu Name und Logo aufgelöst, Abbuchungstermine rücken von selbst weiter, und Summen erscheinen in TRY, USD, EUR oder GBP, wobei veraltete Kurse als solche gekennzeichnet statt verschwiegen werden.',
       stack: 'JavaScript / PocketBase',
       platform: 'Self-hosted',
       price: 'Kostenlos',
@@ -264,7 +267,7 @@ const de = {
       category: 'CLI / Self-hosted',
       subtitle: 'Persönliche Ops-Notizen auf einer PocketBase, die ohnehin läuft',
       description:
-        'Eine Migration und eine statische Seite, kopiert in eine bestehende PocketBase — kein Container, keine zweite Datenbank, kein zusätzlicher Port. Notizen liegen als Karten in vier Kinds vor, mit Markdown- und Mermaid-Rendering, Sortierung per Drag-and-drop, wiederholbaren Seed-Upsets und Warnung bei ungespeicherten Änderungen.',
+        'Eine Migration und eine statische Seite, kopiert in eine bestehende PocketBase: kein Container, keine zweite Datenbank, kein zusätzlicher Port. Notizen liegen als Karten in vier Kinds vor, mit Markdown- und Mermaid-Rendering, Sortierung per Drag-and-drop, wiederholbaren Seed-Upsets und Warnung bei ungespeicherten Änderungen.',
       stack: 'SolidJS / PocketBase',
       platform: 'Self-hosted',
       price: 'Kostenlos',
@@ -277,33 +280,33 @@ const de = {
       category: 'Website',
       subtitle: 'Website für ein Softwarestudio',
       description:
-        'Die Website von Dizey Yazılım, einem kleinen Engineering-Team für Web-Plattformen, Cloud-Infrastruktur und Datensysteme. Sie zeigt, was das Team macht, wie es arbeitet und wie man es erreicht.',
+        'Die Website von Dizey Yazılım, einem kleinen Entwicklungsteam für Web-Plattformen, Cloud-Infrastruktur und Datensysteme. Sie zeigt, was das Team macht, wie es arbeitet und wie man es erreicht.',
       stack: 'Web',
       platform: 'Browser',
       price: 'Kostenlos',
       action: 'Ansehen',
       heroTitle: 'Skalierbare Software, sauber gebaute Infrastruktur.',
       heroText:
-        'Dizey ist die Website eines kleinen Engineering-Teams, das Software von der ersten Idee bis in die Produktion bringt.',
+        'Dizey ist die Website eines kleinen Entwicklungsteams, das Software von der ersten Idee bis in die Produktion bringt.',
     },
     portfolio: {
       category: 'Website',
       subtitle: 'Die Seite, die du gerade ansiehst',
       description:
-        'Diese Seite selbst. Eine React-App mit drei Sprachen, hellem und dunklem Theme und einer eigenen Seite für jedes Projekt. Keine i18n-Bibliothek, kein Router, kein CSS-Framework — alles von Hand geschrieben, der Quellcode ist offen.',
+        'Diese Seite selbst. Eine React-App mit drei Sprachen, hellem und dunklem Theme und einer eigenen Seite für jedes Projekt. Keine i18n-Bibliothek, kein Router, kein CSS-Framework. Alles ist von Hand geschrieben und der Quellcode ist offen.',
       stack: 'React / TypeScript',
       platform: 'Browser',
       price: 'Open Source',
       action: 'Website öffnen',
       heroTitle: 'Eine ruhige, von Hand gebaute persönliche Seite.',
       heroText:
-        'Eine Seite darüber, wer ich bin, wie ich arbeite und welche kleinen Produkte ich baue — in drei Sprachen, mit kurzer Abhängigkeitsliste.',
+        'Eine Seite darüber, wer ich bin, wie ich arbeite und welche kleinen Produkte ich baue, in drei Sprachen und mit kurzer Abhängigkeitsliste.',
     },
     alice: {
       category: 'Website',
       subtitle: 'Landingpage für eine Hochzeitslocation',
       description:
-        'Ein Website-Konzept für eine Hochzeitslocation: Atmosphäre, Leistungen und alles Wichtige – ohne Schnörkel.',
+        'Ein Website-Konzept für eine Hochzeitslocation: Atmosphäre, Leistungen und alles Wichtige, ohne Schnörkel.',
       stack: 'Web',
       platform: 'Browser',
       price: 'Kostenlos',
@@ -314,7 +317,7 @@ const de = {
     },
     'betus-design': {
       category: 'Website',
-      subtitle: 'Landingpage für eine Manufaktur für Handarbeit',
+      subtitle: 'Landingpage für eine Handarbeitsmanufaktur',
       description:
         'Ein Website-Konzept für eine Manufaktur: die Produkte, die Geschichte dahinter und alles Wichtige auf einen Blick.',
       stack: 'Web',
@@ -336,7 +339,7 @@ const de = {
       action: 'Demo öffnen',
       heroTitle: 'Ein Campus, der im Browser läuft.',
       heroText:
-        'Schul-Dashboard und Lernportal für Hezarfen — Kurse, Hausaufgaben, Prüfungen und KI-Lernwerkzeuge in rollenbasierten Abläufen.',
+        'Schul-Dashboard und Lernportal für Hezarfen: Kurse, Hausaufgaben, Prüfungen und KI-Lernwerkzeuge in rollenbasierten Abläufen.',
     },
   },
 } satisfies Messages

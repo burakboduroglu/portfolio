@@ -10,6 +10,7 @@ export type ProfileLinkKey =
   | 'kick'
   | 'behance'
   | 'figma'
+  | 'cursor'
   | 'gdev'
   | 'microsoft'
   | 'aws'

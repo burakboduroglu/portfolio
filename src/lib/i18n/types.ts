@@ -27,6 +27,8 @@ export type Messages = {
     themeAria: string
     themeDark: string
     themeLight: string
+    mobileControlsAria: string
+    close: string
   }
   hero: {
     photoAlt: string

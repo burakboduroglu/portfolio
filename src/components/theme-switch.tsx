@@ -8,8 +8,10 @@ function initialDark(): boolean {
   return document.documentElement.classList.contains('dark')
 }
 
-export function toggleTheme() {
-  const isDark = !document.documentElement.classList.contains('dark')
+export function setTheme(isDark: boolean) {
+  if (document.documentElement.classList.contains('dark') === isDark) {
+    return isDark
+  }
   document.documentElement.classList.toggle('dark', isDark)
   try {
     localStorage.setItem(THEME_KEY, isDark ? 'dark' : 'light')
@@ -20,8 +22,12 @@ export function toggleTheme() {
   return isDark
 }
 
-function ThemeSwitch() {
-  const t = useT()
+export function toggleTheme() {
+  return setTheme(!document.documentElement.classList.contains('dark'))
+}
+
+/** Tracks the theme class, including changes made from another control */
+export function useIsDark() {
   const [dark, setDark] = useState(initialDark)
 
   useEffect(() => {
@@ -32,6 +38,13 @@ function ThemeSwitch() {
     window.addEventListener('theme-change', handleThemeChange)
     return () => window.removeEventListener('theme-change', handleThemeChange)
   }, [])
+
+  return dark
+}
+
+function ThemeSwitch() {
+  const t = useT()
+  const dark = useIsDark()
 
   const label = dark ? t.nav.themeDark : t.nav.themeLight
 

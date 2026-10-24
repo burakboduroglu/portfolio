@@ -12,6 +12,8 @@ const tr = {
     themeAria: 'Tema',
     themeDark: 'Koyu mod',
     themeLight: 'Açık mod',
+    mobileControlsAria: 'Görünüm ve dil',
+    close: 'Kapat',
   },
   hero: {
     photoAlt: 'Burak Boduroğlu',
@@ -35,6 +37,7 @@ const tr = {
       kick: 'Kick',
       behance: 'Behance',
       figma: 'Figma',
+      cursor: 'Cursor',
       gdev: 'Google Dev',
       microsoft: 'MS Learn',
       aws: 'AWS Builder',

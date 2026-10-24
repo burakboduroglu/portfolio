@@ -14,6 +14,12 @@ export type { Locale, Messages } from './types'
 
 const STORAGE_KEY = 'portfolio.locale'
 
+const OG_LOCALES: Record<Locale, string> = {
+  tr: 'tr_TR',
+  en: 'en_US',
+  de: 'de_DE',
+}
+
 const dictionaries: Record<Locale, Messages> = { tr, en, de }
 
 /** Endonyms, for the language switcher tooltips — always in their own language */
@@ -77,13 +83,15 @@ export type DocumentMeta = {
   /** Absolute URL of the page currently rendered */
   canonical: string
   image?: string
+  /** Error and internal pages that should stay out of search results */
+  noindex?: boolean
 }
 
 /**
  * Title, description and social tags depend on the route as well as the
  * language, so the caller that knows the route owns this — see App.tsx.
  */
-export function applyDocumentMeta({ title, description, canonical, image }: DocumentMeta) {
+export function applyDocumentMeta({ title, description, canonical, image, noindex }: DocumentMeta) {
   document.title = title
   setMetaContent('meta[name="description"]', description)
   setMetaContent('meta[property="og:title"]', title)
@@ -100,6 +108,18 @@ export function applyDocumentMeta({ title, description, canonical, image }: Docu
   const link = document.querySelector('link[rel="canonical"]')
   if (link) {
     link.setAttribute('href', canonical)
+  }
+
+  const existingRobots = document.querySelector('meta[name="robots"]')
+  if (noindex) {
+    const robots = existingRobots ?? document.createElement('meta')
+    if (!existingRobots) {
+      robots.setAttribute('name', 'robots')
+      document.head.appendChild(robots)
+    }
+    robots.setAttribute('content', 'noindex')
+  } else {
+    existingRobots?.remove()
   }
 }
 
@@ -118,6 +138,7 @@ export function syncLocaleParam(locale: Locale) {
 
 function syncDocument(locale: Locale) {
   document.documentElement.lang = locale
+  setMetaContent('meta[property="og:locale"]', OG_LOCALES[locale])
   syncLocaleParam(locale)
 }
 

@@ -1,0 +1,12 @@
+<!--
+  .portkill mark: the shell prompt's chevron with the port's block knocked free
+  of it. Two inks on a near-black plate — the family language set by Skadi on
+  2026-09-08. Geometry traced from the chosen Higgsfield concept
+  (studio/output/logo-family/portkill-v3.png) and redrawn on exact 45° axes.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="portkill logo">
+  <rect width="1024" height="1024" fill="#0D1117"/>
+  <path d="M244 212 L552 512 L244 812" fill="none" stroke="#4ADE80" stroke-width="176"
+        stroke-linecap="butt" stroke-linejoin="miter"/>
+  <path d="M714 157 L834 277 L714 397 L594 277 Z" fill="#D7F9E4"/>
+</svg>

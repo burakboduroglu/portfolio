@@ -65,6 +65,7 @@ function HomePage() {
               width='108'
               height='108'
               decoding='async'
+              fetchPriority='high'
             />
             <div className='hero-photo-line' aria-hidden='true' />
           </div>

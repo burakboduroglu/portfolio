@@ -30,9 +30,9 @@ const shot = (id: AppId, file: string, width: number, height: number, alt: Recor
 export const screenshots: Partial<Record<AppId, Screenshot[]>> = {
   'social-web': [
     {
-      src: '/screenshots/social-web/feed-desktop.png',
-      width: 2880,
-      height: 1800,
+      src: '/screenshots/social-web/feed-desktop.webp',
+      width: 1962,
+      height: 1226,
       alt: {
         en: 'social-web on the For you tab: composer, posts, and the community discovery column',
         tr: 'Senin için sekmesinde social-web: gönderi kutusu, gönderiler ve topluluk keşfi sütunu',

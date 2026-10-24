@@ -6,7 +6,13 @@ function AppIcon({ app, large = false }: { app: AppCard; large?: boolean }) {
       className={`store-app-icon ${app.accent} ${large ? 'large' : ''} ${app.icon.length > 2 ? 'wordmark' : ''} ${app.logoUrl ? 'has-logo' : ''} ${app.logoFit === 'wide' ? 'logo-wide' : ''}`}
       aria-hidden='true'>
       {app.logoUrl ? (
-        <img src={app.logoUrl} alt='' />
+        <img
+          src={app.logoUrl}
+          alt=''
+          loading={large ? 'eager' : 'lazy'}
+          decoding='async'
+          fetchPriority={large ? 'high' : 'auto'}
+        />
       ) : app.id === 'portkill' ? (
         <span className='portkill-mark'>
           <i />
